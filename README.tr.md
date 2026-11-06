@@ -1,10 +1,14 @@
+<p align="center">
+  <a href="https://senrecep.github.io/yontu/"><img src="https://raw.githubusercontent.com/senrecep/yontu/main/site/public/mark.svg" alt="yontu" width="120" height="120"></a>
+</p>
+
 # yontu
 
 Türkçe humanizer, TDK denetleyicisi ve tür üslubu rehberi. Türkçe metni yontar: biçim verir, inceltir.
 
 yontu, Türkçe metindeki yapay zekâ ve çeviri kalıplarını işaretler ve sadeleştirir. Yazımı ve noktalamayı Türk Dil Kurumunun kurallarına göre denetler. Sözcük seçimini ve cümle yapısını metnin türüne uydurur. Ajan skill'i, çevrim dışı komut satırı aracı ve MCP sunucusu olarak gelir. Claude Code, Codex, Cursor, Gemini CLI ve MCP destekleyen her istemciyle çalışır. İngilizce humanizer araçları Türkçede pek işe yaramaz, bu yüzden buradaki her kural Türkçe için yazıldı.
 
-[English README](README.md)
+[English README](README.md) · [Web sitesi](https://senrecep.github.io/yontu/)
 
 ## Neden
 

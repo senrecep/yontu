@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://senrecep.github.io/yontu/en/"><img src="https://raw.githubusercontent.com/senrecep/yontu/main/site/public/mark.svg" alt="yontu" width="120" height="120"></a>
+</p>
+
 # yontu
 
 <!-- mcp-name: io.github.senrecep/yontu -->
@@ -6,7 +10,7 @@
 
 yontu is a Turkish humanizer (Türkçe humanizer) and TDK spelling and punctuation linter, shipped as an agent skill, an offline CLI and an MCP server. It flags AI and translation patterns in Turkish text, checks spelling and punctuation against the Türk Dil Kurumu (TDK) rules, and fits wording to the genre the text is written for. It works with Claude Code, Codex, Cursor, Gemini CLI and any MCP client. English humanizers do little for Turkish, so every rule here was written for Turkish.
 
-[Türkçe README](README.tr.md)
+[Türkçe README](README.tr.md) · [Website](https://senrecep.github.io/yontu/en/)
 
 ## Why
 
