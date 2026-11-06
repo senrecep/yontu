@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "apply_patch|Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "yontu hook --format codex --event post-edit", "timeout": 15, "statusMessage": "yontu" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "yontu hook --format codex --event stop", "timeout": 15 }
+        ]
+      }
+    ]
+  }
+}

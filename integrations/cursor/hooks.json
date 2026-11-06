@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      { "command": "yontu hook --format cursor --event post-edit", "matcher": "Write", "timeout": 15 }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "yontu": {
+      "type": "local",
+      "command": ["yontu", "mcp"],
+      "enabled": true
+    }
+  }
+}

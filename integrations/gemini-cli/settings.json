@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "yontu": {
+      "command": "yontu",
+      "args": ["mcp"],
+      "timeout": 30000
+    }
+  }
+}

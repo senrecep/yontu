@@ -1,0 +1,6 @@
+---
+description: Use when writing, editing or reviewing Turkish prose (TDK spelling, natural style, genre fit)
+globs: **/*.md, **/*.mdx, **/*.txt
+alwaysApply: false
+---
+When you write or edit Turkish prose, follow the `yontu` skill (SKILL.md). Keep every fact, number, name and hedge of the original. Before you finish, lint the file with the `lint_text` MCP tool or `yontu lint <file>`, and fix every `tdk` error.

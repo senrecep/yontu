@@ -1,0 +1,48 @@
+{
+  "skills": [
+    {
+      "name": "yontu",
+      "description": "Use when writing, editing, translating or reviewing Turkish text: flags and simplifies AI and translation patterns (humanizer), checks TDK spelling and punctuation, fits the text to its genre (academic, news, blog, e-mail, legal, UI, social), and tightens wordy phrasing without changing the meaning. Türkçe metni yontar: yapay zekâ izlerini gider, TDK yazım ve noktalamasını denetler, metni türüne uydurur.",
+      "files": [
+        "SKILL.md",
+        "references/ai-oruntuleri.md",
+        "references/asiri-duzeltme.md",
+        "references/baglaclar.md",
+        "references/cumle-turleri.md",
+        "references/kaynaklar.md",
+        "references/noktalama-yazim.md",
+        "references/ornekler.md",
+        "references/turler.md",
+        "references/turler/akademik-giris.md",
+        "references/turler/akademik-ozet.md",
+        "references/turler/akademik-tartisma.md",
+        "references/turler/basin-bulteni.md",
+        "references/turler/blog.md",
+        "references/turler/changelog.md",
+        "references/turler/commit.md",
+        "references/turler/dilekce.md",
+        "references/turler/e-ticaret.md",
+        "references/turler/edebi.md",
+        "references/turler/haber.md",
+        "references/turler/hukuk.md",
+        "references/turler/instagram.md",
+        "references/turler/is-eposta.md",
+        "references/turler/kose.md",
+        "references/turler/linkedin.md",
+        "references/turler/readme.md",
+        "references/turler/reklam.md",
+        "references/turler/resmi-eposta.md",
+        "references/turler/resmi-yazi.md",
+        "references/turler/sohbet.md",
+        "references/turler/sunum.md",
+        "references/turler/teknik-dok.md",
+        "references/turler/tez.md",
+        "references/turler/ui-bos.md",
+        "references/turler/ui-buton.md",
+        "references/turler/ui-hata.md",
+        "references/turler/x.md",
+        "references/yogunlastirma.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "yontu",
+  "version": "0.1.0",
+  "description": "Türkçe yazı denetimi: TDK kuralları, yapay zekâ izleri, metin türüne göre üslup.",
+  "mcpServers": {
+    "yontu": {
+      "command": "python3",
+      "args": ["${extensionPath}${/}skills${/}yontu${/}scripts${/}yontu", "mcp"]
+    }
+  }
+}

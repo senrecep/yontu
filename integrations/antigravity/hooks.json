@@ -1,0 +1,8 @@
+{
+  "yontu": {
+    "enabled": false,
+    "Stop": [
+      { "type": "command", "command": "YONTU_STOP_MODE=block yontu hook --format antigravity --event stop", "timeout": 15 }
+    ]
+  }
+}

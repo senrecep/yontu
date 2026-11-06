@@ -1,0 +1,9 @@
+{
+  "context_servers": {
+    "yontu": {
+      "command": "yontu",
+      "args": ["mcp"],
+      "env": {}
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "yontu": {
+      "command": "yontu",
+      "args": ["mcp"],
+      "disabled": false,
+      "autoApprove": ["lint_text", "compare_texts", "get_style_guide"]
+    }
+  }
+}

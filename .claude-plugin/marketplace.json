@@ -1,0 +1,37 @@
+{
+  "name": "yontu",
+  "description": "Türkçe yazı kalitesi araçları",
+  "owner": {
+    "name": "senrecep"
+  },
+  "plugins": [
+    {
+      "name": "yontu",
+      "source": "./",
+      "description": "Tam paket: skill, çevrim dışı denetleyici, MCP sunucusu ve kancalar. TDK yazımı, yapay zekâ izleri, tür üslubu.",
+      "version": "0.1.0",
+      "author": {
+        "name": "senrecep"
+      },
+      "license": "MIT"
+    },
+    {
+      "name": "yontu-lite",
+      "source": "./skills/yontu",
+      "description": "Yalnız skill: MCP sunucusu ve kanca yok, en az bağlam. yontu ile birlikte kurma.",
+      "version": "0.1.0",
+      "author": {
+        "name": "senrecep"
+      },
+      "homepage": "https://github.com/senrecep/yontu",
+      "repository": "https://github.com/senrecep/yontu",
+      "license": "MIT",
+      "keywords": [
+        "turkish",
+        "türkçe",
+        "tdk",
+        "humanizer"
+      ]
+    }
+  ]
+}

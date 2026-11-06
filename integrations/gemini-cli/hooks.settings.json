@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "AfterTool": [
+      {
+        "matcher": "write_file|replace",
+        "hooks": [
+          { "type": "command", "name": "yontu", "command": "yontu hook --format gemini --event post-edit", "timeout": 15000 }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "hooks": [
+          { "type": "command", "name": "yontu", "command": "yontu hook --format gemini --event stop", "timeout": 15000 }
+        ]
+      }
+    ]
+  }
+}

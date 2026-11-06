@@ -1,0 +1,7 @@
+# Append to ~/.codex/config.toml
+[mcp_servers.yontu]
+command = "yontu"
+args = ["mcp"]
+
+[mcp_servers.yontu.env]
+PYTHONUTF8 = "1"

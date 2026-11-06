@@ -1,0 +1,30 @@
+{
+  "description": "yontu: Türkçe metin denetimi. Varsayılan olarak yalnız bilgi verir.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/skills/yontu/scripts/yontu", "hook", "--format", "claude", "--event", "post-edit"],
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/skills/yontu/scripts/yontu", "hook", "--format", "claude", "--event", "stop"],
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

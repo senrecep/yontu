@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "yontu": { "type": "local", "command": "yontu", "args": ["mcp"], "tools": ["*"] }
+  }
+}

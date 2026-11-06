@@ -1,0 +1,10 @@
+{
+  "name": "yontu",
+  "version": "0.1.0",
+  "description": "Türkçe yazı denetimi: TDK yazım ve noktalama, yapay zekâ ve çeviri izleri, metin türüne göre üslup, yoğunlaştırma. Skill, MCP sunucusu ve kancalar.",
+  "author": { "name": "senrecep" },
+  "homepage": "https://github.com/senrecep/yontu",
+  "repository": "https://github.com/senrecep/yontu",
+  "license": "MIT",
+  "keywords": ["turkish", "türkçe", "writing", "tdk", "linter", "humanizer", "mcp"]
+}

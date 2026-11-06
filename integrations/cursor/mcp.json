@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "yontu": { "type": "stdio", "command": "yontu", "args": ["mcp"] }
+  }
+}

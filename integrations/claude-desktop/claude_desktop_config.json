@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "yontu": {
+      "command": "/usr/bin/python3",
+      "args": ["/Users/YOU/src/yontu/skills/yontu/scripts/yontu", "mcp"]
+    }
+  }
+}

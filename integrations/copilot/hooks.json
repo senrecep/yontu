@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "yontu hook --format copilot --event post-edit",
+        "powershell": "yontu hook --format copilot --event post-edit",
+        "timeoutSec": 15
+      }
+    ]
+  }
+}

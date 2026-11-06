@@ -1,0 +1,8 @@
+# Merge into ~/.hermes/config.yaml
+skills:
+  external_dirs:
+    - ~/src/yontu/skills        # the skills/ folder of your yontu checkout
+mcp_servers:
+  yontu:
+    command: "yontu"            # Hermes passes a minimal environment: use an absolute path if needed
+    args: ["mcp"]
