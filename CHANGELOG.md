@@ -1,3 +1,14 @@
+# Changelog
+
+## 0.1.0 (2026-11-06)
+
+
+### Added
+
+* **linter:** add stdlib Turkish linter, fidelity check, MCP server and hooks ([f3948bd](https://github.com/senrecep/yontu/commit/f3948bdf4a8b7f80b14672b19c8b60f037e36f4e))
+* **plugin:** add Claude plugin, commands and agent integrations ([a097943](https://github.com/senrecep/yontu/commit/a097943a6c87a30cd586ff35ffa6ba7cc41218b1))
+* **skill:** add yontu skill, style references and genre guides ([fdda655](https://github.com/senrecep/yontu/commit/fdda65539b7f5030000c58926144133a6deb084e))
+
 ## Initial feature set
 
 Notes written by hand before the first release (0.1.0). release-please prepends every release entry above this section from conventional commits and adds the `# Changelog` title. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
