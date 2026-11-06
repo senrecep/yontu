@@ -17,14 +17,14 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
         include:
           - os: macos-latest
             python-version: "3.13"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -35,3 +35,14 @@ jobs:
         run: |
           python skills/yontu/scripts/yontu lint README.tr.md
           python skills/yontu/scripts/yontu lint skills/yontu/SKILL.md
+
+  test-py39:
+    # Ubuntu runner images no longer ship 3.9; use the official image.
+    name: Test (Python 3.9, container)
+    runs-on: ubuntu-latest
+    container: python:3.9-slim
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests
