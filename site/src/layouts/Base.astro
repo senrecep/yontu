@@ -1,0 +1,74 @@
+---
+import '@fontsource-variable/piazzolla/opsz.css';
+import '@fontsource-variable/geist/wght.css';
+import '@fontsource-variable/geist-mono/wght.css';
+import '../styles/global.css';
+import { strings, type Lang } from '../i18n/strings';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const { lang, title, description, noindex = false } = Astro.props;
+const t = strings[lang];
+const base = import.meta.env.BASE_URL; // '/yontu/'
+const site = Astro.site!;
+const abs = (path: string) => new URL(base + path, site).href;
+const trUrl = abs('');
+const enUrl = abs('en/');
+const canonical = lang === 'tr' ? trUrl : enUrl;
+const pageTitle = title ?? t.title;
+const pageDesc = description ?? t.description;
+const ogImage = abs('og.png');
+---
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#E9E4DA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141C2E" media="(prefers-color-scheme: dark)" />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {!noindex && <link rel="alternate" hreflang="tr" href={trUrl} />}
+    {!noindex && <link rel="alternate" hreflang="en" href={enUrl} />}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={trUrl} />}
+    <link rel="icon" href={`${base}mark.svg`} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
+    <link rel="sitemap" href={`${base}sitemap-index.xml`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="yontu" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={t.ogLocale} />
+    <meta property="og:locale:alternate" content={lang === 'tr' ? 'en_US' : 'tr_TR'} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="yontu: Turkish humanizer and TDK linter for AI agents" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDesc} />
+    <meta name="twitter:image" content={ogImage} />
+    <slot name="head" />
+  </head>
+  <body>
+    <Fragment set:html={`<!--
+Design note for this site.
+THESIS: the page is a lettercutter's slate; the README is the stone and yontu is the chisel. The before/after slab replaces the usual tagline hero and feature-card grid.
+OWN-WORLD: flat warm limestone ground, navy slate fields that own whole bands, cream incised letters, burnt orange only for material that was cut away. Chiselled corners, incised grooves as rules, Piazzolla serif for headings only, Geist for reading text, Geist Mono for real terminal output.
+STORY: a developer copies one install command, sees genuine lint output on a bloated Turkish README and the carved result pass, learns the gate refuses added facts, checks the proof and the limits, and finds the same command waiting at the end.
+FIRST VIEWPORT: two line serif claim, one install command and a proof line on the left; a real lint run on a slate tablet at the right on desktop. The Önce/Sonra slate begins directly below.
+FORM: brief-pinned world (stone and chisel, editorial), rendition 7 of 7: the lettercutter's slate. Seed 662e4a5f.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->`} />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,430 @@
+---
+import Base from '../layouts/Base.astro';
+import Mark from './Mark.astro';
+import Icon from './Icon.astro';
+import Terminal from './Terminal.astro';
+import CodeBlock from './CodeBlock.astro';
+import { strings, type Lang } from '../i18n/strings';
+import { before, after, lintBefore, lintAfter, compareOk, gate, tdk, explain } from '../i18n/samples';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = strings[lang];
+const base = import.meta.env.BASE_URL;
+const home = lang === 'tr' ? base : `${base}en/`;
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+const otherHref = other === 'tr' ? base : `${base}en/`;
+const repo = 'https://github.com/senrecep/yontu';
+const zipUrl = `${repo}/releases/latest/download/yontu-skill.zip`;
+const installCmd = 'pipx install yontu';
+const pageUrl = new URL(home, Astro.site).href;
+
+const navItems = [
+  ['demo', t.nav.demo],
+  ['how', t.nav.how],
+  ['proof', t.nav.proof],
+  ['faq', t.nav.faq],
+  ['install', t.nav.install],
+] as const;
+
+const jsonLd = JSON.stringify([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'yontu',
+    description: t.description,
+    url: pageUrl,
+    inLanguage: t.htmlLang,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Python 3.9+',
+    softwareVersion: '0.1.0',
+    license: 'https://opensource.org/licenses/MIT',
+    downloadUrl: 'https://pypi.org/project/yontu/',
+    sameAs: [repo],
+    author: { '@type': 'Person', name: 'senrecep', url: 'https://github.com/senrecep' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: t.htmlLang,
+    mainEntity: t.faq.map(([q, a]) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  },
+]).replace(/</g, '\\u003c');
+
+const words = (line: string) => line.split(' ');
+let cutIndex = 0;
+let wordIndex = 0;
+---
+<Base lang={lang}>
+  <script slot="head" type="application/ld+json" set:html={jsonLd} />
+  <a class="skip" href="#main">{t.skip}</a>
+
+  <header class="nav-shell">
+    <div class="nav" data-nav>
+      <a class="brand" href={home} aria-label={t.home}>
+        <Mark size={28} />
+        <span class="brand-word" aria-hidden="true">yontu</span>
+      </a>
+      <nav class="nav-links" aria-label={t.nav.label}>
+        <ul role="list">
+          {navItems.map(([id, label]) => <li><a href={`#${id}`} data-spy={id}>{label}</a></li>)}
+        </ul>
+      </nav>
+      <div class="nav-end">
+        <a class="btn-head lang" href={otherHref} hreflang={other} lang={other} title={t.switchHint}>{t.switchLabel}</a>
+        <a class="btn-head icon-only" href={repo} aria-label="GitHub: senrecep/yontu"><Icon name="github" size={20} /></a>
+        <button type="button" class="btn-head icon-only menu-toggle" aria-expanded="false" aria-controls="menu" data-open={t.menuOpen} data-close={t.menuClose} aria-label={t.menuOpen} hidden>
+          <span class="bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="menu" id="menu" hidden>
+      <nav aria-label={t.nav.label}>
+        <ul role="list">
+          {navItems.map(([id, label], i) => <li style={`--i:${i}`}><a href={`#${id}`} data-spy={id}>{label}</a></li>)}
+          <li style={`--i:${navItems.length}`}><a href={otherHref} hreflang={other} lang={other}>{t.switchLabel}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title" class="display grad">
+            {t.heroTitle.map((line) => <span class="line">{line}</span>)}
+          </h1>
+          <p class="hero-sub">{t.heroSub}</p>
+          <CodeBlock code={installCmd} copy={t.copy} copied={t.copied} label={t.ctaLabel} size="lg" />
+          <ul class="proof-line" role="list">
+            {t.proof.map((p) => <li>{p}</li>)}
+          </ul>
+        </div>
+        <figure class="tablet hero-run" aria-labelledby="hero-run-cap">
+          <figcaption id="hero-run-cap" class="vh">{t.heroDemoLabel}</figcaption>
+          <p class="quote" lang="tr">{tdk.input}</p>
+          <Terminal cmd={tdk.cmd} lines={tdk.lines} summary={tdk.summary} />
+        </figure>
+      </div>
+    </section>
+
+    <section id="demo" class="band band--slate" aria-labelledby="demo-title" data-carve>
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2 id="demo-title">{t.problemTitle}</h2>
+          <p>{t.problemBody}</p>
+        </div>
+        <div class="demo-head" data-reveal>
+          <h3>{t.demoTitle}</h3>
+          <ul class="legend" role="list">
+            <li><del class="legend-cut">abc</del> {t.legendDrop}</li>
+            <li><span class="rule-tag">AI-D15</span> {t.legendRule}</li>
+          </ul>
+        </div>
+        <div class="slabs">
+          <article class="slab slab--rough" aria-labelledby="slab-before" data-reveal>
+            <h4 id="slab-before" class="slab-label">{t.beforeLabel}</h4>
+            <div class="slab-text" lang="tr">
+              {before.map((para, pi) => (
+                <p class={pi === 0 ? 'slab-title' : ''}>
+                  {para.map((s) => {
+                    if (s.code) return <code>{s.t}</code>;
+                    if (s.drop) {
+                      const i = cutIndex++;
+                      return <del class="cut" style={`--i:${i}`}>{s.t}{s.rule && <sup class="rule-tag">{s.rule}</sup>}</del>;
+                    }
+                    return <span>{s.t}{s.rule && <sup class="rule-tag">{s.rule}</sup>}</span>;
+                  })}
+                </p>
+              ))}
+            </div>
+            <Terminal cmd={lintBefore.cmd} lines={lintBefore.lines} summary={lintBefore.summary} />
+          </article>
+          <article class="slab slab--dressed" aria-labelledby="slab-after" data-reveal>
+            <h4 id="slab-after" class="slab-label">{t.afterLabel}</h4>
+            <div class="slab-text" lang="tr">
+              {after.map((para, pi) => (
+                <p class={pi === 0 ? 'slab-title' : ''}>
+                  {para.map((s) => (s.code ? <code>{s.t}</code> : <span>{s.t}</span>))}
+                </p>
+              ))}
+            </div>
+            <Terminal cmd={lintAfter.cmd} summary={lintAfter.summary} />
+            <Terminal cmd={compareOk.cmd} lines={compareOk.lines} summary={compareOk.summary} />
+          </article>
+        </div>
+        <p class="note">{t.demoKept}</p>
+        <p class="source">{t.demoSource}</p>
+      </div>
+    </section>
+
+    <section class="band benefits" aria-labelledby="benefits-title">
+      <div class="wrap">
+        <h2 id="benefits-title" data-reveal>{t.benefitsTitle}</h2>
+        <ul class="benefit-list" role="list">
+          {t.benefits.map((b) => (
+            <li class="benefit groove" data-reveal>
+              <div class="benefit-head">
+                <h3><span class="benefit-icon"><Icon name={b.icon as 'seal'} size={20} /></span>{b.title}</h3>
+                <code class="benefit-tag">{b.tag}</code>
+              </div>
+              <p>{b.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="band tagline" aria-label={t.tagline.join(' ')} data-tagline>
+      <div class="wrap">
+        <p class="tagline-text" aria-hidden="true">
+          {t.tagline.map((line) => (
+            <span class="line">{words(line).map((w) => <span class="w" style={`--w:${wordIndex++}`}>{w} </span>)}</span>
+          ))}
+        </p>
+      </div>
+    </section>
+
+    <section id="how" class="band band--deep" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title" data-reveal>{t.howTitle}</h2>
+        <ol class="steps" role="list">
+          {t.how.map((s, i) => (
+            <li class="step groove" data-reveal>
+              <span class="step-n" aria-hidden="true">{i + 1}</span>
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+              <CodeBlock code={s.code} copy={t.copy} copied={t.copied} tone="slate" />
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section id="proof" class="band proof" aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2 id="proof-title">{t.proofTitle}</h2>
+          <p>{t.proofIntro}</p>
+        </div>
+        <dl class="ledger" data-reveal>
+          {t.facts.map(([k, v]) => (
+            <div class="ledger-row groove"><dt>{k}</dt><dd>{v}</dd></div>
+          ))}
+        </dl>
+        <div class="tablet proof-slate">
+          <div class="proof-col" data-reveal>
+            <h3>{t.gateTitle}</h3>
+            <p>{t.gateBody}</p>
+            <div class="gate-pair" lang="tr">
+              <div class="gate-file">
+                <p class="gate-name" lang={t.htmlLang}>{t.gateOld}</p>
+                <p>Toplantı <span class="gone">12 Kasım</span> günü yapılacak.</p>
+              </div>
+              <div class="gate-file">
+                <p class="gate-name" lang={t.htmlLang}>{t.gateNew}</p>
+                <p>Toplantı <ins>14 Kasım</ins> günü saat <ins>10.00</ins>'da yapılacak.</p>
+              </div>
+            </div>
+            <Terminal cmd={gate.cmd} lines={gate.lines} summary={gate.summary} exit={gate.exit} exitLabel={t.gateExit} />
+          </div>
+          <div class="proof-col" data-reveal>
+            <h3>{t.explainTitle}</h3>
+            <p>{t.explainBody}</p>
+            <Terminal cmd={explain.cmd} lines={explain.rows.map(([k, v]) => k.padEnd(11) + v)} />
+            <h3>{t.tdkTitle}</h3>
+            <p>{t.tdkBody}</p>
+            <Terminal cmd={tdk.fixCmd} lines={[tdk.fixOut]} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="band faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <h2 id="faq-title" data-reveal>{t.faqTitle}</h2>
+        <div class="faq-list">
+          {t.faq.map(([q, a]) => (
+            <details class="qa groove" data-reveal>
+              <summary><h3>{q}</h3><span class="qa-mark" aria-hidden="true"></span></summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="band band--deep risk" aria-labelledby="risk-title">
+      <div class="wrap">
+        <h2 id="risk-title" data-reveal>{t.riskTitle}</h2>
+        <p class="risk-line" data-reveal>
+          {t.risk.map(([k], i) => <>{i > 0 && <span class="risk-dot" aria-hidden="true"> · </span>}<span>{k}</span></>)}
+        </p>
+        <p class="risk-body" data-reveal>{t.riskBody}</p>
+      </div>
+    </section>
+
+    <section id="install" class="band band--slate final" aria-labelledby="final-title">
+      <div class="wrap">
+        <div class="final-cta" data-reveal>
+          <h2 id="final-title" class="display grad grad--dark">
+            {t.heroTitle.map((line) => <span class="line">{line}</span>)}
+          </h2>
+          <p class="hero-sub">{t.heroSub}</p>
+          <CodeBlock code={installCmd} copy={t.copy} copied={t.copied} label={t.ctaLabel} size="lg" tone="stone" />
+          <ul class="proof-line" role="list">
+            {t.proof.map((p) => <li>{p}</li>)}
+          </ul>
+        </div>
+        <h3 class="routes-title" data-reveal>{t.routesTitle}</h3>
+        <ul class="routes" role="list">
+          {t.routes.map((r) => (
+            <li class="route" data-reveal>
+              <h4>{r.name}</h4>
+              <p>{r.note}</p>
+              <CodeBlock code={r.code} copy={t.copy} copied={t.copied} tone="slate" />
+            </li>
+          ))}
+          <li class="route" data-reveal>
+            <h4>{t.zipName}</h4>
+            <p>{t.zipNote}</p>
+            <a class="btn btn--chalk" href={zipUrl}><Icon name="download" size={20} /> {t.zipLink}</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-row">
+      <div class="foot-brand">
+        <Mark size={28} />
+        <p><span class="brand-word">yontu</span> · {t.footerLicense} · <a href="https://github.com/senrecep">senrecep</a></p>
+      </div>
+      <p class="foot-credit">{t.footerCredit}</p>
+      <ul class="foot-links" role="list">
+        <li><a href={repo}>{t.footerLinks.repo}</a></li>
+        <li><a href={`${repo}/blob/main/${lang === 'tr' ? 'README.tr.md' : 'README.md'}`}>{t.footerLinks.readme}</a></li>
+        <li><a href={`${repo}/blob/main/CHANGELOG.md`}>{t.footerLinks.changelog}</a></li>
+        <li><a href={`${repo}/blob/main/CONTRIBUTING.md`}>{t.footerLinks.contributing}</a></li>
+        <li><a href={otherHref} hreflang={other} lang={other}>{t.switchLabel}</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasIO = 'IntersectionObserver' in window;
+
+    // Copy buttons.
+    document.querySelectorAll<HTMLButtonElement>('.code-copy').forEach((btn) => {
+      if (!navigator.clipboard) return;
+      btn.hidden = false;
+      const text = btn.querySelector<HTMLElement>('.code-copy-text')!;
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+          text.textContent = btn.dataset.done ?? '';
+          btn.classList.add('is-done');
+          setTimeout(() => {
+            text.textContent = btn.dataset.label ?? '';
+            btn.classList.remove('is-done');
+          }, 1800);
+        } catch {
+          /* clipboard refused; the text stays selectable */
+        }
+      });
+    });
+
+    // Mobile menu.
+    const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const menu = document.querySelector<HTMLElement>('#menu');
+    if (toggle && menu) {
+      toggle.hidden = false;
+      const setOpen = (open: boolean) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', (open ? toggle.dataset.close : toggle.dataset.open) ?? '');
+        root.classList.toggle('menu-open', open);
+        if (open) {
+          menu.hidden = false;
+          requestAnimationFrame(() => requestAnimationFrame(() => menu.classList.add('is-open')));
+        } else {
+          menu.classList.remove('is-open');
+          setTimeout(() => { if (!menu.classList.contains('is-open')) menu.hidden = true; }, still ? 0 : 400);
+        }
+      };
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+      window.matchMedia('(min-width: 960px)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
+    }
+
+    if (hasIO) {
+      // Current section in the nav.
+      const links = document.querySelectorAll<HTMLAnchorElement>('[data-spy]');
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          links.forEach((l) => {
+            if (l.dataset.spy === e.target.id) l.setAttribute('aria-current', 'true');
+            else l.removeAttribute('aria-current');
+          });
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      document.querySelectorAll('main section').forEach((s) => spy.observe(s));
+
+      if (!still) {
+        // Scroll reveals, once.
+        root.classList.add('reveals');
+        const rev = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-in');
+              rev.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('[data-reveal]').forEach((el) => rev.observe(el));
+
+        // The chisel strikes through the cut phrases once the slabs are in view.
+        const slate = document.querySelector<HTMLElement>('[data-carve]');
+        if (slate) {
+          slate.classList.add('is-waiting');
+          const carve = new IntersectionObserver((entries) => {
+            if (entries.some((e) => e.isIntersecting)) {
+              slate.classList.remove('is-waiting');
+              slate.classList.add('is-carving');
+              carve.disconnect();
+            }
+          }, { threshold: 0.2 });
+          carve.observe(slate.querySelector('.slabs') ?? slate);
+        }
+
+        // Tagline: each word rises from muted to full ink.
+        const tag = document.querySelector<HTMLElement>('[data-tagline]');
+        if (tag) {
+          tag.classList.add('is-waiting');
+          const lit = new IntersectionObserver((entries) => {
+            if (entries.some((e) => e.isIntersecting)) {
+              tag.classList.add('is-lit');
+              lit.disconnect();
+            }
+          }, { threshold: 0.6 });
+          lit.observe(tag.querySelector('.tagline-text') ?? tag);
+        }
+      }
+    }
+  </script>
+</Base>

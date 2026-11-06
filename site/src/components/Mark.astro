@@ -1,0 +1,12 @@
+---
+// The logo. To swap it, replace public/mark.svg (also used as the favicon)
+// and regenerate public/apple-touch-icon.png from it.
+interface Props {
+  size?: number;
+  alt?: string;
+  class?: string;
+}
+const { size = 40, alt = '', class: className } = Astro.props;
+const src = `${import.meta.env.BASE_URL}mark.svg`;
+---
+<img src={src} width={size} height={size} alt={alt} class={className} decoding="async" />

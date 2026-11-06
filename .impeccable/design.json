@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T00:00:00Z",
+  "title": "Design System: yontu",
+  "extensions": {
+    "colorMeta": {
+      "slate": { "role": "primary", "displayName": "Lettercutter Slate", "canonical": "#1f2a44", "tonalRamp": ["#0b1120", "#10172a", "#141c2e", "#1a2339", "#1f2a44", "#263250", "#2b385a", "#4a5470"] },
+      "chalk": { "role": "primary", "displayName": "Cream Chalk", "canonical": "#f4ebdd", "tonalRamp": ["#4a463f", "#6b665c", "#8d877b", "#b9b3a6", "#d6cdbd", "#e3d8c6", "#f4ebdd", "#ffffff"] },
+      "cut": { "role": "secondary", "displayName": "Cut Orange", "canonical": "#e8833a", "tonalRamp": ["#5a2608", "#7a3409", "#974310", "#b9561a", "#d06c2a", "#e8833a", "#f0a06a", "#f7c9a6"] },
+      "limestone": { "role": "neutral", "displayName": "Limestone", "canonical": "#e9e4da", "tonalRamp": ["#1b1a17", "#4a463f", "#8d877b", "#c4bcad", "#ddd6c9", "#e9e4da", "#f4efe6", "#faf8f3"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero claim and tagline reveal, with the heading gradient." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2." },
+      "title": { "displayName": "Title", "purpose": "Slab, benefit, step and route headings." },
+      "body": { "displayName": "Body", "purpose": "Reading text in Geist." },
+      "label": { "displayName": "Label", "purpose": "Captions, legends, nav links." },
+      "code": { "displayName": "Code", "purpose": "Real terminal output and install commands." }
+    },
+    "shadows": [
+      { "name": "groove-lip", "value": "0 1px 0 #f4efe6", "purpose": "The 1px light lip under a 2px incised groove; part of the rule, not elevation." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Single easing for all transitions." },
+      { "name": "t-color", "value": "300ms", "purpose": "Colour and small state changes." },
+      { "name": "t-layout", "value": "500ms", "purpose": "Layout and menu item motion." },
+      { "name": "t-reveal", "value": "700ms", "purpose": "Scroll reveals and tagline word lighting." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "steps", "value": "900px" },
+      { "name": "nav", "value": "960px" },
+      { "name": "lg", "value": "1024px" }
+    ],
+    "clipPaths": [
+      { "name": "bevel", "value": "polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px)" },
+      { "name": "bevel-sm", "value": "polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px)" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Chalk Button",
+      "kind": "button",
+      "refersTo": "button-chalk",
+      "description": "Primary action on slate fields.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Install</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 4px; background: #f4ebdd; color: #1f2a44; font: 600 16px/24px 'Geist Variable', system-ui, sans-serif; text-decoration: none; transition: background-color 300ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn:hover { background: #ffffff; } .ds-btn:focus-visible { outline: 2px solid #f4ebdd; outline-offset: 2px; }"
+    },
+    {
+      "name": "Slate Tablet",
+      "kind": "card",
+      "refersTo": "tablet",
+      "description": "Chiselled slate panel holding real output.",
+      "html": "<figure class=\"ds-tablet\"><figcaption class=\"ds-cap\">Lint run</figcaption><p class=\"ds-quote\">A sample sentence.</p></figure>",
+      "css": ".ds-tablet { margin: 0; padding: 24px; background: #1f2a44; color: #f4ebdd; clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px); } .ds-cap { font: 600 14px/20px 'Geist Variable', system-ui, sans-serif; color: #b9b3a6; } .ds-quote { margin: 12px 0 0; font: 400 20px/28px 'Piazzolla Variable', Georgia, serif; }"
+    },
+    {
+      "name": "Terminal Output",
+      "kind": "custom",
+      "refersTo": "terminal-output",
+      "description": "Genuine lint output with semantic line colours.",
+      "html": "<pre class=\"ds-term\"><span class=\"ds-cmd\">yontu lint README.md</span>\n<span class=\"ds-err\">error  TDK-014</span>\n<span class=\"ds-warn\">warn   style</span></pre>",
+      "css": ".ds-term { margin: 0; padding: 16px; border-radius: 4px; background: #121a2b; color: #f4ebdd; font: 400 14px/20px 'Geist Mono Variable', ui-monospace, monospace; white-space: pre-wrap; } .ds-cmd { display: block; margin-bottom: 8px; font-weight: 600; } .ds-err { color: #f7a8a0; } .ds-warn { color: #ebcb86; }"
+    },
+    {
+      "name": "Cut Phrase",
+      "kind": "custom",
+      "refersTo": "slab-rough",
+      "description": "Struck-through orange text for removed wording, on slate.",
+      "html": "<p class=\"ds-slab\">A <span class=\"ds-cut\">truly seamless</span> tool.</p>",
+      "css": ".ds-slab { padding: 24px; background: #1a2339; color: #f4ebdd; font: 400 18px/28px 'Geist Variable', system-ui, sans-serif; } .ds-cut { color: #e8833a; text-decoration: line-through 2px #e8833a; }"
+    },
+    {
+      "name": "Floating Nav",
+      "kind": "nav",
+      "refersTo": "nav-pill",
+      "description": "Pill nav with a slate current-page item.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">Proof</a></nav>",
+      "css": ".ds-nav { display: inline-flex; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid rgba(27,26,23,0.16); background: #e9e4da; } .ds-nav a { padding: 8px 12px; border-radius: 8px; color: #1b1a17; font: 600 14px/20px 'Geist Variable', system-ui, sans-serif; text-decoration: none; } .ds-nav a:hover { background: #ddd6c9; } .ds-nav a[aria-current] { background: #1f2a44; color: #f4ebdd; } .ds-nav a:focus-visible { outline: 2px solid #1f2a44; outline-offset: 2px; }"
+    },
+    {
+      "name": "Incised Groove",
+      "kind": "custom",
+      "refersTo": "groove",
+      "description": "Full-width section divider: dark cut with light lip.",
+      "html": "<div class=\"ds-groove\"></div>",
+      "css": ".ds-groove { height: 2px; background: #c4bcad; box-shadow: 0 1px 0 #f4efe6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lettercutter's Slate",
+    "overview": "The page is a lettercutter's slate: the README is the stone and yontu is the chisel. A flat warm limestone ground carries the reading text. Navy slate fields own whole bands and panels. Cream letters sit on the slate as if incised. Burnt orange appears only for material that was cut away.",
+    "keyCharacteristics": [
+      "Flat surfaces only; depth comes from tone shifts and incised grooves.",
+      "Corners are nearly square or chiselled by octagonal clip-path.",
+      "Serif for headings only, sans for reading, mono for real terminal content.",
+      "Light and dark schemes both supported; the slate is identical in both.",
+      "The heading gradient and Phosphor regular icons are fixed commitments."
+    ],
+    "rules": [
+      { "name": "The Cut Rule", "body": "Orange means material removed. It is not an accent for buttons, links or decoration.", "section": "colors" },
+      { "name": "The Light Orange Rule", "body": "On limestone, orange text is always #974310 for AA; the bright orange is only for slate grounds.", "section": "colors" },
+      { "name": "The Heading Gradient Rule", "body": "Display headings carry a vertical text gradient, owner mandated; do not alter its stops.", "section": "colors" },
+      { "name": "The Serif Is For Headings Rule", "body": "Piazzolla appears on headings, the claim and numerals; body paragraphs never use it.", "section": "typography" },
+      { "name": "The Real Output Rule", "body": "Mono is used only for genuine command or terminal content.", "section": "typography" },
+      { "name": "The Two Weights Rule", "body": "Weights are 400, 500 and 600. No heavier, no italics.", "section": "typography" },
+      { "name": "The Incised Groove Rule", "body": "Section dividers are a 2px full-width dark cut with a 1px light lip. Never a one-sided border.", "section": "elevation" },
+      { "name": "The Flat Ground Rule", "body": "Backgrounds are solid colours; the only gradient is on heading glyphs.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Piazzolla 600 only for headings and the claim; Geist for reading; mono only for real terminal content.",
+      "Do use #974310 for any orange text on limestone, and #e8833a only on slate.",
+      "Do separate sections with full-width incised grooves.",
+      "Do use --bevel (12px) or --bevel-sm (8px) clip-paths for panels, and 2 to 4px radii for small controls.",
+      "Do keep surfaces flat and let tone shift carry hierarchy.",
+      "Do use Phosphor regular icons, inlined, with aria-hidden.",
+      "Do animate with cubic-bezier(0.22, 1, 0.36, 1) at 300 / 500 / 700ms and honour reduced motion.",
+      "Do keep the heading gradient stops exactly as mandated."
+    ],
+    "donts": [
+      "Don't use orange as a general accent, link colour or button fill; it marks removed material.",
+      "Don't use italics or weights above 600.",
+      "Don't use one-sided borders or single hairlines as section rules.",
+      "Don't add drop shadows, glows or surface gradients.",
+      "Don't set body copy in the serif or labels in mono.",
+      "Don't use pure black or pure white as a ground; dark scheme grounds on navy (#141c2e)."
+    ]
+  }
+}

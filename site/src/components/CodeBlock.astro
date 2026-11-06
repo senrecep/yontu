@@ -1,0 +1,25 @@
+---
+// A command block with a copy button. Works without JavaScript; the button
+// only appears once the script runs.
+import Icon from './Icon.astro';
+interface Props {
+  code: string;
+  copy: string;
+  copied: string;
+  label?: string;
+  tone?: 'slate' | 'stone';
+  size?: 'lg' | 'md';
+}
+const { code, copy, copied, label, tone = 'slate', size = 'md' } = Astro.props;
+---
+<div class={`code code--${tone} code--${size}`}>
+  {label && <p class="code-label">{label}</p>}
+  <div class="code-row">
+    <pre><code>{code}</code></pre>
+    <button type="button" class="code-copy" data-copy={code} data-label={copy} data-done={copied} hidden>
+      <span class="code-icon code-icon--copy"><Icon name="copy" size={18} /></span>
+      <span class="code-icon code-icon--done"><Icon name="check" size={18} /></span>
+      <span class="code-copy-text">{copy}</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+---
+// Real yontu output, rendered as chalk notes on slate.
+interface Props {
+  cmd: string;
+  lines?: string[];
+  summary?: string;
+  exit?: number;
+  exitLabel?: string;
+  label?: string;
+}
+const { cmd, lines = [], summary, exit, exitLabel, label } = Astro.props;
+const level = (line: string) =>
+  /(^|:\s)hata\s/.test(line) ? 'err' : /(^|:\s)uyarı\s/.test(line) ? 'warn' : /(^|:\s)bilgi\s/.test(line) ? 'info' : '';
+---
+<figure class="term">
+  {label && <figcaption class="term-label">{label}</figcaption>}
+  <pre><code><span class="term-cmd"><span class="term-prompt" aria-hidden="true">$ </span>{cmd}</span>
+{lines.map((l) => <span class={`term-line ${level(l)}`}>{l}{'\n'}</span>)}{summary && <span class="term-sum">{summary}</span>}{exit !== undefined && <span class="term-exit">{'\n'}{exitLabel}</span>}</code></pre>
+</figure>

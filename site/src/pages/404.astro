@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import Mark from '../components/Mark.astro';
+import { strings } from '../i18n/strings';
+const tr = strings.tr;
+const en = strings.en;
+const base = import.meta.env.BASE_URL;
+---
+<Base lang="tr" title={`${tr.notFoundTitle} · yontu`} description={tr.notFoundBody} noindex>
+  <main id="main" class="lost">
+    <div class="tablet lost-slab">
+      <a class="brand" href={base} aria-label={tr.home}>
+        <Mark size={40} />
+        <span class="brand-word" aria-hidden="true">yontu</span>
+      </a>
+      <p class="lost-code" aria-hidden="true">404</p>
+      <h1>{tr.notFoundTitle}</h1>
+      <p>{tr.notFoundBody}</p>
+      <p><a class="btn btn--chalk" href={base}>{tr.notFoundHome}</a></p>
+      <div lang="en" class="lost-en">
+        <h2>{en.notFoundTitle}</h2>
+        <p>{en.notFoundBody}</p>
+        <p><a href={`${base}en/`} hreflang="en">{en.notFoundHome}</a></p>
+      </div>
+    </div>
+  </main>
+</Base>
