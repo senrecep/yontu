@@ -154,6 +154,85 @@ _SILENT_END = re.compile(r"(?:ault|eaux?|aux|oux|oix|ois|ais|ot)$")
 _SILENT_NAMES = {"dumas", "degas", "camus", "debussy"}
 
 
+# English letter names: LLM'in (el-el-em), JS'te (cey-es), AI'ın (ey-ay).
+ENGLISH_LETTER = {
+    "A": "ey", "B": "bi", "C": "si", "D": "di", "E": "i", "F": "ef", "G": "ci", "H": "eyç",
+    "I": "ay", "J": "cey", "K": "key", "L": "el", "M": "em", "N": "en", "O": "o", "P": "pi",
+    "Q": "kyu", "R": "ar", "S": "es", "T": "ti", "U": "yu", "V": "vi", "W": "dabılyu",
+    "X": "eks", "Y": "vay", "Z": "zi",
+}
+_SAYABLE = re.compile(r"^(?:[^AEIİOÖUÜ]?[AEIİOÖUÜ])+[^AEIİOÖUÜ]?$")
+# acronyms said with English letter names in Turkish tech prose
+ENGLISH_READ = set("""
+AI API AWS CI CD CLI CPU CSS DNS GCP GPU HTML HTTP HTTPS ID IDE IP JS JSON LLM ML NPM OS PDF
+PHP PR QA SDK SQL SSH TS UI URL UX VM VPN XML YAML
+""".split())
+# acronyms with vowels that are still spelled with Turkish letter names (AB "a-be")
+TURKISH_SPELLED = {"AB", "AK", "AA", "AŞ", "ABB", "AVM", "AKM", "AYM", "AÖF", "İBB", "AİHM", "AİHS"}
+
+
+def _other_reading(base, suf):
+    """True when the suffix fits another common reading of the acronym: the English
+    letter name for acronyms said the English way (LLM'in, JS'te) or the acronym read
+    as a word (MEB'e, API'nin, KAY'a)."""
+    readings = []
+    if base in ENGLISH_READ and base[-1] in ENGLISH_LETTER:
+        readings.append(ENGLISH_LETTER[base[-1]])
+    if len(base) >= 2 and base not in TURKISH_SPELLED and _SAYABLE.match(base):
+        low = tu.tr_lower(base)
+        readings.append(low)
+        if "ı" in low:
+            readings.append(low.replace("ı", "i"))  # API read as "api"
+    for reading in readings:
+        info = base_info(reading)
+        exp = expected_suffix(info, suf) if info else None
+        if exp and exp[0] == suf:
+            return True
+    return False
+
+
+_BACK_TO_FRONT = {"a": "e", "ı": "i", "o": "ö", "u": "ü"}
+
+
+# English words often written with a Turkish suffix in tech prose
+ENGLISH_WORDS = set("""
+adapter browser builder case code commit compiler container controller docker formatter
+handler helper humanizer linter node parser player provider release router server
+template type unicode update wrapper
+""".split())
+
+
+def _english_evidence(base, raw):
+    """Positive sign that a name is an English word: a known one, CamelCase, or the
+    same word shown as code elsewhere in the text."""
+    if tu.tr_lower(base) in ENGLISH_WORDS or re.search("[a-z][A-Z]", base):
+        return True
+    return bool(re.search(r"`[^`\n]*\b" + re.escape(base) + r"\b[^`\n]*`", raw, re.I))
+
+
+def _english_name_reading(low, suf):
+    """True when the suffix fits how an English word is said: -er/-or as "ır"
+    (Linter'a, Humanizer'ın) or a silent final e (Unicode'u, Case'e). The caller
+    checks first that the word is English."""
+    if len(low) < 6 and not low.endswith("e") or re.search("[çğıöşü]", low):
+        return False
+    readings = []
+    if len(low) >= 6 and re.search(r"[^aeıioöuü](?:er|or)$", low):
+        readings.append(low[:-2] + "ır")
+    if len(low) >= 4 and re.search(r"[aeıioöuü][cdkmnprstvz]e$", low):
+        stem = low[:-1]
+        readings.append(stem)
+        vs = [i for i, c in enumerate(stem) if c in _BACK_TO_FRONT]
+        if vs:
+            readings.append(stem[:vs[-1]] + _BACK_TO_FRONT[stem[vs[-1]]] + stem[vs[-1] + 1:])
+    for reading in readings:
+        info = base_info(reading)
+        exp = expected_suffix(info, suf) if info else None
+        if exp and exp[0] == suf:
+            return True
+    return False
+
+
 def apostrophe_suffix(rule, ctx):
     """Check the suffix after an apostrophe against its base (number, acronym, name)."""
     target = rule.get("target")
@@ -213,6 +292,11 @@ def apostrophe_suffix(rule, ctx):
             continue
         good, consonant_diff = exp
         if good == suf:
+            continue
+        if target == "acronym" and rule.get("mode") == "letter" and _other_reading(base, suf):
+            continue
+        if target == "name" and _english_evidence(base, ctx.raw) and _english_name_reading(
+                tu.tr_lower(base), suf):
             continue
         if target == "name" and suf[0] in "dt" and good[0] in "dt" and good[0] != suf[0]:
             continue  # voicing is KS-07's job
@@ -283,17 +367,49 @@ def _sent_words(ctx, span):
     return tu.words(ctx.text[span[0]:span[1]])
 
 
-def _prose_sentences(ctx):
-    out = []
+def _prose_sentences(ctx, units=False):
+    """(start, end, words) of running-text sentences. units=True keeps headings, labels and
+    salutations, for rules that only need them in the denominator."""
+    out, bare = [], []
     for s, e in ctx.sentences:
         line_start = ctx.text.rfind("\n", 0, s) + 1
         prefix = ctx.text[line_start:s + 4]
         if re.match(r"^\s*(?:#|[-*+•]\s|\d+[.)]\s|\|)", prefix):
             continue
-        n = len(_sent_words(ctx, (s, e)))
-        if n:
-            out.append((s, e, n))
-    return out
+        ws = _sent_words(ctx, (s, e))
+        if not ws or _english_sentence(ws):
+            continue
+        kind = None if units else _not_prose(ctx.text[s:e], ws)
+        if not kind:
+            out.append((s, e, len(ws)))
+        elif kind == "bare":
+            bare.append((s, e, len(ws)))
+    # a text made only of short lines without end punctuation (a one-line note, a commit
+    # subject) is its own prose, not a set of headings
+    return out or bare
+
+
+_LABEL = re.compile(r"^\s*[" + tu.UPPER + r"][" + tu.LETTERS + r"]*(?:\s+[" + tu.LETTERS + r"]+)?\s*:")
+
+
+def _not_prose(body, ws):
+    """Units that are not sentences of running text: a heading or salutation without
+    end punctuation (Giriş, Sayın Müdürlüğe,), a short label line (Kimlik: `blog`.,
+    Konu : Staj) and a list of ids joined with a middle dot."""
+    body = body.strip()
+    if _LABEL.match(body) and len(ws) <= 5:
+        return "label"
+    if body.count("·") >= 2:
+        return "ids"
+    if not re.search("[.!?…][\"”’)»]*$", body) and len(ws) <= 12 and "\n" not in body:
+        return "bare"
+    return None
+
+
+def _english_sentence(ws):
+    # an English sentence in a Turkish text (a quoted error message, a README line)
+    n, tr, en = tu.share(" ".join(ws))
+    return en >= 2 and en > 2 * tr
 
 
 def _band(ctx, key):
@@ -311,7 +427,7 @@ def sentence_band(rule, ctx):
     lo, hi = band
     if avg > hi * rule.get("tolerance", 1.15) or avg < lo / rule.get("tolerance", 1.15):
         yield {"start": sents[0][0], "end": min(sents[0][1], sents[0][0] + 60),
-               "message": "Ortalama cümle %.1f kelime; bu tür için hedef %d-%d." % (avg, lo, hi)}
+               "message": "Ortalama cümle %s kelime; bu tür için hedef %d-%d." % (("%.1f" % avg).replace(".", ","), lo, hi)}
 
 
 def sentence_max(rule, ctx):
@@ -378,6 +494,16 @@ def max_sentences(rule, ctx):
     limit = rule.get("max") or ctx.prof.get("max_sentences")
     if not limit:
         return
+    if ctx.register == "ui":
+        # each block of a UI file is its own string (a message, a toast)
+        for ps, pe in ctx.paragraphs:
+            inside = [x for x in ctx.sentences if ps <= x[0] < pe]
+            if len(inside) > limit:
+                s, e = inside[limit]
+                yield {"start": s, "end": e,
+                       "message": "%s (%d cümle)" % (rule.get("message", ""), len(inside))}
+                return
+        return
     if len(ctx.sentences) > limit:
         s, e = ctx.sentences[limit]
         yield {"start": s, "end": e, "message": "%s (%d cümle)" % (rule.get("message", ""), len(ctx.sentences))}
@@ -392,7 +518,9 @@ def line_words(rule, ctx):
     for line in ctx.text.split("\n"):
         body = re.sub(r"^\s*(?:[-*+•]|\d+[.)])\s+", "", line)
         n = len(tu.words(body))
-        if n > limit and (not rule.get("bullets_only") or body != line):
+        # running text: several sentences on one line
+        prose = re.search("[.!?…]\\s+\\S", body.strip())
+        if n > limit and not prose and (not rule.get("bullets_only") or body != line):
             yield {"start": pos, "end": pos + len(line),
                    "message": "%s (%d kelime)" % (rule.get("message", ""), n)}
         pos += len(line) + 1
@@ -410,13 +538,14 @@ def burstiness(rule, ctx):
         return
     if cv < rule.get("threshold", 0.25):
         yield {"start": sents[0][0], "end": min(sents[0][1], sents[0][0] + 60),
-               "message": "Cümle uzunlukları çok tekdüze (değişkenlik katsayısı %.2f)." % cv}
+               "message": "Cümle uzunlukları çok tekdüze (değişkenlik katsayısı %s)." % ("%.2f" % cv).replace(".", ",")}
 
 
 def mixed_quotes(rule, ctx):
     t = ctx.text
-    straight = re.search(r"\"[^\"\n]+\"", t)
-    curly = re.search(r"“[^”\n]+”", t)
+    # a pair with no letter inside (“ ”) names the glyphs, it does not quote anything
+    straight = re.search(r"\"[^\"\n]*\w[^\"\n]*\"", t)
+    curly = re.search(r"“[^”\n]*\w[^”\n]*”", t)
     apo_s = re.search(r"[" + tu.LETTERS + r"0-9]'[" + tu.LOWER + r"]", t)
     apo_c = re.search(r"[" + tu.LETTERS + r"0-9]’[" + tu.LOWER + r"]", t)
     hit = None
@@ -447,8 +576,16 @@ _PLUR = re.compile(r"(?<![" + tu.LETTERS + r"])(?:siz|sizi|size|sizin|sizde|sizd
                    r"|[" + tu.LOWER + r"]{2,}(?:sınız|siniz|sunuz|sünüz|nız|niz|nuz|nüz)(?=[.!?])")
 
 
+_SEN_SIZ_SKIP = re.compile(
+    r"(?<![" + tu.LETTERS + r"])(?:sen|siz)\s*(?:ve|ya da|veya|/|,)\s*(?:sen|siz)(?![" + tu.LETTERS + r"])"
+    r"|^\s*\|.*$"
+    r"|(?:^|\n)[ \t]*(?:[-*]\s*)?\**(?:önce|sonra|doğrusu|yanlış|doğru|örnek)\**\s*:\**[^\n]*(?:\n(?![ \t]*\n)[^\n]*)*",
+    re.M)
+
+
 def sen_siz(rule, ctx):
-    src = ctx.noquote_low
+    # "sen ve siz", a table of forms and a before/after example name both forms on purpose
+    src = _SEN_SIZ_SKIP.sub(lambda m: " " * len(m.group()), ctx.noquote_low)
     a = list(_SING.finditer(src))
     b = list(_PLUR.finditer(src))
     if a and b:
@@ -532,11 +669,17 @@ def emoji_lines(rule, ctx):
                "message": "%s (%d satır)" % (rule.get("message", ""), len(hits))}
 
 
+# a code label (A1 Önem şişirme.) or a quoted form ("Siz".) is not a clipped sentence
+_SHORT_NOT_STYLE = re.compile(r"^\s*(?:[A-ZÇĞİÖŞÜ]\d+[A-Z]?\s|[\"“'‘«][^\"”'’»]*[\"”'’»][.!?…]?\s*$)")
+
+
 def short_sentence_share(rule, ctx):
-    sents = _prose_sentences(ctx)
+    sents = _prose_sentences(ctx, units=True)
     if len(sents) < rule.get("min_sentences", 5):
         return
-    short = [x for x in sents if x[2] <= rule.get("max_words", 3)]
+    short = [x for x in sents if x[2] <= rule.get("max_words", 3)
+             and not _SHORT_NOT_STYLE.match(ctx.text[x[0]:x[1]])
+             and not _not_prose(ctx.text[x[0]:x[1]], _sent_words(ctx, x[:2]))]
     share = len(short) / float(len(sents))
     if share > rule.get("threshold", 0.2):
         s, e, _ = short[0]
@@ -552,6 +695,8 @@ def qa_pairs(rule, ctx):
         if ctx.noquote[s:e].rstrip().endswith("?"):
             ns, ne = sents[i + 1]
             same_para = "\n\n" not in ctx.text[e:ns]
+            if ctx.noquote[ns:ne].rstrip().endswith("?"):
+                continue
             if same_para and len(tu.words(ctx.text[ns:ne])) <= rule.get("answer_words", 8):
                 hits.append((s, ne))
     need = max(rule.get("min", 2), int(math.ceil(rule.get("per300", 2) * ctx.nwords / 300.0)))
@@ -561,10 +706,12 @@ def qa_pairs(rule, ctx):
 
 
 def synonym_rotation(rule, ctx):
+    # a table row or the right side of "→" lists alternatives, it does not rotate them
+    low = re.sub(r"(?m)^\s*\|.*$|→.*$", lambda m: " " * len(m.group()), ctx.low)
     for cluster in rule.get("clusters"):
         found = []
         for w in cluster:
-            m = re.search(r"(?<![" + tu.LETTERS + r"])" + w + r"[" + tu.LOWER + r"]*", ctx.low)
+            m = re.search(r"(?<![" + tu.LETTERS + r"])" + w + r"[" + tu.LOWER + r"]*", low)
             if m:
                 found.append(m)
         if len(found) >= rule.get("min", 3):

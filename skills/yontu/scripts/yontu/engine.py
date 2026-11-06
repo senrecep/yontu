@@ -331,6 +331,29 @@ def _groups(ctx, per):
     return [(0, len(ctx.text))]
 
 
+def _excluded(rule, src, start, end):
+    """True when the rule's exclude pattern overlaps the match: the exclude marks a
+    construction that looks like the hit but is not one."""
+    ls = src.rfind("\n", 0, start) + 1
+    le = src.find("\n", end)
+    le = len(src) if le < 0 else le
+    return any(a < end and start < b for a, b in
+               (x.span() for x in rule.excl.finditer(src, max(0, ls - 1), le)))
+
+
+_GENRES = ("mektup öykü roman şiir makale dilekçe readme e-posta eposta tutanak rapor "
+           "haber deneme blog sohbet sözlü commit tez").split()
+
+def _names_list(match):
+    """True when most items of a listed series are text kinds (blog, sohbet ve e-posta):
+    the text is talking about genres, not piling up qualities."""
+    items = re.split(r"\s*,\s*|\s+ve\s+", tu.tr_lower(match))
+    named = sum(1 for it in items if any(it == n or (len(n) >= 4 and it.startswith(n)
+                                                     and len(it) - len(n) <= 4)
+                                         for n in _GENRES))
+    return named >= 2
+
+
 def _run_count(rule, ctx):
     """count/density: aggregate matches, emit one finding at the first match."""
     out = []
@@ -341,6 +364,10 @@ def _run_count(rule, ctx):
     for gs, ge in _groups(ctx, per):
         hits = [m for m in rule.regex.finditer(src, gs, ge)
                 if not ctx.masked_near(m.start(), m.end())]
+        if rule.excl is not None:
+            hits = [m for m in hits if not _excluded(rule, src, m.start(), m.end())]
+        if rule.get("skip_names"):
+            hits = [m for m in hits if not _names_list(m.group())]
         if rule.get("distinct"):
             seen, uniq = set(), []
             for m in hits:
@@ -375,6 +402,7 @@ def _run_ratio(rule, ctx):
     if len(sents) < rule.get("min_sentences", 5) or ctx.nwords < 50:
         return []
     pat = rule.sent_pattern
+    thr = (rule.get("register_threshold") or {}).get(ctx.register, rule.get("threshold", 0.4))
     hits = []
     for s, e in sents:
         body = tu.tr_lower(ctx.text[s:e]).rstrip(" .!?…\"'”’)")
@@ -384,10 +412,10 @@ def _run_ratio(rule, ctx):
         if ok != bool(rule.get("invert")):
             hits.append((s, e))
     share = len(hits) / float(len(sents))
-    if share >= rule.get("threshold", 0.4) and hits:
+    if share >= thr and hits:
         s, e = hits[0]
         msg = "%s (%%%d cümle, eşik %%%d)" % (rule.get("message", ""), round(share * 100),
-                                              round(rule.get("threshold", 0.4) * 100))
+                                              round(thr * 100))
         return [_make(rule, ctx, s, min(e, s + 80), message=msg)]
     return []
 
@@ -440,7 +468,7 @@ def _whitelisted(findings, ctx):
     return out
 
 
-_DIRECTIVE = re.compile(r"<!--\s*(?:yontu|trlint)-(disable-next-line|disable|enable)\b([^>]*?)-->")
+_DIRECTIVE = re.compile(r"<!--\s*yontu-(disable-next-line|disable|enable)\b([^>]*?)-->")
 
 
 def _directives(raw):
@@ -484,6 +512,43 @@ def _disabled(f, blocks, nextline):
     return False
 
 
+def _tr_unit(counts):
+    n, tr, en = counts
+    return tr >= 1 and tr > en
+
+
+def _en_unit(counts):
+    n, tr, en = counts
+    return n >= 4 and en >= 2 and en > 2 * tr
+
+
+def _english_spans(ctx):
+    """Spans that are clearly English (a README section, a quoted English sentence).
+    The rules are written for Turkish, so findings there are noise. A paragraph counts
+    only when none of its sentences reads as Turkish; otherwise single English sentences
+    are skipped. The whole text counts when it is English and no sentence is Turkish."""
+    text = ctx.text
+    sents = [(s, e, tu.share(text[s:e])) for s, e in ctx.sentences]
+    if tu.english(tu.share(text)) and not any(_tr_unit(c) for _, _, c in sents):
+        return [(0, len(text) + 1)]
+    out = []
+    for ps, pe in tu.split_paragraphs(text):
+        inside = [x for x in sents if ps <= x[0] < pe]
+        if tu.english(tu.share(text[ps:pe]), min_words=6) and not any(
+                _tr_unit(c) for _, _, c in inside):
+            out.append((ps, pe))
+        else:
+            out.extend((s, e) for s, e, c in inside if _en_unit(c))
+    return out
+
+
+def _turkish_only(findings, ctx):
+    spans = _english_spans(ctx)
+    if not spans:
+        return findings
+    return [f for f in findings if not any(s <= f["start"] < e for s, e in spans)]
+
+
 def lint(text, register=None, tur=None, config=None, filename=None, layers=None,
          min_level="info"):
     """Lint text. Returns a dict with register, tur, words and findings."""
@@ -508,7 +573,7 @@ def lint(text, register=None, tur=None, config=None, filename=None, layers=None,
             cap = LEVELS.get(f.pop("level_cap", None), lvl)
             f["level"] = LEVEL_NAMES[min(lvl, cap)]
             findings.append(f)
-    findings = _whitelisted(_dedup(findings), ctx)
+    findings = _whitelisted(_dedup(_turkish_only(findings, ctx)), ctx)
     idx = tu.LineIndex(ctx.raw)
     blocks, nextline = _directives(ctx.raw)
     out = []
@@ -553,7 +618,9 @@ def fix(text, register=None, tur=None, config=None):
         return fix(text.replace("\r\n", "\n"), register, tur, config).replace("\n", "\r\n")
     for _ in range(5):
         res = lint(text, register, tur, config, layers=("tdk",))
-        edits = [f for f in res["findings"] if f.get("fix") is not None]
+        quoted = tu.mention_spans(text)
+        edits = [f for f in res["findings"] if f.get("fix") is not None
+                 and not any(a <= f["start"] and f["end"] <= b for a, b in quoted)]
         if not edits:
             break
         edits.sort(key=lambda f: f["start"], reverse=True)

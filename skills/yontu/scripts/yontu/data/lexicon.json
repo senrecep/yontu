@@ -356,13 +356,14 @@
    "evidence": "hipotez",
    "message": "Hafif fiil kalıbı: \"-mA işlemini gerçekleştirmek\".",
    "family": "ys-A",
-   "pattern": "%B[%L]{3,}\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "pattern": "%B[%L]{3,}\\s+işlem(?:i(?:ni)?|imi|imizi|inizi)(?:\\s+[%L]+){0,3}?\\s+gerçekleştir[%L]*",
    "prec": 3,
    "source": "references/yogunlastirma.md; Akboğa (2026)",
    "suggestion": "fiilin kendisi",
    "examples": {
     "pos": [
-     "Yedekleme işlemini gerçekleştirin."
+     "Yedekleme işlemini gerçekleştirin.",
+     "Kayıt yenileme işlemimi süresinde gerçekleştiremedim."
     ],
     "neg": [
      "Yedek alın.",
@@ -2701,6 +2702,35 @@
     ],
     "neg": [
      "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "family": "ys-G",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "id": "YS-G48",
+   "message": "Türkçe karşılığı daha yaygın.",
+   "pattern": "%Bargümantatif[%L]*",
+   "suggestion": "tartışmacı",
+   "examples": {
+    "pos": [
+     "Bu argümantatif bir metin."
+    ],
+    "neg": [
+     "Bu tartışmacı bir metin."
     ]
    }
   }

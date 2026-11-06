@@ -138,8 +138,8 @@ class TestYonerge(unittest.TestCase):
         res = engine.lint(t)
         self.assertEqual([f["line"] for f in res["findings"] if f["id"] == "YZ-03"], [3])
 
-    def test_block_with_trlint_prefix(self):
-        t = "herkez\n<!-- trlint-disable -->\nherkez\nherkez\n<!-- trlint-enable -->\nherkez"
+    def test_block(self):
+        t = "herkez\n<!-- yontu-disable -->\nherkez\nherkez\n<!-- yontu-enable -->\nherkez"
         res = engine.lint(t)
         self.assertEqual([f["line"] for f in res["findings"] if f["id"] == "YZ-03"], [1, 6])
 

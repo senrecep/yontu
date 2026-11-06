@@ -253,29 +253,6 @@
    }
   },
   {
-   "id": "YZ-04",
-   "layer": "tdk",
-   "level": "warning",
-   "evidence": "kaynak",
-   "message": "gts bu sözü \"ünvan\" biçiminde verir.",
-   "kind": "map",
-   "map": {
-    "unvan": "ünvan"
-   },
-   "suffix": true,
-   "fixable": false,
-   "family": "yazim",
-   "source": "gts, 2026-11-05 sorgusu; Yazım Kılavuzu ile doğrulanmadı",
-   "examples": {
-    "pos": [
-     "Unvanı müdür."
-    ],
-    "neg": [
-     "Ünvanı müdür."
-    ]
-   }
-  },
-  {
    "id": "YZ-05",
    "layer": "tdk",
    "level": "warning",
@@ -388,6 +365,34 @@
    "source": "TDK Güncel Türkçe Sözlük"
   },
   {
+   "id": "YZ-09",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "\"-ki\" eki bu sözlerde ünlü uyumuna girer.",
+   "kind": "map",
+   "map": {
+    "dünki": "dünkü",
+    "bugünki": "bugünkü",
+    "öbürki": "öbürkü"
+   },
+   "suffix": true,
+   "fix_bare_only": true,
+   "family": "ki",
+   "source": "TDK Yazım Kılavuzu, -ki Ekinin Yazılışı",
+   "examples": {
+    "pos": [
+     "Dünki toplantı uzun sürdü.",
+     "Bugünkinden daha iyi."
+    ],
+    "neg": [
+     "Dünkü toplantı uzun sürdü.",
+     "Bugünkünden daha iyi.",
+     "Yarınki toplantı kısa."
+    ]
+   }
+  },
+  {
    "id": "SP-01",
    "layer": "tdk",
    "level": "error",
@@ -395,7 +400,7 @@
    "message": "Noktalama işaretinden önce boşluk bırakılmaz.",
    "pattern": "(?<=[%W0-9)\\\"”’])[ \\t]+([,;:!?]|\\.(?![.\\w]))(?=[ \\t]|$)",
    "fix": "$1",
-   "exclude": "^[ \\t]*(?:sayı|konu|ilgi|ek|tarih|kimden|kime|bilgi)[ \\t]*:",
+   "exclude": "^[ \\t]*(?:sayı|konu|ilgi|ek|tarih|kimden|kime|bilgi)[ \\t]*:|(?<=[ \\t])[,;:!?.][ \\t]*(?=\\|)|\\([^\\w\\n]*\\)",
    "family": "noktalama",
    "source": "TDK Yazım Kılavuzu, Noktalama",
    "examples": {
@@ -437,6 +442,7 @@
    "evidence": "kaynak",
    "message": "Ayraç içinde kenarda boşluk bırakılmaz.",
    "pattern": "(\\()[ \\t]+(?=\\S)|(?<=\\S)[ \\t]+(\\))",
+   "exclude": "\\([^\\w\\n]*\\)",
    "fix": "$1$2",
    "family": "noktalama",
    "examples": {
@@ -518,7 +524,7 @@
    "level": "warning",
    "evidence": "kaynak",
    "message": "Bağlaçtan hemen sonra virgül gereksiz.",
-   "pattern": "(?<![\\\"“'(])(?<!, )%B(ve|veya|yahut),",
+   "pattern": "(?<![\\\"“'(*_])(?<!, )(?<!\\| )(?<!(?<![%W])[%W] )%B(ve|veya|yahut),(?![ \\t]*(?:ve|veya|yahut|ile|ama|fakat|ya|de|da|ki|gerek|kâh|hem|ayrıca)%E)",
    "family": "noktalama",
    "examples": {
     "pos": [
@@ -607,10 +613,12 @@
     "neg": [
      "— Gel, dedi.",
      "Sıtkı Bey— Gel bakalım.",
-     "Ali Bey— Yarın gelirim."
+     "Ali Bey— Yarın gelirim.",
+     "| Kural | — |",
+     "Uzun çizgi (—) kullanılmaz."
     ]
    },
-   "exclude": "(?:^|(?<=\\n))[ \\t]*[%U][%L]*(?:[ \\t]+[%U][%L]*)?—",
+   "exclude": "(?:^|(?<=\\n))[ \\t]*[%U][%L]*(?:[ \\t]+[%U][%L]*)?—|\\|[ \\t]*—[ \\t]*(?=\\|)|\\([ \\t]*—[ \\t]*\\)",
    "case": "exact"
   },
   {
@@ -677,7 +685,7 @@
    "level": "error",
    "evidence": "kaynak",
    "message": "Tırnaktan sonra gelen ek kesmeyle ayrılmaz.",
-   "pattern": "(?<=\\S)([”\\\"])%A([%L]{1,6})%E",
+   "pattern": "(?<=[^\\s(\\[{])([”\\\"])%A([%L]{1,6})%E",
    "fix": "$1$2",
    "family": "kesme",
    "source": "TDK Yazım Kılavuzu, Tırnak İşareti",
@@ -734,18 +742,21 @@
    "level": "error",
    "evidence": "kaynak",
    "message": "Kurum adlarına gelen ekler kesmeyle ayrılmaz.",
-   "pattern": "([%U][%L]+[ \\t]+)(Kurumu|Kurulu|Bakanlığı|Başkanlığı|Müdürlüğü|Üniversitesi|Fakültesi|Enstitüsü|Yüksekokulu|Meclisi|Derneği|Vakfı|Belediyesi|Valiliği|Kaymakamlığı|Lisesi|Okulu|Hastanesi|Bankası|Kulübü|Şirketi|Partisi|Odası|Konseyi|Komisyonu|Ajansı|Müzesi|Kütüphanesi|Merkezi|Dairesi|Mahkemesi|Sendikası|Federasyonu|Holdingi)%A([%L]+)",
+   "pattern": "([%U][%L%U]+[ \\t]+)(Kurumu|Kurulu|Bakanlığı|Başkanlığı|Müdürlüğü|Üniversitesi|Fakültesi|Enstitüsü|Yüksekokulu|Meclisi|Derneği|Vakfı|Belediyesi|Valiliği|Kaymakamlığı|Lisesi|Okulu|Hastanesi|Bankası|Kulübü|Şirketi|Partisi|Odası|Konseyi|Komisyonu|Ajansı|Müzesi|Kütüphanesi|Merkezi|Dairesi|Mahkemesi|Sendikası|Federasyonu|Holdingi)%A([%L]+)",
    "case": "exact",
    "fix": "$1$2$3",
    "family": "kesme",
    "source": "TDK Yazım Kılavuzu, Kesme İşareti",
    "examples": {
     "pos": [
-     "Türk Dil Kurumu'nun kararı"
+     "Türk Dil Kurumu'nun kararı",
+     "ABC Şirketi'nden yanıt geldi.",
+     "TEMA Vakfı'na başvurduk."
     ],
     "neg": [
      "Türk Dil Kurumunun kararı",
-     "TDK'nin kararı"
+     "TDK'nin kararı",
+     "ABC Şirketinden yanıt geldi."
     ]
    }
   },
@@ -804,7 +815,7 @@
    "level": "error",
    "evidence": "kaynak",
    "message": "Özel adlara gelen yapım ve çokluk ekleri kesmeyle ayrılmaz (Bergamalı). Sözcük özel ad değilse büyük harf de gerekmez (merge request'ler).",
-   "pattern": "%B(?!%N%A)([%U][%L]+)%A((?:l[ae]r|l[ıiuü]k?|[cç][ıiuü](?:l[ıiuü]k)?|s[ıiuü]z)[%L]*)%E",
+   "pattern": "%B(?!%N%A)(?!(?:Ki|De|Da|Mi|Mı|Mu|Mü)%A)([%U][%L]+)%A((?:l[ae]r|l[ıiuü]k?|[cç][ıiuü](?:l[ıiuü]k)?|s[ıiuü]z)[%L]*)%E",
    "case": "exact",
    "family": "kesme",
    "source": "TDK Yazım Kılavuzu, Kesme İşareti",
@@ -835,7 +846,7 @@
    "level": "warning",
    "evidence": "kaynak",
    "message": "Özel adlara gelen yapım ekleri kesmeyle ayrılmaz (Antakyalı).",
-   "pattern": "(?:^|(?<=[.!?…:]\\s)|(?<=^[-*+>#]\\s))(?!%N%A)([%U][%L]+)%A((?:l[ıiuü]|[cç][ıiuü]|s[ıiuü]z)[%L]*)%E",
+   "pattern": "(?:^|(?<=[.!?…:]\\s)|(?<=^[-*+>#]\\s))(?!%N%A)(?!(?:Ki|De|Da|Mi|Mı|Mu|Mü)%A)([%U][%L]+)%A((?:l[ıiuü]|[cç][ıiuü]|s[ıiuü]z)[%L]*)%E",
    "case": "exact",
    "fixable": false,
    "suggestion": "$1$2",
@@ -1466,6 +1477,37 @@
      "iki yüz kişi",
      "Akşam altmışaltı oynadık.",
      "Yirmisekiz Çelebi Mehmet Paris'e gitti."
+    ]
+   }
+  },
+  {
+   "id": "SY-05",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Türkçede ondalık kesir virgülle ayrılır (2,5 kat).",
+   "suggestion": "noktayı virgül yapın",
+   "pattern": "(?<![.,])%B\\d+\\.(?:\\d{1,2}|\\d{4,})(?![.,]\\d)[ \\t]+(?:milyon|milyar|bin|kat|puan|kilo|kilogram|ton|kilometre|metre|santimetre|litre|lira|dolar|avro|derece|saat|dakika|saniye|yıl|ay|hafta|gün)[%L]*%E",
+   "registers_off": [
+    "teknik",
+    "commit"
+   ],
+   "family": "sayi",
+   "source": "TDK Yazım Kılavuzu, Virgül",
+   "examples": {
+    "pos": [
+     "Satışlar 2.5 kat arttı.",
+     "Yolculuk 3.5 saat sürdü.",
+     "Bütçe 1.2 milyar lira oldu."
+    ],
+    "neg": [
+     "Satışlar 2,5 kat arttı.",
+     "Python 3.9 sürümünü kurun.",
+     "Madde 3.2 uyarınca işlem yapılır.",
+     "Toplantı saat 14.30'da başlar.",
+     "Sayı 2.000 kişiyi buldu.",
+     "Toplam 1.150 lira tuttu.",
+     "Fiyat 1.500.000 lira."
     ]
    }
   },
@@ -2318,6 +2360,79 @@
     "neg": [
      "Pekâlâ, başlayalım.",
      "Hükûmet açıkladı."
+    ]
+   }
+  },
+  {
+   "id": "DZ-03",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü düzeltme işaretiyle yazar.",
+   "kind": "map",
+   "map": {
+    "dahil": "dâhil"
+   },
+   "fixable": false,
+   "family": "duzeltme",
+   "source": "gts, 2026-11-06 sorgusu; TDK Yazım Kılavuzu, Düzeltme İşareti",
+   "examples": {
+    "pos": [
+     "Kargo ücrete dahil.",
+     "Süre dahilinde başvurun."
+    ],
+    "neg": [
+     "Kargo ücrete dâhil.",
+     "Süre dâhilinde başvurun.",
+     "Dahili hat 204."
+    ]
+   },
+   "suffix": true,
+   "exclude": "%Bdahili%E"
+  },
+  {
+   "id": "DZ-04",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Nispet eki \"-î\" düzeltme işaretiyle yazılır; kök de şapkalıdır (askerî, millî gibi).",
+   "kind": "map",
+   "map": {
+    "dahili": "dâhilî"
+   },
+   "fixable": false,
+   "family": "duzeltme",
+   "source": "gts, 2026-11-06 sorgusu; TDK Yazım Kılavuzu, Düzeltme İşareti",
+   "examples": {
+    "pos": [
+     "Dahili hat 204."
+    ],
+    "neg": [
+     "Dâhilî hat 204.",
+     "Süre dahilinde başvurun."
+    ]
+   }
+  },
+  {
+   "id": "DZ-08",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü düzeltme işaretiyle yazar.",
+   "kind": "map",
+   "map": {
+    "halbuki": "hâlbuki"
+   },
+   "fixable": false,
+   "family": "duzeltme",
+   "source": "gts, 2026-11-06 sorgusu; TDK Yazım Kılavuzu, Düzeltme İşareti",
+   "examples": {
+    "pos": [
+     "Halbuki dün söylemiştin."
+    ],
+    "neg": [
+     "Hâlbuki dün söylemiştin.",
+     "Hal böyleyken gitti."
     ]
    }
   }

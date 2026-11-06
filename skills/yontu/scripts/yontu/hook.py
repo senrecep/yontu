@@ -32,20 +32,11 @@ MAX_TRANSCRIPT = 4 * 1024 * 1024
 MAX_CONTEXT = 3000
 MAX_ITEMS = 10
 MAX_FILES = 5
-MIN_WORDS = 8
+MIN_WORDS = tu.MIN_WORDS
 # Chat artifacts that are wrong in any delivered text. AI-E9 (placeholder) is left out:
 # in a chat answer a bracketed slot is often what the user asked for.
 HIGH_CONFIDENCE = ("AI-E6", "AI-E7", "AI-E8")
 
-_TR_WORDS = set("""
-ve bir bu için ile de da ki mi mı mu mü ne ama çok daha gibi olarak değil var yok şu o en
-her olan sonra kadar göre ancak veya ya hem diye ise nasıl neden şimdi şey biz ben sen siz
-bunu bunun şunu olur oldu olduğu yani artık önce hiç bile yine zaten sadece sonra şöyle
-""".split())
-_EN_WORDS = set("""
-the and of to is in that it for with as this are be was you not or by an from at have
-can will if we which but what all there their has would should could when then than
-""".split())
 _PATCH_FILE = re.compile(r"^\*\*\* (?:Update|Add) File: (.+?)\s*$", re.M)
 # Hooks without a matcher (Copilot) also fire for tools that only read a file.
 _READ_TOOL = re.compile(r"^(?:read|view|grep|glob|ls|list|search|fetch)"
@@ -63,23 +54,10 @@ def log(msg):
 
 # --- language ------------------------------------------------------------------
 
-def prose(text):
-    """Text with code, URLs, paths and markup blanked out (same mask as the linter)."""
-    return tu.apply_mask(text, tu.build_mask(text))
-
-
-def turkish_share(text):
-    """(words, Turkish-looking words, English function words) in the prose part of text."""
-    ws = [tu.tr_lower(w) for w in tu.words(prose(tu.nfc(text))) if not w[0].isdigit()]
-    tr = sum(1 for w in ws if w in _TR_WORDS or any(c in "çğıöşü" for c in w))
-    en = sum(1 for w in ws if w in _EN_WORDS)
-    return len(ws), tr, en
-
-
-def is_turkish(text):
-    """True when the prose is mostly Turkish: enough words, Turkish share high, little English."""
-    n, tr, en = turkish_share(text)
-    return n >= MIN_WORDS and tr >= 0.3 * n and tr > 2 * en
+# Shared with the linter, which skips English text the same way.
+prose = tu.prose
+turkish_share = tu.turkish_share
+is_turkish = tu.is_turkish
 
 
 # --- payload -------------------------------------------------------------------
@@ -251,7 +229,7 @@ def _config(start_dir):
     try:
         cfg = profiller.load_config(None, start_dir)
         if not isinstance(cfg, dict):
-            raise ValueError("not an object")
+            raise ValueError("JSON nesnesi değil")
         engine.check_config(cfg)
         return cfg
     except Exception as exc:  # broken .yontu.json must not break the agent

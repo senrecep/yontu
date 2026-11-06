@@ -298,7 +298,7 @@
     "kip": "Amaç ve yöntem için geçmiş edilgen (-mIştIr): \"incelenmiş, karşılaştırılmıştır\". Bulgu için -DIr / -mAktAdIr (\"göstermektedir\"). Sonuç için geniş zaman ya da -DIr. -mAktAdIr burada doğaldır, ai-iz kuralı kapalı.",
     "baglaclar": "Az ve işlevli: \"bu amaçla\", \"bulgular ... göstermektedir\", \"sonuç olarak\" (tek kez). \"Ayrıca/bunun yanı sıra\" zinciri AI izidir.",
     "sozcuk": "Alan terimi zorunlu. Arapça kökenli terim (\"tahlil\", \"mukayese\") dergi geleneğine göre serbest. İngilizce terim ilk geçişte parantezle verilir: \"tutum ölçeği (attitude scale)\".",
-    "noktalama": "Noktalı virgül serbest (akademikte doğal). Em dash yok. Kısaltma ilk geçişte açılır.",
+    "noktalama": "Noktalı virgül serbest (akademikte doğal). Uzun çizgi (—) kullanılmaz. Kısaltma ilk geçişte açılır.",
     "yapi": "[Bağlam/boşluk 1 cümle] → [Amaç] → [Yöntem: örneklem, araç, analiz] → [Ana bulgular, sayılarla] → [Sonuç/öneri] → Anahtar kelimeler (3-5).",
     "ai_hatalari": [
      "\"Günümüzde giderek önem kazanan ...\" diye dayanaksız açılış.",
@@ -342,7 +342,7 @@
     "kip": "Literatür aktarımında -mIştIr (\"göstermiştir\") ve geniş zaman. Boşluk cümlesinde \"sınırlıdır\", \"bulunmamaktadır\".",
     "baglaclar": "\"Ancak\" (boşluğa geçiş), \"bu nedenle\", \"buna karşın\". Paragraf başına bağlaç zorunlu değil.",
     "sozcuk": "Terim tutarlılığı (aynı kavram için tek terim).",
-    "noktalama": "APA tipi atıf parantezi \"(Yılmaz, 2019)\". Atıflar yazarın gerçek kaynağı olmalı. AI'nin uydurduğu atıf fidelity gate kapsamındadır (yeni ad+yıl = error).",
+    "noktalama": "APA tipi atıf parantezi \"(Yılmaz, 2019)\". Atıflar yazarın gerçek kaynağı olmalı. Yapay zekânın uydurduğu atıf sadakat kapısının kapsamındadır (yeni ad+yıl = error).",
     "yapi": "[Alan ve önem, kaynakla] → [Önceki çalışmalar ne yaptı] → [Boşluk: ne yapılmadı] → [Bu çalışmanın amacı ve soruları] → [Makale düzeni, isteğe bağlı].",
     "ai_hatalari": [
      "Kaynaksız genelleme (\"Literatürde pek çok çalışma ...\").",
@@ -410,7 +410,7 @@
    "guidance": {
     "amac": "Jüri ve enstitü. Akademik makaleden uzun. Enstitü yazım kılavuzu biçimi bağlar (kenar boşluğu, atıf stili).",
     "uzunluk": "Paragraf 5-10 cümle, cümle ort. 16-28. Özet 250-300 kelime, sınırı enstitü kılavuzu koyar. hipotez",
-    "resmiyet": "Kişi zamirinden kaçınılır, \"Bu çalışmada ... incelenmiştir\" tercih edilir (zaferhoca, Türkçe tez yazım rehberi). Nitel desende araştırmacı konumu için \"ben\" kullanılabilir. Bu bir uyarı değil, `info`'dur.",
+    "resmiyet": "Kişi zamirinden kaçınılır, \"Bu çalışmada ... incelenmiştir\" tercih edilir (zaferhoca, Türkçe tez yazım rehberi). Nitel desende araştırmacı konumu için \"ben\" kullanılabilir. Düzeyi uyarı değil, bilgidir (`info`).",
     "kip": "Yöntem bölümünde geçmiş edilgen. Kuramsal çerçevede geniş zaman / -DIr.",
     "baglaclar": "Akademik özetle aynı. Bölüm başı \"Bu bölümde ... ele alınacaktır\" yapısı bir kez kabul edilir, her alt başlıkta tekrarı AI/şablon izidir.",
     "yapi": "Giriş (problem, amaç, önem, varsayımlar, sınırlılıklar, tanımlar) → Kuramsal çerçeve/literatür → Yöntem → Bulgular → Tartışma, sonuç, öneriler.",
@@ -557,11 +557,11 @@
    "guidance": {
     "amac": "Görüş bildirmek ve ikna etmek. Okur yazarı sesinden tanır.",
     "uzunluk": "busbed 2023 köşe yazısı incelemesi: ortalama 10.22 kelime/cümle, yazı başına ~430 kelime ve ~42 cümle. Hedef bant 8-14 kelime. kaynak Paragraf 3-6 cümle.",
-    "resmiyet": "1. tekil serbest ve beklenir. \"Biz\" okurla ortaklık için kullanılır. Hitap (\"sevgili okur\") yazara özgüdür, AI'nin şablon hitabı değildir.",
+    "resmiyet": "1. tekil serbest ve beklenir. \"Biz\" okurla ortaklık için kullanılır. Hitap (\"sevgili okur\") yazara özgüdür, yapay zekânın şablon hitabı değildir.",
     "kip": "Geniş zaman, -DI, -mIş (aktarılan). -mAktAdIr nadirdir, yoğunsa AI ya da kurum sesi gibi okunur.",
     "baglaclar": "Doğal konuşma bağları (\"ama\", \"yani\", \"üstelik\", \"oysa\"). \"Öte yandan / bunun yanı sıra / sonuç olarak\" zinciri AI izidir.",
     "sozcuk": "Yazar tercihi geniştir. Arapça/Farsça kökenli sözcük üslup tercihi olabilir, uyarı yok.",
-    "noktalama": "Noktalı virgül yazara göre değişir. Em dash Türkçe vurgu aracı değildir (MS, TDK). Soru ve ünlem serbest ama dozlu.",
+    "noktalama": "Noktalı virgül yazara göre değişir. Uzun çizgi (—) Türkçede vurgu aracı değildir (Microsoft, TDK). Soru ve ünlem serbest ama dozlu.",
     "yapi": "[Somut giriş: olay, gözlem, anı] → [Tez] → [Gerekçe, örnek] → [Karşı görüş] → [Kapanış: açık uç ya da çağrı]. Kalıp \"Sonuç olarak\" kapanışı gerekmez.",
     "ai_hatalari": [
      "Üçlü listeler (\"hem ..., hem ..., hem de ...\").",
@@ -598,7 +598,7 @@
     "kip": "Geniş zaman, şimdiki zaman, -DI. Rehberde emir (\"deneyin\", \"dene\"). -mAktAdIr yoğunluğu `warning` alır.",
     "baglaclar": "Kısa geçişler. Her paragrafı bağlaçla açmak AI izidir.",
     "sozcuk": "Gündelik sözcük. İngilizce terimde yerleşik karşılık varsa onu yaz, yoksa ilk geçişte açıkla.",
-    "noktalama": "Noktalı virgül 300 kelimede ≥1 ise `info`. Rewrite asla `;` üretmez. Em dash yok.",
+    "noktalama": "Noktalı virgül 300 kelimede ≥1 ise `info`. Yeniden yazım asla `;` üretmez. Uzun çizgi (—) kullanılmaz.",
     "yapi": "[Kanca: sorun ya da sonuç] → [Neden önemli, kısa] → [Başlıklı adımlar/bölümler] → [Kapanış: tek cümlelik öneri]. \"Sonuç\" başlığı altında tekrarlı özet AI izidir.",
     "ai_hatalari": [
      "\"Bu yazıda ... ele alacağız\" girişi.",
@@ -612,7 +612,7 @@
    "examples": [
     {
      "once": "Günümüzün hızla değişen dijital dünyasında, verimli çalışmak her zamankinden daha önemli bir hâle gelmiştir. Bu yazıda, verimliliğinizi artırmanın yollarını detaylı bir şekilde ele alacağız. Hadi başlayalım!",
-     "sonra": "Verimli çalışmak her zamankinden önemli. Aşağıda verimliliğinizi artırmanın yollarını ayrıntılı olarak ele alıyoruz.",
+     "sonra": "Verimli çalışmak her zamankinden önemli. Verimliliği artırmanın birkaç yolu var:",
      "duzeltme": "15 §2.1"
     },
     {
@@ -647,7 +647,7 @@
     "resmiyet": "\"Siz\" (MS ve Google Material Türkçe rehberleri). Ürün davranışını anlatırken 3. kişi geniş zaman (\"Komut ... oluşturur\"). Google: ben ve sen aynı ifadede karışmaz.",
     "kip": "Adımda emir \"-(y)In\": \"Çalıştırın\", \"Ekleyin\". MS: \"-ınız\" (yapınız) otoriter durur, \"yapın\" kullanılır. Davranış için geniş ve şimdiki zaman. Gerçek değilse gelecek zaman yok (MS). Edilgen doğal (\"Dosya oluşturulur\"). Bu register'da edilgen kuralı kapalı.",
     "baglaclar": "\"Ardından\", \"sonra\", \"bunun için\". \"Böylece\" (MS: \"dolayısıyla\" yerine \"böylece, bu sayede\").",
-    "sozcuk": "Terim sözlüğü zorunlu: deploy için tek karşılık (dağıtmak / yayına almak / deploy etmek). Kod adları çevrilmez ve backtick içinde yazılır. Sonek kesme işaretiyle ayrılır: `config.yaml`'ı. Kesme işareti sınıfı `['’]`.",
+    "sozcuk": "Terim sözlüğü zorunlu: deploy için tek karşılık (dağıtmak / yayına almak / deploy etmek). Kod adları çevrilmez ve backtick içinde yazılır. Koda ek getirilmez, ardına bir ad eklenir: `config.yaml` dosyasını. Kesme işareti sınıfı `['’]`.",
     "noktalama": "Kod bloklarında linter çalışmaz. Liste maddesi tam cümleyse büyük harf ve nokta, ifadeyse yalnız büyük harf (MS).",
     "yapi": "[Ne yapar, 1 cümle] → [Ön koşullar] → [Adımlar] → [Doğrulama] → [Sorun giderme].",
     "ai_hatalari": [
@@ -694,8 +694,8 @@
    },
    "examples": [
     {
-     "once": "trlint, Türkçe metinleriniz için geliştirilmiş modern, güçlü ve kullanıcı dostu bir linter aracıdır. Yazım kalitenizi bir üst seviyeye taşır!",
-     "sonra": "trlint, Türkçe metin için bir linterdir.",
+     "once": "yontu, Türkçe metinleriniz için geliştirilmiş modern, güçlü ve kullanıcı dostu bir linter aracıdır. Yazım kalitenizi bir üst seviyeye taşır!",
+     "sonra": "yontu, Türkçe metin için bir linterdir.",
      "duzeltme": "15 §2.1"
     },
     {
@@ -745,7 +745,7 @@
    "name": "Commit mesajı",
    "register": "commit",
    "guidance": {
-    "amac": "`git log`'u okuyan geliştirici ve otomatik araçlar (semver, changelog üretimi).",
+    "amac": "`git log` çıktısını okuyan geliştirici ve otomatik araçlar (semver, changelog üretimi).",
     "uzunluk": "Başlık ≤50 karakter (git geleneği, sert sınır 72). Gövde satırı ≤72 karakter. kaynak (git geleneği)",
     "kip": "Standart yok. Git geleneği İngilizcede emir kipini kullanır (\"add\"). Conventional Commits'in Türkçe çevirisi örneklerde geçmiş edilgen kullanır (\"Türkçe çeviri eklendi\", \"yazım hataları düzeltildi\"). Türkçe için iki geçerli seçenek var: emir (\"ekle\") ya da geçmiş edilgen (\"eklendi\"). Kural depo içinde tutarlılık.",
     "bicim": "`<tip>[(kapsam)][!]: <açıklama>`. Tip İngilizce kalır (feat, fix, docs, chore...), çünkü araçlar ona göre çalışır. Açıklama küçük harfle başlar, sonda nokta yoktur.",
@@ -782,7 +782,7 @@
     "uzunluk": "Buton 1-4 kelime, en çok 6. Bu sınır uygulayıcı rehberlerinden geliyor. iOS butonları 1-2 kelime (Erkan Ceylan). hipotez Türkçe metin İngilizceden belirgin biçimde uzar. talhaaslan.com \"yaklaşık iki katı\" diyor (hipotez). Yer tutucuya göre tasarım yapılmalı.",
     "resmiyet": "\"Siz\": MS, Google Material Türkçe ve uiuxtasarim (banka, sağlık, kurumsal, kamu). Genç kitle ve oyun ürünlerinde \"sen\" olabilir. Ana hata ikisini karıştırmaktır. Kullanıcının uygulamaya söylediği onay kutusu metni 1. tekildir: \"Gönderdiğim iletilere imzamı otomatik olarak ekle\" (MS). Google: \"ben\" yalnız sahiplik için kullanılır (\"Profilim\").",
     "kip": "Buton fiildir ve yalın emir biçimindedir: \"Kaydet\", \"Siparişi onayla\", \"Projeyi sil\". Bu biçim \"siz\" kullanan üründe de kabul görür (uiuxtasarim). \"Kaydedin\" biçimi seçilirse ürünün tamamında tutarlı olmalı. Etiket isimdir: \"Telefon numarası\" doğru, \"Telefon numaranızı giriniz\" yanlış.",
-    "sozcuk": "MS kaçınma listesi bu register'da `warning`: MS'e göre \"el ile\" yerine \"kendiniz\", \"öğe\" yerine nesnenin adı (dosya, resim) kullanılır. Aynı şeye tek ad verilir: \"Sepet\" ile \"Alışveriş çantası\" karışmamalı (uiuxtasarim). Geri alınamaz eylem açıkça adlandırılır: \"Hesabı kalıcı olarak sil\".",
+    "sozcuk": "MS kaçınma listesi bu register'da `warning`: Microsoft'a göre \"el ile\" yerine \"kendiniz\", \"öğe\" yerine nesnenin adı (dosya, resim) kullanılır. Aynı şeye tek ad verilir: \"Sepet\" ile \"Alışveriş çantası\" karışmamalı (uiuxtasarim). Geri alınamaz eylem açıkça adlandırılır: \"Hesabı kalıcı olarak sil\".",
     "noktalama": "Butonda nokta yok. Tümüyle büyük harf kullanılmaz (MS, Erkan Ceylan). Değişkene ek gelirken ünlü uyumu kırılmasına ve İ/I büyük harf dönüşümüne dikkat edilir.",
     "yapi": "[Fiil] + [nesne]. \"Evet/Hayır\" yerine eylem adı: \"Taslağı sil / Düzenlemeye dön\" (talhaaslan).",
     "ai_hatalari": [
@@ -814,7 +814,7 @@
    "guidance": {
     "amac": "Kullanıcı ne olduğunu ve ne yapacağını bilmeli. Hata metni üç şey söyler: sorun, neden, çözüm (Erkan Ceylan).",
     "uzunluk": "1-2 cümle, 5-14 kelime. Mobil snackbar en çok 2 satır (Google Material). hipotez / kaynak (Google)",
-    "resmiyet": "\"Siz\". MS'e göre \"özür dileriz\" yalnız ciddi hatada kullanılır, diğer durumlarda \"maalesef\" ya da \"ne yazık ki\". MS \"üzgünüz\" ifadesini hiç önermez. Bazı Türkçe UX yazıları (AykutUX) \"Üzgünüz\" örneği veriyor. Bu bir çelişkidir. Varsayılan olarak MS kuralı uygulanır, seviye `info`. Suçlayıcı dil yok: \"Yanlış şifre girdiniz\" yerine \"Şifrenizi kontrol eder misiniz?\" (Şeyma Balcı).",
+    "resmiyet": "\"Siz\". Microsoft'a göre \"özür dileriz\" yalnız ciddi hatada kullanılır, diğer durumlarda \"maalesef\" ya da \"ne yazık ki\". MS \"üzgünüz\" ifadesini hiç önermez. Bazı Türkçe UX yazıları (AykutUX) \"Üzgünüz\" örneği veriyor. Bu bir çelişkidir. Varsayılan olarak MS kuralı uygulanır, seviye `info`. Suçlayıcı dil yok: \"Yanlış şifre girdiniz\" yerine \"Şifrenizi kontrol eder misiniz?\" (Şeyma Balcı).",
     "kip": "MS standartları: Cannot → \"...yapılamıyor\", Failed → \"...yapılamadı\", \"...bulunamıyor\", \"Bellek yeterli değil\". Mişli geçmiş kullanılmaz: \"Bu ayarı daha önce belirtmediniz\" (MS). Olaylar mantıksal sırayla anlatılır.",
     "yapi": "[Ne oldu] + [neden, biliniyorsa] + [ne yapmalı]. Hata kodu gerekiyorsa sona.",
     "ai_hatalari": [
@@ -998,7 +998,7 @@
     "uzunluk": "1-2 cümle, 6-14 kelime/cümle. Karakter sınırı platformca belirlenir (standart hesap 280). hipotez",
     "resmiyet": "Serbest. Kişisel hesapta 1. tekil, kurumsal hesapta \"biz\" ve \"siz\".",
     "kip": "Gündelik. Ek kısaltması ve argo kişisel hesapta normaldir, uyarılmaz.",
-    "noktalama": "Serbest. Noktalı virgül `info`. Em dash `warning` (tdk).",
+    "noktalama": "Serbest. Noktalı virgül `info`. Uzun çizgi (—) `warning` (tdk).",
     "ai_hatalari": [
      "Flood'da her tweeti \"1/\" numarası ve 🧵 ile açmak.",
      "Her cümlede hashtag.",
@@ -1028,7 +1028,7 @@
    "guidance": {
     "amac": "Görselin bağlamı. Okur görsele bakar, ilk satırı okur.",
     "uzunluk": "İlk satır ≤ 10 kelime. Toplam 20-120 kelime. hipotez",
-    "resmiyet": "\"Sen\" yaygın (marka hesabı da dahil). Tutarlılık kuralı geçerli.",
+    "resmiyet": "\"Sen\" yaygın (marka hesabı da dâhil). Tutarlılık kuralı geçerli.",
     "erisilebilirlik": "Alt metin ≤125 karakter, \"resim/fotoğraf\" sözcüğüyle başlamaz (Google Material Türkçe). kaynak",
     "ai_hatalari": [
      "\"Bu muhteşem anı sizlerle paylaşmak istedim ✨\".",
@@ -1216,7 +1216,7 @@
     "uzunluk": "Ölçüm uyarısı yok. Burstiness `info` bile kapalıdır, çünkü edebî ritim bilinçli bir seçimdir.",
     "resmiyet": "Anlatıcıya göre değişir (1. tekil, 3. tekil, 2. tekil deneysel).",
     "kip": "-DI (görülen), -mIş (masal, aktarılan), şimdiki zaman (canlı anlatım). Zaman kayması bilinçli olabilir.",
-    "noktalama": "Diyalog: satır başı uzun çizgi muaf. Cümle içi em dash yine `warning` (TDK). Üç nokta, ünlem ve noktalı virgül yazarın seçimidir.",
+    "noktalama": "Diyalog: satır başı uzun çizgi muaf. Cümle içi uzun çizgi yine `warning` (TDK). Üç nokta, ünlem ve noktalı virgül yazarın seçimidir.",
     "sozcuk": "Arkaik ya da yöresel sözcük bilinçli olabilir. Sözlük `►` yönlendirmesi asla uyarılmaz.",
     "ai_hatalari": [
      "Duygu adlandırma: \"içinde derin bir hüzün hissetti\" (göster, söyleme).",
@@ -1248,9 +1248,9 @@
     "amac": "Soruyu soran kişi. Cevap ilk cümlede verilir.",
     "uzunluk": "Sohbet temel çizgisi (ege-arhan): medyan 12 kelime/cümle, cümlelerin %28'i ≤8 kelime, fiil-sonu oranı %36. Hedef bant 8-16. hipotez (tek korpus, kalibrasyon gerekir) Paragraf 1-4 cümle.",
     "resmiyet": "Kullanıcının hitabını izler: \"sen\" ile soran kişiye \"sen\". Belirsizse \"siz\". Asistanın \"ben\"i serbest, ama \"Bir yapay zekâ olarak\" girişi gereksiz.",
-    "kip": "Şimdiki ve geniş zaman, öneride emir ya da \"-(y)AbIlIrsIn\". -mAktAdIr `warning`.",
+    "kip": "Şimdiki ve geniş zaman, öneride emir ya da \"-(y)AbIlIrsInIz\" (\"sen\" hitabında \"-(y)AbIlIrsIn\"). -mAktAdIr `warning`.",
     "baglaclar": "Doğal. Her cevaba \"Tabii ki!\", \"Harika bir soru!\" ile başlamak AI izidir.",
-    "noktalama": "Rewrite noktalı virgül üretmez. Em dash yok. Liste yalnız gerçekten liste olan içerikte kullanılır.",
+    "noktalama": "Yeniden yazım noktalı virgül üretmez. Uzun çizgi (—) kullanılmaz. Liste yalnız gerçekten liste olan içerikte kullanılır.",
     "yapi": "[Cevap] → [Gerekçe/ayrıntı] → [Gerekirse adımlar] → [Tek satır seçenek ya da uyarı]. Kapanışta \"Başka bir sorunuz olursa ...\" gereksiz.",
     "ai_hatalari": [
      "Övgü açılışı.",

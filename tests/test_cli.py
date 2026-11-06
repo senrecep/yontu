@@ -113,7 +113,7 @@ class TestLint(Base):
         self.assertEqual(run(["lint", "-", "--config", cfg], stdin="Metin.")[0], 0)
 
     def test_directive(self):
-        text = "<!-- trlint-disable-next-line YZ-03 -->\nHerkez geldi.\n"
+        text = "<!-- yontu-disable-next-line YZ-03 -->\nHerkez geldi.\n"
         self.assertEqual(run(["lint", "-"], stdin=text)[0], 0)
 
     def test_usage_errors(self):

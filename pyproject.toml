@@ -39,7 +39,6 @@ Changelog = "https://github.com/senrecep/yontu/blob/main/CHANGELOG.md"
 
 [project.scripts]
 yontu = "yontu.cli:main"
-trlint = "yontu.cli:main"
 
 [tool.setuptools]
 # yontu.skill carries SKILL.md and references/** so the MCP guide tools work from a wheel.

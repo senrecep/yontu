@@ -1,4 +1,4 @@
-"""Command line: yontu (alias trlint).
+"""Command line: yontu.
 
 Subcommands: lint, compare, stats, rules, explain, profiles, mcp, hook.
 
@@ -9,6 +9,7 @@ import argparse
 import io
 import json
 import os
+import re
 import sys
 
 from . import __version__
@@ -84,11 +85,28 @@ def _layers(value):
     return tuple(out)
 
 
+def _ondalik(x):
+    """Text output only: Turkish decimal comma (5,8). JSON keeps the dot."""
+    if isinstance(x, float):
+        return repr(x).replace(".", ",")
+    if isinstance(x, str):
+        return re.sub(r"(?<=\d)\.(?=\d)", ",", x)
+    return x
+
+
+def _aralik(x):
+    if x is None:
+        return "-"
+    if isinstance(x, (list, tuple)):
+        return "-".join(str(v) for v in x)
+    return x
+
+
 def _finding_line(name, f):
     lvl = LEVEL_TR.get(f["level"], f["level"])
     line = "%s:%d:%d: %s %s [%s] %s" % (name, f["line"], f["col"], lvl, f["id"], f["layer"], f["message"])
     if f.get("match") and f.get("scope") != "doc" and len(f["match"]) <= 60:
-        line += " «%s»" % f["match"].replace("\n", " ")
+        line += " “%s”" % f["match"].replace("\n", " ")
     hint = f.get("fix") if f.get("fix") is not None else f.get("suggestion")
     if hint:
         line += " → %s" % hint
@@ -136,7 +154,7 @@ def cmd_lint(args):
             sys.stdout.write(_finding_line(name, f) + "\n")
         sys.stdout.write("%s: %d hata, %d uyarı, %d bilgi · %s/%s (%s)\n" % (
             name, counts["error"], counts["warning"], counts["info"],
-            res["register"], res["tur"] or "-", res["detected_by"]))
+            res["register"], res["tur"] or "-", _ondalik(res["detected_by"])))
     return 1 if counts["error"] else 0
 
 
@@ -161,19 +179,19 @@ def cmd_stats(args):
         return 0
     band = res["band"]
     rows = [
-        ("register/tür", "%s/%s (%s)" % (res["register"], res["tur"] or "-", res["detected_by"])),
+        ("register/tür", "%s/%s (%s)" % (res["register"], res["tur"] or "-", _ondalik(res["detected_by"]))),
         ("kelime", res["words"]),
         ("cümle", res["sentences"]),
         ("paragraf", res["paragraphs"]),
-        ("cümle ort.", "%s (sapma %s, en uzun %s)" % (res["sentence_mean"], res["sentence_stdev"],
-                                                    res["sentence_max"])),
+        ("cümle ort.", "%s (sapma %s, en uzun %s)" % (_ondalik(res["sentence_mean"]),
+                                                    _ondalik(res["sentence_stdev"]), res["sentence_max"])),
         ("bant", "cümle %s, en çok %s, Ateşman %s" % tuple(
-            "-" if band[k] is None else band[k] for k in ("sentence_words", "sentence_max", "atesman"))),
+            _aralik(band[k]) for k in ("sentence_words", "sentence_max", "atesman"))),
         ("uzun cümle", res["long_sentences"]),
-        ("Ateşman", res["atesman"]),
+        ("Ateşman", _ondalik(res["atesman"])),
     ]
     for k, v in sorted(res["per300"].items()):
-        rows.append(("%s/300" % k, v))
+        rows.append(("%s/300" % k, _ondalik(v)))
     for k, v in rows:
         sys.stdout.write("%-14s %s\n" % (k, v))
     return 0
@@ -273,7 +291,7 @@ def cmd_hook(args):
 
 
 def build_parser():
-    p = argparse.ArgumentParser(prog="yontu", description="Türkçe metin denetleyicisi (trlint).")
+    p = argparse.ArgumentParser(prog="yontu", description="Türkçe metin denetleyicisi.")
     p.add_argument("--version", action="version", version="yontu " + __version__)
     sub = p.add_subparsers(dest="cmd")
 

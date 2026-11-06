@@ -165,3 +165,12 @@ insiyatif	inisiyatif	Dün insiyatif konusunu konuştuk.
 dolayısı ile	dolayısıyla	Dün dolayısı ile konusunu konuştuk.
 ard arda	art arda	Dün ard arda konusunu konuştuk.
 oysa ki	oysaki	Dün oysa ki konusunu konuştuk.
+Dünki	Dünkü	Dünki toplantıda bütçe konuşuldu.
+bugünkinden	bugünkünden	Yarınki hava bugünkinden serin olacak.
+öbürki	öbürkü	Bu kalem değil, öbürki daha iyi yazıyor.
+Halbuki	Hâlbuki	Halbuki dün her şey hazırdı.
+dahil	dâhil	Kahvaltı fiyata dahil.
+dahilinde	dâhilinde	Süre dahilinde başvurmanız gerekir.
+Dahili	Dâhilî	Dahili hat numarası 204.
+Şirketi'nden	Şirketinden	ABC Şirketi'nden yanıt geldi.
+2.5 kat	2,5 kat	Satışlar geçen yıla göre 2.5 kat arttı.

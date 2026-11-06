@@ -128,6 +128,62 @@ def quote_mask(text):
     return mask
 
 
+def mention_spans(text, max_words=3):
+    """Spans of short quoted runs ("Herşey", “Türkçe’de”). A quote of a word or two is
+    usually a mention of the form, not a use of it, so autofix leaves it alone."""
+    out = []
+    for pat in _QUOTE_PATTERNS:
+        for m in pat.finditer(text):
+            if len(m.group()[1:-1].split()) <= max_words:
+                out.append((m.start(), m.end()))
+    return out
+
+
+# --- language --------------------------------------------------------------
+
+MIN_WORDS = 8
+_TR_WORDS = set("""
+ve bir bu için ile de da ki mi mı mu mü ne ama çok daha gibi olarak değil var yok şu o en
+her olan sonra kadar göre ancak veya ya hem diye ise nasıl neden şimdi şey biz ben sen siz
+bunu bunun şunu olur oldu olduğu yani artık önce hiç bile yine zaten sadece sonra şöyle
+""".split())
+_EN_WORDS = set("""
+the and of to is in that it for with as this are be was you not or by an from at have
+can will if we which but what all there their has would should could when then than
+""".split())
+
+
+def prose(text):
+    """Text with code, URLs, paths and markup blanked out (same mask as the linter)."""
+    return apply_mask(text, build_mask(text))
+
+
+def share(masked):
+    """(words, Turkish-looking words, English function words) of already masked text."""
+    ws = [tr_lower(w) for w in words(masked) if not w[0].isdigit()]
+    tr = sum(1 for w in ws if w in _TR_WORDS or any(c in "çğıöşü" for c in w))
+    en = sum(1 for w in ws if w in _EN_WORDS)
+    return len(ws), tr, en
+
+
+def turkish_share(text):
+    """(words, Turkish-looking words, English function words) in the prose part of text."""
+    return share(prose(nfc(text)))
+
+
+def is_turkish(text):
+    """True when the prose is mostly Turkish: enough words, Turkish share high, little English."""
+    n, tr, en = turkish_share(text)
+    return n >= MIN_WORDS and tr >= 0.3 * n and tr > 2 * en
+
+
+def english(counts, min_words=MIN_WORDS):
+    """True on positive English evidence: enough words and English function words
+    clearly ahead of Turkish ones. Short or unclear text counts as Turkish."""
+    n, tr, en = counts
+    return n >= min_words and en >= 0.12 * n and en > 2 * tr
+
+
 # --- sentences -------------------------------------------------------------
 
 ABBREVIATIONS = {

@@ -78,7 +78,9 @@ class TestYanlisAlarm(unittest.TestCase):
         self.assertTrue(hits("En iyi fiyat bizde.", "ST-31", register="pazarlama"))
 
     def test_ky01_info_under_notr(self):
-        text = "PR'ı merge etmeden önce CI'ın geçtiğini kontrol et."
+        # PR'ı (pi-ar) and CI'ın (si-ay) follow the English letter names: not flagged at all
+        self.assertEqual(hits("PR'ı merge etmeden önce CI'ın geçtiğini kontrol et.", "KY-01"), [])
+        text = "Paketi PTT'ya vermeden önce adresi bir kez daha kontrol et."
         res = engine.lint(text)
         self.assertEqual(res["register"], "notr")
         levels = {f["level"] for f in res["findings"] if f["id"] == "KY-01"}

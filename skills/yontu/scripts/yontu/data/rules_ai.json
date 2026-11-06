@@ -152,7 +152,7 @@
     ]
    },
    "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
-   "note": "Virgülsüz \"Bu bağlamda\" insan akademik metninde sık; yalnız virgüllü açılış. Akademik register'da (tez dahil) paragraf içindeki virgüllü biçim de olağan bağlaç; orada yalnız paragrafı açan \"Bu bağlamda,\" sayılır.",
+   "note": "Virgülsüz \"Bu bağlamda\" insanların yazdığı akademik metinlerde de sık görülür; kural yalnız virgüllü açılışı yakalar. Akademik register'da (tez dâhil) paragraf içindeki virgüllü biçim de olağan bağlaç; orada yalnız paragrafı açan \"Bu bağlamda,\" sayılır.",
    "para_start_registers": [
     "akademik"
    ],
@@ -790,7 +790,7 @@
    "per300": 9,
    "min": 4,
    "scaled": true,
-   "pattern": "%B[%L]{2,}m[ae](?:s[ıi]|l[ae]r[ıi])(?:n[ıi]n|n[ae]|n[ıi]|nd[ae]|yl[ae]|ndan|nden)?%E",
+   "pattern": "%B(?!çalışma)[%L]{2,}m[ae](?:s[ıi]|l[ae]r[ıi])(?:n[ıi]n|n[ae]|n[ıi]|nd[ae]|yl[ae]|ndan|nden)?%E",
    "examples": {
     "pos": [
      "Verilerin toplanması, analiz edilmesi, raporlanması ve paylaşılması gerekiyor."
@@ -813,6 +813,7 @@
    "min": 3,
    "scaled": true,
    "pattern": "%Bolarak%E",
+   "exclude": "%B(?:varsayılan|örnek|girdi|çıktı|metin|dosya|json|yaml|markdown|pdf|csv|html|liste|tablo|başlık|ek|not|uyarı|bilgi|hata|parametre|argüman|değer|seçenek|yönetici|başkan|danışman|editör|yazar|üye|gönüllü|stajyer|müdür|öğretmen|mühendis|geliştirici|kullanıcı|misafir|konuk|sözcü|temsilci|vekil)(?:s?[ıiuü]|l[ae]r[ıi]?)?[ \\t]+olarak%E",
    "examples": {
     "pos": [
      "Ekip olarak hızlı olarak ve düzenli olarak çalıştık."
@@ -832,6 +833,9 @@
    "family": "ai-C",
    "kind": "ratio",
    "threshold": 0.5,
+   "register_threshold": {
+    "kurumsal": 0.67
+   },
    "min_sentences": 6,
    "registers_off": [
     "akademik",
@@ -860,13 +864,18 @@
    "kind": "count",
    "per": "paragraph",
    "min": 2,
-   "pattern": "[%W]+,\\s+[%W]+(?:\\s+[%W]+)?\\s+ve\\s+[%W]+",
+   "pattern": "(?<![%W-])(?<![%W],\\s)(?<![%W],)[%W]+(?:,\\s+(?!yani\\b)[%W]+(?:\\s+[%W]+)?)+\\s+ve\\s+[%W]+(?:-[%W]+)*",
+   "exclude": "^[ \\t]*\\|.*",
+   "skip_names": true,
    "examples": {
     "pos": [
      "Hız, güven ve kalite sunuyoruz. Ekip, süreç ve araçlar hazır."
     ],
     "neg": [
-     "Hız, güven ve kalite sunuyoruz.\n\nEkip, süreç ve araçlar hazır."
+     "Hız, güven ve kalite sunuyoruz.\n\nEkip, süreç ve araçlar hazır.",
+     "Rapor, tutanak, dilekçe ve mektup ayrı yazılır. Hız, güven ve kalite de önemlidir.",
+     "Odak, yani yeni ve vurgulanan bilgi yüklemin önüne gelir. Hız, güven ve kalite önemlidir.",
+     "Blog, sohbet ve e-posta gevşek yazılır. Hız, güven ve kalite de önemlidir."
     ]
    },
    "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
@@ -963,6 +972,7 @@
    "family": "ai-C",
    "kind": "density",
    "per300": 1,
+   "exclude": ",[^.!?;\\n]*;",
    "min": 1,
    "registers": [
     "blog",
@@ -994,6 +1004,9 @@
    "message": "Kalın etiketli madde listesi.",
    "family": "ai-C",
    "kind": "count",
+   "registers_off": [
+    "commit"
+   ],
    "min": 3,
    "pattern": "^\\s*(?:[-*+]|\\d+[.)]|[✅✔☑➡]️?|\\d️?⃣)\\s+\\*\\*[^*\\n]{1,50}(?::\\*\\*|\\*\\*\\s*:)",
    "examples": {
@@ -1171,6 +1184,9 @@
    "min_sentences": 8,
    "max_words": 3,
    "threshold": 0.3,
+   "registers_off": [
+    "ui"
+   ],
    "examples": {
     "pos": [
      "Hız önemli. Güven şart. Kalite her şey. Biz buradayız. Köprüde trafik vardı ve yarım saat bekledik. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Sonunda işi cuma günü teslim ettik. Hemen başla."
@@ -1501,6 +1517,29 @@
    "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
   },
   {
+   "id": "AI-D20",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Okuru davet eden geçiş kalıbı (\"Gelin ... inceleyelim\"). Doğrudan konuya girin.",
+   "family": "ai-D",
+   "registers_off": [
+    "edebi"
+   ],
+   "pattern": "%Bgelin,?\\s+(?:[%L]+\\s+){0,3}?birlikte\\s+(?:[%L]+\\s+){0,3}?(?:inceleyelim|bakalım|keşfedelim|göz\\s+atalım)%E",
+   "examples": {
+    "pos": [
+     "Gelin birlikte inceleyelim.",
+     "Gelin bunları birlikte daha yakından inceleyelim."
+    ],
+    "neg": [
+     "Birlikte bakalım mı?",
+     "Gelin, kahve içelim."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
    "id": "AI-L1",
    "layer": "ai-iz",
    "level": "info",
@@ -1626,6 +1665,35 @@
    },
    "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
    "scope": "doc"
+  },
+  {
+   "id": "AI-L5",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hazır gönderi kalıbı. Ne gördüğünüzü ya da ne olduğunu kendi sözünüzle yazın.",
+   "family": "ai-L",
+   "turs": [
+    "linkedin",
+    "x",
+    "instagram"
+   ],
+   "default": "tur",
+   "test_tur": "instagram",
+   "test_register": "sosyal",
+   "pattern": "%Bsizlerle\\s+paylaşmak\\s+ist[%L]*|%Bkelimeler\\s+(?:kifayetsiz|yetersiz|kifayet\\s+etmiyor)|%Bdeğerli\\s+takipçilerimiz[%L]*",
+   "examples": {
+    "pos": [
+     "Bu manzarayı sizlerle paylaşmak istedim.",
+     "Kelimeler kifayetsiz kalıyor.",
+     "Değerli takipçilerimiz, yarın kapalıyız."
+    ],
+    "neg": [
+     "Dün akşam Kaş'taydık, gün batımı çok güzeldi.",
+     "Yarın kapalıyız."
+    ]
+   },
+   "source": "proje içi deneme, 2026-11-06"
   },
   {
    "id": "AI-E1",
@@ -1820,6 +1888,30 @@
     ]
    },
    "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E11B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Metni anlatan giriş cümlesi. Silin; içindeki iddiayı düz cümle yapın.",
+   "family": "ai-E",
+   "registers_off": [
+    "teknik",
+    "akademik"
+   ],
+   "pattern": "%B(?:bu\\s+(?:yazıda|makalede|bölümde|rehberde|yazımızda|içerikte)|aşağıda),?\\s+[^.!?\\n]{0,80}?(?:ele\\s+alıyoruz|inceliyoruz|değiniyoruz|keşfediyoruz)%E",
+   "examples": {
+    "pos": [
+     "Bu yazıda kurulumu adım adım ele alıyoruz.",
+     "Aşağıda en sık yapılan hataları inceliyoruz."
+    ],
+    "neg": [
+     "Bu yazıda kurulumu anlattım.",
+     "Aşağıdaki tablo sonuçları gösteriyor."
+    ]
+   },
+   "source": "proje içi deneme, 2026-11-06"
   },
   {
    "id": "AI-E13",
@@ -2067,7 +2159,7 @@
    "layer": "stil",
    "level": "info",
    "evidence": "hakem",
-   "message": "Kod parçasına kesme işaretiyle ek getirilmiş. Eki koddan sonra boşlukla ayırmayı ya da cümleyi değiştirmeyi düşünün.",
+   "message": "Kod parçasına kesme işaretiyle ek getirilmiş. Kodun ardına bir ad ekleyin (`config.json` dosyasını) ya da cümleyi değiştirin.",
    "family": "stil",
    "kind": "builtin",
    "builtin": "code_apostrophe",
@@ -2306,6 +2398,61 @@
    "source": "references/turler"
   },
   {
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "family": "stil",
+   "kind": "count",
+   "skip_quotes": true,
+   "pattern": "!",
+   "id": "ST-22U",
+   "message": "Arayüz metninde ünlem işareti beklenmez; hata ve düğme metnini sakin yazın.",
+   "min": 1,
+   "turs": [
+    "ui-hata",
+    "ui-buton"
+   ],
+   "default": "tur",
+   "test_tur": "ui-hata",
+   "test_register": "ui",
+   "examples": {
+    "pos": [
+     "Geçersiz giriş!"
+    ],
+    "neg": [
+     "Şifre en az 8 karakter olmalı."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "family": "stil",
+   "kind": "count",
+   "skip_quotes": true,
+   "pattern": "!",
+   "id": "ST-22B",
+   "message": "Boş ekran metninde ünlem tek kalsın; ikisi fazla.",
+   "min": 2,
+   "turs": [
+    "ui-bos"
+   ],
+   "default": "tur",
+   "test_tur": "ui-bos",
+   "test_register": "ui",
+   "examples": {
+    "pos": [
+     "Henüz kayıt yok! Hemen başlayın!"
+    ],
+    "neg": [
+     "Henüz kayıt yok. Hemen başlayın!"
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
    "id": "ST-23",
    "layer": "stil",
    "level": "info",
@@ -2510,6 +2657,7 @@
    ],
    "test_register": "pazarlama",
    "pattern": "%B(?:türkiye|dünya|sektör|piyasa|şehr|bölge)[%L]*%A?n[ıiuü]n\\s+en\\s+[%L]+|%Ben\\s+(?:iyi|ucuz|kaliteli|lezzetli|güvenilir|hızlı|taze)%E(?!\\s+(?:şekilde|biçimde|sonuç\\s+için|sonucu\\s+(?:almak|elde\\s+etmek)\\s+için|verim\\s+için|deneyim\\s+için|performans\\s+için))",
+   "skip_quotes": true,
    "examples": {
     "pos": [
      "Türkiye'nin en iyi kahvesi şimdi kapınızda!",
@@ -2522,6 +2670,201 @@
     ]
    },
    "source": "Ticari Reklam ve Haksız Ticari Uygulamalar Yönetmeliği; references/turler/reklam.md"
+  },
+  {
+   "id": "ST-32",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Resmî kalıplar üst üste gelmiş. Cümleyi konuşur gibi yeniden kurun.",
+   "family": "stil",
+   "turs": [
+    "is-eposta",
+    "sohbet",
+    "blog",
+    "sunum"
+   ],
+   "default": "tur",
+   "test_tur": "is-eposta",
+   "test_register": "is-eposta",
+   "pattern": "%B(?:bilgilerinize\\s+sun[%L]*|hususu(?:nu|n)?%E|ilişkin\\s+olarak|yönelik\\s+olarak|tarafınızca|[%L]+(?:acak|ecek)\\s+olan%E|gerçekleştiril[%L]*|hayata\\s+geçiril[%L]*)",
+   "examples": {
+    "pos": [
+     "Toplantıya ilişkin olarak raporun tarafınızca hazırlanmasını rica ederim."
+    ],
+    "neg": [
+     "Toplantı için raporu hazırlar mısın?",
+     "Raporu sen hazırlarsan iyi olur."
+    ]
+   },
+   "source": "references/turler; dogfood 2026-11-06",
+   "kind": "count",
+   "min": 2,
+   "per": "sentence"
+  },
+  {
+   "id": "ST-33",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Arayüzde \"Lütfen ... giriniz\" yerine kısa emir kipi yeter: \"E-posta adresinizi girin\".",
+   "family": "stil",
+   "turs": [
+    "ui-buton",
+    "ui-hata",
+    "ui-bos"
+   ],
+   "default": "tur",
+   "test_tur": "ui-buton",
+   "test_register": "ui",
+   "pattern": "%Blütfen\\s+[^.!?\\n]{0,60}?[%L]+(?:yınız|yiniz|yunuz|yünüz|ınız|iniz|unuz|ünüz)(?=[ \\t]*(?:[.!?]|$))",
+   "examples": {
+    "pos": [
+     "Lütfen e-posta adresinizi giriniz"
+    ],
+    "neg": [
+     "E-posta adresinizi girin",
+     "Lütfen bekleyin."
+    ]
+   },
+   "source": "references/turler; dogfood 2026-11-06"
+  },
+  {
+   "id": "ST-34",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Sürüm notunda ve arayüzde \"-mıştır\" yerine geçmiş zaman yeter: \"giderildi\".",
+   "family": "stil",
+   "turs": [
+    "changelog",
+    "commit",
+    "ui-hata",
+    "ui-bos"
+   ],
+   "default": "tur",
+   "test_tur": "changelog",
+   "test_register": "teknik",
+   "pattern": "%B[%L]+(?:ıl|il|ul|ül|ın|in|un|ün|n|l)(?:mıştır|miştir|muştur|müştür)%E",
+   "examples": {
+    "pos": [
+     "Giriş hatası giderilmiştir."
+    ],
+    "neg": [
+     "Giriş hatası giderildi.",
+     "Sorun çözüldü."
+    ]
+   },
+   "source": "references/turler; dogfood 2026-11-06"
+  },
+  {
+   "id": "ST-35",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Belirsiz sürüm notu. Neyin değiştiğini tek tek yazın.",
+   "family": "stil",
+   "turs": [
+    "changelog",
+    "commit"
+   ],
+   "default": "tur",
+   "test_tur": "changelog",
+   "test_register": "teknik",
+   "pattern": "%B(?:çeşitli|bazı|birtakım|bir\\s+takım|genel)\\s+(?:iyileştirme|hata|düzeltme|değişiklik|güncelleme)[%L]*",
+   "examples": {
+    "pos": [
+     "Çeşitli iyileştirmeler yapıldı."
+    ],
+    "neg": [
+     "Açılış süresi yarıya indi.",
+     "Oturum zaman aşımı hatası giderildi."
+    ]
+   },
+   "source": "references/turler; dogfood 2026-11-06"
+  },
+  {
+   "id": "ST-36",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Haberde yorum ve \"biz\" dili. Olayı aktarın, değerlendirmeyi kaynağa bırakın.",
+   "family": "stil",
+   "turs": [
+    "haber"
+   ],
+   "default": "tur",
+   "test_tur": "haber",
+   "test_register": "haber",
+   "pattern": "%B(?:sevindirici|üzücü|önemli|tarihî|kritik)\\s+(?:bir\\s+)?(?:gelişme|adım|açıklama)[%L]*|%B(?:vatandaşlarımız|ülkemiz|milletimiz|şehrimiz)[%L]*",
+   "examples": {
+    "pos": [
+     "Bakan önemli açıklamalarda bulundu.",
+     "Düzenleme vatandaşlarımıza kolaylık sağlayacak."
+    ],
+    "neg": [
+     "Bakan, düzenlemenin mart ayında yürürlüğe gireceğini söyledi.",
+     "Vatandaşlar sabah saatlerinde kuyruk oluşturdu.",
+     "Bakan, \"Ülkemiz için önemli bir adım\" dedi."
+    ]
+   },
+   "source": "references/turler; dogfood 2026-11-06",
+   "skip_quotes": true
+  },
+  {
+   "id": "ST-37",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Kolaylık vaadi. Ne kadar kolay olduğunu adımlar göstersin.",
+   "family": "stil",
+   "turs": [
+    "readme",
+    "teknik-dok",
+    "e-ticaret",
+    "reklam"
+   ],
+   "default": "tur",
+   "test_tur": "readme",
+   "test_register": "teknik",
+   "pattern": "%B(?:oldukça|çok|son\\s+derece|gayet)\\s+kolay(?:dır)?%E|%B(?:kolayca|zahmetsizce|sorunsuzca)%E|%Byapmanız\\s+gereken\\s+tek\\s+şey",
+   "examples": {
+    "pos": [
+     "Kurulum oldukça kolaydır.",
+     "Yapmanız gereken tek şey komutu çalıştırmak.",
+     "Ayarları kolayca değiştirebilirsiniz."
+    ],
+    "neg": [
+     "Kurulum iki adımdır.",
+     "Komutu çalıştırın."
+    ]
+   },
+   "source": "references/turler; dogfood 2026-11-06"
+  },
+  {
+   "id": "ST-38",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Resmî yazıda kurum ağzından \"-ümüzce\" yeter: \"Müdürlüğümüzce\".",
+   "family": "stil",
+   "turs": [
+    "resmi-yazi"
+   ],
+   "default": "tur",
+   "test_tur": "resmi-yazi",
+   "test_register": "resmi",
+   "pattern": "%B[%L]+(?:ımız|imiz|umuz|ümüz)\\s+tarafından%E",
+   "examples": {
+    "pos": [
+     "Rapor Müdürlüğümüz tarafından incelendi."
+    ],
+    "neg": [
+     "Rapor Müdürlüğümüzce incelendi.",
+     "Rapor kurul tarafından incelendi."
+    ]
+   },
+   "source": "references/turler; dogfood 2026-11-06"
   }
  ]
 }
