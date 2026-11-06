@@ -1,6 +1,6 @@
 {
   "name": "yontu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Türkçe yazı denetimi: TDK yazım ve noktalama, yapay zekâ ve çeviri izleri, metin türüne göre üslup, yoğunlaştırma. Skill, MCP sunucusu ve kancalar.",
   "author": {
     "name": "senrecep"
