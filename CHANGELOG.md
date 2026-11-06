@@ -1,10 +1,6 @@
-# Changelog
+## Initial feature set
 
-All notable changes to this project are listed here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
-
-## [0.1.0] - unreleased
-
-First release.
+Notes written by hand before the first release (0.1.0). release-please prepends every release entry above this section from conventional commits and adds the `# Changelog` title. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
 ### Added
 

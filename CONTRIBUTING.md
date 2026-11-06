@@ -59,6 +59,18 @@ Each genre has exactly one guide, `references/turler/<id>.md`, and a row in `tur
 
 Before and after pairs (`references/ornekler.md`, `tests/fixtures/sadakat/`) must pass `yontu compare` with no errors. The "after" text may not add a fact, number, name, date, example or claim that the "before" text lacks.
 
+## Releasing
+
+Releases are automated with release-please. Commit messages on `main` use Conventional Commits (`feat:`, `fix:`, `perf:`; `feat!:` or a `BREAKING CHANGE:` footer for breaking changes). After each push, `.github/workflows/release.yml` opens or updates a release PR that bumps the version in every file (`scripts/check-versions.py` lists them and CI fails if they drift) and prepends the entry to `CHANGELOG.md`. Merging that PR tags `vX.Y.Z`, creates the GitHub release and publishes to PyPI and the MCP Registry, and attaches the wheel, sdist, `yontu-skill.zip` and `SHA256SUMS` to the release.
+
+The first release is 0.1.0 through `"initial-version"` in `release-please-config.json`; later versions follow the commit types. A release PR made with the default `GITHUB_TOKEN` does not start CI; close and reopen it, or merge with admin rights. If a publish job fails, use "Re-run failed jobs"; "Re-run all jobs" skips publishing because the release already exists.
+
+One-time setup by the repository owner:
+
+1. PyPI: add a pending publisher at https://pypi.org/manage/account/publishing/ with project `yontu`, owner `senrecep`, repository `yontu`, workflow `release.yml`, environment `pypi`.
+2. GitHub: create the environments `pypi` and `mcp-registry` (Settings > Environments). A required reviewer on `pypi` is optional and adds a manual approval before upload.
+3. GitHub: turn on "Allow GitHub Actions to create and approve pull requests" (Settings > Actions > General). release-please cannot open its PR without it.
+
 ## Human text
 
 The most useful contribution is clean Turkish text written by people, in any genre: abstracts, news, documentation, e-mails, UI strings, commit messages. Calibration needs at least 50 texts per register. Send only text you have the right to share, and say where it came from.
