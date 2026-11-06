@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <title>yontu</title>
-  <rect width="64" height="64" rx="14" fill="#1F2A44"/>
-  <path d="M12 17h9.4l13.2 27.6-4.6 6.8z" fill="#F4EBDD"/>
-  <path d="M40.5 23 50 16 29.4 55H19.4z" fill="#F4EBDD"/>
-  <path d="M40.5 23 50 16l-1 3.8-6.6 4.9z" fill="#C9AE85"/>
-  <path d="M43.6 19.4C46.4 12.6 52.4 8.4 58.6 9.6 53.4 11 49.2 14.6 46.4 20.4z" fill="#E8833A"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><title>yontu</title><rect width="512" height="512" rx="112" fill="#1F2A44"/><g transform="translate(256 262) scale(1.12) translate(-285 -264)"><path d="M145 128H210L260 255 310 128H345L366 149 291 340Q270 405 205 408Q170 408 150 392L171 347Q195 358 213 345Q222 337 229 330Z" fill="#F4EBDD"/><path d="M352 142C372 116 412 114 426 138C434 154 422 172 404 174C390 175 382 164 388 156C392 161 399 162 403 157C408 149 400 140 388 139C378 138 369 146 362 154Z" fill="#E8833A"/></g></svg>
