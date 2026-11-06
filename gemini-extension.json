@@ -5,7 +5,10 @@
   "mcpServers": {
     "yontu": {
       "command": "python3",
-      "args": ["${extensionPath}${/}skills${/}yontu${/}scripts${/}yontu", "mcp"]
+      "args": [
+        "${extensionPath}${/}skills${/}yontu${/}scripts${/}yontu",
+        "mcp"
+      ]
     }
   }
 }

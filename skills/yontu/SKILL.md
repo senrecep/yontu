@@ -11,7 +11,7 @@ license: MIT
 compatibility: >-
   Works from the references alone. Optional offline linter needs Python 3.9+ (no network).
 metadata:
-  version: "0.1.0"
+  version: "0.1.0"  # x-release-please-version
   language: "tr"
   cli: "yontu, trlint"
 ---

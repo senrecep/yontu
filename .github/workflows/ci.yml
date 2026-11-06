@@ -31,6 +31,9 @@ jobs:
       - name: Unit tests
         run: python -m unittest discover -s tests
 
+      - name: Version consistency
+        run: python scripts/check-versions.py
+
       - name: Lint own Turkish docs
         run: |
           python skills/yontu/scripts/yontu lint README.tr.md

@@ -8,7 +8,7 @@ import sys
 import tempfile
 import unittest
 
-from ortak import PKG, SCRIPTS, engine, profiller
+from ortak import PKG, SCRIPTS, engine, profiller, yontu
 
 ENV = dict(os.environ, PYTHONIOENCODING="utf-8")
 ENV.pop("PYTHONPATH", None)
@@ -61,7 +61,7 @@ class TestEntry(Base):
     def test_version(self):
         code, out, _ = run(["--version"])
         self.assertEqual(code, 0)
-        self.assertIn("0.1.0", out)
+        self.assertIn(yontu.__version__, out)
 
 
 class TestLint(Base):

@@ -6,7 +6,7 @@ from ortak import yontu
 
 class TestApi(unittest.TestCase):
     def test_exports(self):
-        self.assertEqual(yontu.__version__, "0.1.0")
+        self.assertRegex(yontu.__version__, r"^\d+\.\d+\.\d+$")
         for name in ("lint", "fix", "compare", "stats", "profiles"):
             self.assertTrue(callable(getattr(yontu, name)), name)
 

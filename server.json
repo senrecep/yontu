@@ -15,9 +15,14 @@
       "identifier": "yontu",
       "version": "0.1.0",
       "runtimeHint": "uvx",
-      "transport": { "type": "stdio" },
+      "transport": {
+        "type": "stdio"
+      },
       "packageArguments": [
-        { "type": "positional", "value": "mcp" }
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
       ]
     }
   ]
