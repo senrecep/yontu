@@ -1,0 +1,6 @@
+# P10 Teknik belge · teknik
+=== önce
+Uygulama deploy edildikten sonra, yayına alınan sürümün loglarını kontrol ederek dağıtımın başarılı olup olmadığını teyit edebilirsiniz.
+=== sonra
+Uygulamayı yayına aldıktan sonra sürümün loglarına bakarak dağıtımın başarılı olup
+olmadığını doğrulayabilirsiniz.

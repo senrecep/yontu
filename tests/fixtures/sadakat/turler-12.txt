@@ -1,0 +1,5 @@
+# P11 README · teknik
+=== önce
+yontu, Türkçe metinleriniz için geliştirilmiş modern, güçlü ve kullanıcı dostu bir linter aracıdır. Yazım kalitenizi bir üst seviyeye taşır!
+=== sonra
+yontu, Türkçe metin için bir linterdir.

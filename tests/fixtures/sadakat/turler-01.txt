@@ -1,0 +1,6 @@
+# P1 Akademik özet · akademik
+=== önce
+Günümüzde giderek artan önemiyle dikkat çeken dijital okuryazarlık, eğitim alanında son derece kritik bir rol oynamaktadır. Bu bağlamda bu çalışma, öğretmen adaylarının dijital okuryazarlık düzeylerini kapsamlı bir şekilde incelemeyi amaçlamaktadır.
+=== sonra
+Dijital okuryazarlığın eğitimdeki önemi giderek artmaktadır. Bu çalışmanın amacı,
+öğretmen adaylarının dijital okuryazarlık düzeylerini incelemektir.

@@ -1,0 +1,5 @@
+# Örnekler
+=== önce
+Ürünü geri iade etmenin sebebi, kargoda hasar görmesinden dolayıdır.
+=== sonra
+Ürünün iade nedeni, kargoda hasar görmesidir.

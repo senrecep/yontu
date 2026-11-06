@@ -1,0 +1,167 @@
+# 06 §16.1 yanlış biçimleri. Her satır: yanlış, doğru ve cümle (sekmeyle ayrılır).
+yanlız	yalnız	Dün yanlız konusunu konuştuk.
+yalnış	yanlış	Dün yalnış konusunu konuştuk.
+herkez	herkes	Dün herkez konusunu konuştuk.
+şöför	şoför	Dün şöför konusunu konuştuk.
+kirbik	kirpik	Dün kirbik konusunu konuştuk.
+kiprik	kirpik	Dün kiprik konusunu konuştuk.
+süpriz	sürpriz	Dün süpriz konusunu konuştuk.
+supriz	sürpriz	Dün supriz konusunu konuştuk.
+orjinal	orijinal	Dün orjinal konusunu konuştuk.
+eşortman	eşofman	Dün eşortman konusunu konuştuk.
+egsoz	egzoz	Dün egsoz konusunu konuştuk.
+eksoz	egzoz	Dün eksoz konusunu konuştuk.
+meyva	meyve	Dün meyva konusunu konuştuk.
+traş	tıraş	Dün traş konusunu konuştuk.
+entellektüel	entelektüel	Dün entellektüel konusunu konuştuk.
+kollej	kolej	Dün kollej konusunu konuştuk.
+profesyönel	profesyonel	Dün profesyönel konusunu konuştuk.
+proğram	program	Dün proğram konusunu konuştuk.
+fotograf	fotoğraf	Dün fotograf konusunu konuştuk.
+kontor	kontör	Dün kontor konusunu konuştuk.
+mötör	motor	Dün mötör konusunu konuştuk.
+tirbüşon	tirbuşon	Dün tirbüşon konusunu konuştuk.
+yımırta	yumurta	Dün yımırta konusunu konuştuk.
+kıravat	kravat	Dün kıravat konusunu konuştuk.
+labaratuvar	laboratuvar	Dün labaratuvar konusunu konuştuk.
+laboratuar	laboratuvar	Dün laboratuar konusunu konuştuk.
+konservatuar	konservatuvar	Dün konservatuar konusunu konuştuk.
+antreman	antrenman	Dün antreman konusunu konuştuk.
+antreör	antrenör	Dün antreör konusunu konuştuk.
+eşkiya	eşkıya	Dün eşkiya konusunu konuştuk.
+klavuz	kılavuz	Dün klavuz konusunu konuştuk.
+herhangibir	herhangi bir	Dün herhangibir konusunu konuştuk.
+yada	ya da	Dün yada konusunu konuştuk.
+şarz	şarj	Dün şarz konusunu konuştuk.
+mağazin	magazin	Dün mağazin konusunu konuştuk.
+pantalon	pantolon	Dün pantalon konusunu konuştuk.
+istifrağ	istifra	Dün istifrağ konusunu konuştuk.
+eczahane	eczane	Dün eczahane konusunu konuştuk.
+mahsüs	mahsus	Dün mahsüs konusunu konuştuk.
+espiri	espri	Dün espiri konusunu konuştuk.
+inşaallah	inşallah	Dün inşaallah konusunu konuştuk.
+maşşallah	maşallah	Dün maşşallah konusunu konuştuk.
+sağol	sağ ol	Dün sağol konusunu konuştuk.
+kurdela	kurdele	Dün kurdela konusunu konuştuk.
+tiren	tren	Dün tiren konusunu konuştuk.
+kıral	kral	Dün kıral konusunu konuştuk.
+pilaj	plaj	Dün pilaj konusunu konuştuk.
+pisikoloji	psikoloji	Dün pisikoloji konusunu konuştuk.
+sandoviç	sandviç	Dün sandoviç konusunu konuştuk.
+bisküvit	bisküvi	Dün bisküvit konusunu konuştuk.
+kilasör	klasör	Dün kilasör konusunu konuştuk.
+çukulata	çikolata	Dün çukulata konusunu konuştuk.
+eşarb	eşarp	Dün eşarb konusunu konuştuk.
+dinazor	dinozor	Dün dinazor konusunu konuştuk.
+fermuvar	fermuar	Dün fermuvar konusunu konuştuk.
+kuafor	kuaför	Dün kuafor konusunu konuştuk.
+reportaj	röportaj	Dün reportaj konusunu konuştuk.
+rotuş	rötuş	Dün rotuş konusunu konuştuk.
+sezeryan	sezaryen	Dün sezeryan konusunu konuştuk.
+şovalye	şövalye	Dün şovalye konusunu konuştuk.
+tellevizyon	televizyon	Dün tellevizyon konusunu konuştuk.
+yogurt	yoğurt	Dün yogurt konusunu konuştuk.
+yoğrut	yoğurt	Dün yoğrut konusunu konuştuk.
+mozayik	mozaik	Dün mozayik konusunu konuştuk.
+mataryal	materyal	Dün mataryal konusunu konuştuk.
+metod	metot	Dün metod konusunu konuştuk.
+aksesuvar	aksesuar	Dün aksesuvar konusunu konuştuk.
+akvaryüm	akvaryum	Dün akvaryüm konusunu konuştuk.
+ambülans	ambulans	Dün ambülans konusunu konuştuk.
+apartıman	apartman	Dün apartıman konusunu konuştuk.
+anfi	amfi	Dün anfi konusunu konuştuk.
+ayakabı	ayakkabı	Dün ayakabı konusunu konuştuk.
+bilhasa	bilhassa	Dün bilhasa konusunu konuştuk.
+pekçok	pek çok	Dün pekçok konusunu konuştuk.
+herbiri	her biri	Dün herbiri konusunu konuştuk.
+kopye	kopya	Dün kopye konusunu konuştuk.
+mayanez	mayonez	Dün mayanez konusunu konuştuk.
+mösyü	mösyö	Dün mösyü konusunu konuştuk.
+nufüs	nüfus	Dün nufüs konusunu konuştuk.
+otobus	otobüs	Dün otobus konusunu konuştuk.
+pardesü	pardösü	Dün pardesü konusunu konuştuk.
+pogaça	poğaça	Dün pogaça konusunu konuştuk.
+poaça	poğaça	Dün poaça konusunu konuştuk.
+prezentabl	prezantabl	Dün prezentabl konusunu konuştuk.
+rasgele	rastgele	Dün rasgele konusunu konuştuk.
+restorant	restoran	Dün restorant konusunu konuştuk.
+sörvis	servis	Dün sörvis konusunu konuştuk.
+tasaruf	tasarruf	Dün tasaruf konusunu konuştuk.
+teferruvat	teferruat	Dün teferruvat konusunu konuştuk.
+tıraktör	traktör	Dün tıraktör konusunu konuştuk.
+zatürree	zatürre	Dün zatürree konusunu konuştuk.
+pilaket	plaket	Dün pilaket konusunu konuştuk.
+ünversite	üniversite	Dün ünversite konusunu konuştuk.
+annons	anons	Dün annons konusunu konuştuk.
+bilakiz	bilakis	Dün bilakiz konusunu konuştuk.
+deklanşor	deklanşör	Dün deklanşor konusunu konuştuk.
+ekspress	ekspres	Dün ekspress konusunu konuştuk.
+eksersiz	egzersiz	Dün eksersiz konusunu konuştuk.
+egzema	egzama	Dün egzema konusunu konuştuk.
+ekzema	egzama	Dün ekzema konusunu konuştuk.
+ekzotik	egzotik	Dün ekzotik konusunu konuştuk.
+enterasan	enteresan	Dün enterasan konusunu konuştuk.
+fasülye	fasulye	Dün fasülye konusunu konuştuk.
+feslegen	fesleğen	Dün feslegen konusunu konuştuk.
+gardrop	gardırop	Dün gardrop konusunu konuştuk.
+heycan	heyecan	Dün heycan konusunu konuştuk.
+hierarşi	hiyerarşi	Dün hierarşi konusunu konuştuk.
+kampanye	kampanya	Dün kampanye konusunu konuştuk.
+katalok	katalog	Dün katalok konusunu konuştuk.
+kayısi	kayısı	Dün kayısi konusunu konuştuk.
+kordinat	koordinat	Dün kordinat konusunu konuştuk.
+kordinasyon	koordinasyon	Dün kordinasyon konusunu konuştuk.
+kordinatör	koordinatör	Dün kordinatör konusunu konuştuk.
+konsensus	konsensüs	Dün konsensus konusunu konuştuk.
+kontejan	kontenjan	Dün kontejan konusunu konuştuk.
+lahmacün	lahmacun	Dün lahmacün konusunu konuştuk.
+lökemi	lösemi	Dün lökemi konusunu konuştuk.
+mitink	miting	Dün mitink konusunu konuştuk.
+müsvette	müsvedde	Dün müsvette konusunu konuştuk.
+mütala	mütalaa	Dün mütala konusunu konuştuk.
+ofsait	ofsayt	Dün ofsait konusunu konuştuk.
+parelel	paralel	Dün parelel konusunu konuştuk.
+parfum	parfüm	Dün parfum konusunu konuştuk.
+prespektif	perspektif	Dün prespektif konusunu konuştuk.
+pisuar	pisuvar	Dün pisuar konusunu konuştuk.
+prosedur	prosedür	Dün prosedur konusunu konuştuk.
+radyotör	radyatör	Dün radyotör konusunu konuştuk.
+rezarvasyon	rezervasyon	Dün rezarvasyon konusunu konuştuk.
+sentral	santral	Dün sentral konusunu konuştuk.
+sempozium	sempozyum	Dün sempozium konusunu konuştuk.
+siluet	silüet	Dün siluet konusunu konuştuk.
+spageti	spagetti	Dün spageti konusunu konuştuk.
+stad	stat	Dün stad konusunu konuştuk.
+standard	standart	Dün standard konusunu konuştuk.
+şampuvan	şampuan	Dün şampuvan konusunu konuştuk.
+teklonoji	teknoloji	Dün teklonoji konusunu konuştuk.
+tiatro	tiyatro	Dün tiatro konusunu konuştuk.
+tualet	tuvalet	Dün tualet konusunu konuştuk.
+vantilator	vantilatör	Dün vantilator konusunu konuştuk.
+vejeteryan	vejetaryen	Dün vejeteryan konusunu konuştuk.
+zaafiyet	zafiyet	Dün zaafiyet konusunu konuştuk.
+farketmek	fark etmek	Dün farketmek konusunu konuştuk.
+varolmak	var olmak	Dün varolmak konusunu konuştuk.
+biraraya	bir araya	Dün biraraya konusunu konuştuk.
+önyargı	ön yargı	Dün önyargı konusunu konuştuk.
+işbirliği	iş birliği	Dün işbirliği konusunu konuştuk.
+haftasonu	hafta sonu	Dün haftasonu konusunu konuştuk.
+özgeçmiş	öz geçmiş	Dün özgeçmiş konusunu konuştuk.
+dilbilgisi	dil bilgisi	Dün dilbilgisi konusunu konuştuk.
+eşzamanlı	eş zamanlı	Dün eşzamanlı konusunu konuştuk.
+olağandışı	olağan dışı	Dün olağandışı konusunu konuştuk.
+yasadışı	yasa dışı	Dün yasadışı konusunu konuştuk.
+yanısıra	yanı sıra	Dün yanısıra konusunu konuştuk.
+arasıra	ara sıra	Dün arasıra konusunu konuştuk.
+önkoşul	ön koşul	Dün önkoşul konusunu konuştuk.
+çevrimiçi	çevrim içi	Dün çevrimiçi konusunu konuştuk.
+ilgiçekici	ilgi çekici	Dün ilgiçekici konusunu konuştuk.
+herşey	her şey	Dün herşey konusunu konuştuk.
+birşey	bir şey	Dün birşey konusunu konuştuk.
+diğil	değil	Dün diğil konusunu konuştuk.
+deyil	değil	Dün deyil konusunu konuştuk.
+teşekürler	teşekkürler	Dün teşekürler konusunu konuştuk.
+insiyatif	inisiyatif	Dün insiyatif konusunu konuştuk.
+dolayısı ile	dolayısıyla	Dün dolayısı ile konusunu konuştuk.
+ard arda	art arda	Dün ard arda konusunu konuştuk.
+oysa ki	oysaki	Dün oysa ki konusunu konuştuk.

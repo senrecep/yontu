@@ -1,0 +1,5 @@
+# Adlaştırma ve boş "olan"
+=== önce
+Eğitim, kişisel gelişim açısından çok önemli olan bir süreçtir.
+=== sonra
+Eğitim, kişisel gelişim için çok önemli bir süreç.

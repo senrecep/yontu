@@ -1,0 +1,5 @@
+# P14 Buton ve etiket · ui
+=== önce
+Emin misiniz? · Evet · Hayır
+=== sonra
+Taslak silinsin mi? · Taslağı sil · Vazgeç

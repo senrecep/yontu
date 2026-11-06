@@ -1,0 +1,6 @@
+# P8 Köşe yazısı ve deneme · deneme
+=== önce
+Peki bu ne anlama geliyor? Aslında çok basit: Şehirlerimiz artık yürüyen insan için değil, otomobil için tasarlanıyor. Ve bu, hepimizi etkiliyor.
+=== sonra
+Şehirlerimiz artık yürüyen insan için değil, otomobil için tasarlanıyor ve bu hepimizi
+etkiliyor.

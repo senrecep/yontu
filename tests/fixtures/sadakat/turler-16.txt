@@ -1,0 +1,5 @@
+# P15 Hata ve onay iletisi · ui
+=== önce
+Üzgünüz, dosyanız yüklenirken beklenmedik bir hata oluştu! Lütfen daha sonra tekrar deneyiniz.
+=== sonra
+Dosya yüklenemedi. Daha sonra yeniden deneyin.

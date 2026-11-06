@@ -1,0 +1,5 @@
+# Örnekler
+=== önce
+Kurulum işlemini gerçekleştirdikten sonra, yapılandırma dosyasında gerekli olan değişikliklerin yapılması gerekmektedir.
+=== sonra
+Kurulumdan sonra yapılandırma dosyasında gerekli değişiklikleri yapın.

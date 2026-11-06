@@ -1,0 +1,145 @@
+# TDK kural sayfalarındaki doğru örnekler. Her satır bir örnek; tdk katmanı 0 hata vermeli.
+# Kesme konur (06 §10.1)
+Kurtuluş Savaşı'nı anlatan kitap yeniden basıldı.
+Atatürk'üm dediği gün herkes ağladı.
+Türkiye'mizin bütün illerinden öğrenci geldi.
+Bu bilgiyi Ziya Gökalp'tan öğrendik.
+Refik Halit Karay'mış o kapıyı çalan.
+Bu kitabın yazarı Ahmet Cevat Emre'dir.
+Namık Kemal'se bu şiiri sürgünde yazdı.
+Şinasi'yle başlayan dönem uzun sürdü.
+Siz Alman'sınız, ben Kırgız'ım.
+Osmanlı Devleti'ndeki düzen değişti.
+Çanakkale Boğazı'nın iki yakası da güzeldir.
+Karar Resmî Gazete'de yayımlandı.
+Millî Eğitim Temel Kanunu'na göre okullar açıldı.
+Eski Çağ'ın sonunu Yükselme Dönemi'nin başı izlemez.
+Hisar'dan Boğaz'dan geçen vapura bindik.
+Bu Kanun'un 17. maddesi açıktır.
+Yönetmelik'in 2'nci maddesi değişti.
+Türkiye, Avrupa Birliği'ne üyelik için başvurdu.
+Nihat Bey'e, Ayşe Hanım'dan aldığımız mektubu verdik.
+Enver Paşa'ya bir telgraf gönderildi.
+Dilekçeyi Türk Dil Kurumu Başkanı'na sunduk.
+Raporu TBMM'nin, TDK'nin ve BM'nin sitelerinde bulabilirsiniz.
+ABD'de ve BM'de aynı karar alındı.
+Bu haberi TV'ye çıkıp anlattı.
+TDK'den gelen yanıt kısaydı.
+BDT'ye, THY'de ve TRT'den gelen haberler aynıydı.
+TL'nin değeri düştü.
+ASELSAN'da çalışan mühendis NATO'dan, UNESCO'ya giden heyetten ve BOTAŞ'ın yöneticisinden söz etti.
+Ev 1985'te yapıldı.
+Yarışmada 8'inci, kardeşi 2'nci oldu.
+Bu 7,65'lik tabancanın ruhsatı yok.
+Konu 657'yle ilgili yasada geçiyor.
+Başvurular 17 Aralık'a kadar sürecek.
+Toplantı 12 Temmuz 2010 Pazartesi'nin sabahında yapıldı.
+Bu alfabeyi a'dan z'ye ezbere bilir.
+# Kesme konmaz (06 §10.2)
+Türkiye Büyük Millet Meclisine bir önerge verildi.
+Türk Dil Kurumundan gelen yanıt kısaydı.
+Türkiye Petrolleri Anonim Ortaklığına yeni bir müdür atandı.
+Bakanlar Kurulunun kararı yayımlandı.
+Danışma Kurulundan bir üye istifa etti.
+Mavi Köşe Bakkaliyesinden ekmek aldık.
+Başbakanlığa ve Rektörlüğe yazı gönderildi.
+Boğaz Köprümüzün ışıkları yandı.
+Amik Ovamızın toprağı verimlidir.
+Türklük bilinci, Türkçenin gelişmesi ve Türklerin tarihi bu derste işlenir.
+Avrupalı ve Konyalı öğrenciler aynı sınıfta okudu.
+Ahmetler bu akşam bize gelecek.
+Atatürkçülüğün ilkeleri derste anlatıldı.
+Ayşe de geldi.
+# de/da, ki, mi (06 §11)
+Kızı da geldi gelini de.
+Gidip de gelmemek var.
+Çay ya da kahve içebilirsiniz.
+Bilmem ki ne desem.
+Demek ki yanılmışım.
+Kaldı ki bu iş kolay değildi.
+Belki yarın gelir.
+Çünkü kimse sormadı.
+Hâlbuki her şey hazırdı.
+Mademki geldin, otur.
+Oysaki ben de oradaydım.
+Sanki bir şey olmuş gibi baktı.
+Nasıl ki sen bekledin, ben de bekledim.
+Şöyle ki iki yol var.
+Yeter ki sen iste.
+Zil çaldı mı ki?
+Seni öyle göreceğim geldi ki.
+Evdeki kitapları yarınki toplantıya getir.
+Bugünkü ve dünkü haberler aynıydı.
+Benimki eski, seninki yeni, onunki ise kırık.
+Kaldı mı?
+Sen de mi geldin?
+Olur mu?
+İnsanlık öldü mü?
+Verecek misin?
+Okuyor muyuz?
+Gelecek miydi?
+Güzel mi güzel!
+Vaz mı geçtin?
+Bulutla, çiçekle ve arkadaşıyla çevreyle ilgili konuştu.
+Yorgundu, güzelmiş, gelirse görürüz.
+Okula başlayacakken taşındık.
+Okurken uyudu.
+Okuldayken aradı.
+Başlayacağım ama sen gelmeyeceksin.
+Önce ben başlayayım.
+Kitap bende.
+# Büyük harf ve sayı (06 §12-13)
+Saat 17.30'da 1.500.000 lira ödendi.
+Paket 25 kilogram geldi.
+İki yüz kişi, üç yüz altmış beş gün ve bin iki yüz elli bir kitap var.
+Oran %25 arttı.
+II. Dünya Savaşı XX. yüzyılın en büyük savaşıdır.
+III. Selim yenilikler yaptı.
+Çocuklara ikişer, büyüklere dokuzar elma verildi.
+Pastanın 1/2'si kaldı.
+İstanbul 29 Mayıs 1453'te alındı.
+Cumhuriyet 29 Ekim 1923 Salı günü ilan edildi.
+Tarih 29.5.1453 olarak yazılır.
+Eylülün ikinci haftasında, perşembe günleri buluşuyoruz.
+Ağrı Dağı, Van Gölü ve Ege Denizi bu haritada var.
+Konya ili ve Etimesgut ilçesi aynı listede.
+Türk kahvesi içtik.
+# Bitişik ve ayrı yazım (06 §14)
+Her şey her zaman yolunda gitmez.
+Her biri hiç kimseye söylemedi.
+Pek çok kişi ya da bazıları ara sıra gelir.
+Art arda yanı sıra bir an önce bir arada olalım.
+Hafta sonu iş birliği için ön yargı olmadan ön koşulları konuştuk.
+Öz geçmiş, dil bilgisi, eş zamanlı ve eş anlamlı sözcükler.
+Olağan dışı ve yasa dışı işler son derece tehlikelidir.
+Söz konusu farkı fark ettim ve bunu hak ettim.
+Birçok, birkaç ve birtakım sorun var.
+Biraz birdenbire geldi.
+Birbirine baktılar.
+Herhangi bir sorun yok, hiçbir şey olmadı.
+Herhâlde gelir.
+Hâlihazırda olağanüstü bir altyapı ve üstyapı var.
+Bu öngörü sayesinde vazgeçtik.
+Öncelikle dolayısıyla yalnızca kısacası sonuçta şimdilik bekliyoruz.
+E-posta ve e-ticaret işleri arttı.
+Bir şey, hiçbir şey, bir gün, demek ki, öyle ki, bir araya.
+Kaybolmak, affetmek, hissetmek, reddetmek, emretmek ve sabretmek bitişik yazılır.
+Fark etmek, kabul etmek, terk etmek, hak etmek, yok olmak ve var olmak ayrı yazılır.
+Köpek balığı, ateş böceği ve çörek otu.
+Çalar saat, tükenmez kalem ve uçan daire.
+Orta Doğu ve Uzak Doğu ülkeleri.
+Gelebilir, alıverdi, uyuyakaldı.
+Yavaş yavaş yürüdü.
+Gökyüzü apaçık ve masmavi, ortalık kapkara.
+# Noktalama
+At ölür, meydan kalır; yiğit ölür, şan kalır.
+Bu konuda şunları söyledi: Herkes kendi işine baksın.
+Annem, babam, kardeşlerim geldi.
+Ne güzel bir gün!
+Kim geldi?
+Bu yıl ise Meclis erken açıldı.
+# Düzeltme işareti
+Hâlâ bekliyoruz.
+Halam bize geldi.
+Bu kâğıt, hikâye ve dükkân eski.
+Yapay zekâ üzerine bir reklam hazırladık.

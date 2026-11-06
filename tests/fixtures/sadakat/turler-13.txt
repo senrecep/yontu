@@ -1,0 +1,5 @@
+# P12 CHANGELOG · teknik
+=== önce
+Kullanıcıların daha iyi bir deneyim yaşayabilmesi amacıyla giriş ekranında yer alan hata mesajları iyileştirilmiştir.
+=== sonra
+Giriş ekranındaki hata mesajları iyileştirildi.

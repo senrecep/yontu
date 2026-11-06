@@ -1,0 +1,5 @@
+# P7 Haber · haber
+=== önce
+Son yıllarda giderek önem kazanan su tasarrufu konusunda önemli bir adım atıldı. Belediye, sevindirici bir gelişme olarak, yarından itibaren parklarda damla sulama sistemine geçileceğini açıkladı.
+=== sonra
+Belediye, parklarda yarından itibaren damla sulama sistemine geçileceğini açıkladı.

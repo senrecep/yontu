@@ -1,0 +1,6 @@
+# Örnekler
+=== önce
+Bu yöntem, verimliliğin artırılması konusunda önemli bir rol oynamakta ve kullanıcılara zaman tasarrufu sağlama imkânı sunmaktadır.
+=== sonra
+Bu yöntem verimliliği artırmaya önemli katkı sunar ve kullanıcıya zaman
+kazandırabilir.

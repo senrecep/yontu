@@ -1,0 +1,7 @@
+# 8. Haber · haber
+=== önce
+Son yıllarda giderek artan trafik sorunu, şehrimizde önemli bir gündem maddesi hâline gelmiştir. Bu bağlamda Büyükşehir Belediyesi, dün gerçekleştirdiği basın toplantısında, metro hattının 2027 yılının sonunda hizmete açılacağını ifade etti. Belediye Başkanı, projenin şehrin ulaşım sorununa kalıcı bir çözüm sunacağını belirterek, vatandaşların sabırla beklemesini rica etti. Bu gelişme, kent sakinleri tarafından sevinçle karşılandı.
+=== sonra
+Büyükşehir Belediyesi dün düzenlediği basın toplantısında metro hattının 2027 yılının
+sonunda hizmete açılacağını açıkladı. Belediye Başkanı, projenin şehrin ulaşım sorununa
+kalıcı bir çözüm olacağını söyledi ve vatandaşlardan sabırla beklemelerini istedi.

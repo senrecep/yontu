@@ -1,0 +1,6 @@
+# P3 Akademik tartışma ve sonuç · akademik
+=== önce
+Bu çalışmanın bulguları, uzaktan eğitimin öğrenci motivasyonunu olumsuz etkilediğini açıkça kanıtlamaktadır.
+=== sonra
+Bu çalışmanın bulguları, uzaktan eğitimin öğrenci motivasyonunu olumsuz etkilediğini
+kanıtlamaktadır.

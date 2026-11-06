@@ -1,0 +1,11 @@
+# 4. Resmî e-posta · kurumsal
+=== önce
+Sayın Ayşe Yılmaz,
+
+Umarım bu e-posta sizi iyi bulur. Sizinle, 12 Kasım tarihinde gerçekleştirilmesi planlanan proje değerlendirme toplantısı hakkında iletişime geçmek istedim. Toplantıya ilişkin olarak, sunum dosyasının tarafınızca 10 Kasım tarihine kadar tarafımıza iletilmesi hususunda desteğinizi rica ederim. Herhangi bir sorunuz olması durumunda benimle iletişime geçmekten lütfen çekinmeyin. Zaman ayırdığınız için şimdiden çok teşekkür ederim.
+=== sonra
+Sayın Ayşe Yılmaz,
+
+12 Kasım'da yapılması planlanan proje değerlendirme toplantısı için sunum dosyasını 10
+Kasım'a kadar bize iletmenizi rica ederim. Sorunuz olursa bana yazabilirsiniz. Zaman
+ayırdığınız için teşekkür ederim.

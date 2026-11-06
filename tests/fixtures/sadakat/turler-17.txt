@@ -1,0 +1,5 @@
+# P16 Boş durum ve bildirim · ui
+=== önce
+Harika! İşleminiz başarılı bir şekilde gerçekleştirilmiştir!
+=== sonra
+İşleminiz tamamlandı.

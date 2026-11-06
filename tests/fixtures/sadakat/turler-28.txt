@@ -1,0 +1,5 @@
+# P27 Sohbet asistanı cevabı · sohbet
+=== önce
+Harika bir soru! Python'da bir listeyi ters çevirmek için birkaç farklı yöntem bulunmaktadır. Gelin bunları birlikte detaylı bir şekilde inceleyelim.
+=== sonra
+Python'da bir listeyi ters çevirmenin birkaç yolu var.

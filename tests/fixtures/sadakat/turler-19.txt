@@ -1,0 +1,5 @@
+# P18 E-ticaret ürün açıklaması · pazarlama
+=== önce
+Powerbank 10,000 mAh kapasitesi ile telefonunuzu 2.5 kez şarj edebilir.
+=== sonra
+10.000 mAh kapasiteli powerbank, telefonunuzu 2,5 kez şarj edebilir.

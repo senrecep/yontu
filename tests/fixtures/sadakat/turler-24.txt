@@ -1,0 +1,5 @@
+# P23 İş içi e-posta ve mesaj · is-eposta
+=== önce
+Merhaba Ayşe, sprint planlaması kapsamında gerçekleştirilecek olan toplantıya ilişkin olarak gündem maddelerinin tarafınızca hazırlanması hususunu bilgilerinize sunarım.
+=== sonra
+Merhaba Ayşe, sprint planlama toplantısının gündemini hazırlamanızı rica ederim.

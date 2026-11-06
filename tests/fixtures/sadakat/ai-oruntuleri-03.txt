@@ -1,0 +1,5 @@
+# E. Sohbet botu kalıntısı
+=== önce
+Elbette! İşte istediğiniz e-posta taslağı. Umarım işinize yarar!
+=== sonra
+(yalnızca taslağın kendisi)

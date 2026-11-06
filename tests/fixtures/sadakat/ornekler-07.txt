@@ -1,0 +1,13 @@
+# 7. Sohbet asistanı cevabı · sohbet
+=== önce
+Harika bir soru! Git'te son commit'i geri almak için birkaç farklı yöntem bulunmaktadır. Gelin bunları birlikte inceleyelim:
+
+1. **git reset --soft HEAD~1**: Bu komut, son commit'i geri alır ancak değişikliklerinizi korur.
+2. **git revert HEAD**: Bu komut, son commit'i geri alan yeni bir commit oluşturur.
+
+Umarım bu bilgiler yardımcı olur! Başka sorunuz olursa çekinmeden sorabilirsiniz.
+=== sonra
+Git'te son commit'i geri almanın birkaç yolu var:
+
+1. `git reset --soft HEAD~1` son commit'i geri alır, değişikliklerinizi korur.
+2. `git revert HEAD` son commit'i geri alan yeni bir commit oluşturur.

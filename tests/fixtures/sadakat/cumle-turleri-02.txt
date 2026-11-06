@@ -1,0 +1,5 @@
+# Adlaştırma ve boş "olan"
+=== önce
+Yöntemin sahip olduğu bazı sınırlılıklar bulunmaktadır.
+=== sonra
+Yöntemin sınırları var.

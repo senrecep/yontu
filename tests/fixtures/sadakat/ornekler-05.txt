@@ -1,0 +1,13 @@
+# 5. LinkedIn gönderisi · blog
+=== önce
+Büyük bir heyecan ve gururla duyurmak isterim ki, 5 yıllık muhteşem bir yolculuğun ardından X Şirketi'ndeki görevimi tamamladım ve yeni bir maceraya atılıyorum!
+
+Bu süreçte bana destek olan tüm harika ekip arkadaşlarıma sonsuz teşekkürlerimi sunuyorum. Birlikte nice zorluğun üstesinden geldik, nice başarıya imza attık.
+
+Peki şimdi ne var? Önümüzdeki hafta Y Şirketi'nde ürün yöneticisi olarak çalışmaya başlıyorum. Bu yeni yolculukta öğrenmeye ve büyümeye devam edeceğim!
+=== sonra
+X Şirketindeki 5 yılın ardından görevimi tamamladım. Önümüzdeki hafta Y Şirketinde ürün
+yöneticisi olarak çalışmaya başlıyorum.
+
+Bu süreçte bana destek olan ekip arkadaşlarıma teşekkür ederim. Birlikte birçok zorluğu
+aştık, birçok başarı elde ettik. Yeni işimde öğrenmeye ve gelişmeye devam edeceğim.

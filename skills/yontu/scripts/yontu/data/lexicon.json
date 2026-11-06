@@ -1,0 +1,2769 @@
+{
+ "version": 1,
+ "rules": [
+  {
+   "id": "YS-A01",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Hafif fiil kalıbı: \"kontrol işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bkontrol\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "denetlemek, kontrol etmek",
+   "examples": {
+    "pos": [
+     "Kontrol işlemini gerçekleştirdik."
+    ],
+    "neg": [
+     "Kontrol ettik."
+    ]
+   }
+  },
+  {
+   "id": "YS-A03",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Hafif fiil kalıbı: \"değerlendirme yapmak\".",
+   "family": "ys-A",
+   "pattern": "%Bdeğerlendirme\\s+(?:yap(?!ay)|gerçekleştir)[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "değerlendirmek",
+   "examples": {
+    "pos": [
+     "Ekip bir değerlendirme yaptı."
+    ],
+    "neg": [
+     "Ekip durumu değerlendirdi."
+    ]
+   }
+  },
+  {
+   "id": "YS-A04",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Hafif fiil kalıbı: \"inceleme yapmak\".",
+   "family": "ys-A",
+   "pattern": "%Binceleme\\s+(?:yap(?!ay)|gerçekleştir)[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "incelemek",
+   "examples": {
+    "pos": [
+     "Kurul inceleme gerçekleştirdi."
+    ],
+    "neg": [
+     "Kurul dosyayı inceledi."
+    ]
+   }
+  },
+  {
+   "id": "YS-A06",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"güncelleme yapmak\".",
+   "family": "ys-A",
+   "pattern": "%Bgüncelleme\\s+(?:yap(?!ay)|gerçekleştir)[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "güncellemek",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui",
+    "blog",
+    "deneme",
+    "pazarlama",
+    "sozlu",
+    "is-eposta",
+    "kurumsal"
+   ],
+   "examples": {
+    "pos": [
+     "Sisteme güncelleme yaptık."
+    ],
+    "neg": [
+     "Sistemi güncelledik."
+    ]
+   }
+  },
+  {
+   "id": "YS-A09",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"iyileştirme yapmak\".",
+   "family": "ys-A",
+   "pattern": "%Biyileştirme\\s+(?:yap(?!ay)|gerçekleştir)[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "iyileştirmek, düzeltmek",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui",
+    "blog",
+    "deneme",
+    "pazarlama",
+    "sozlu",
+    "is-eposta",
+    "kurumsal"
+   ],
+   "examples": {
+    "pos": [
+     "Arayüzde iyileştirme yaptık."
+    ],
+    "neg": [
+     "Arayüzü iyileştirdik."
+    ]
+   }
+  },
+  {
+   "id": "YS-A10",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"ödeme işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bödeme\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ödemek, ödeme yapmak",
+   "examples": {
+    "pos": [
+     "Ödeme işlemini gerçekleştirin."
+    ],
+    "neg": [
+     "Ödemeyi yapın."
+    ]
+   }
+  },
+  {
+   "id": "YS-A11",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"kayıt işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bkayıt\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kaydolmak, kaydetmek",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui",
+    "is-eposta",
+    "kurumsal",
+    "blog",
+    "deneme",
+    "pazarlama",
+    "sozlu"
+   ],
+   "examples": {
+    "pos": [
+     "Kayıt işlemini gerçekleştirin."
+    ],
+    "neg": [
+     "Kaydolun."
+    ]
+   }
+  },
+  {
+   "id": "YS-A12",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"giriş işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bgiriş\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "giriş yapmak, oturum açmak",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui"
+   ],
+   "examples": {
+    "pos": [
+     "Giriş işlemini gerçekleştirin."
+    ],
+    "neg": [
+     "Giriş yapın."
+    ]
+   }
+  },
+  {
+   "id": "YS-A14",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"kutlama gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bkutlama\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kutlamak",
+   "examples": {
+    "pos": [
+     "Okulda kutlama gerçekleştirildi."
+    ],
+    "neg": [
+     "Okulda bayram kutlandı."
+    ]
+   }
+  },
+  {
+   "id": "YS-A16",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"sohbet gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bsohbet\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sohbet etmek, konuşmak",
+   "examples": {
+    "pos": [
+     "Yazarla sohbet gerçekleştirdik."
+    ],
+    "neg": [
+     "Yazarla sohbet ettik."
+    ]
+   }
+  },
+  {
+   "id": "YS-A21",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"test işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Btest\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "test etmek, sınamak",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui"
+   ],
+   "examples": {
+    "pos": [
+     "Test işlemini gerçekleştirin."
+    ],
+    "neg": [
+     "Kodu test edin."
+    ]
+   }
+  },
+  {
+   "id": "YS-A22",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"kurulum işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bkurulum\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kurmak, yüklemek",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui"
+   ],
+   "examples": {
+    "pos": [
+     "Kurulum işlemini gerçekleştirdikten sonra devam edin."
+    ],
+    "neg": [
+     "Kurulumdan sonra devam edin."
+    ]
+   }
+  },
+  {
+   "id": "YS-A23",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"silme işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%Bsilme\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "silmek",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui"
+   ],
+   "examples": {
+    "pos": [
+     "Silme işlemini gerçekleştirin."
+    ],
+    "neg": [
+     "Dosyayı silin."
+    ]
+   }
+  },
+  {
+   "id": "YS-A24",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"gönderme işlemini yapmak\".",
+   "family": "ys-A",
+   "pattern": "%Bgönder(?:im|me)\\s+işlemi(?:ni)?\\s+(?:yap(?!ay)|gerçekleştir)[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "göndermek",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui",
+    "is-eposta",
+    "kurumsal"
+   ],
+   "examples": {
+    "pos": [
+     "Gönderme işlemini yapın."
+    ],
+    "neg": [
+     "Formu gönderin."
+    ]
+   }
+  },
+  {
+   "id": "YS-A25",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"-mA işlemini gerçekleştirmek\".",
+   "family": "ys-A",
+   "pattern": "%B[%L]{3,}\\s+işlemi(?:ni)?\\s+gerçekleştir[%L]*",
+   "prec": 3,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "fiilin kendisi",
+   "examples": {
+    "pos": [
+     "Yedekleme işlemini gerçekleştirin."
+    ],
+    "neg": [
+     "Yedek alın.",
+     "İşlem tamam."
+    ]
+   }
+  },
+  {
+   "id": "YS-A54",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"kullanımı sağlanmaktadır\".",
+   "family": "ys-A",
+   "pattern": "%Bkullanım(?:ı)?\\s+sağla[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kullanmak, kullanılır",
+   "examples": {
+    "pos": [
+     "Bu araçla kolay kullanım sağlanır."
+    ],
+    "neg": [
+     "Bu araç kolay kullanılır."
+    ]
+   }
+  },
+  {
+   "id": "YS-A57",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"-mAsI mümkündür\".",
+   "family": "ys-A",
+   "pattern": "%B[%L]{2,}m[ae]s[ıi]\\s+mümkündür%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "-Abilir: \"yapılabilir\"",
+   "examples": {
+    "pos": [
+     "Raporun yarın teslim edilmesi mümkündür."
+    ],
+    "neg": [
+     "Rapor yarın teslim edilebilir.",
+     "Bunun yapılması mümkün değildir."
+    ]
+   }
+  },
+  {
+   "id": "YS-A58",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"-mAsI mümkün değildir\".",
+   "family": "ys-A",
+   "pattern": "%B[%L]{2,}m[ae]s[ıi]\\s+mümkün\\s+değil(?:dir)?%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "-AmAz: \"yapılamaz\"",
+   "examples": {
+    "pos": [
+     "Bunun yapılması mümkün değildir."
+    ],
+    "neg": [
+     "Bu yapılamaz."
+    ]
+   }
+  },
+  {
+   "id": "YS-A59",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"-mA imkânı bulunmaktadır\".",
+   "family": "ys-A",
+   "pattern": "%B[%L]{2,}m[ae]\\s+(?:imk[aâ]nı|olanağı)\\s+(?:bulunmaktadır|bulunur|vardır|mevcuttur)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "-Abilir",
+   "examples": {
+    "pos": [
+     "Formu çevrim içi doldurma imkânı bulunmaktadır."
+    ],
+    "neg": [
+     "Formu çevrim içi doldurabilirsiniz."
+    ]
+   }
+  },
+  {
+   "id": "YS-A81",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"belirtmek isterim\".",
+   "family": "ys-A",
+   "pattern": "%B(?:belirtmek|ifade\\s+etmek|vurgulamak|teşekkür\\s+etmek)\\s+isterim%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "belirtirim, teşekkür ederim",
+   "registers": [
+    "notr",
+    "is-eposta",
+    "kurumsal",
+    "sosyal",
+    "sohbet"
+   ],
+   "examples": {
+    "pos": [
+     "Desteğiniz için teşekkür etmek isterim."
+    ],
+    "neg": [
+     "Yarın gitmek isterim."
+    ]
+   }
+  },
+  {
+   "id": "YS-A89",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"önem arz etmek\".",
+   "family": "ys-A",
+   "pattern": "%Bönem\\s+arz\\s+e[dt][%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "önemli olmak",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Bu konu önem arz etmektedir."
+    ],
+    "neg": [
+     "Bu konu önemlidir."
+    ]
+   }
+  },
+  {
+   "id": "YS-A93",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"bilgilendirme yapmak\".",
+   "family": "ys-A",
+   "pattern": "%Bbilgilendirme\\s+(?:yap(?!ay)|gerçekleştir)[%L]*|%Bbilgilendirmede\\s+bulun[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "bilgilendirmek, haber vermek",
+   "examples": {
+    "pos": [
+     "Müşterilere bilgilendirme yapıldı."
+    ],
+    "neg": [
+     "Müşteriler bilgilendirildi."
+    ]
+   }
+  },
+  {
+   "id": "YS-A94",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hafif fiil kalıbı: \"paylaşımda bulunmak\".",
+   "family": "ys-A",
+   "pattern": "%Bpaylaşımda\\s+bulun[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "paylaşmak",
+   "examples": {
+    "pos": [
+     "Ekip yeni bir paylaşımda bulundu."
+    ],
+    "neg": [
+     "Ekip yeni bir duyuru paylaştı."
+    ]
+   }
+  },
+  {
+   "id": "YS-B01",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"hızlı bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bhızlı\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "hızla, hızlıca",
+   "examples": {
+    "pos": [
+     "İş hızlı bir şekilde bitti."
+    ],
+    "neg": [
+     "İş hızlı bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B02",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"dikkatli bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bdikkatli\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "dikkatle, özenle",
+   "examples": {
+    "pos": [
+     "İş dikkatli bir şekilde bitti."
+    ],
+    "neg": [
+     "İş dikkatli bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B03",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"kolay bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bkolay\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "kolayca",
+   "examples": {
+    "pos": [
+     "İş kolay bir şekilde bitti."
+    ],
+    "neg": [
+     "İş kolay bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B04",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"açık bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Baçık\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "açıkça",
+   "examples": {
+    "pos": [
+     "İş açık bir şekilde bitti."
+    ],
+    "neg": [
+     "İş açık bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B05",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"etkili bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Betkili\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "etkili",
+   "examples": {
+    "pos": [
+     "İş etkili bir şekilde bitti."
+    ],
+    "neg": [
+     "İş etkili bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B06",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"verimli bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bverimli\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "verimli",
+   "examples": {
+    "pos": [
+     "İş verimli bir şekilde bitti."
+    ],
+    "neg": [
+     "İş verimli bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B07",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"başarılı bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bbaşarılı\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "başarıyla",
+   "examples": {
+    "pos": [
+     "İş başarılı bir şekilde bitti."
+    ],
+    "neg": [
+     "İş başarılı bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B08",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"sorunsuz bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bsorunsuz\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sorunsuz",
+   "examples": {
+    "pos": [
+     "İş sorunsuz bir şekilde bitti."
+    ],
+    "neg": [
+     "İş sorunsuz bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B10",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"sürekli bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bsürekli\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sürekli, durmadan",
+   "examples": {
+    "pos": [
+     "İş sürekli bir şekilde bitti."
+    ],
+    "neg": [
+     "İş sürekli bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B11",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"detaylı bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%B(?:detaylı|ayrıntılı)\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ayrıntılı, ayrıntısıyla",
+   "examples": {
+    "pos": [
+     "İş detaylı bir şekilde bitti."
+    ],
+    "neg": [
+     "İş detaylı bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B12",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"kapsamlı bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bkapsamlı\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kapsamlı, etraflıca",
+   "examples": {
+    "pos": [
+     "İş kapsamlı bir şekilde bitti."
+    ],
+    "neg": [
+     "İş kapsamlı bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B13",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"doğru bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bdoğru\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "doğru",
+   "examples": {
+    "pos": [
+     "İş doğru bir şekilde bitti."
+    ],
+    "neg": [
+     "İş doğru bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B14",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"güvenli bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bgüvenli\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "güvenle, güvenli",
+   "examples": {
+    "pos": [
+     "İş güvenli bir şekilde bitti."
+    ],
+    "neg": [
+     "İş güvenli bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B16",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"sessiz bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bsessiz\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "sessizce",
+   "examples": {
+    "pos": [
+     "İş sessiz bir şekilde bitti."
+    ],
+    "neg": [
+     "İş sessiz bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B17",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"yavaş bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Byavaş\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "yavaşça, yavaş yavaş",
+   "examples": {
+    "pos": [
+     "İş yavaş bir şekilde bitti."
+    ],
+    "neg": [
+     "İş yavaş bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B18",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"sakin bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bsakin\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "sakince",
+   "examples": {
+    "pos": [
+     "İş sakin bir şekilde bitti."
+    ],
+    "neg": [
+     "İş sakin bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B19",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"rahat bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Brahat\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "rahatça",
+   "examples": {
+    "pos": [
+     "İş rahat bir şekilde bitti."
+    ],
+    "neg": [
+     "İş rahat bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B22",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"özenli bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bözenli\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "özenle",
+   "examples": {
+    "pos": [
+     "İş özenli bir şekilde bitti."
+    ],
+    "neg": [
+     "İş özenli bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B23",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"titiz bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Btitiz\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "titizlikle",
+   "examples": {
+    "pos": [
+     "İş titiz bir şekilde bitti."
+    ],
+    "neg": [
+     "İş titiz bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B24",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"acil bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bacil\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "acilen, hemen",
+   "examples": {
+    "pos": [
+     "İş acil bir şekilde bitti."
+    ],
+    "neg": [
+     "İş acil bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B25",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"sabırlı bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bsabırlı\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sabırla",
+   "examples": {
+    "pos": [
+     "İş sabırlı bir şekilde bitti."
+    ],
+    "neg": [
+     "İş sabırlı bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B26",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"net bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bnet\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "net, açıkça",
+   "examples": {
+    "pos": [
+     "İş net bir şekilde bitti."
+    ],
+    "neg": [
+     "İş net bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B30",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"tam bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Btam\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "eksiksiz, tam",
+   "examples": {
+    "pos": [
+     "İş tam bir şekilde bitti."
+    ],
+    "neg": [
+     "İş tam bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B31",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"sistematik bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bsistematik\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sistemli",
+   "examples": {
+    "pos": [
+     "İş sistematik bir şekilde bitti."
+    ],
+    "neg": [
+     "İş sistematik bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B32",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"yoğun bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Byoğun\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yoğun",
+   "examples": {
+    "pos": [
+     "İş yoğun bir şekilde bitti."
+    ],
+    "neg": [
+     "İş yoğun bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B44",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"kesin bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bkesin\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kesinlikle, kesin olarak",
+   "examples": {
+    "pos": [
+     "İş kesin bir şekilde bitti."
+    ],
+    "neg": [
+     "İş kesin bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B45",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"ciddi bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bciddi\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ciddiyetle",
+   "examples": {
+    "pos": [
+     "İş ciddi bir şekilde bitti."
+    ],
+    "neg": [
+     "İş ciddi bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B46",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"sıkı bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bsıkı\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "sıkıca",
+   "examples": {
+    "pos": [
+     "İş sıkı bir şekilde bitti."
+    ],
+    "neg": [
+     "İş sıkı bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B47",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"bir şekilde\" zarfı: \"derin bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bderin\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "derinden, derinlemesine",
+   "examples": {
+    "pos": [
+     "İş derin bir şekilde bitti."
+    ],
+    "neg": [
+     "İş derin bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B49",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"kalıcı bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bkalıcı\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kalıcı olarak, temelli",
+   "examples": {
+    "pos": [
+     "İş kalıcı bir şekilde bitti."
+    ],
+    "neg": [
+     "İş kalıcı bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B51",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"bilimsel bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bbilimsel\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "bilimsel olarak",
+   "examples": {
+    "pos": [
+     "İş bilimsel bir şekilde bitti."
+    ],
+    "neg": [
+     "İş bilimsel bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B54",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"doğrudan bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bdoğrudan\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "doğrudan",
+   "examples": {
+    "pos": [
+     "İş doğrudan bir şekilde bitti."
+    ],
+    "neg": [
+     "İş doğrudan bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B33",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"doğal bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bdoğal\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "doğal olarak, kendiliğinden",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "examples": {
+    "pos": [
+     "Yara doğal bir şekilde iyileşti."
+    ],
+    "neg": [
+     "Yara kendiliğinden iyileşti."
+    ]
+   }
+  },
+  {
+   "id": "YS-B52",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"otomatik bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Botomatik\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "otomatik, kendiliğinden",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui"
+   ],
+   "examples": {
+    "pos": [
+     "Dosya otomatik bir şekilde kaydedilir."
+    ],
+    "neg": [
+     "Dosya otomatik kaydedilir."
+    ]
+   }
+  },
+  {
+   "id": "YS-B53",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"manuel bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%Bmanuel\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "elle",
+   "registers": [
+    "notr",
+    "teknik",
+    "commit",
+    "ui"
+   ],
+   "examples": {
+    "pos": [
+     "Ayarı manuel bir şekilde değiştirin."
+    ],
+    "neg": [
+     "Ayarı elle değiştirin."
+    ]
+   }
+  },
+  {
+   "id": "YS-B56",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bir şekilde\" zarfı: \"-lI bir şekilde\".",
+   "family": "ys-B",
+   "pattern": "%B[%L]{2,}(?:l[ıiuü]|s[ıiuü]z)\\s+bir\\s+(?:şekilde|biçimde)%E",
+   "prec": 3,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yalın zarf ya da -cA eki",
+   "examples": {
+    "pos": [
+     "Konu farklı bir şekilde ele alındı."
+    ],
+    "neg": [
+     "Konu bir şekilde çözüldü."
+    ]
+   }
+  },
+  {
+   "id": "YS-C03",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Boş \"olan\": \"-dA yer alan\".",
+   "family": "ys-C",
+   "pattern": "%B[%W]+(?:%A)?[dt][ae]\\s+yer\\s+alan%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "-dAki: \"tablodaki değerler\"",
+   "examples": {
+    "pos": [
+     "Tabloda yer alan değerler eski."
+    ],
+    "neg": [
+     "Tablodaki değerler eski."
+    ]
+   }
+  },
+  {
+   "id": "YS-C07",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Boş \"olan\": \"ile ilgili olan\".",
+   "family": "ys-C",
+   "pattern": "%Bile\\s+ilgili\\s+olan%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ile ilgili, -A dair",
+   "examples": {
+    "pos": [
+     "Bütçe ile ilgili olan sorular."
+    ],
+    "neg": [
+     "Bütçe ile ilgili sorular."
+    ]
+   }
+  },
+  {
+   "id": "YS-C08",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Boş \"olan\": \"-A yönelik olan\".",
+   "family": "ys-C",
+   "pattern": "%Byönelik\\s+olan%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "-A yönelik, için",
+   "examples": {
+    "pos": [
+     "Öğrencilere yönelik olan kurs."
+    ],
+    "neg": [
+     "Öğrencilere yönelik kurs."
+    ]
+   }
+  },
+  {
+   "id": "YS-C17",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Boş \"olan\": \"mevcut olan\".",
+   "family": "ys-C",
+   "pattern": "%Bmevcut\\s+olan\\s+(?!(?:ve|ile|da|de|bu|şu|bir)%E)[%L]{3,}",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "mevcut, var olan, eldeki",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "examples": {
+    "pos": [
+     "Mevcut olan kaynaklar yetmedi."
+    ],
+    "neg": [
+     "Mevcut olanı koruyun."
+    ]
+   }
+  },
+  {
+   "id": "YS-C23",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Boş \"olan\": \"olan ... olan\".",
+   "family": "ys-C",
+   "pattern": "%Bolan%E[^.!?\\n,]{1,40}?%Bolan%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "birini sıfata çevirin ya da cümleyi bölün",
+   "examples": {
+    "pos": [
+     "Yeni olan ve hızlı olan sürüm çıktı."
+    ],
+    "neg": [
+     "Yeni olan sürüm çıktı."
+    ]
+   }
+  },
+  {
+   "id": "YS-D01",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"geri iade\".",
+   "family": "ys-D",
+   "pattern": "%Bgeri\\s+iade",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "iade",
+   "examples": {
+    "pos": [
+     "Ürünü geri iade etti."
+    ],
+    "neg": [
+     "Ürünü iade etti."
+    ]
+   }
+  },
+  {
+   "id": "YS-D02",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"en optimum\".",
+   "family": "ys-D",
+   "pattern": "%Ben\\s+(?:optimum|optimal)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "optimum, en uygun",
+   "examples": {
+    "pos": [
+     "En optimum çözüm bu."
+    ],
+    "neg": [
+     "Optimum çözüm bu."
+    ]
+   }
+  },
+  {
+   "id": "YS-D03",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"en ideal\".",
+   "family": "ys-D",
+   "pattern": "%Ben\\s+ideal%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ideal, en uygun",
+   "examples": {
+    "pos": [
+     "En ideal yer burası."
+    ],
+    "neg": [
+     "İdeal yer burası."
+    ]
+   }
+  },
+  {
+   "id": "YS-D05",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"en maksimum\".",
+   "family": "ys-D",
+   "pattern": "%Ben\\s+(?:maksimum|minimum|azami|asgari)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "en çok, en az",
+   "examples": {
+    "pos": [
+     "En maksimum hız bu."
+    ],
+    "neg": [
+     "En yüksek hız bu."
+    ]
+   }
+  },
+  {
+   "id": "YS-D09",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"en son olarak\".",
+   "family": "ys-D",
+   "pattern": "%Ben\\s+son\\s+olarak%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "son olarak",
+   "examples": {
+    "pos": [
+     "En son olarak raporu ekledik."
+    ],
+    "neg": [
+     "Son olarak raporu ekledik."
+    ]
+   }
+  },
+  {
+   "id": "YS-D10",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"sebebi ... -den dolayıdır\".",
+   "family": "ys-D",
+   "pattern": "%B(?:sebebi|nedeni)\\s+[^.!?\\n]{1,80}?[dt][ae]n\\s+dolayıdır%E|%B(?:sebebi|nedeni)\\s+[^.!?\\n]{1,80}?[dt][ıiuü]ğ[ıiuü]\\s+içindir%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "nedeni ...-dır",
+   "examples": {
+    "pos": [
+     "İadenin sebebi kargoda hasar görmesinden dolayıdır."
+    ],
+    "neg": [
+     "İadenin nedeni kargoda hasar görmesidir."
+    ]
+   }
+  },
+  {
+   "id": "YS-D11",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"amacı ... -mak içindir\".",
+   "family": "ys-D",
+   "pattern": "%Bamacı\\s+[^.!?\\n]{1,80}?m[ae]k\\s+içindir%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "amacı ...-mak(tır)",
+   "examples": {
+    "pos": [
+     "Projenin amacı maliyeti düşürmek içindir."
+    ],
+    "neg": [
+     "Projenin amacı maliyeti düşürmektir."
+    ]
+   }
+  },
+  {
+   "id": "YS-D13",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"yeniden tekrar\".",
+   "family": "ys-D",
+   "pattern": "%Byeniden\\s+tekrar",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yeniden, tekrar",
+   "examples": {
+    "pos": [
+     "Testi yeniden tekrar çalıştırdık."
+    ],
+    "neg": [
+     "Testi yeniden çalıştırdık."
+    ]
+   }
+  },
+  {
+   "id": "YS-D14",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"tekrar yeniden\".",
+   "family": "ys-D",
+   "pattern": "%Btekrar\\s+yeniden",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yeniden, tekrar",
+   "examples": {
+    "pos": [
+     "Testi tekrar yeniden çalıştırdık."
+    ],
+    "neg": [
+     "Testi tekrardan çalıştırdık."
+    ]
+   }
+  },
+  {
+   "id": "YS-D16",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"birbirleriyle karşılıklı\".",
+   "family": "ys-D",
+   "pattern": "%Bbirbirleri(?:yle|ne|ni)\\s+karşılıklı",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "birbirleriyle",
+   "examples": {
+    "pos": [
+     "Ekipler birbirleriyle karşılıklı konuştu."
+    ],
+    "neg": [
+     "Ekipler birbirleriyle konuştu."
+    ]
+   }
+  },
+  {
+   "id": "YS-D21",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"sonuç olarak sonuçta\".",
+   "family": "ys-D",
+   "pattern": "%Bsonuç\\s+olarak,?\\s+sonuçta",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sonuçta",
+   "examples": {
+    "pos": [
+     "Sonuç olarak sonuçta karar verildi."
+    ],
+    "neg": [
+     "Sonuç olarak karar verildi."
+    ]
+   }
+  },
+  {
+   "id": "YS-D22",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"ama fakat\".",
+   "family": "ys-D",
+   "pattern": "%B(?:ama\\s+fakat|ancak\\s+ama|lakin\\s+fakat|fakat\\s+ama|ama\\s+ancak)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ama, fakat",
+   "examples": {
+    "pos": [
+     "Geldi ama fakat geç kaldı."
+    ],
+    "neg": [
+     "Geldi ama geç kaldı."
+    ]
+   }
+  },
+  {
+   "id": "YS-D23",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"ve ayrıca\".",
+   "family": "ys-D",
+   "pattern": "%Bve\\s+(?:de\\s+)?ayrıca%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ayrıca",
+   "examples": {
+    "pos": [
+     "Rapor hazır ve ayrıca ekler de var."
+    ],
+    "neg": [
+     "Rapor hazır. Ayrıca ekler de var."
+    ]
+   }
+  },
+  {
+   "id": "YS-D24",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"bunun yanı sıra ayrıca\".",
+   "family": "ys-D",
+   "pattern": "%Bbunun\\s+yanı\\s+sıra,?\\s+ayrıca%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ayrıca, bunun yanı sıra",
+   "examples": {
+    "pos": [
+     "Bunun yanı sıra ayrıca bütçe arttı."
+    ],
+    "neg": [
+     "Bunun yanı sıra bütçe arttı."
+    ]
+   }
+  },
+  {
+   "id": "YS-D26",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"vb. gibi\".",
+   "family": "ys-D",
+   "pattern": "%B(?:vb|vs|v\\.s)\\.?\\s+gibi%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "vb.",
+   "examples": {
+    "pos": [
+     "Elma, armut vb. gibi meyveler."
+    ],
+    "neg": [
+     "Elma, armut vb. meyveler."
+    ]
+   }
+  },
+  {
+   "id": "YS-D28",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"tahminen yaklaşık\".",
+   "family": "ys-D",
+   "pattern": "%Btahminen\\s+yaklaşık%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "tahminen, yaklaşık",
+   "examples": {
+    "pos": [
+     "Tahminen yaklaşık yüz kişi geldi."
+    ],
+    "neg": [
+     "Yaklaşık yüz kişi geldi."
+    ]
+   }
+  },
+  {
+   "id": "YS-D29",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"hemen hemen neredeyse\".",
+   "family": "ys-D",
+   "pattern": "%Bhemen\\s+hemen\\s+neredeyse%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "hemen hemen, neredeyse",
+   "examples": {
+    "pos": [
+     "Hemen hemen neredeyse bitti."
+    ],
+    "neg": [
+     "Neredeyse bitti."
+    ]
+   }
+  },
+  {
+   "id": "YS-D30",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"kesinlikle mutlaka\".",
+   "family": "ys-D",
+   "pattern": "%Bkesinlikle\\s+mutlaka%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kesinlikle, mutlaka",
+   "examples": {
+    "pos": [
+     "Kesinlikle mutlaka gelin."
+    ],
+    "neg": [
+     "Mutlaka gelin."
+    ]
+   }
+  },
+  {
+   "id": "YS-D31",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"olası ihtimal\".",
+   "family": "ys-D",
+   "pattern": "%B(?:olası\\s+ihtimal|muhtemel\\s+olasılık)",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "olasılık, ihtimal",
+   "examples": {
+    "pos": [
+     "Olası ihtimalleri konuştuk."
+    ],
+    "neg": [
+     "Olasılıkları konuştuk."
+    ]
+   }
+  },
+  {
+   "id": "YS-D32",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"birlikte iş birliği yapmak\".",
+   "family": "ys-D",
+   "pattern": "%Bbirlikte\\s+iş\\s*birliği\\s+yap",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "iş birliği yapmak",
+   "examples": {
+    "pos": [
+     "Birlikte iş birliği yaptık."
+    ],
+    "neg": [
+     "İş birliği yaptık."
+    ]
+   }
+  },
+  {
+   "id": "YS-D33",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"ortak paylaşım\".",
+   "family": "ys-D",
+   "pattern": "%B(?:ortak\\s+paylaşım|ortaklaşa\\s+paylaş)",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "paylaşım, paylaşmak",
+   "examples": {
+    "pos": [
+     "Ortak paylaşım alanı açıldı."
+    ],
+    "neg": [
+     "Paylaşım alanı açıldı."
+    ]
+   }
+  },
+  {
+   "id": "YS-D34",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"tüm ... hepsi\".",
+   "family": "ys-D",
+   "pattern": "%B(?:tüm|bütün)\\s+[%L]+\\s+hepsi%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "tüm, hepsi",
+   "examples": {
+    "pos": [
+     "Tüm öğrencilerin hepsi geldi."
+    ],
+    "neg": [
+     "Öğrencilerin hepsi geldi."
+    ]
+   }
+  },
+  {
+   "id": "YS-D35",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"bütün herkes\".",
+   "family": "ys-D",
+   "pattern": "%Bbütün\\s+herkes",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "herkes",
+   "examples": {
+    "pos": [
+     "Bütün herkes geldi."
+    ],
+    "neg": [
+     "Herkes geldi."
+    ]
+   }
+  },
+  {
+   "id": "YS-D37",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"yeni yenilikler\".",
+   "family": "ys-D",
+   "pattern": "%Byeni\\s+(?:yenilik|inovasyon)",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yenilikler",
+   "examples": {
+    "pos": [
+     "Yeni yenilikler geliyor."
+    ],
+    "neg": [
+     "Yenilikler geliyor."
+    ]
+   }
+  },
+  {
+   "id": "YS-D38",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"şu anki mevcut\".",
+   "family": "ys-D",
+   "pattern": "%B(?:şu\\s+anki\\s+mevcut|şimdiki\\s+güncel)",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "mevcut, şimdiki",
+   "examples": {
+    "pos": [
+     "Şu anki mevcut sürüm eski."
+    ],
+    "neg": [
+     "Mevcut sürüm eski."
+    ]
+   }
+  },
+  {
+   "id": "YS-D39",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"özgür serbest\".",
+   "family": "ys-D",
+   "pattern": "%B(?:serbest\\s+özgürce|özgür\\s+serbest)",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "özgürce, serbest",
+   "examples": {
+    "pos": [
+     "Özgür serbest bir ortam."
+    ],
+    "neg": [
+     "Özgür bir ortam."
+    ]
+   }
+  },
+  {
+   "id": "YS-D40",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"eş zamanlı olarak aynı anda\".",
+   "family": "ys-D",
+   "pattern": "%Beş\\s*zamanlı\\s+olarak\\s+aynı\\s+anda",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "eş zamanlı, aynı anda",
+   "examples": {
+    "pos": [
+     "İki iş eş zamanlı olarak aynı anda çalışır."
+    ],
+    "neg": [
+     "İki iş aynı anda çalışır."
+    ]
+   }
+  },
+  {
+   "id": "YS-D41",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"her zaman daima\".",
+   "family": "ys-D",
+   "pattern": "%B(?:her\\s+zaman\\s+daima|daima\\s+her\\s+zaman)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "her zaman, daima",
+   "examples": {
+    "pos": [
+     "Her zaman daima yanınızdayız."
+    ],
+    "neg": [
+     "Her zaman yanınızdayız."
+    ]
+   }
+  },
+  {
+   "id": "YS-D44",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"son derece çok\".",
+   "family": "ys-D",
+   "pattern": "%B(?:son\\s+derece\\s+çok|çok\\s+fazla\\s+aşırı)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "son derece, çok",
+   "examples": {
+    "pos": [
+     "Son derece çok yoruldum."
+    ],
+    "neg": [
+     "Çok yoruldum."
+    ]
+   }
+  },
+  {
+   "id": "YS-D45",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"kendisi bizzat\".",
+   "family": "ys-D",
+   "pattern": "%B(?:kendisi\\s+bizzat|bizzat\\s+kendisi)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kendisi, bizzat",
+   "examples": {
+    "pos": [
+     "Müdür kendisi bizzat geldi."
+    ],
+    "neg": [
+     "Müdür bizzat geldi."
+    ]
+   }
+  },
+  {
+   "id": "YS-D47",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Aynı anlam iki kez söylenmiş: \"kısaca özetlemek gerekirse\".",
+   "family": "ys-D",
+   "pattern": "%B(?:kısaca\\s+özetlemek|özetle\\s+söylemek)\\s+gerekirse",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "kısaca, özetle",
+   "examples": {
+    "pos": [
+     "Kısaca özetlemek gerekirse plan iyi."
+    ],
+    "neg": [
+     "Kısaca plan iyi."
+    ]
+   }
+  },
+  {
+   "id": "YS-D50",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"zaten hâlihazırda\".",
+   "family": "ys-D",
+   "pattern": "%Bzaten\\s+h[aâ]lihazırda%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "zaten, hâlihazırda",
+   "examples": {
+    "pos": [
+     "Dosya zaten hâlihazırda var."
+    ],
+    "neg": [
+     "Dosya zaten var."
+    ]
+   }
+  },
+  {
+   "id": "YS-D04",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"en mükemmel\".",
+   "family": "ys-D",
+   "pattern": "%Ben\\s+mükemmel%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "mükemmel",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "examples": {
+    "pos": [
+     "En mükemmel sonuç bu."
+    ],
+    "neg": [
+     "Mükemmel sonuç bu."
+    ]
+   }
+  },
+  {
+   "id": "YS-D15",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"karşılıklı iş birliği\".",
+   "family": "ys-D",
+   "pattern": "%Bkarşılıklı\\s+(?:iş\\s*birliği|etkileşim)",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "iş birliği, etkileşim",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "examples": {
+    "pos": [
+     "Karşılıklı iş birliği güçlendi."
+    ],
+    "neg": [
+     "İş birliği güçlendi."
+    ]
+   }
+  },
+  {
+   "id": "YS-D25",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"örneğin ... gibi\".",
+   "family": "ys-D",
+   "pattern": "%Börneğin,?\\s+(?:[^\\s.!?]+\\s+){1,8}?gibi%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "örneğin ..., ... gibi",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "examples": {
+    "pos": [
+     "Örneğin elma ve armut gibi meyveler."
+    ],
+    "neg": [
+     "Örneğin elma. Armut gibi değil."
+    ]
+   }
+  },
+  {
+   "id": "YS-D27",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"yaklaşık N kadar\".",
+   "family": "ys-D",
+   "pattern": "%Başağı\\s+yukarı\\s+yaklaşık%E|%Byaklaşık(?:\\s+olarak)?\\s+[\\d.,]+\\s+(?:[%L]+\\s+)?(?:kadar|civarında)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yaklaşık",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "examples": {
+    "pos": [
+     "Yaklaşık 50 kişi kadar geldi."
+    ],
+    "neg": [
+     "Yaklaşık 50 kişi geldi.",
+     "Yaklaşık iki saat sonra eve kadar yürüdük."
+    ]
+   }
+  },
+  {
+   "id": "YS-D42",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı anlam iki kez söylenmiş: \"asla hiçbir zaman\".",
+   "family": "ys-D",
+   "pattern": "%B(?:asla\\s+hiçbir\\s+zaman|hiçbir\\s+zaman\\s+asla)%E",
+   "prec": 1,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "asla, hiçbir zaman",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "examples": {
+    "pos": [
+     "Asla hiçbir zaman vazgeçmedi."
+    ],
+    "neg": [
+     "Hiçbir zaman vazgeçmedi."
+    ]
+   }
+  },
+  {
+   "id": "YS-E00",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Çeviri kalıbı öbekler yoğun.",
+   "family": "ys-E",
+   "kind": "density",
+   "per300": 3,
+   "min": 3,
+   "scaled": true,
+   "prec": 4,
+   "pattern": "%B(?:(?:önemli|kilit|büyük)\\s+(?:bir\\s+)?rol\\s+oyna|fark\\s+yarat|anlam\\s+ifade\\s+et|derinlemesine\\s+dal|derine\\s+in|dikkate\\s+değer|altını\\s+çiz|yeni\\s+bir\\s+boyut\\s+kazandır|kapı(?:sını)?\\s+arala|köprü\\s+kur|oyunun\\s+kurallarını\\s+değiştir|büyük\\s+resm|aynı\\s+sayfada|[%L]+m[ae]kt[ae]n\\s+çekinmeyin|herhangi\\s+bir\\s+(?:sorunuz|sorunuzda)|bir\\s+parçası\\s+ol|gerçek\\s+zamanlı\\s+olarak|uzun\\s+vadede|artan\\s+bir\\s+şekilde|bir\\s+sonucu\\s+olarak|[%L]+m[ae]k\\s+adına|kalbinde|değer\\s+kat|güç\\s+ver|hayat\\s+ver|meydan\\s+oku|zorluklarla\\s+yüzleş|bir\\s+adım\\s+(?:öne|ileri)|geri\\s+dönüş(?:ler)?(?:iniz|leriniz))",
+   "suggestion": "Yerli karşılığını seçin: \"önemli rol oynar\" yerine \"önemlidir\".",
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "examples": {
+    "pos": [
+     "Bu araç fark yaratır, önemli bir rol oynar ve sürece değer katar."
+    ],
+    "neg": [
+     "Bu araç fark yaratır."
+    ]
+   }
+  },
+  {
+   "id": "YS-F00",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Aynı genel fiil sık tekrarlanıyor.",
+   "family": "ys-F",
+   "kind": "density",
+   "per300": 4,
+   "min": 4,
+   "scaled": true,
+   "same": true,
+   "same_group": 1,
+   "prec": 4,
+   "pattern": "%B(sağla(?!m)|art+ır|kullan(?!ıc)|göster(?!ge)|oluştur|gerçekleştir)[%L]*",
+   "suggestion": "Nesneye göre daha isabetli bir fiil seçin.",
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "examples": {
+    "pos": [
+     "Araç hız sağlar, güven sağlar, kolaylık sağlar ve destek sağlar."
+    ],
+    "neg": [
+     "Araç hız sağlar ve güveni artırır."
+    ]
+   }
+  },
+  {
+   "id": "YS-G01",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"müracaat\".",
+   "family": "ys-G",
+   "pattern": "%Bmüracaat[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "başvuru",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda müracaat konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G06",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"ispat etmek\".",
+   "family": "ys-G",
+   "pattern": "%Bispat\\s+e[dt][%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "gts_dogrulandi": true,
+   "suggestion": "kanıtlamak",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda ispat etme konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G08",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"husus\".",
+   "family": "ys-G",
+   "pattern": "%Bhusus(?!iyet)[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "konu, nokta",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda husus konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G09",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"netice\".",
+   "family": "ys-G",
+   "pattern": "%Bnetice[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sonuç",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda netice konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G12",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"binaenaleyh\".",
+   "family": "ys-G",
+   "pattern": "%Bbinaenaleyh%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "bu yüzden, dolayısıyla",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda binaenaleyh konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G13",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"mütemadiyen\".",
+   "family": "ys-G",
+   "pattern": "%Bmütemadiyen%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "sürekli, durmadan",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda mütemadiyen konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G14",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"ekseriyetle\".",
+   "family": "ys-G",
+   "pattern": "%Bekseriyetle%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "çoğunlukla, genellikle",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda ekseriyetle konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G15",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"tatbik etmek\".",
+   "family": "ys-G",
+   "pattern": "%Btatbik\\s+e[dt][%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "uygulamak",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda tatbik etme konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G16",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"istifade etmek\".",
+   "family": "ys-G",
+   "pattern": "%Bistifade\\s+e[dt][%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yararlanmak",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda istifade etme konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G24",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"münasebet\".",
+   "family": "ys-G",
+   "pattern": "%Bmünasebet[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ilişki, ilgi",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda münasebet konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G29",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"nazaran\".",
+   "family": "ys-G",
+   "pattern": "%Bnazaran%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "-A göre",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda nazaran konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G31",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"bilhassa\".",
+   "family": "ys-G",
+   "pattern": "%Bbilhassa%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "özellikle",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda bilhassa konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G37",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"akabinde\".",
+   "family": "ys-G",
+   "pattern": "%Bakabinde%E",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ardından, sonra",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda akabinde konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G43",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"teferruat\".",
+   "family": "ys-G",
+   "pattern": "%Bteferruat[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "ayrıntı",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda teferruat konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G44",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"lüzum\".",
+   "family": "ys-G",
+   "pattern": "%Blüzum[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "gerek",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda lüzum konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G45",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"malumat\".",
+   "family": "ys-G",
+   "pattern": "%Bmal[uû]mat[%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "bilgi",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda malumat konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  },
+  {
+   "id": "YS-G47",
+   "layer": "yogunluk",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Daha yaygın karşılığı var: \"kifayet etmek\".",
+   "family": "ys-G",
+   "pattern": "%Bkifayet\\s+e[dt][%L]*",
+   "prec": 2,
+   "source": "references/yogunlastirma.md; Akboğa (2026)",
+   "suggestion": "yetmek, yeterli olmak",
+   "default": "off",
+   "tags": [
+    "concision-extra"
+   ],
+   "registers_off": [
+    "akademik",
+    "hukuk",
+    "resmi"
+   ],
+   "examples": {
+    "pos": [
+     "Toplantıda kifayet etme konuşuldu."
+    ],
+    "neg": [
+     "Toplantıda plan konuşuldu."
+    ]
+   }
+  }
+ ],
+ "whitelist": {
+  "*": [
+   "%Bolan\\s+bitenler[%L]*",
+   "%Byeni\\s+bir\\s+sayfa\\s+aç[%L]*",
+   "%Bkarar\\s+ver[%L]*",
+   "%Byardım\\s+et[%L]*",
+   "%Bsöz\\s+ver[%L]*",
+   "%Bhata\\s+yap[%L]*",
+   "%Bziyaret\\s+et[%L]*",
+   "%Bteşekkür\\s+e[dt][%L]*",
+   "%Bkabul\\s+e[dt][%L]*",
+   "%Bdikkat\\s+e[dt][%L]*",
+   "%Bmerak\\s+e[dt][%L]*",
+   "%Bkontrol\\s+e[dt][%L]*",
+   "%Bkatkı\\s+sun[%L]*",
+   "%Btekrardan%E",
+   "%Billaki%E",
+   "%Barttır[%L]*"
+  ],
+  "haber": [
+   "%Bmeydana\\s+gel[%L]*",
+   "%Baçıklama\\s+yap[%L]*",
+   "%Bartış\\s+göster[%L]*"
+  ],
+  "akademik": [
+   "%Bortaya\\s+koymaktadır%E",
+   "%Banaliz\\s+edilmiştir%E",
+   "%Bamaçlanmıştır%E",
+   "%Banlamlı\\s+(?:bir\\s+)?farklılık[%L]*",
+   "%Bgelişmekte\\s+olan\\s+ülke[%L]*",
+   "%Banlamlı\\s+bir\\s+(?:şekilde|biçimde)%E"
+  ],
+  "hukuk": [
+   "%Bsöz\\s+konusu%E",
+   "%Bilişkin%E",
+   "%Bh[aâ]linde%E",
+   "%Btalepte\\s+bulun[%L]*",
+   "%Byerine\\s+getir[%L]*",
+   "%Bteşkil\\s+e[dt][%L]*",
+   "%Bönem\\s+arz\\s+e[dt][%L]*",
+   "%Btemel\\s+esaslar[%L]*",
+   "%Bişbu%E",
+   "%Bmezk[uû]r[%L]*",
+   "%Bmüracaat[%L]*",
+   "%Bmütalaa[%L]*"
+  ],
+  "resmi": [
+   "%Bsöz\\s+konusu%E",
+   "%Bilişkin%E",
+   "%Bh[aâ]linde%E",
+   "%Btalepte\\s+bulun[%L]*",
+   "%Byerine\\s+getir[%L]*",
+   "%Bteşkil\\s+e[dt][%L]*",
+   "%Bönem\\s+arz\\s+e[dt][%L]*",
+   "%Btemel\\s+esaslar[%L]*",
+   "%Bişbu%E",
+   "%Bmezk[uû]r[%L]*",
+   "%Bmüracaat[%L]*",
+   "%Bmütalaa[%L]*"
+  ]
+ }
+}

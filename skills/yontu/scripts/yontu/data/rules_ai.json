@@ -1,0 +1,2527 @@
+{
+ "version": 1,
+ "rules": [
+  {
+   "id": "AI-A1",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Önem kalıbı tekrarlanıyor. Neden önemli olduğunu somut olarak söyleyin.",
+   "family": "ai-A",
+   "kind": "count",
+   "min": 2,
+   "pattern": "%B(?:büyük|kritik|hayati|önemli|kilit|belirleyici|merkezi)\\s+(?:bir\\s+)?(?:önem\\s+taşı|rol\\s+oyn|öneme\\s+sahip|role\\s+sahip)|%B(?:vazgeçilmez|ayrılmaz)\\s+bir\\s+parças|%Bgiderek\\s+artan%E",
+   "examples": {
+    "pos": [
+     "Eğitim kritik bir rol oynar. Teknoloji de hayati önem taşır."
+    ],
+    "neg": [
+     "Bu karar büyük önem taşıyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-A1B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Abartılı önem kalıbı. Eş anlamlısıyla değiştirmek izi silmez; rolün ne olduğunu somut söyleyin ya da cümleyi silin.",
+   "family": "ai-A",
+   "pattern": "%B(?:kritik|hayati|belirleyici|kilit)\\s+(?:bir\\s+)?rol\\s+oyn",
+   "examples": {
+    "pos": [
+     "Bu ekip projede kritik bir rol oynuyor.",
+     "Önbellek hızda belirleyici rol oynar."
+    ],
+    "neg": [
+     "Bu ekip projede test işini yürütüyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-A3",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Şişirilmiş sıfatlar yoğun. Ölçülebilir bir bilgiyle değiştirin ya da silin.",
+   "family": "ai-A",
+   "kind": "density",
+   "per300": 2,
+   "min": 3,
+   "scaled": true,
+   "pattern": "%B(?:kapsamlı|benzersiz|eşsiz|çığır\\s+açan|muazzam|paha\\s+biçilmez|kusursuz|olağanüstü|devrim\\s+niteliğinde|büyüleyici|son\\s+derece)[%L]*",
+   "examples": {
+    "pos": [
+     "Bu kapsamlı rehber eşsiz bir deneyim sunar ve çığır açan fikirler içerir."
+    ],
+    "neg": [
+     "Bu rehber kapsamlı bir giriş sunuyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-A3B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalıp övgü: \"eşsiz bir deneyim\". Deneyimin kendisini somut anlatın.",
+   "family": "ai-A",
+   "pattern": "%B(?:eşsiz|benzersiz|unutulmaz|muhteşem|kusursuz|olağanüstü|büyüleyici)\\s+(?:bir\\s+)?(?:[%L]+\\s+)?deneyim[%L]*",
+   "examples": {
+    "pos": [
+     "Kulüp eşsiz bir abonelik deneyimi sunuyor.",
+     "Size eşsiz bir deneyim yaşatıyoruz."
+    ],
+    "neg": [
+     "Kulüp her ay iki paket kahve gönderiyor.",
+     "Ekip on yıllık deneyime sahip."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-A4",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Yolculuk ve keşif mecazları birikmiş. Doğrudan anlatın.",
+   "family": "ai-A",
+   "kind": "count",
+   "min": 2,
+   "pattern": "%Byolculu[ğk][%L]*\\s+(?:çık|davet)|%Bserüven[%L]*|%Bdünyasına\\s+(?:adım|yolculuk|dalış)|%Bkapılarını\\s+aç|%Bderinliklerine\\s+dal|%Bgeniş\\s+bir\\s+yelpaze|%Bzengin\\s+(?:bir\\s+)?(?:doku|mozaik)",
+   "examples": {
+    "pos": [
+     "Kodlama dünyasına adım atın. Bu serüvende geniş bir yelpaze sizi bekliyor."
+    ],
+    "neg": [
+     "Geniş bir yelpaze sunuyoruz."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-A5",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Cümle başında aynı bağlam kalıbı tekrarlanıyor.",
+   "family": "ai-A",
+   "kind": "count",
+   "min": 2,
+   "registers_off": [
+    "akademik",
+    "resmi",
+    "hukuk"
+   ],
+   "pattern": "(?:^|(?<=[.!?]\\s))bu\\s+(?:bağlamda|çerçevede|doğrultuda|noktada)",
+   "examples": {
+    "pos": [
+     "Bu bağlamda ilk adım atıldı. Bu doğrultuda ikinci adım planlandı."
+    ],
+    "neg": [
+     "Bu bağlamda ilk adım atıldı. Sonra ikinci adım geldi."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-A5B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Cümle başında \"Bu bağlamda\". Bağlacı silin ya da ilişkiyi açık söyleyin (Bu açıdan).",
+   "family": "ai-A",
+   "registers_off": [
+    "resmi",
+    "hukuk",
+    "kurumsal"
+   ],
+   "pattern": "(?:^|(?<=[.!?]\\s))bu\\s+bağlamda,",
+   "examples": {
+    "pos": [
+     "Bu bağlamda, konunun incelenmesi önemlidir."
+    ],
+    "neg": [
+     "Bu açıdan konuyu incelemek önemlidir.",
+     "Kavram bu bağlamda farklı anlam taşır.",
+     "Bu bağlamda örneklem büyüklüğü sınırlılık olarak değerlendirilmelidir.",
+     "Önceki çalışmalar konuyu ele almıştır. Bu bağlamda, örneklem büyüklüğü ayrıca incelenmiştir."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
+   "note": "Virgülsüz \"Bu bağlamda\" insan akademik metninde sık; yalnız virgüllü açılış. Akademik register'da (tez dahil) paragraf içindeki virgüllü biçim de olağan bağlaç; orada yalnız paragrafı açan \"Bu bağlamda,\" sayılır.",
+   "para_start_registers": [
+    "akademik"
+   ],
+   "test_register": "akademik"
+  },
+  {
+   "id": "AI-A6",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Hazır giriş kalıbı. Doğrudan konuya girin.",
+   "family": "ai-A",
+   "registers_off": [
+    "akademik",
+    "resmi",
+    "hukuk"
+   ],
+   "pattern": "\\A\\s*(?:#[^\\n]*\\n\\s*)?(?:günümüzde|günümüzün|günümüz\\s+dünyasında|(?:hızla|giderek)\\s+(?:gelişen|değişen)|teknolojinin\\s+hızla|dijital\\s+çağda)",
+   "examples": {
+    "pos": [
+     "Günümüzde yapay zekâ her yerde.",
+     "# Başlık\n\nHızla gelişen dünyada her şey değişiyor.",
+     "Günümüzün rekabetçi ortamında her şirket hız arıyor."
+    ],
+    "neg": [
+     "Yapay zekâ bugün her yerde. Günümüzde de öyle."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-A6B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Hazır önem girişi. Neyin, kime göre arttığını somut söyleyin.",
+   "family": "ai-A",
+   "pattern": "%B(?:günümüzde|son\\s+yıllarda)\\s+giderek\\s+(?:önem\\s+kazan|art|yaygınlaş)[%L]*",
+   "examples": {
+    "pos": [
+     "Bu konu günümüzde giderek önem kazanan bir alandır.",
+     "Son yıllarda giderek önem kazanan su tasarrufu gündemde."
+    ],
+    "neg": [
+     "Kayıtlar 2024'ten beri giderek artıyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-A7",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Hazır kapanış kalıbı. Son cümle yeni bir şey söylemiyorsa silin.",
+   "family": "ai-A",
+   "pattern": "%B(?:tüm\\s+bunlar[ıi]?\\s+göz\\s+önünde\\s+bulundur|özetlemek\\s+gerekirse|toparlamak\\s+gerekirse|sonuç\\s+itibarıyla|son\\s+tahlilde|tüm\\s+bu\\s+bilgiler\\s+ışığında)",
+   "examples": {
+    "pos": [
+     "Özetlemek gerekirse, plan işe yaradı.",
+     "Tüm bunlar göz önünde bulundurulduğunda karar doğru."
+    ],
+    "neg": [
+     "Sonuç olarak plan işe yaradı.",
+     "Kısacası plan işe yaradı."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-A7B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Son paragraf \"Sonuç olarak\" ile özet açıyor. Yeni bir şey söylemiyorsa silin.",
+   "family": "ai-A",
+   "pattern": "%Bsonuç\\s+olarak(?=[^\\n]*(?:\\n[^\\n]+)*\\s*\\Z)",
+   "examples": {
+    "pos": [
+     "Kurulum kolay.\n\nSonuç olarak bu araç işe yarıyor."
+    ],
+    "neg": [
+     "Sonuç olarak plan işe yaradı ama bitmedi.\n\nYarın ikinci aşama başlıyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-A8",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Vurgu kalıbı. Söylenecek şeyi doğrudan söyleyin.",
+   "family": "ai-A",
+   "pattern": "%B(?:unutulmamalıdır\\s+ki|şunu\\s+(?:belirtmek|vurgulamak|eklemek)\\s+gerek(?:ir|mektedir)|altını\\s+çizmek\\s+gerek|belirtmekte\\s+fayda\\s+var|önemle\\s+vurgulamak\\s+gerek)",
+   "examples": {
+    "pos": [
+     "Unutulmamalıdır ki süre kısa.",
+     "Şunu belirtmek gerekir ki bütçe sınırlı."
+    ],
+    "neg": [
+     "Süre kısa; bunu unutmayalım."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-A9",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Aşırı kesinlik. Kanıtın gücünü yazar belirler; \"açıkça\" gibi pekiştirme gerekli mi?",
+   "family": "ai-A",
+   "pattern": "%B(?:açıkça|açık\\s+bir\\s+şekilde|net\\s+bir\\s+şekilde|kesin\\s+olarak|kesinlikle|şüphesiz|tartışmasız\\s+(?:bir\\s+)?şekilde)\\s+(?:[%L]+\\s+)?(?:(?:kanıtla|ispatla)[%L]*|ortaya\\s+koy(?:makta|muş)[%L]*)",
+   "examples": {
+    "pos": [
+     "Bulgular bu etkiyi açıkça kanıtlamaktadır.",
+     "Bulgular bu etkiyi açıkça ortaya koymaktadır."
+    ],
+    "neg": [
+     "Bulgular bu etkiyi kanıtlamaktadır.",
+     "Sonuçlar açıkça görülüyor.",
+     "Bakanlığın verileri ihracatın düştüğünü açıkça ortaya koydu."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
+   "registers_off": [
+    "haber",
+    "hukuk"
+   ],
+   "note": "Haber dilindeki geçmiş zaman (açıkça ortaya koydu) dışarıda; \"ortaya koy-\" yalnız -mAktAdIr / -mIştIr biçiminde yakalanır."
+  },
+  {
+   "id": "AI-A10",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"-mış bulunmaktayız\" kalıbı. Fiili doğrudan çekin (inceledik).",
+   "family": "ai-A",
+   "registers_off": [
+    "resmi"
+   ],
+   "pattern": "%B[%L]{2,}m[ıiuü]ş\\s+bulunmakta[%L]*",
+   "examples": {
+    "pos": [
+     "Ürünlerinizi incelemiş bulunmaktayız.",
+     "Ürünlerinizi incelemiş bulunmakta olup bir model seçtik."
+    ],
+    "neg": [
+     "Ürünlerinizi inceledik.",
+     "Depoda iki cihaz bulunmaktadır."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-A11",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalıp abartı: \"vazgeçilmez bir parçası\". Neden gerekli olduğunu somut yazın.",
+   "family": "ai-A",
+   "pattern": "%Bvazgeçilmez\\s+(?:bir\\s+)?parças[%L]*",
+   "examples": {
+    "pos": [
+     "Kahve hayatımızın vazgeçilmez bir parçası oldu."
+    ],
+    "neg": [
+     "Kahve her sabah içtiğim ilk şey.",
+     "Bu parça vazgeçilmez değil."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-A12",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalıp başlık (\"Sırları\", \"Kapsamlı Bir Rehber\"). Başlığı düz bir konu satırı yapın.",
+   "family": "ai-A",
+   "pattern": "^#{1,6}[ \\t]+[^\\n]*?%B(?:sırları|kapsamlı\\s+(?:bir\\s+)?(?:rehber|kılavuz)[%L]*|bilmeniz\\s+gereken\\s+her\\s+şey|nihai\\s+rehber[%L]*|adım\\s+adım\\s+rehber[%L]*)",
+   "examples": {
+    "pos": [
+     "# Uzaktan Çalışmada Odaklanmanın Sırları: Kapsamlı Bir Rehber",
+     "## Docker Nedir? Bilmeniz Gereken Her Şey"
+    ],
+    "neg": [
+     "# Evden çalışırken odak",
+     "Ailenin sırları ortaya çıktı."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-A13",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Son paragrafta hazır vecize. Olgu taşımıyorsa silin.",
+   "family": "ai-A",
+   "pattern": "%B(?:küçük\\s+adımlar[%L]*\\s+büyük\\s+fark[%L]*|başarı\\s+bir\\s+yolculuktur)(?=[^\\n]*(?:\\n[^\\n]+)*\\s*\\Z)",
+   "examples": {
+    "pos": [
+     "Mola verin.\n\nKüçük adımlar büyük farklar yaratır!"
+    ],
+    "neg": [
+     "Küçük adımlarla ilerledik.\n\nSonra durduk."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-B1",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Çeviri kalıbı (\"at the end of the day\"). \"Sonuçta\" yeter.",
+   "family": "ai-B",
+   "pattern": "(?:^|(?<=[.!?]\\s))günün\\s+sonunda,",
+   "suggestion": "Sonuçta",
+   "examples": {
+    "pos": [
+     "Günün sonunda, önemli olan sonuç."
+    ],
+    "neg": [
+     "Günün sonunda eve döndük."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B2",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Çeviri kalıbı (\"bring to the table\").",
+   "family": "ai-B",
+   "pattern": "%Bmasaya\\s+(?:[%L]+\\s+){0,3}getir",
+   "suggestion": "katmak, sunmak",
+   "examples": {
+    "pos": [
+     "Ekip masaya yeni fikirler getiriyor."
+    ],
+    "neg": [
+     "Konuyu masaya yatırdık."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B5",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"tarafından\" yoğun. Etkin çatıyı deneyin.",
+   "family": "ai-B",
+   "kind": "density",
+   "per300": 4.5,
+   "min": 3,
+   "scaled": true,
+   "pattern": "%Btarafından%E",
+   "examples": {
+    "pos": [
+     "Rapor ekip tarafından yazıldı, müdür tarafından okundu, kurul tarafından onaylandı."
+    ],
+    "neg": [
+     "Rapor ekip tarafından yazıldı."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B12",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"bu ... anlamına gelir\" kalıbı tekrarlanıyor.",
+   "family": "ai-B",
+   "kind": "count",
+   "min": 2,
+   "pattern": "%Bbu(?:\\s+da)?\\s+[^.!?\\n]{0,30}?anlamına\\s+gel",
+   "examples": {
+    "pos": [
+     "Bu daha az hata anlamına gelir. Bu da daha hızlı teslim anlamına geliyor."
+    ],
+    "neg": [
+     "Bu daha az hata anlamına gelir."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B13",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"sadece ... değil, aynı zamanda\" ya da \"-mAklA kalmaz, ... de\" kalıbı tekrarlanıyor.",
+   "family": "ai-B",
+   "kind": "count",
+   "min": 1,
+   "pattern": "%B(?:sadece|yalnızca)\\s+[^.!?\\n]{1,60}?\\s+değil,?\\s+(?:aynı\\s+zamanda|ayrıca)|%B[%L]*(?:la|le|ile)\\s+kalma(?:z|dı|mış[%L]*|yıp),?\\s+aynı\\s+zamanda|%B[%L]*m[ae]kl[ae]\\s+kalma(?:z|dı|mış[%L]*|yıp),?\\s+(?:[%L]+\\s+){1,8}?d[ae]%E",
+   "examples": {
+    "pos": [
+     "Sadece hızlı değil, aynı zamanda ucuz.",
+     "Bu araç kod yazmakla kalmaz, aynı zamanda test de eder.",
+     "Stresi azaltmakla kalmaz, verimliliğinizi de artırır.",
+     "Bu proje becerilerimi geliştirmekle kalmadı, ekip çalışmasının ne kadar önemli olduğunu da gösterdi."
+    ],
+    "neg": [
+     "Sadece hızlı değil.",
+     "Yalnızca ben geldim.",
+     "Stresi azaltır ve verimliliği artırır."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B14",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Çeviri e-posta açılışı.",
+   "family": "ai-B",
+   "pattern": "%Bsizi\\s+iyi\\s+bul",
+   "examples": {
+    "pos": [
+     "Umarım bu e-posta sizi iyi bulur."
+    ],
+    "neg": [
+     "Sizi iyi tanırım."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B15",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Çeviri kapanış kalıbı (\"don't hesitate to\").",
+   "family": "ai-B",
+   "pattern": "%B(?:sormaktan|ulaşmaktan|iletişime\\s+geçmekten|yazmaktan)\\s+çekinmeyin",
+   "suggestion": "Sorunuz olursa yazın.",
+   "examples": {
+    "pos": [
+     "Sormaktan çekinmeyin."
+    ],
+    "neg": [
+     "Sorunuz olursa yazın."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B16",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Çeviri kalıbı (\"looking forward to\").",
+   "family": "ai-B",
+   "pattern": "%Bdört\\s+gözle\\s+bekl",
+   "examples": {
+    "pos": [
+     "Yanıtınızı dört gözle bekliyorum."
+    ],
+    "neg": [
+     "Yanıtınızı bekliyorum."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B17",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"canlı bir kanıtı\" türü kalıp.",
+   "family": "ai-B",
+   "pattern": "%B(?:canlı|açık|güçlü|somut)\\s+(?:bir\\s+)?(?:kanıtı|göstergesi)(?:dır)?%E",
+   "examples": {
+    "pos": [
+     "Bu, başarının canlı bir kanıtıdır."
+    ],
+    "neg": [
+     "Kanıt açık."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B18",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"emin olun\" tekrarlanıyor (\"make sure\" çevirisi).",
+   "family": "ai-B",
+   "kind": "count",
+   "min": 2,
+   "pattern": "%Bemin\\s+olun%E",
+   "examples": {
+    "pos": [
+     "Dosyayı kaydettiğinizden emin olun. Ayarları kontrol ettiğinizden emin olun."
+    ],
+    "neg": [
+     "Dosyayı kaydettiğinizden emin olun."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B19",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Önemi vurgulama kalıbı.",
+   "family": "ai-B",
+   "pattern": "%Bönemini\\s+(?:bir\\s+kez\\s+daha\\s+)?vurgul|%Bönemin[ie]\\s+[^.!?\\n]{0,30}?altını\\s+çiz",
+   "examples": {
+    "pos": [
+     "Çalışma eğitimin önemini vurguluyor."
+    ],
+    "neg": [
+     "Önemli bir çalışma."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B25",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Okura talimat veren kalıp.",
+   "family": "ai-B",
+   "pattern": "%Bkendinize\\s+(?:şu\\s+soruyu|şunu)\\s+sorun",
+   "examples": {
+    "pos": [
+     "Kendinize şu soruyu sorun: Neden?"
+    ],
+    "neg": [
+     "Kendinize dikkat edin."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B26",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kapanış kalıbı (\"that's it\").",
+   "family": "ai-B",
+   "pattern": "%Bişte\\s+bu\\s+kadar[!.]",
+   "examples": {
+    "pos": [
+     "İşte bu kadar! Artık hazırsınız."
+    ],
+    "neg": [
+     "İşte bu kadar basit bir ayar."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-B27",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Liste kapanışı (\"and much more\").",
+   "family": "ai-B",
+   "pattern": "%Bve\\s+(?:çok\\s+)?daha\\s+fazlası[.!]",
+   "examples": {
+    "pos": [
+     "Tema, eklenti ve çok daha fazlası."
+    ],
+    "neg": [
+     "Daha fazlası için arayın."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C1",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Cümle sonlarında \"-mAktAdIr\" yoğun. Gündelik metinde \"-yor\" ya da geniş zaman kullanın.",
+   "family": "ai-C",
+   "kind": "ratio",
+   "threshold": 0.25,
+   "min_sentences": 5,
+   "registers_off": [
+    "akademik",
+    "resmi",
+    "hukuk"
+   ],
+   "sentence_pattern": "m[ae]kt[ae]d[ıi]r(?:lar|ler)?$",
+   "examples": {
+    "pos": [
+     "Sistem verileri işlemektedir. Kullanıcılar hızlı sonuç beklemektedir. Ekip yeni sürümü hazırlamaktadır. Bu yöntem zaman kazandırmaktadır. Raporlar her hafta güncellenmektedir. Müşteriler destek hattını aramaktadır. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C1B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Bu türde \"-mAktAdIr\" çeviri kokar. \"-yor\" ya da geniş zaman kullanın (\"sunulmaktadır\" yerine \"sunuluyor\").",
+   "family": "ai-C",
+   "turs": [
+    "readme",
+    "linkedin",
+    "blog",
+    "x",
+    "instagram",
+    "reklam",
+    "e-ticaret",
+    "sohbet"
+   ],
+   "default": "tur",
+   "pattern": "%B[%L]+m[ae]kt[ae]d[ıi]r(?:lar|ler)?(?=[.!?]|[ \\t]*$)",
+   "examples": {
+    "pos": [
+     "Bağlantılar yalnızca krt.li üzerinden sunulmaktadır."
+    ],
+    "neg": [
+     "Bağlantılar yalnızca krt.li üzerinden sunuluyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-C2",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Cümlelerin çoğu \"-DIr\" ile bitiyor.",
+   "family": "ai-C",
+   "kind": "ratio",
+   "threshold": 0.5,
+   "min_sentences": 6,
+   "registers_off": [
+    "akademik",
+    "resmi",
+    "hukuk"
+   ],
+   "sentence_pattern": "[%L]{2,}[dt][ıiuü]r(?:lar|ler)?$",
+   "examples": {
+    "pos": [
+     "Bu araç kullanışlıdır. Kurulum kolaydır. Arayüz sadedir. Belgeler açıktır. Destek hızlıdır. Fiyat uygundur. Ekip deneyimlidir. Sonuçlar tutarlıdır. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Bu araç kullanışlıdır. Kurulum kolaydır. Arayüz sadedir. Belgeler açıktır. Destek hızlıdır. Fiyat uygundur. Ekip deneyimlidir. Sonuçlar tutarlıdır."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C3",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"-ArAk\" zarf-fiili çok cümlede var. Bazılarını iki cümleye bölün.",
+   "family": "ai-C",
+   "kind": "ratio",
+   "threshold": 0.35,
+   "min_sentences": 6,
+   "sentence_pattern": "%B(?!olarak%E)[%L]{2,}[ae]r[ae]k%E",
+   "examples": {
+    "pos": [
+     "Verileri toplayarak rapor hazırladık. Kodu inceleyerek hatayı bulduk. Testleri çalıştırarak sürümü doğruladık. Belgeleri okuyarak kurulumu tamamladık. Ekibe danışarak kararı verdik. Planı gözden geçirerek takvimi değiştirdik. Sabah erkenden yola çıktık ve köprüde yarım saat trafikte bekledik. Toplantı öğleden sonra başladı ve bütçe konusu yine uzun sürdü. Ahmet raporu masaya bıraktı, sonra herkese birer kahve almaya gitti. Akşam yağmur yağınca dışarıdaki programı iptal edip ofiste kaldık."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C3B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"göz önünde bulundurarak\" türü bağlayıcılar tekrarlanıyor.",
+   "family": "ai-C",
+   "kind": "count",
+   "min": 2,
+   "pattern": "%B(?:göz\\s+önünde\\s+bulundurarak|dikkate\\s+alarak|baz\\s+alarak|temel\\s+alarak|esas\\s+alarak)",
+   "examples": {
+    "pos": [
+     "Bütçeyi dikkate alarak plan yaptık. Takvimi göz önünde bulundurarak ekibi kurduk."
+    ],
+    "neg": [
+     "Bütçeyi dikkate alarak plan yaptık."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C4",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Cümle uzunlukları çok tekdüze.",
+   "family": "ai-C",
+   "kind": "builtin",
+   "builtin": "burstiness",
+   "threshold": 0.3,
+   "min_mean": 18,
+   "min_sentences": 10,
+   "examples": {
+    "pos": [
+     "Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi. Tasarım ekibi kullanıcı görüşmelerinden gelen notları topladı, arayüzdeki üç ekranı baştan çizmeye karar verdi ve yeni taslakları ertesi hafta küçük bir grupla denedi. Altyapı ekibi sunucuların bakımını hafta sonuna taşıdı, kesinti süresini kullanıcılara önceden duyurdu ve olası sorunlar için nöbetçi bir mühendisi gece boyunca hazırda tuttu. Destek ekibi son ayda gelen şikâyetleri konularına göre ayırdı, en sık görülen beş sorunu ayrı bir listeye yazdı ve bu listeyi ürün ekibiyle paylaştı. Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi. Tasarım ekibi kullanıcı görüşmelerinden gelen notları topladı, arayüzdeki üç ekranı baştan çizmeye karar verdi ve yeni taslakları ertesi hafta küçük bir grupla denedi. Altyapı ekibi sunucuların bakımını hafta sonuna taşıdı, kesinti süresini kullanıcılara önceden duyurdu ve olası sorunlar için nöbetçi bir mühendisi gece boyunca hazırda tuttu. Destek ekibi son ayda gelen şikâyetleri konularına göre ayırdı, en sık görülen beş sorunu ayrı bir listeye yazdı ve bu listeyi ürün ekibiyle paylaştı."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C5",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Adlaştırma (\"-mAsI\") yoğun. Eylemi fiille söyleyin.",
+   "family": "ai-C",
+   "kind": "density",
+   "per300": 9,
+   "min": 4,
+   "scaled": true,
+   "pattern": "%B[%L]{2,}m[ae](?:s[ıi]|l[ae]r[ıi])(?:n[ıi]n|n[ae]|n[ıi]|nd[ae]|yl[ae]|ndan|nden)?%E",
+   "examples": {
+    "pos": [
+     "Verilerin toplanması, analiz edilmesi, raporlanması ve paylaşılması gerekiyor."
+    ],
+    "neg": [
+     "Verileri topladık ve paylaştık."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C6",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"olarak\" yoğun. Bir kısmını silin ya da hâl ekiyle söyleyin.",
+   "family": "ai-C",
+   "kind": "density",
+   "per300": 4.5,
+   "min": 3,
+   "scaled": true,
+   "pattern": "%Bolarak%E",
+   "examples": {
+    "pos": [
+     "Ekip olarak hızlı olarak ve düzenli olarak çalıştık."
+    ],
+    "neg": [
+     "Ekip olarak çalıştık."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C7",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Cümlelerin çoğu edilgen. Yapanı biliniyorsa etkin çatı kullanın.",
+   "family": "ai-C",
+   "kind": "ratio",
+   "threshold": 0.5,
+   "min_sentences": 6,
+   "registers_off": [
+    "akademik",
+    "resmi",
+    "hukuk",
+    "teknik"
+   ],
+   "sentence_pattern": "(?:[ıiuü][ln]|[aeoö]n)(?:m[ıiuü]şt[ıiuü]r|m[ae]kt[ae]d[ıi]r|[ae]c[ae]kt[ıi]r|[ae]c[ae]k|d[ıiuü]|[ıiuü]r)(?:lar|ler)?$",
+   "examples": {
+    "pos": [
+     "Rapor hazırlandı. Veriler toplandı. Toplantı ertelendi. Sonuçlar paylaşıldı. Bütçe onaylandı. Takvim güncellendi. Sunucu yeniden başlatıldı. Hatalar giderildi. Sabah erkenden yola çıktık ve köprüde yarım saat trafikte bekledik. Toplantı öğleden sonra başladı ve bütçe konusu yine uzun sürdü. Ahmet raporu masaya bıraktı, sonra herkese birer kahve almaya gitti. Akşam yağmur yağınca dışarıdaki programı iptal edip ofiste kaldık. Ertesi gün planı yeniden konuştuk ve iki maddeyi listeden çıkardık."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C8",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Aynı paragrafta birden çok üçlü sıralama var.",
+   "family": "ai-C",
+   "kind": "count",
+   "per": "paragraph",
+   "min": 2,
+   "pattern": "[%W]+,\\s+[%W]+(?:\\s+[%W]+)?\\s+ve\\s+[%W]+",
+   "examples": {
+    "pos": [
+     "Hız, güven ve kalite sunuyoruz. Ekip, süreç ve araçlar hazır."
+    ],
+    "neg": [
+     "Hız, güven ve kalite sunuyoruz.\n\nEkip, süreç ve araçlar hazır."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C9",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"X değil, Y\" karşıtlık kalıbı sık.",
+   "family": "ai-C",
+   "kind": "density",
+   "per300": 1.5,
+   "min": 2,
+   "pattern": "%Bdeğil[,;]",
+   "examples": {
+    "pos": [
+     "Bu bir son değil, bir başlangıç. Mesele hız değil, yön."
+    ],
+    "neg": [
+     "Bu bir son değil, bir başlangıç."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C10",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Cümle başında \"Peki ...?\" soruları tekrarlanıyor.",
+   "family": "ai-C",
+   "kind": "count",
+   "min": 2,
+   "pattern": "(?:^|(?<=[.!?]\\s))peki,?\\s[^.!?\\n]{0,80}\\?",
+   "examples": {
+    "pos": [
+     "Peki bu ne demek? Bir örnek verelim. Peki neden önemli? Çünkü süre kısa."
+    ],
+    "neg": [
+     "Peki bu ne demek? Bir örnek verelim."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C10B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"Cevap basit:\" kalıbı.",
+   "family": "ai-C",
+   "pattern": "%B(?:(?:cevap|yanıt)\\s+(?:çok\\s+)?|aslında\\s+(?:çok\\s+)?)basit[:.]",
+   "examples": {
+    "pos": [
+     "Neden mi? Cevap basit: zaman.",
+     "Peki bu ne demek? Aslında çok basit: plan tuttu."
+    ],
+    "neg": [
+     "Cevap basit değil.",
+     "Aslında çok basit bir plan."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C10Q",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Soru sorup hemen kısa cevap veren çiftler tekrarlanıyor.",
+   "family": "ai-C",
+   "kind": "builtin",
+   "builtin": "qa_pairs",
+   "answer_words": 6,
+   "min": 2,
+   "per300": 2,
+   "examples": {
+    "pos": [
+     "Neden bu yöntem? Çünkü hızlı. Peki maliyeti? Oldukça düşük."
+    ],
+    "neg": [
+     "Neden bu yöntem? Ekip geçen yıl iki ayrı projede denedi ve süreyi yarıya indirdi."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C11",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Bu türde noktalı virgül yapay durur. Nokta ya da virgül kullanın.",
+   "family": "ai-C",
+   "kind": "density",
+   "per300": 1,
+   "min": 1,
+   "registers": [
+    "blog",
+    "deneme",
+    "is-eposta",
+    "sosyal",
+    "sohbet",
+    "ui",
+    "pazarlama",
+    "sozlu",
+    "haber"
+   ],
+   "pattern": ";(?=\\s)",
+   "examples": {
+    "pos": [
+     "Kurulum kolay; ayarlar sade."
+    ],
+    "neg": [
+     "Kurulum kolay. Ayarlar sade."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C13",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalın etiketli madde listesi.",
+   "family": "ai-C",
+   "kind": "count",
+   "min": 3,
+   "pattern": "^\\s*(?:[-*+]|\\d+[.)]|[✅✔☑➡]️?|\\d️?⃣)\\s+\\*\\*[^*\\n]{1,50}(?::\\*\\*|\\*\\*\\s*:)",
+   "examples": {
+    "pos": [
+     "- **Hız:** iyi\n- **Güven:** iyi\n- **Fiyat:** uygun",
+     "✅ **Hız:** iyi\n✅ **Güven:** iyi\n✅ **Fiyat:** uygun"
+    ],
+    "neg": [
+     "- Hız: iyi\n- Güven: iyi\n- Fiyat: uygun"
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C13B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalın yazı çok sık.",
+   "family": "ai-C",
+   "kind": "density",
+   "per300": 4,
+   "min": 4,
+   "pattern": "\\*\\*[^*\\n]+\\*\\*",
+   "examples": {
+    "pos": [
+     "**Bir** iki **üç** dört **beş** altı **yedi** sekiz."
+    ],
+    "neg": [
+     "Tek **önemli** not var."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C13C",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Başlık ve maddelerde emoji.",
+   "family": "ai-C",
+   "kind": "builtin",
+   "builtin": "emoji_lines",
+   "mode": "heading",
+   "min": 3,
+   "examples": {
+    "pos": [
+     "## 🚀 Giriş\n\n## ✅ Kurulum\n\n## 💡 İpuçları\n\nMetin."
+    ],
+    "neg": [
+     "## Giriş\n\nMetin 🙂"
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C13D",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kısa metinde çok başlık var.",
+   "family": "ai-C",
+   "kind": "density",
+   "per300": 4,
+   "min": 5,
+   "registers_off": [
+    "teknik"
+   ],
+   "pattern": "^#{1,6}\\s",
+   "examples": {
+    "pos": [
+     "# A\nx\n## B\ny\n## C\nz\n## D\nt\n## E\nu"
+    ],
+    "neg": [
+     "# A\nMetin.\n## B\nMetin."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C13E",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Emoji madde imi olarak kullanılmış.",
+   "family": "ai-C",
+   "kind": "builtin",
+   "builtin": "emoji_lines",
+   "mode": "list",
+   "min": 3,
+   "examples": {
+    "pos": [
+     "Üç ders:\n1️⃣ Basit çözüm.\n2️⃣ İletişim.\n3️⃣ Hata yapmak.",
+     "✅ Taze kavrum\n✅ Esnek abonelik\n✅ Ücretsiz kargo"
+    ],
+    "neg": [
+     "Üç ders:\n1. Basit çözüm.\n2. İletişim.\n3. Hata yapmak.",
+     "✅ Taze kavrum\nEsnek abonelik\n✅ Ücretsiz kargo",
+     "Cumartesi akşamı sizi bekliyoruz!\n📍 Kadıköy Moda Sahnesi\n🕗 Saat 20.00\n🎟️ Biletler kapıda\n🍷 İkram bizden"
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
+   "scope": "span",
+   "registers_off": [
+    "sosyal"
+   ],
+   "note": "Instagram ve X'te emoji etiketi (📍 yer, 🕗 saat) türün normu; orada kapalı. Etiket satırları (yer, saat, bilet, fiyat) liste sayılmaz. İkisi aynı metinde tetiklenirse ST-13 düşer.",
+   "skip_labels": true
+  },
+  {
+   "id": "AI-C14",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Eş anlamlı sözcükler dönüşümlü kullanılıyor. Birini seçip tekrar edin.",
+   "family": "ai-C",
+   "kind": "builtin",
+   "builtin": "synonym_rotation",
+   "min": 3,
+   "clusters": [
+    [
+     "önemli",
+     "kritik",
+     "hayati",
+     "elzem"
+    ],
+    [
+     "art+ır",
+     "yükselt",
+     "güçlendir"
+    ],
+    [
+     "sağla",
+     "sun(?:ar|mak|ul|duğ)",
+     "temin\\s+et"
+    ]
+   ],
+   "examples": {
+    "pos": [
+     "Bu adım önemli. Sonraki adım kritik. Son adım hayati."
+    ],
+    "neg": [
+     "Bu adım önemli. Sonraki adım da önemli."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C16",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"X'ten Y'ye, Z'den W'ye\" kalıbı.",
+   "family": "ai-C",
+   "pattern": "[%W]+(?:%A)?[dt][ae]n\\s+[%W]+(?:%A)?y?[ae],\\s+[%W]+(?:%A)?[dt][ae]n\\s+[%W]+(?:%A)?y?[ae]%E",
+   "examples": {
+    "pos": [
+     "Sağlıktan eğitime, finanstan perakendeye her alanda kullanılıyor."
+    ],
+    "neg": [
+     "Evden okula yürüdük."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-C18",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Çok kısa cümle oranı yüksek. Kesik kesik bir ritim oluşuyor.",
+   "family": "ai-C",
+   "kind": "builtin",
+   "builtin": "short_sentence_share",
+   "min_sentences": 8,
+   "max_words": 3,
+   "threshold": 0.3,
+   "examples": {
+    "pos": [
+     "Hız önemli. Güven şart. Kalite her şey. Biz buradayız. Köprüde trafik vardı ve yarım saat bekledik. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Sonunda işi cuma günü teslim ettik. Hemen başla."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D1",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Övgüyle açılan yanıt.",
+   "family": "ai-D",
+   "pattern": "%B(?:harika|güzel|mükemmel|çok\\s+iyi|ilginç)\\s+(?:bir\\s+)?soru%E|%Bkesinlikle\\s+haklısınız",
+   "examples": {
+    "pos": [
+     "Harika bir soru! Şöyle açıklayayım."
+    ],
+    "neg": [
+     "Soru şu: ne zaman?"
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D2",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Terapist dili.",
+   "family": "ai-D",
+   "pattern": "%B(?:duygularınız\\s+(?:çok\\s+)?(?:geçerli|anlaşılır)|bunu\\s+hissetmeniz\\s+(?:çok\\s+)?(?:normal|doğal)|kendinize\\s+karşı\\s+nazik\\s+olun)",
+   "examples": {
+    "pos": [
+     "Bunu hissetmeniz çok normal."
+    ],
+    "neg": [
+     "Bunu hissetmedim."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D3",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Aynı cümlede çok sayıda çekince var.",
+   "family": "ai-D",
+   "kind": "count",
+   "per": "sentence",
+   "min": 3,
+   "pattern": "%B(?:belki|muhtemelen|olasılıkla|bir\\s+ihtimal|sanki|bir\\s+ölçüde|kısmen|görece|bir\\s+nebze)%E|gibi\\s+görün",
+   "examples": {
+    "pos": [
+     "Belki de bu sonuç muhtemelen bir ölçüde doğrudur."
+    ],
+    "neg": [
+     "Muhtemelen yarın gelir. Belki de gelmez."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D5",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Kaynaksız \"uzmanlar/araştırmalar gösteriyor\" iddiası.",
+   "family": "ai-D",
+   "pattern": "%B(?:uzmanlar|araştırmalar|çalışmalar|bilim\\s+insanları)\\s+(?:[%L]+\\s+){0,4}?(?:göstermektedir|gösteriyor|belirtiyor|vurguluyor|öneriyor|belirtmektedir|vurgulamaktadır|ortaya\\s+koyuyor)",
+   "exclude": "%B(?:uzmanlar|araştırmalar|çalışmalar|bilim\\s+insanları)[^.!?\\n]{0,80}?(?:\\([^)\\n]*\\d{4}|\\[\\d+\\])",
+   "examples": {
+    "pos": [
+     "Araştırmalar bunun işe yaradığını gösteriyor."
+    ],
+    "neg": [
+     "Araştırmalar (Yılmaz, 2021) bunun işe yaradığını gösteriyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D6",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Cümle başında \"Unutmayın\" öğüdü.",
+   "family": "ai-D",
+   "pattern": "(?:^|(?<=[.!?]\\s))unutmayın[,:!]",
+   "examples": {
+    "pos": [
+     "Unutmayın, her adım önemli."
+    ],
+    "neg": [
+     "Şifrenizi unutmayın."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D7",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Genel geçer \"başarının anahtarı\" kalıbı.",
+   "family": "ai-D",
+   "pattern": "%B(?:başarının\\s+(?:anahtarı|sırrı)|hayatın\\s+anlamı|mutluluğun\\s+(?:anahtarı|sırrı))",
+   "examples": {
+    "pos": [
+     "Düzenli çalışma başarının anahtarıdır."
+    ],
+    "neg": [
+     "Kapının anahtarı bende."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D8",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"Dürüst olmak gerekirse\" dolgu kalıbı.",
+   "family": "ai-D",
+   "pattern": "%Bdürüst\\s+olmak\\s+gerekirse",
+   "examples": {
+    "pos": [
+     "Dürüst olmak gerekirse, plan zayıf."
+    ],
+    "neg": [
+     "Dürüst bir plan."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D9",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Basmakalıp özdeyiş.",
+   "family": "ai-D",
+   "pattern": "%B(?:her\\s+şeyin\\s+bir\\s+zamanı\\s+var|değişim\\s+kaçınılmazdır|önemli\\s+olan\\s+(?:yolculuk|süreç)tur)",
+   "examples": {
+    "pos": [
+     "Unutmayalım, değişim kaçınılmazdır."
+    ],
+    "neg": [
+     "Değişim yavaş oldu."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D12",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Broşür dili.",
+   "family": "ai-D",
+   "kind": "count",
+   "min": 2,
+   "registers_off": [
+    "pazarlama"
+   ],
+   "pattern": "%B(?:sizi\\s+bekliyor|kaçırmayın|hayalinizdeki|bir\\s+tık\\s+uza[kğ]|kaçırılmayacak)",
+   "examples": {
+    "pos": [
+     "Hayalinizdeki ev sizi bekliyor."
+    ],
+    "neg": [
+     "Misafirler sizi bekliyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-D12P",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Broşür dili.",
+   "family": "ai-D",
+   "registers": [
+    "pazarlama"
+   ],
+   "test_register": "pazarlama",
+   "pattern": "%B(?:kaçırmayın|hayalinizdeki|bir\\s+tık\\s+uza[kğ]|kaçırılmayacak)",
+   "examples": {
+    "pos": [
+     "Bu fırsatı kaçırmayın."
+    ],
+    "neg": [
+     "Siparişiniz yarın kargoda."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-D13",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalıp vaat: \"bir üst seviyeye taşımak\". Neyin nasıl değiştiğini yazın.",
+   "family": "ai-D",
+   "pattern": "%Bbir\\s+üst\\s+(?:seviyeye|düzeye|boyuta)\\s+taşı[%L]*",
+   "examples": {
+    "pos": [
+     "Kahve deneyiminizi bir üst seviyeye taşıyın."
+    ],
+    "neg": [
+     "Kutuları bir üst kata taşıdık."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-D15",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Pazarlama sıfatı üçlüsü. Aracın ne yaptığını yazın.",
+   "family": "ai-D",
+   "pattern": "%B(?:modern|güçlü|hızlı|esnek|kullanıcı\\s+dostu|sezgisel|şık|yenilikçi|ölçeklenebilir|kolay|güvenli|kapsamlı|performanslı|etkili|verimli|basit),\\s+(?:modern|güçlü|hızlı|esnek|kullanıcı\\s+dostu|sezgisel|şık|yenilikçi|ölçeklenebilir|kolay|güvenli|kapsamlı|performanslı|etkili|verimli|basit)(?:,\\s+(?:modern|güçlü|hızlı|esnek|kullanıcı\\s+dostu|sezgisel|şık|yenilikçi|ölçeklenebilir|kolay|güvenli|kapsamlı|performanslı|etkili|verimli|basit))*,?\\s+ve\\s+(?:modern|güçlü|hızlı|esnek|kullanıcı\\s+dostu|sezgisel|şık|yenilikçi|ölçeklenebilir|kolay|güvenli|kapsamlı|performanslı|etkili|verimli|basit)%E",
+   "examples": {
+    "pos": [
+     "Modern, hızlı ve kullanıcı dostu bir komut satırı aracıdır.",
+     "Güçlü, esnek, güvenli ve ölçeklenebilir bir altyapı.",
+     "Hızlı, etkili ve verimli bir çözüm sunuyoruz."
+    ],
+    "neg": [
+     "Hızlı ve güvenli bir araç.",
+     "Komut satırından URL kısaltır.",
+     "Kasa hafif, sağlam ve dayanıklı alüminyumdan.",
+     "Kamu kaynaklarının etkili, verimli ve güvenli bir şekilde kullanılması esastır."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
+   "registers_off": [
+    "resmi",
+    "hukuk"
+   ],
+   "note": "Mevzuat dilinde (etkili, verimli ve güvenli) ve malzeme tanımında (hafif, sağlam) insan kullanımı; o kayıtlarda kapalı. Listeyi açan \"etkili, verimli\" çifti mevzuat kalıbıdır, düşer; listenin içindeki çift sayılır.",
+   "exclude": "(?<!,\\s)%Betkili,?\\s+(?:ekonomik,?\\s+)?(?:ve\\s+)?verimli%E|(?<!,\\s)%Bverimli,?\\s+(?:ve\\s+)?etkili%E"
+  },
+  {
+   "id": "AI-D16",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalıp yüceltme: \"X'ten fazlası, bir yaşam tarzı\". Ürünün ne yaptığını yazın.",
+   "family": "ai-D",
+   "pattern": "%B[%L]+(?:%A[%L]+)?(?<=[dt][ae]n)\\s+fazlas[ıi],?\\s+(?:[%L]+\\s+){0,2}?(?:yaşam\\s+tarz|felsefe|tutku|hikâye|hikaye|deneyim)[%L]*",
+   "examples": {
+    "pos": [
+     "Biz bir kahve markasından fazlası, bir yaşam tarzıyız."
+    ],
+    "neg": [
+     "Üç yıldan fazlası geçti.",
+     "Yarısından fazlası satıldı."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-D17",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalıp çağrı: \"...manın zamanı geldi!\". Çağrıyı somut eylemle yazın.",
+   "family": "ai-D",
+   "pattern": "%B[%L]+m[ae]n[ıi]n\\s+zaman[ıi]\\s+geldi\\s*!",
+   "examples": {
+    "pos": [
+     "Sabahlarınızı kurtarmanın zamanı geldi!"
+    ],
+    "neg": [
+     "Tatil zamanı geldi!",
+     "Gitmenin zamanı geldi."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-D18",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Kalıp kapanış: \"Yeni maceralara!\". Kanca değildir; yazarın duygusunu taşıyorsa bırakın, yoksa somut bir sonraki adımla bitirin.",
+   "family": "ai-D",
+   "pattern": "(?:^|(?<=[.!?]\\s))yeni\\s+maceralara\\s*!",
+   "examples": {
+    "pos": [
+     "Teşekkürler. Yeni maceralara!"
+    ],
+    "neg": [
+     "Yeni maceralara atılmayı seviyor."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-D19",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Resmî teşekkür kalıbı. Gönderide \"sonsuz teşekkürler\" ya da \"teşekkür ederim\" yeter; gücü düşürmeyin.",
+   "family": "ai-D",
+   "registers_off": [
+    "resmi",
+    "hukuk",
+    "akademik"
+   ],
+   "pattern": "%Bteşekkürlerimi(?:zi)?\\s+sun(?:uyorum|uyoruz|arım|arız)%E",
+   "examples": {
+    "pos": [
+     "Herkese sonsuz teşekkürlerimi sunuyorum."
+    ],
+    "neg": [
+     "Herkese sonsuz teşekkürler."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-L1",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Satırların çoğu emojiyle başlıyor.",
+   "family": "ai-L",
+   "kind": "builtin",
+   "builtin": "emoji_lines",
+   "mode": "line_start",
+   "threshold": 0.3,
+   "turs": [
+    "linkedin"
+   ],
+   "default": "tur",
+   "test_tur": "linkedin",
+   "test_register": "sosyal",
+   "examples": {
+    "pos": [
+     "🚀 Yeni işime başladım.\n✅ Ekip harika.\n💡 Çok şey öğreneceğim.\nTeşekkürler."
+    ],
+    "neg": [
+     "Yeni işime başladım.\nEkip küçük ama deneyimli.\nİlk ay altyapıyı taşıyacağız."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-L2",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Hazır duyuru kalıbı. Ne olduğunu doğrudan söyleyin.",
+   "family": "ai-L",
+   "pattern": "%B(?:heyecanla|gururla|mutlulukla)\\s+(?:duyur|paylaş|belirt)|%B(?:büyük\\s+)?(?:bir\\s+)?heyecan(?:la|ımı)\\s+",
+   "turs": [
+    "linkedin",
+    "x",
+    "instagram"
+   ],
+   "default": "tur",
+   "test_tur": "linkedin",
+   "test_register": "sosyal",
+   "examples": {
+    "pos": [
+     "Yeni görevime başladığımı heyecanla duyuruyorum."
+    ],
+    "neg": [
+     "Yeni görevime başladım."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-L3",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"Yolculuk\" mecazı. Yerine düz olguyu yazın (bu 3 yıl, çalıştığım ekip). Yalnız metinde geçen adları kullanın.",
+   "family": "ai-L",
+   "pattern": "%Byolculu[kğ][%L]*",
+   "turs": [
+    "linkedin"
+   ],
+   "default": "tur",
+   "test_tur": "linkedin",
+   "test_register": "sosyal",
+   "examples": {
+    "pos": [
+     "Bu yolculukta yanımda olan herkese teşekkürler."
+    ],
+    "neg": [
+     "İzmir'e trenle gittim."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme"
+  },
+  {
+   "id": "AI-L3B",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"Yolculuk\" mecazı. Yerine düz olguyu yazın (bu 3 yıl, çalıştığım ekip). Yalnız metinde geçen adları kullanın.",
+   "family": "ai-L",
+   "prec": 2,
+   "pattern": "%Byeni\\s+bir\\s+yolculuğa\\s+(?:başlıyorum|başladım|başlıyoruz|başladık|çıkıyorum|çıktım|çıkıyoruz|çıktık|adım\\s+atıyorum|adım\\s+attım)%E|%Byolculuğ[%L]*\\s+(?:yeni\\s+)?(?:bir\\s+)?(?:durağ|parças|başlangıc)[%L]*|%Bbu\\s+yolculukta\\s+(?:[%L]+\\s+){0,3}?(?:öğren|destek|yanımda|emeğ)[%L]*|%B(?:öğrenme|kariyer|dönüşüm|gelişim|başarı|kodlama|yazılım|dijital|dijitalleşme|liderlik|girişimcilik|büyüme|iyileşme|farkındalık)\\s+yolculuğ[%L]*",
+   "examples": {
+    "pos": [
+     "Yeni bir yolculuğa başlıyorum.",
+     "Emek verdiğim yolculuğun yeni bir durağına ulaştım.",
+     "Bu yolculukta öğrendiğim üç ders var.",
+     "Kariyer yolculuğumda bu bir dönüm noktası.",
+     "Bu yolculukta öğrendiğim en önemli şey trendleri takip etmekti."
+    ],
+    "neg": [
+     "İzmir'e trenle gittim.",
+     "Ankara yolculuğu altı saat sürdü.",
+     "Bu yolculukta iki kez mola verdik.",
+     "Araştırma gemisi yeni bir yolculuğa çıktı.",
+     "Kaşifin keşif yolculuğu iki yıl sürdü.",
+     "Bu yolculukta öğrendiğim en önemli şey, tren saatlerine güvenmemekti.",
+     "Ertesi gün Kars'a doğru yeni bir yolculuğa çıktık."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
+   "note": "AI-L3 `linkedin` türünde tüm \"yolculuk\" geçişlerini yakalar; çakışmada o kalır (prec 2). Yakınında gerçek yolculuk işareti (tren, otobüs, bilet, otel, \"Kars'a doğru\"...) varsa düşer: gezi yazısı.",
+   "exclude": "%B(?:tren(?!d)|otobüs|uçak|uçuş|vapur|feribot|gemi|bilet|otel|pansiyon|hostel|kamp(?!any|üs)|valiz|bavul|sırt\\s+çanta|rota(?!sy|ry)|harita|kilometre|km|istasyon|otogar|havaalan|havaliman|peron|vagon|kompartıman|vize|pasaport|otostop|bisiklet|karavan|araba|[%L]+['’]y?[ae]\\s+doğru)[%L]*[\\s\\S]{0,80}?yolculu[%L]*|yolculu[%L]*(?=[\\s\\S]{0,160}?%B(?:tren(?!d)|otobüs|uçak|uçuş|vapur|feribot|gemi|bilet|otel|pansiyon|hostel|kamp(?!any|üs)|valiz|bavul|sırt\\s+çanta|rota(?!sy|ry)|harita|kilometre|km|istasyon|otogar|havaalan|havaliman|peron|vagon|kompartıman|vize|pasaport|otostop|bisiklet|karavan|araba|[%L]+['’]y?[ae]\\s+doğru))"
+  },
+  {
+   "id": "AI-L4",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "Liste kalıbı: \"öğrendiğim N ders\". Dersleri listesiz, olayla anlatın.",
+   "family": "ai-L",
+   "pattern": "%Böğrendiğim\\s+(?:\\d+|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on)\\s+(?:önemli\\s+)?(?:ders|şey)[%L]*",
+   "examples": {
+    "pos": [
+     "Bu süreçte öğrendiğim 3 ders şunlar."
+    ],
+    "neg": [
+     "Öğrendiğim şey sabırdı."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; proje içi deneme",
+   "scope": "doc"
+  },
+  {
+   "id": "AI-E1",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Sohbet kapanışı. Metinde gereksiz.",
+   "family": "ai-E",
+   "pattern": "%Bumar(?:ım|ız)\\s+[^.!?\\n]{0,60}?(?:(?:yardımcı|faydalı|yararlı)\\s+ol(?:ur|muştur|acaktır|muşumdur)|işinize\\s+yarar)",
+   "examples": {
+    "pos": [
+     "Umarım bu bilgiler yardımcı olur.",
+     "Umarız bu rehber faydalı olmuştur.",
+     "Umarım bu yazı size yararlı olacaktır."
+    ],
+    "neg": [
+     "Umarım yarın görüşürüz."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E2",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Sohbet kapanışı (\"başka sorunuz olursa\").",
+   "family": "ai-E",
+   "pattern": "%B(?:başka|ek)\\s+(?:bir\\s+)?(?:sorunuz|sorularınız)\\s+(?:olursa|varsa)",
+   "examples": {
+    "pos": [
+     "Başka sorunuz olursa yazın."
+    ],
+    "neg": [
+     "Sorunuz olursa yazın."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E3",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Yardım teklifiyle biten sohbet kalıbı.",
+   "family": "ai-E",
+   "pattern": "%B(?:dilerseniz|isterseniz)\\s+[^.!?\\n]{0,60}?[%L]+[ae]bilirim%E",
+   "examples": {
+    "pos": [
+     "İsterseniz bir örnek daha hazırlayabilirim."
+    ],
+    "neg": [
+     "İsterseniz yarın gelin."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E4",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Metnin başında sohbet onayı.",
+   "family": "ai-E",
+   "pattern": "\\A\\s*(?:elbette|tabii(?:\\s+ki)?|kesinlikle|harika|memnuniyetle)[!,.]",
+   "examples": {
+    "pos": [
+     "Elbette! İşte metin."
+    ],
+    "neg": [
+     "Metin elbette hazır."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E5",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Metnin başında \"İşte ...:\" sunumu.",
+   "family": "ai-E",
+   "pattern": "\\A\\s*işte\\s+[^\\n]{0,80}?:",
+   "examples": {
+    "pos": [
+     "İşte düzeltilmiş metin:\n\nMetin."
+    ],
+    "neg": [
+     "Metin hazır. İşte şu: bir."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E6",
+   "layer": "ai-iz",
+   "level": "warning",
+   "evidence": "hakem",
+   "message": "Model kimliği cümlesi metinde kalmış.",
+   "family": "ai-E",
+   "pattern": "%Byapay\\s+zek[aâ]\\s+(?:dil\\s+)?(?:modeli|asistanı)\\s+olarak",
+   "examples": {
+    "pos": [
+     "Bir yapay zekâ modeli olarak görüşüm yok."
+    ],
+    "neg": [
+     "Yapay zekâ modeli eğitildi."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E7",
+   "layer": "ai-iz",
+   "level": "warning",
+   "evidence": "hakem",
+   "message": "Model eğitim verisi cümlesi metinde kalmış.",
+   "family": "ai-E",
+   "pattern": "%B(?:bilgi\\s+kesme\\s+tarihim|eğitim\\s+verilerim)",
+   "examples": {
+    "pos": [
+     "Bilgi kesme tarihim 2023."
+    ],
+    "neg": [
+     "Eğitim verileri paylaşıldı."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E8",
+   "layer": "ai-iz",
+   "level": "warning",
+   "evidence": "hakem",
+   "message": "Arayüzden kopyalanmış metin kalmış.",
+   "family": "ai-E",
+   "case": "exact",
+   "registers_off": [
+    "ui"
+   ],
+   "pattern": "%B(?:Regenerate response|Copy code|As an AI language model)%E",
+   "examples": {
+    "pos": [
+     "Metin bitti.\nRegenerate response"
+    ],
+    "neg": [
+     "Metin bitti."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E9",
+   "layer": "ai-iz",
+   "level": "warning",
+   "evidence": "hakem",
+   "message": "Doldurulmamış yer tutucu.",
+   "family": "ai-E",
+   "case": "exact",
+   "pattern": "\\[(?:[%U][%L]+(?:[ \\t][%W]+){0,4}|(?:Your|Insert|YOUR)[^\\]\\n]{0,40})\\](?![(\\[:])|%B[Ll]orem\\s+ipsum",
+   "examples": {
+    "pos": [
+     "Sayın [Müşteri Adı], teşekkürler.",
+     "Lorem ipsum dolor."
+    ],
+    "neg": [
+     "Bkz. [Kurulum](kurulum.md).",
+     "Fiyat: [ürün adı] için sorun."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E11",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"Bu yazıda/bölümde ... ele alacağız / anlatılır\" girişi. Metni anlatan cümleyi silin; içindeki iddiayı düz cümle yapın.",
+   "family": "ai-E",
+   "pattern": "%Bbu\\s+(?:(?:yazıda|makalede|bölümde|rehberde|yazımızda|içerikte),?\\s+[^.!?\\n]{0,80}?(?:ele\\s+alacağız|inceleyeceğiz|değineceğiz|öğreneceksiniz|keşfedeceğiz|bakacağız|açıklanmaktadır|anlatılmaktadır|açıklanır|anlatılır|açıklanıyor|anlatılıyor|ele\\s+alınır|ele\\s+alınıyor|ele\\s+alınmaktadır)|(?:yazı|bölüm|rehber),?\\s+[^.!?\\n]{0,80}?(?:anlatır|açıklar|anlatıyor|açıklıyor|ele\\s+alır|ele\\s+alıyor)%E)",
+   "examples": {
+    "pos": [
+     "Bu yazıda kurulumu adım adım ele alacağız.",
+     "Bu yazıda, kurulumu adım adım ele alacağız.",
+     "Bu bölümde yöntemin ayrıntıları açıklanmaktadır.",
+     "Bu bölümde yapılandırma ayrıntılı olarak anlatılır.",
+     "Bu bölüm, önbelleğin nasıl yapılandırılacağını ayrıntılarıyla anlatır."
+    ],
+    "neg": [
+     "Bu yazıda üç hata var.",
+     "Bu bölüm kısa."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E13",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"**Not:**\" kutuları tekrarlanıyor.",
+   "family": "ai-E",
+   "kind": "count",
+   "min": 2,
+   "pattern": "\\*\\*not:\\*\\*|\\*\\*not\\*\\*:",
+   "examples": {
+    "pos": [
+     "**Not:** bir.\n\n**Not:** iki."
+    ],
+    "neg": [
+     "**Not:** bir."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "AI-E14",
+   "layer": "ai-iz",
+   "level": "info",
+   "evidence": "hipotez",
+   "message": "\"Aşağıda ... bulabilirsiniz\" sunum kalıbı.",
+   "family": "ai-E",
+   "pattern": "%Başağıda\\s+[^.!?\\n]{0,60}?(?:bulabilirsiniz|yer\\s+almaktadır|sıraladık|listeledik|derledik)",
+   "examples": {
+    "pos": [
+     "Aşağıda en iyi on aracı sıraladık."
+    ],
+    "neg": [
+     "Aşağıdaki tabloya bakın."
+    ]
+   },
+   "source": "turkish-humanify / turkce-humanizer örüntü listeleri; Wikipedia: Signs of AI writing"
+  },
+  {
+   "id": "ST-01",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Ortalama cümle uzunluğu türün bandı dışında.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "sentence_band",
+   "test_register": "blog",
+   "examples": {
+    "pos": [
+     "Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi. Tasarım ekibi kullanıcı görüşmelerinden gelen notları topladı, arayüzdeki üç ekranı baştan çizmeye karar verdi ve yeni taslakları ertesi hafta küçük bir grupla denedi. Altyapı ekibi sunucuların bakımını hafta sonuna taşıdı, kesinti süresini kullanıcılara önceden duyurdu ve olası sorunlar için nöbetçi bir mühendisi gece boyunca hazırda tuttu. Destek ekibi son ayda gelen şikâyetleri konularına göre ayırdı, en sık görülen beş sorunu ayrı bir listeye yazdı ve bu listeyi ürün ekibiyle paylaştı. Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi. Tasarım ekibi kullanıcı görüşmelerinden gelen notları topladı, arayüzdeki üç ekranı baştan çizmeye karar verdi ve yeni taslakları ertesi hafta küçük bir grupla denedi. Altyapı ekibi sunucuların bakımını hafta sonuna taşıdı, kesinti süresini kullanıcılara önceden duyurdu ve olası sorunlar için nöbetçi bir mühendisi gece boyunca hazırda tuttu. Destek ekibi son ayda gelen şikâyetleri konularına göre ayırdı, en sık görülen beş sorunu ayrı bir listeye yazdı ve bu listeyi ürün ekibiyle paylaştı."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık ve köprüde yarım saat trafikte bekledik. Toplantı öğleden sonra başladı ve bütçe konusu yine uzun sürdü. Ahmet raporu masaya bıraktı, sonra herkese birer kahve almaya gitti. Akşam yağmur yağınca dışarıdaki programı iptal edip ofiste kaldık. Ertesi gün planı yeniden konuştuk ve iki maddeyi listeden çıkardık. Sabah erkenden yola çıktık ve köprüde yarım saat trafikte bekledik. Toplantı öğleden sonra başladı ve bütçe konusu yine uzun sürdü. Ahmet raporu masaya bıraktı, sonra herkese birer kahve almaya gitti. Akşam yağmur yağınca dışarıdaki programı iptal edip ofiste kaldık. Ertesi gün planı yeniden konuştuk ve iki maddeyi listeden çıkardık."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-02",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Türün üst sınırını aşan cümleler var.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "sentence_max",
+   "min": 2,
+   "test_register": "haber",
+   "examples": {
+    "pos": [
+     "Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu ve aynı gün kısa bir not da yayımladı. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi ve aynı gün kısa bir not da yayımladı. Sabah erkenden yola çıktık."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-03",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Okunabilirlik puanı türün bandı dışında.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "readability",
+   "test_register": "sosyal",
+   "examples": {
+    "pos": [
+     "Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi. Tasarım ekibi kullanıcı görüşmelerinden gelen notları topladı, arayüzdeki üç ekranı baştan çizmeye karar verdi ve yeni taslakları ertesi hafta küçük bir grupla denedi. Altyapı ekibi sunucuların bakımını hafta sonuna taşıdı, kesinti süresini kullanıcılara önceden duyurdu ve olası sorunlar için nöbetçi bir mühendisi gece boyunca hazırda tuttu. Destek ekibi son ayda gelen şikâyetleri konularına göre ayırdı, en sık görülen beş sorunu ayrı bir listeye yazdı ve bu listeyi ürün ekibiyle paylaştı. Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi. Tasarım ekibi kullanıcı görüşmelerinden gelen notları topladı, arayüzdeki üç ekranı baştan çizmeye karar verdi ve yeni taslakları ertesi hafta küçük bir grupla denedi. Altyapı ekibi sunucuların bakımını hafta sonuna taşıdı, kesinti süresini kullanıcılara önceden duyurdu ve olası sorunlar için nöbetçi bir mühendisi gece boyunca hazırda tuttu. Destek ekibi son ayda gelen şikâyetleri konularına göre ayırdı, en sık görülen beş sorunu ayrı bir listeye yazdı ve bu listeyi ürün ekibiyle paylaştı. Ekip yeni sürümün hazırlık sürecinde bütün modülleri tek tek gözden geçirdi, eksik kalan testleri tamamladı ve sonuçları cuma sabahı yapılan toplantıda yöneticilere ayrıntılı olarak sundu. Proje yöneticisi takvimdeki gecikmeleri tek tek değerlendirdi, müşteriye yeni teslim tarihini yazılı olarak bildirdi ve ekipten haftalık durum raporlarını düzenli göndermesini istedi. Tasarım ekibi kullanıcı görüşmelerinden gelen notları topladı, arayüzdeki üç ekranı baştan çizmeye karar verdi ve yeni taslakları ertesi hafta küçük bir grupla denedi. Altyapı ekibi sunucuların bakımını hafta sonuna taşıdı, kesinti süresini kullanıcılara önceden duyurdu ve olası sorunlar için nöbetçi bir mühendisi gece boyunca hazırda tuttu. Destek ekibi son ayda gelen şikâyetleri konularına göre ayırdı, en sık görülen beş sorunu ayrı bir listeye yazdı ve bu listeyi ürün ekibiyle paylaştı."
+    ],
+    "neg": [
+     "Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik. Sabah erkenden yola çıktık. Köprüde trafik vardı ve yarım saat bekledik. Toplantı öğleden sonra başladı. Ahmet raporu masaya bıraktı, sonra kahve almaya gitti. Akşam yağmur yağdı. Ertesi gün planı yeniden konuştuk ve iki maddeyi çıkardık. Bütçe yine yetmedi. Sonunda işi cuma günü teslim ettik."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-04",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Commit başlığı uzun.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "commit_title",
+   "check": "length",
+   "limits": [
+    60,
+    72
+   ],
+   "registers": [
+    "commit"
+   ],
+   "source": "git geleneği",
+   "examples": {
+    "pos": [
+     "fix(auth): oturum açma ekranındaki zaman aşımı hatası düzeltildi"
+    ],
+    "neg": [
+     "fix(auth): oturum hatası düzeltildi"
+    ]
+   }
+  },
+  {
+   "id": "ST-05",
+   "layer": "stil",
+   "level": "warning",
+   "evidence": "hakem",
+   "message": "Commit başlığı 72 karakteri aşıyor.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "commit_title",
+   "check": "length",
+   "limits": [
+    60,
+    72
+   ],
+   "registers": [
+    "commit"
+   ],
+   "source": "git geleneği",
+   "examples": {
+    "pos": [
+     "fix(auth): oturum açma ekranındaki zaman aşımı hatası düzeltildi ve kayıt akışı da yeniden düzenlendi"
+    ],
+    "neg": [
+     "fix(auth): oturum hatası düzeltildi"
+    ]
+   }
+  },
+  {
+   "id": "ST-06",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Commit başlığı `tip(kapsam): açıklama` biçiminde değil.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "commit_title",
+   "check": "format",
+   "registers": [
+    "commit"
+   ],
+   "source": "Conventional Commits",
+   "examples": {
+    "pos": [
+     "Güncellemeler yapıldı"
+    ],
+    "neg": [
+     "docs: kurulum adımları eklendi"
+    ]
+   }
+  },
+  {
+   "id": "ST-08",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Commit başlığı noktayla bitmemeli.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "commit_title",
+   "check": "period",
+   "registers": [
+    "commit"
+   ],
+   "source": "Conventional Commits",
+   "examples": {
+    "pos": [
+     "fix: hata düzeltildi."
+    ],
+    "neg": [
+     "fix: hata düzeltildi"
+    ]
+   }
+  },
+  {
+   "id": "ST-07",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Aynı bağlaç paragrafta tekrarlanıyor.",
+   "family": "stil",
+   "kind": "count",
+   "per": "paragraph",
+   "same": true,
+   "same_group": 1,
+   "min": 3,
+   "pattern": "%B(ayrıca|bununla\\s+birlikte|öte\\s+yandan|ancak|dolayısıyla|bu\\s+nedenle|ek\\s+olarak)%E",
+   "examples": {
+    "pos": [
+     "Ayrıca bir. Ayrıca iki. Ayrıca üç."
+    ],
+    "neg": [
+     "Ayrıca bir. Ancak iki. Bu nedenle üç."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-09",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Aynı metinde hem \"sen\" hem \"siz\" hitabı var.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "sen_siz",
+   "examples": {
+    "pos": [
+     "Siz formu doldurun. Sonra sen de bekle."
+    ],
+    "neg": [
+     "Formu doldurun. Sonra bekleyin."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-10",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Kod parçasına kesme işaretiyle ek getirilmiş. Eki koddan sonra boşlukla ayırmayı ya da cümleyi değiştirmeyi düşünün.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "code_apostrophe",
+   "examples": {
+    "pos": [
+     "`config.json`'u açın."
+    ],
+    "neg": [
+     "`config.json` dosyasını açın."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-11",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Düz ve kıvrık tırnak karışık kullanılmış.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "mixed_quotes",
+   "examples": {
+    "pos": [
+     "\"Bir\" ve “iki” dedi."
+    ],
+    "neg": [
+     "“Bir” ve “iki” dedi.",
+     "Ali’nin “kitabı” burada."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-12",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Paragrafların çoğu aynı sözcükle başlıyor.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "paragraph_initial",
+   "words": [
+    "bu",
+    "ayrıca",
+    "ancak",
+    "sonuç\\s+olarak"
+   ],
+   "threshold": 0.5,
+   "min_paragraphs": 4,
+   "examples": {
+    "pos": [
+     "Bu bir.\n\nBu iki.\n\nBu üç.\n\nDört."
+    ],
+    "neg": [
+     "Bir.\n\nİki.\n\nBu üç.\n\nDört."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-13",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Satırların çoğu emojiyle başlıyor.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "emoji_lines",
+   "mode": "line_start",
+   "threshold": 0.3,
+   "registers_off": [
+    "sosyal",
+    "pazarlama",
+    "sohbet"
+   ],
+   "examples": {
+    "pos": [
+     "🚀 Bir\nİki\n✅ Üç\n💡 Dört\nBeş"
+    ],
+    "neg": [
+     "Bir\nİki\nÜç 🙂"
+    ]
+   },
+   "source": "references/turler",
+   "scope": "span",
+   "prec": 3,
+   "skip_labels": true,
+   "yields_to": [
+    "AI-C13E"
+   ]
+  },
+  {
+   "id": "ST-15",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Metin uzunluğu bu türün aralığı dışında.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "word_count",
+   "default": "off",
+   "test_tur": "linkedin",
+   "test_register": "sosyal",
+   "examples": {
+    "pos": [
+     "Kısa."
+    ],
+    "neg": [
+     "Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil. Bugün ekipte yeni bir süreç denedik ve sonuçlar fena değil."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-16",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Satır bu tür için uzun.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "line_words",
+   "default": "off",
+   "test_tur": "ui-buton",
+   "test_register": "ui",
+   "examples": {
+    "pos": [
+     "Ayarlarınızı kaydetmek için lütfen bu düğmeye hemen tıklayın"
+    ],
+    "neg": [
+     "Kaydet"
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-16S",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Bu tür için cümle sayısı fazla.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "max_sentences",
+   "default": "off",
+   "test_tur": "ui-hata",
+   "test_register": "ui",
+   "examples": {
+    "pos": [
+     "Bağlantı kurulamadı. Ağınızı kontrol edin. Sonra yeniden deneyin. Sorun sürerse yazın."
+    ],
+    "neg": [
+     "Bağlantı kurulamadı. Ağınızı kontrol edip yeniden deneyin."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-17",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Akademik metin genel bir zaman kalıbıyla açılıyor. Araştırma sorusuyla başlayın.",
+   "family": "stil",
+   "kind": "builtin",
+   "builtin": "first_sentence",
+   "first_pattern": "%B(?:günümüzde|son\\s+yıllarda)%E",
+   "turs": [
+    "akademik-ozet",
+    "akademik-giris",
+    "tez"
+   ],
+   "default": "tur",
+   "test_tur": "akademik-ozet",
+   "test_register": "akademik",
+   "examples": {
+    "pos": [
+     "Günümüzde dijital okuryazarlık önem kazanmıştır. Bu çalışma lise öğrencilerini incelemektedir."
+    ],
+    "neg": [
+     "Bu çalışma lise öğrencilerinin dijital okuryazarlığını incelemektedir."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-18",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Bu türde birinci tekil kişi beklenmez.",
+   "family": "stil",
+   "default": "off",
+   "test_tur": "akademik-ozet",
+   "test_register": "akademik",
+   "pattern": "%B(?:ben|bana|beni|benim|bence)%E|%B(?!yardım)[%L]{3,}(?:d[ıiuü]m|t[ıiuü]m)%E",
+   "examples": {
+    "pos": [
+     "Bu çalışmada verileri ben topladım."
+    ],
+    "neg": [
+     "Bu çalışmada veriler toplanmıştır.",
+     "Bu çalışma yükseköğretim ve yönetim alanındadır."
+    ]
+   },
+   "source": "references/turler",
+   "exclude": "%B(?:yüksek)?(?:öğretim|eğitim|yönetim|üretim|denetim|tüketim|gözetim|işletim|iletim|yardım|adım)%E"
+  },
+  {
+   "id": "ST-22",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Bu türde ünlem işareti beklenmez.",
+   "family": "stil",
+   "kind": "count",
+   "min": 1,
+   "skip_quotes": true,
+   "registers": [
+    "akademik",
+    "resmi",
+    "haber",
+    "kurumsal"
+   ],
+   "pattern": "!",
+   "examples": {
+    "pos": [
+     "Sonuçlar çok iyi!"
+    ],
+    "neg": [
+     "Sonuçlar iyi.",
+     "Bakan \"Çok iyi!\" dedi."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-23",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Çok sayıda etiket (#) var.",
+   "family": "stil",
+   "kind": "count",
+   "min": 5,
+   "pattern": "(?:^|(?<=\\s))#[%W0-9_]+",
+   "examples": {
+    "pos": [
+     "Gün #a #b #c #d #e"
+    ],
+    "neg": [
+     "Gün #a #b"
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-24",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "Art arda büyük harfli sözcükler. Vurgu için büyük harf kullanmayın.",
+   "family": "stil",
+   "case": "exact",
+   "registers_off": [
+    "resmi",
+    "hukuk"
+   ],
+   "pattern": "%B[%U]{2,}(?:\\s+[%U]{2,}){2,}%E",
+   "examples": {
+    "pos": [
+     "Bu fırsatı SAKIN KAÇIRMAYIN ARKADAŞLAR hemen."
+    ],
+    "neg": [
+     "NATO ve AB görüştü."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-25",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"... ilişkin bilgilere yer verilecektir\" dolaylı. Fiili doğrudan kullanın (açıklanacaktır).",
+   "family": "stil",
+   "turs": [
+    "tez",
+    "akademik-giris",
+    "akademik-ozet",
+    "akademik-tartisma"
+   ],
+   "default": "tur",
+   "test_tur": "tez",
+   "test_register": "akademik",
+   "pattern": "%Bbilgiler(?:e|ine)\\s+yer\\s+veril[%L]*",
+   "examples": {
+    "pos": [
+     "Bu bölümde yönteme ilişkin bilgilere yer verilecektir."
+    ],
+    "neg": [
+     "Bu bölümde yöntem açıklanacaktır."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-26",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Resmî yazıda kapanış tekildir: \"rica ederim\", \"arz ederim\".",
+   "family": "stil",
+   "turs": [
+    "resmi-yazi"
+   ],
+   "default": "tur",
+   "test_tur": "resmi-yazi",
+   "test_register": "resmi",
+   "pattern": "%B(?:rica|arz)\\s+ederiz%E",
+   "examples": {
+    "pos": [
+     "Listenin gönderilmesini rica ederiz."
+    ],
+    "neg": [
+     "Listenin gönderilmesini rica ederim."
+    ]
+   },
+   "source": "Resmî Yazışma Yönetmeliği; references/turler/resmi-yazi.md"
+  },
+  {
+   "id": "ST-27",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "\"Personel\" topluluk adıdır; çoğul eki gerekmez (personelin).",
+   "family": "stil",
+   "registers": [
+    "resmi",
+    "kurumsal",
+    "is-eposta"
+   ],
+   "test_register": "resmi",
+   "pattern": "%Bpersoneller[%L]*",
+   "examples": {
+    "pos": [
+     "Katılacak personellerin listesini gönderin."
+    ],
+    "neg": [
+     "Katılacak personelin listesini gönderin."
+    ]
+   },
+   "source": "TDK Güncel Türkçe Sözlük (personel); references/turler/resmi-yazi.md"
+  },
+  {
+   "id": "ST-28",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "hakem",
+   "message": "İngilizce fiil + \"et-\". Türkçe karşılığı yerleşikse onu kullanın (deploy et- → yayına al-).",
+   "family": "stil",
+   "turs": [
+    "teknik-dok",
+    "readme"
+   ],
+   "default": "tur",
+   "test_tur": "teknik-dok",
+   "test_register": "teknik",
+   "pattern": "%B(?:deploy|redeploy|install|upgrade|update|release|restart|reboot|rollback|login|logout|download|upload|check|setup)\\s+(?:et|ed|edil|olun|ol)[%L]*",
+   "examples": {
+    "pos": [
+     "Uygulama deploy edildikten sonra logları kontrol edin."
+    ],
+    "neg": [
+     "Uygulamayı yayına aldıktan sonra loglara bakın.",
+     "Değişikliği commit edin."
+    ]
+   },
+   "source": "references/turler"
+  },
+  {
+   "id": "ST-29",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Buton eylemi söylemeli (Taslağı sil, Vazgeç). \"Evet/Hayır\" ve \"Emin misiniz?\" neyin onaylandığını söylemez.",
+   "family": "stil",
+   "turs": [
+    "ui-buton"
+   ],
+   "default": "tur",
+   "test_tur": "ui-buton",
+   "test_register": "ui",
+   "pattern": "%B(?:evet|hayır)%E|%Bemin\\s+misiniz",
+   "examples": {
+    "pos": [
+     "Emin misiniz? · Evet · Hayır"
+    ],
+    "neg": [
+     "Taslak silinsin mi? · Taslağı sil · Vazgeç"
+    ]
+   },
+   "source": "Microsoft ve Google Material Türkçe stil rehberleri; references/turler/ui-buton.md"
+  },
+  {
+   "id": "ST-30",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "\"Üzgünüz\" ve \"beklenmedik bir hata\" bilgi vermez. Sorunu ve çözümü yazın.",
+   "family": "stil",
+   "turs": [
+    "ui-hata"
+   ],
+   "default": "tur",
+   "test_tur": "ui-hata",
+   "test_register": "ui",
+   "pattern": "%Büzgünüz%E|%Bbeklenmedik\\s+bir\\s+hata",
+   "examples": {
+    "pos": [
+     "Üzgünüz, dosya yüklenemedi.",
+     "Beklenmedik bir hata oluştu."
+    ],
+    "neg": [
+     "Dosya yüklenemedi. Daha sonra yeniden deneyin."
+    ]
+   },
+   "source": "Microsoft Türkçe stil rehberi; references/turler/ui-hata.md"
+  },
+  {
+   "id": "ST-31",
+   "layer": "stil",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Kanıtsız üstünlük iddiası. Kanıt yoksa çıkarın (Ticari Reklam Yönetmeliği).",
+   "family": "stil",
+   "registers": [
+    "pazarlama"
+   ],
+   "test_register": "pazarlama",
+   "pattern": "%B(?:türkiye|dünya|sektör|piyasa|şehr|bölge)[%L]*%A?n[ıiuü]n\\s+en\\s+[%L]+|%Ben\\s+(?:iyi|ucuz|kaliteli|lezzetli|güvenilir|hızlı|taze)%E(?!\\s+(?:şekilde|biçimde|sonuç\\s+için|sonucu\\s+(?:almak|elde\\s+etmek)\\s+için|verim\\s+için|deneyim\\s+için|performans\\s+için))",
+   "examples": {
+    "pos": [
+     "Türkiye'nin en iyi kahvesi şimdi kapınızda!",
+     "Şehrin en taze ekmeği."
+    ],
+    "neg": [
+     "Kahve şimdi kapınızda!",
+     "Ürünü en iyi şekilde saklayın.",
+     "En iyi sonuç için hamuru bir gece dinlendirin."
+    ]
+   },
+   "source": "Ticari Reklam ve Haksız Ticari Uygulamalar Yönetmeliği; references/turler/reklam.md"
+  }
+ ]
+}

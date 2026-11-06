@@ -1,0 +1,5 @@
+# P24 Basın bülteni · kurumsal
+=== önce
+Sektörün Öncüsü X Şirketi'nden Devrim Niteliğinde Muhteşem Bir Adım!
+=== sonra
+X Şirketinden [ürün ya da hizmetin adı]

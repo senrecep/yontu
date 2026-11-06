@@ -1,0 +1,5 @@
+# P25 Sunum ve konuşma metni · sozlu
+=== önce
+Günümüzde yapay zekâ teknolojilerinin eğitim süreçlerine entegrasyonu, öğretmenlerin rollerinin yeniden tanımlanmasını gerekli kılmaktadır.
+=== sonra
+Yapay zekâ eğitime girdikçe öğretmenin rolünü yeniden tanımlamak gerekiyor.

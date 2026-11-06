@@ -1,0 +1,14 @@
+# 1. README · teknik
+=== önce
+yontu: Türkçe Metinler İçin Modern Ve Güçlü Bir Linter
+
+yontu, Türkçe metinlerinizi analiz ederek yazım hatalarını, noktalama sorunlarını ve yapay zekâ izlerini tespit eden, modern, güçlü ve kullanıcı dostu bir araçtır. Projenin temel amacı, yazım kalitenizi bir üst seviyeye taşımaktır!
+
+Kullanım: Analiz işlemini gerçekleştirmek için aşağıdaki komutu kolayca çalıştırabilirsiniz: `yontu lint metin.md`
+=== sonra
+yontu: Türkçe metinler için linter
+
+yontu, Türkçe metindeki yazım hatalarını, noktalama sorunlarını ve yapay zekâ izlerini bulan
+bir linterdir.
+
+Kullanım: `yontu lint metin.md`

@@ -1,0 +1,5 @@
+# P13 Commit mesajı · commit
+=== önce
+fix: Kullanıcı giriş ekranında yaşanan ve kullanıcıların sisteme giriş yapmasını engelleyen hata başarılı bir şekilde düzeltilmiştir.
+=== sonra
+fix: kullanıcı girişini engelleyen hata düzeltildi

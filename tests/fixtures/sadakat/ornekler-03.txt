@@ -1,0 +1,11 @@
+# 3. Akademik özet · akademik
+=== önce
+Günümüzde giderek artan bir önem kazanan uzaktan eğitim, eğitim süreçlerinde kilit bir rol oynamaktadır. Bu bağlamda, bu çalışma ortaokul öğrencilerinin uzaktan eğitime yönelik tutumlarını kapsamlı bir şekilde incelemeyi amaçlamaktadır. Araştırmada nicel araştırma yöntemlerinden tarama modeli kullanılmıştır. Çalışmanın örneklemini 312 öğrenci oluşturmaktadır. Veriler, araştırmacı tarafından geliştirilen tutum ölçeği aracılığıyla toplanmıştır. Elde edilen bulgular, öğrencilerin tutumlarının cinsiyete göre anlamlı bir farklılık göstermediğini, ancak sınıf düzeyine göre anlamlı bir farklılık gösterdiğini ortaya koymaktadır. Sonuç olarak, bu bulgular uzaktan eğitim politikalarının şekillendirilmesinde önemli bir rol oynayabilir.
+=== sonra
+Uzaktan eğitimin eğitim süreçlerindeki önemi giderek artmaktadır. Bu çalışmanın
+amacı, ortaokul öğrencilerinin uzaktan eğitime yönelik tutumlarını incelemektir. Araştırmada
+nicel desenlerden tarama modeli kullanılmıştır. Örneklemi 312 öğrenci oluşturmaktadır.
+Veriler, araştırmacının geliştirdiği tutum ölçeğiyle toplanmıştır. Bulgular, öğrencilerin
+tutumlarının cinsiyete göre anlamlı farklılık göstermediğini, sınıf düzeyine göre ise
+anlamlı farklılık gösterdiğini ortaya koymaktadır. Bu bulgular, uzaktan eğitim
+politikalarının şekillenmesinde önemli olabilir.

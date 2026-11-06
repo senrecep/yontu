@@ -1,0 +1,6 @@
+# 6. Arayüz hata iletisi · ui
+=== önce
+Üzgünüz, ödemeniz işlenirken beklenmedik bir hata oluştu! Lütfen kart bilgilerinizi kontrol ediniz ve daha sonra tekrar deneyiniz. (Hata kodu: 402)
+=== sonra
+Ödeme alınamadı. Kart bilgilerinizi kontrol edin ve daha sonra yeniden deneyin.
+(Hata kodu: 402)

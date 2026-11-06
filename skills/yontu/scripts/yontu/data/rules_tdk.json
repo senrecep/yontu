@@ -1,0 +1,2325 @@
+{
+ "version": 1,
+ "rules": [
+  {
+   "id": "YZ-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Yazım yanlışı.",
+   "kind": "map",
+   "map": {
+    "yanlız": "yalnız",
+    "yalnış": "yanlış",
+    "şöför": "şoför",
+    "süpriz": "sürpriz",
+    "orjinal": "orijinal",
+    "eşortman": "eşofman",
+    "egsoz": "egzoz",
+    "traş": "tıraş",
+    "kollej": "kolej",
+    "proğram": "program",
+    "fotograf": "fotoğraf",
+    "labaratuvar": "laboratuvar",
+    "laboratuar": "laboratuvar",
+    "labaratuar": "laboratuvar",
+    "konservatuar": "konservatuvar",
+    "antreman": "antrenman",
+    "klavuz": "kılavuz",
+    "şarz": "şarj",
+    "mağazin": "magazin",
+    "pantalon": "pantolon",
+    "inşaallah": "inşallah",
+    "sağol": "sağ ol",
+    "tiren": "tren",
+    "kıral": "kral",
+    "pisikoloji": "psikoloji",
+    "çukulata": "çikolata",
+    "dinazor": "dinozor",
+    "tellevizyon": "televizyon",
+    "yogurt": "yoğurt",
+    "mataryal": "materyal",
+    "aksesuvar": "aksesuar",
+    "apartıman": "apartman",
+    "ayakabı": "ayakkabı",
+    "mayanez": "mayonez",
+    "rasgele": "rastgele",
+    "tasaruf": "tasarruf",
+    "teferruvat": "teferruat",
+    "ünversite": "üniversite",
+    "eksersiz": "egzersiz",
+    "fasülye": "fasulye",
+    "heycan": "heyecan",
+    "kontejan": "kontenjan",
+    "müsvette": "müsvedde",
+    "parelel": "paralel",
+    "prespektif": "perspektif",
+    "rezarvasyon": "rezervasyon",
+    "sempozium": "sempozyum",
+    "siluet": "silüet",
+    "şampuvan": "şampuan",
+    "tiatro": "tiyatro",
+    "tualet": "tuvalet",
+    "diğil": "değil",
+    "deyil": "değil",
+    "teşekür": "teşekkür",
+    "insiyatif": "inisiyatif",
+    "kordina": "koordina",
+    "hakket": "hak et",
+    "hakked": "hak ed",
+    "farket": "fark et",
+    "farked": "fark ed",
+    "kirbik": "kirpik",
+    "kiprik": "kirpik",
+    "supriz": "sürpriz",
+    "eksoz": "egzoz",
+    "entellektüel": "entelektüel",
+    "tirbüşon": "tirbuşon",
+    "yımırta": "yumurta",
+    "kıravat": "kravat",
+    "antreör": "antrenör",
+    "eşkiya": "eşkıya",
+    "eczahane": "eczane",
+    "espiri": "espri",
+    "maşşallah": "maşallah",
+    "pilaj": "plaj",
+    "sandoviç": "sandviç",
+    "kilasör": "klasör",
+    "reportaj": "röportaj",
+    "rotuş": "rötuş",
+    "şovalye": "şövalye",
+    "yoğrut": "yoğurt",
+    "mozayik": "mozaik",
+    "ambülans": "ambulans",
+    "anfi": "amfi",
+    "mösyü": "mösyö",
+    "pardesü": "pardösü",
+    "pogaça": "poğaça",
+    "poaça": "poğaça",
+    "prezentabl": "prezantabl",
+    "sörvis": "servis",
+    "tıraktör": "traktör",
+    "zatürree": "zatürre",
+    "pilaket": "plaket",
+    "annons": "anons",
+    "ekspress": "ekspres",
+    "egzema": "egzama",
+    "ekzema": "egzama",
+    "ekzotik": "egzotik",
+    "enterasan": "enteresan",
+    "feslegen": "fesleğen",
+    "gardrop": "gardırop",
+    "hierarşi": "hiyerarşi",
+    "lökemi": "lösemi",
+    "ofsait": "ofsayt",
+    "pisuar": "pisuvar",
+    "radyotör": "radyatör",
+    "sentral": "santral",
+    "spageti": "spagetti",
+    "teklonoji": "teknoloji",
+    "zaafiyet": "zafiyet",
+    "profesyönel": "profesyonel",
+    "fermuvar": "fermuar",
+    "malesef": "maalesef",
+    "müsade": "müsaade",
+    "katagori": "kategori",
+    "döküman": "doküman",
+    "dökümantasyon": "dokümantasyon",
+    "muhattap": "muhatap"
+   },
+   "suffix": true,
+   "family": "yazim",
+   "source": "TDK Yazım Kılavuzu, sık yapılan yanlışlar; gts",
+   "examples": {
+    "pos": [
+     "Yanlız kaldım.",
+     "Bunu farkettim.",
+     "Hakkettiği ödülü aldı.",
+     "Malesef gelemedim.",
+     "Müsadenizle çıkayım."
+    ],
+    "neg": [
+     "Yalnız kaldım.",
+     "Bunu fark ettim."
+    ]
+   }
+  },
+  {
+   "id": "YZ-02",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü başka biçimde yazar.",
+   "kind": "map",
+   "map": {
+    "makina": "makine",
+    "mönü": "menü",
+    "ahçı": "aşçı",
+    "sarmısak": "sarımsak"
+   },
+   "suffix": true,
+   "fixable": false,
+   "fix_bare_only": true,
+   "family": "yazim",
+   "source": "gts",
+   "examples": {
+    "pos": [
+     "Makina bozuldu."
+    ],
+    "neg": [
+     "Makine bozuldu."
+    ]
+   }
+  },
+  {
+   "id": "YZ-02B",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü başka biçimde yazar.",
+   "kind": "map",
+   "map": {
+    "metod": "metot",
+    "stad": "stat",
+    "standard": "standart",
+    "dolayısı ile": "dolayısıyla",
+    "mütevazi": "mütevazı"
+   },
+   "exclude": "%B(?:the|a|an|of|for|in|to|by|and|or)[ \\t]+standard%E|standard[ \\t]+(?:library|libraries|input|output|error|streams?|profile|mode|format|deviation|practices?)%E",
+   "fixable": false,
+   "family": "yazim",
+   "source": "gts",
+   "examples": {
+    "pos": [
+     "Bu metod eski.",
+     "Bundan dolayısı ile ertelendi."
+    ],
+    "neg": [
+     "Bu metodu biliyoruz.",
+     "Standardı yükselttik.",
+     "Python 3.9+, standard library only."
+    ]
+   }
+  },
+  {
+   "id": "YZ-03",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Yazım yanlışı.",
+   "kind": "map",
+   "map": {
+    "meyva": "meyve",
+    "kampanye": "kampanya",
+    "vejeteryan": "vejetaryen",
+    "sezeryan": "sezaryen",
+    "kuafor": "kuaför",
+    "nufüs": "nüfus",
+    "akvaryüm": "akvaryum",
+    "otobus": "otobüs",
+    "herkez": "herkes",
+    "restorant": "restoran",
+    "katalok": "katalog",
+    "mitink": "miting",
+    "herkesde": "herkeste",
+    "kontor": "kontör",
+    "mötör": "motor",
+    "istifrağ": "istifra",
+    "mahsüs": "mahsus",
+    "kurdela": "kurdele",
+    "bisküvit": "bisküvi",
+    "kopye": "kopya",
+    "deklanşor": "deklanşör",
+    "kayısi": "kayısı",
+    "konsensus": "konsensüs",
+    "lahmacün": "lahmacun",
+    "parfum": "parfüm",
+    "prosedur": "prosedür",
+    "vantilator": "vantilatör"
+   },
+   "suffix": true,
+   "fix_bare_only": true,
+   "family": "yazim",
+   "source": "TDK Yazım Kılavuzu; gts",
+   "examples": {
+    "pos": [
+     "Meyva aldım.",
+     "Herkez geldi."
+    ],
+    "neg": [
+     "Meyve aldım.",
+     "Herkes geldi."
+    ]
+   }
+  },
+  {
+   "id": "YZ-04",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "gts bu sözü \"ünvan\" biçiminde verir.",
+   "kind": "map",
+   "map": {
+    "unvan": "ünvan"
+   },
+   "suffix": true,
+   "fixable": false,
+   "family": "yazim",
+   "source": "gts, 2026-11-05 sorgusu; Yazım Kılavuzu ile doğrulanmadı",
+   "examples": {
+    "pos": [
+     "Unvanı müdür."
+    ],
+    "neg": [
+     "Ünvanı müdür."
+    ]
+   }
+  },
+  {
+   "id": "YZ-05",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "TDK \"iş birliği\" biçiminde ayrı yazar.",
+   "kind": "map",
+   "map": {
+    "işbirli": "iş birli"
+   },
+   "suffix": true,
+   "fixable": false,
+   "family": "yazim",
+   "source": "gts, 2026-11-05 sorgusu",
+   "examples": {
+    "pos": [
+     "İşbirliği yaptık."
+    ],
+    "neg": [
+     "İş birliği yaptık."
+    ]
+   }
+  },
+  {
+   "id": "YZ-06",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Yazım yanlışı.",
+   "kind": "map",
+   "map": {
+    "herhangibir": "herhangi bir",
+    "ard arda": "art arda",
+    "tabi ki": "tabii ki",
+    "tabiki": "tabii ki",
+    "kendiside": "kendisi de",
+    "birtek": "bir tek",
+    "hiçbirzaman": "hiçbir zaman",
+    "okadar": "o kadar",
+    "bukadar": "bu kadar",
+    "nekadar": "ne kadar",
+    "şukadar": "şu kadar",
+    "bilhasa": "bilhassa",
+    "itibariyle": "itibarıyla",
+    "eşarb": "eşarp",
+    "bilakiz": "bilakis",
+    "mütala": "mütalaa",
+    "hergün": "her gün",
+    "şuan": "şu an",
+    "birsürü": "bir sürü",
+    "yinede": "yine de",
+    "kimbilir": "kim bilir",
+    "hoşçakal": "hoşça kal",
+    "herneyse": "her neyse",
+    "birdaha": "bir daha",
+    "aksi taktirde": "aksi takdirde"
+   },
+   "family": "yazim",
+   "source": "TDK Yazım Kılavuzu",
+   "examples": {
+    "pos": [
+     "Ne kadar güzel, tabiki geleceğim.",
+     "Yinede geldi.",
+     "Hergün koşarım.",
+     "Şuan meşgulüm."
+    ],
+    "neg": [
+     "Tabii ki geleceğim."
+    ]
+   }
+  },
+  {
+   "id": "YZ-07",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "\"birde\" bağlaç ise ayrı yazılır: \"bir de\".",
+   "pattern": "%B(birde)%E(?![ \\t]+(?:bir|ikide|kalır|kaldı))",
+   "suggestion": "bir de",
+   "family": "yazim",
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan de",
+   "examples": {
+    "pos": [
+     "Birde şunu ekleyelim."
+    ],
+    "neg": [
+     "Bir de şunu ekleyelim.",
+     "Saat birde buluşalım."
+    ]
+   },
+   "exclude": "(?:saat|gece|öğlen)[ \\t]+birde"
+  },
+  {
+   "id": "YZ-08",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Kazanç anlamında \"kâr\" yazılır.",
+   "pattern": "%B(kar)[ \\t]+(?=marj|pay|oran|zarar)",
+   "group": 1,
+   "suggestion": "kâr",
+   "family": "yazim",
+   "examples": {
+    "pos": [
+     "Kar marjı düştü."
+    ],
+    "neg": [
+     "Kâr marjı düştü."
+    ]
+   },
+   "source": "TDK Güncel Türkçe Sözlük"
+  },
+  {
+   "id": "SP-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Noktalama işaretinden önce boşluk bırakılmaz.",
+   "pattern": "(?<=[%W0-9)\\\"”’])[ \\t]+([,;:!?]|\\.(?![.\\w]))(?=[ \\t]|$)",
+   "fix": "$1",
+   "exclude": "^[ \\t]*(?:sayı|konu|ilgi|ek|tarih|kimden|kime|bilgi)[ \\t]*:",
+   "family": "noktalama",
+   "source": "TDK Yazım Kılavuzu, Noktalama",
+   "examples": {
+    "pos": [
+     "Geldi , gitti.",
+     "Bitti ."
+    ],
+    "neg": [
+     "Geldi, gitti.",
+     "Sayı : 12"
+    ]
+   }
+  },
+  {
+   "id": "SP-02",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Virgül ve noktalı virgülden sonra boşluk bırakılır.",
+   "pattern": "(?<=[%W])([,;])(?=[%W])",
+   "fix": "$1 ",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "elma,armut"
+    ],
+    "neg": [
+     "elma, armut",
+     "3,5 kilo",
+     "Bkz. code.claude.com/docs/en/{hooks,plugin-marketplaces} sayfası."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "SP-04",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Ayraç içinde kenarda boşluk bırakılmaz.",
+   "pattern": "(\\()[ \\t]+(?=\\S)|(?<=\\S)[ \\t]+(\\))",
+   "fix": "$1$2",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "( örnek )"
+    ],
+    "neg": [
+     "(örnek)"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "SP-06",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Kesme işaretinden sonra boşluk bırakılmaz.",
+   "pattern": "(?<!['’%W])([%U][%L]+|\\d+)(%A)[ \\t]+((?!d[ae]%E)(?:d[ae]n?|t[ae]n?|d[ae]ki|t[ae]ki|y[ae]|y[ıiuü]|[ıiuü]n|n[ıiuü]n|[ae]|[ıiuü]|yl[ae]|l[ae]|l[ae]r[%L]*))%E",
+   "case": "exact",
+   "fix": "$1$2$3",
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "Ankara' ya gitti."
+    ],
+    "neg": [
+     "Ankara'ya gitti.",
+     "'Merhaba' de."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "SP-07",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Kesmeden sonra boşluk var. Bulunma eki ise bitişik (Ali'de), bağlaç ise kesmesiz ayrı yazılır (Ali de).",
+   "pattern": "(?<!['’%W])([%U][%L]+)(%A)[ \\t]+(d[ae])%E",
+   "case": "exact",
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "Ali' de geldi."
+    ],
+    "neg": [
+     "Ali de geldi."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "VR-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Bağlaç olan \"ve\", \"veya\" ve \"yahut\" sözcüklerinden önce virgül konmaz.",
+   "pattern": ",[ \\t]+(ve|veya|yahut)%E(?![ \\t]*[,)\\]])",
+   "fix": " $1",
+   "family": "noktalama",
+   "source": "TDK Yazım Kılavuzu, Virgül",
+   "examples": {
+    "pos": [
+     "elma, armut, ve kiraz"
+    ],
+    "neg": [
+     "elma, armut ve kiraz",
+     "Liste: tespit, veya, ya da.",
+     "Ayşe Hanım, yani şirketin temsilcisi, ve iki uzman katıldı.",
+     "vb. (ve başkası, ve benzeri, ve benzerleri)"
+    ]
+   },
+   "exclude": ",[ \\t]+(?:yani|örneğin|mesela|bence|kısacası|diğer[ \\t]+adıyla|başka[ \\t]+bir[ \\t]+deyişle)[ \\t][^,.;:!?\\n]{1,80},[ \\t]+(?:ve|veya|yahut)%E|\\([^)\\n]*,[ \\t]+(?:ve|veya|yahut)%E"
+  },
+  {
+   "id": "VR-02",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Bağlaçtan hemen sonra virgül gereksiz.",
+   "pattern": "(?<![\\\"“'(])(?<!, )%B(ve|veya|yahut),",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "Geldi ve, oturdu."
+    ],
+    "neg": [
+     "Geldi ve oturdu.",
+     "\"ve, veya, yahut\" bağlaçları"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "UN-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Üç noktadan fazla nokta kullanılmaz.",
+   "pattern": "(?<!\\.)\\.{4,}",
+   "fix": "...",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "Bekledik...."
+    ],
+    "neg": [
+     "Bekledik..."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "UN-02",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "İki nokta yan yana kullanılmaz: nokta ya da üç nokta.",
+   "pattern": "(?<=[%W])\\.\\.(?!\\.)",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "Tamam.."
+    ],
+    "neg": [
+     "Tamam...",
+     "Tamam."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "UN-08",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Soru eki var ama cümle soru işaretiyle bitmiyor.",
+   "pattern": "%B(m[ıiuü](?:s[ıiuü]n(?:[ıiuü]z)?|y[ıiuü]m|y[ıiuü]z|d[ıiuü]r)?)\\.(?=\\s|$)",
+   "suggestion": "$1?",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "Geldin mi."
+    ],
+    "neg": [
+     "Geldin mi?",
+     "Güzel mi güzel.",
+     "Bu birimin başında bir müdür."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri",
+   "exclude": "%Bmüdür%E"
+  },
+  {
+   "id": "CZ-01",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Uzun çizgi yalnız satır başındaki konuşmada kullanılır. Cümle içinde virgül, ayraç ya da bitişik kısa çizgi yazın.",
+   "pattern": "(?<=\\S)[ \\t]*—[ \\t]*(?=\\S)",
+   "family": "noktalama",
+   "source": "TDK Yazım Kılavuzu, Uzun Çizgi",
+   "examples": {
+    "pos": [
+     "Bu kural — bence — gerekli."
+    ],
+    "neg": [
+     "— Gel, dedi.",
+     "Sıtkı Bey— Gel bakalım.",
+     "Ali Bey— Yarın gelirim."
+    ]
+   },
+   "exclude": "(?:^|(?<=\\n))[ \\t]*[%U][%L]*(?:[ \\t]+[%U][%L]*)?—",
+   "case": "exact"
+  },
+  {
+   "id": "CZ-02",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Ara söz için boşluklu çizgi değil, bitişik kısa çizgi ya da virgül kullanılır.",
+   "pattern": "(?<=[%L])[ \\t]+–[ \\t]+(?=[%L])",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "Bu yöntem – bildiğimiz kadarıyla – yeni."
+    ],
+    "neg": [
+     "1914–1918 arası",
+     "XII – XIV. yüzyıllar"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri",
+   "case": "exact"
+  },
+  {
+   "id": "CZ-03",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Ara söz için boşluklu çizgi değil, bitişik kısa çizgi ya da virgül kullanılır.",
+   "pattern": "(?<=[%L])[ \\t]+-[ \\t]+(?=[%L])",
+   "case": "exact",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "Bu yöntem - bildiğimiz kadarıyla - yeni."
+    ],
+    "neg": [
+     "Ankara - İstanbul"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "CZ-06",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Yinelenen sayı adları arasına çizgi konmaz.",
+   "pattern": "%B(bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on)-(iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|yirmi)(?=[ \\t]+(?:kişi|gün|yıl|saat|dakika|kez|defa|hafta|ay|sayfa))",
+   "fix": "$1 $2",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "üç-beş kişi"
+    ],
+    "neg": [
+     "üç beş kişi"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "TR-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Tırnaktan sonra gelen ek kesmeyle ayrılmaz.",
+   "pattern": "(?<=\\S)([”\\\"])%A([%L]{1,6})%E",
+   "fix": "$1$2",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Tırnak İşareti",
+   "examples": {
+    "pos": [
+     "“Çalıkuşu”'nu okudum."
+    ],
+    "neg": [
+     "“Çalıkuşu”nu okudum."
+    ]
+   }
+  },
+  {
+   "id": "TR-05",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Türkçede tırnak için “ ” ya da \" \" kullanılır.",
+   "pattern": "[«»„]",
+   "family": "noktalama",
+   "examples": {
+    "pos": [
+     "«Gel» dedi."
+    ],
+    "neg": [
+     "“Gel” dedi."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Noktalama İşaretleri"
+  },
+  {
+   "id": "AY-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Ek ayraçtan sonra değil, ayraçtan önceki sözcüğe gelir.",
+   "pattern": "(?<![%W])([%U][%L]+)[ \\t]*\\((?![%L0-9]{1,2}\\))[^)\\n]{1,60}\\)%A?(n?[ıiuü]n|y?[ıiuü]|y?[ae]|[dt][ae]n|[dt][ae])%E",
+   "case": "exact",
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "Yunus Emre (1240-1320)'nin şiirleri"
+    ],
+    "neg": [
+     "Yunus Emre'nin (1240-1320) şiirleri",
+     "İlgi (a)'da kayıtlı yazı"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "KS-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Kurum adlarına gelen ekler kesmeyle ayrılmaz.",
+   "pattern": "([%U][%L]+[ \\t]+)(Kurumu|Kurulu|Bakanlığı|Başkanlığı|Müdürlüğü|Üniversitesi|Fakültesi|Enstitüsü|Yüksekokulu|Meclisi|Derneği|Vakfı|Belediyesi|Valiliği|Kaymakamlığı|Lisesi|Okulu|Hastanesi|Bankası|Kulübü|Şirketi|Partisi|Odası|Konseyi|Komisyonu|Ajansı|Müzesi|Kütüphanesi|Merkezi|Dairesi|Mahkemesi|Sendikası|Federasyonu|Holdingi)%A([%L]+)",
+   "case": "exact",
+   "fix": "$1$2$3",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "examples": {
+    "pos": [
+     "Türk Dil Kurumu'nun kararı"
+    ],
+    "neg": [
+     "Türk Dil Kurumunun kararı",
+     "TDK'nin kararı"
+    ]
+   }
+  },
+  {
+   "id": "KS-02",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Dil adlarına gelen ekler kesmeyle ayrılmaz.",
+   "pattern": "%B(Türkçe|İngilizce|Almanca|Fransızca|Arapça|Rusça|İspanyolca|İtalyanca|Japonca|Çince|Farsça|Korece|Yunanca|Latince|Kürtçe|Osmanlıca|Azerice|Felemenkçe|Portekizce|Hintçe|İbranice|Ermenice|Gürcüce|Bulgarca|Lehçe|Macarca|Fince|İsveççe|Norveççe|Danca|Romence|Sırpça|Hırvatça|Boşnakça|Arnavutça|Ukraynaca|Kazakça|Özbekçe|Kırgızca|Türkmence|Tatarca|Uygurca|Moğolca|Hollandaca|Tayca)%A([%L]+)",
+   "case": "exact",
+   "fix": "$1$2",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "examples": {
+    "pos": [
+     "Türkçe'de bu böyle."
+    ],
+    "neg": [
+     "Türkçede bu böyle."
+    ]
+   }
+  },
+  {
+   "id": "KS-03",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Özel adlara gelen yapım ve çokluk ekleri kesmeyle ayrılmaz (Ankaralı, Ahmetler).",
+   "pattern": "%B(%N)%A((?:l[ae]r|l[ıiuü]k?|[cç][ıiuü](?:l[ıiuü]k)?|s[ıiuü]z)[%L]*)%E",
+   "case": "exact",
+   "fix": "$1$2",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "examples": {
+    "pos": [
+     "Bu Ankara'lı bir öğrenci.",
+     "Onlar Atatürk'çü düşünceyi savunur.",
+     "İstanbul'lu bir yazar.",
+     "Ahmet'ler bize geldi.",
+     "Türkiye'li sporcular kazandı."
+    ],
+    "neg": [
+     "Ankaralı bir öğrenci",
+     "ABD'li bir öğrenci",
+     "Ali'le gittim.",
+     "Ankara'ya gittik.",
+     "Banner'lar güncellendi.",
+     "Ahmet'in kitabı."
+    ]
+   }
+  },
+  {
+   "id": "KS-03B",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Özel adlara gelen yapım ve çokluk ekleri kesmeyle ayrılmaz (Bergamalı). Sözcük özel ad değilse büyük harf de gerekmez (merge request'ler).",
+   "pattern": "%B(?!%N%A)([%U][%L]+)%A((?:l[ae]r|l[ıiuü]k?|[cç][ıiuü](?:l[ıiuü]k)?|s[ıiuü]z)[%L]*)%E",
+   "case": "exact",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "note": "Büyük harfli yabancı sözcükler burada; sık özel adlar KS-03'te. Otomatik düzeltme yok: özel ad mı, büyük harfle yazılmış yabancı cins ad mı, yazar karar verir. Cümle başı KS-03S'te. Çok sözcüklü ad ya da yabancı görünen terim (Pull Request'ler, GitHub Action'lar) uyarıya iner, öneri verilmez.",
+   "examples": {
+    "pos": [
+     "Bu Bergama'lı bir halıdır.",
+     "Ekipte Selçuk'lar çoğunlukta."
+    ],
+    "neg": [
+     "Ankara'lı bir öğrenci",
+     "Bergamalı bir halı",
+     "ABD'li bir öğrenci",
+     "Ali'le gittim.",
+     "Banner'lar güncellendi.",
+     "- **Popup'lar:** kapatıldı.",
+     "Önce test. Diff'leri inceledim."
+    ]
+   },
+   "skip_sentence_initial": true,
+   "fixable": false,
+   "suggestion": "$1$2",
+   "multiword_cap": "warning"
+  },
+  {
+   "id": "KS-03S",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Özel adlara gelen yapım ekleri kesmeyle ayrılmaz (Antakyalı).",
+   "pattern": "(?:^|(?<=[.!?…:]\\s)|(?<=^[-*+>#]\\s))(?!%N%A)([%U][%L]+)%A((?:l[ıiuü]|[cç][ıiuü]|s[ıiuü]z)[%L]*)%E",
+   "case": "exact",
+   "fixable": false,
+   "suggestion": "$1$2",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "note": "KS-03B'nin cümle başı hâli. Çokluk eki (-lAr) dışarıda: cümle başında büyük harfle yazılmış cins ad olabilir (Banner'lar).",
+   "examples": {
+    "pos": [
+     "Göreme'li rehberle konuştum.",
+     "Dün geldi. Bergama'lı bir halı aldı."
+    ],
+    "neg": [
+     "Antakyalı tedarikçiyle konuştum.",
+     "Banner'lar güncellendi.",
+     "Diff'leri inceledim.",
+     "Ankara'lı öğrenciler geldi.",
+     "ABD'li bir öğrenci."
+    ]
+   }
+  },
+  {
+   "id": "KS-04",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Sonunda nokta olan kısaltmaya gelen ek kesmeyle ayrılmaz.",
+   "pattern": "%B(vb|vs|dr|prof|doç|av|alb|gen|mah|cad|sok|no|alm|ing|fr|ar|far)\\.%A(?=[%L])",
+   "fix": "$1.",
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "Dr.'a sordum."
+    ],
+    "neg": [
+     "Dr.a sordum."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "KS-06",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Özel ada gelen çekim eki kesmeyle ayrılır.",
+   "pattern": "%B(?:(Türkiye|Ankara|Avrupa|Asya|Amerika|Almanya|Fransa|Rusya|Japonya|İtalya|İspanya|Antalya|Adana|Konya|Bursa|Londra|İngiltere|Afrika|Kayseri|Samsun)(y[ıiuü]|y[ae]|n[ıiuü]n|d[ae]n?|d[ae]ki|yl[ae])|(İstanbul|İzmir|Trabzon|Paris|Berlin|Atatürk|Kıbrıs|Azerbaycan|Yunanistan|Erzurum|Diyarbakır|Eskişehir)([ıiuü]|[ae]|[ıiuü]n|[dt][ae]n?|[dt][ae]ki))%E",
+   "case": "exact",
+   "fix": "$1$3'$2$4",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "examples": {
+    "pos": [
+     "İstanbulda yaşıyorum.",
+     "Türkiyenin başkenti"
+    ],
+    "neg": [
+     "İstanbul'da yaşıyorum.",
+     "Ankaralı bir öğrenci"
+    ]
+   }
+  },
+  {
+   "id": "KS-07",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Kesmeden sonraki ek, adın okunuşuna uymuyor.",
+   "kind": "builtin",
+   "builtin": "apostrophe_suffix",
+   "target": "name",
+   "check": "consonant",
+   "fixable": false,
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "Ahmet'de kaldı.",
+     "Frankfurt'da kaldı.",
+     "Facebook'da gördüm.",
+     "Linux'da çalışır."
+    ],
+    "neg": [
+     "Ahmet'te kaldı.",
+     "Kemal'e sordum.",
+     "Claude'un önerisi.",
+     "Bloomberg'e göre.",
+     "Mac'te çalışır.",
+     "Mac'da çalışır.",
+     "Facebook'ta gördüm.",
+     "Renault'da çalıştı.",
+     "Peugeot'da çalıştı.",
+     "Dumas'dan alıntı yaptı.",
+     "Bordeaux'dan geldi.",
+     "Bordeaux'daki bağlar."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "KS-07V",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Kesmeden sonraki ekin ünlüsü adın son ünlüsüne uymuyor olabilir.",
+   "kind": "builtin",
+   "builtin": "apostrophe_suffix",
+   "target": "name",
+   "check": "vowel",
+   "fixable": false,
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "Mehmet'a sordum."
+    ],
+    "neg": [
+     "Mehmet'e sordum.",
+     "Apple'ın ürünü.",
+     "Apple'a sordum."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "KS-07N",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Sayıya gelen ek, sayının okunuşuna uymuyor.",
+   "kind": "builtin",
+   "builtin": "apostrophe_suffix",
+   "target": "number",
+   "fixable": true,
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı",
+   "examples": {
+    "pos": [
+     "2024'de başladı.",
+     "3'de buluşalım."
+    ],
+    "neg": [
+     "2024'te başladı.",
+     "2020'de başladı.",
+     "Sürüm 4.17.0'daki hata.",
+     "1.0'a geçtik.",
+     "3.10'a yükselttik.",
+     "Fiyat $2.99'luk.",
+     "Maliyet ~$8'a indi.",
+     "Saat 09.00'da başlar."
+    ]
+   }
+  },
+  {
+   "id": "KS-08",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "\"o\" zamirine gelen ek kesmeyle ayrılmaz: onun, ona.",
+   "pattern": "%B[Oo]%A(nun|na|nu|nda|ndan|nla)%E",
+   "case": "exact",
+   "examples": {
+    "pos": [
+     "O'nun kitabı",
+     "o'nun kitabı"
+    ],
+    "neg": [
+     "Onun kitabı"
+    ]
+   },
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "KS-09",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Rakamla yazılan sayıya gelen ek kesmeyle ayrılır.",
+   "pattern": "(?<![\\w.,'’])(\\d+(?:[.,]\\d+)?)(d[ae]n?|t[ae]n?|d[ae]ki|t[ae]ki|y[ae]|y[ıiuü]|[ıiuü]n|n[ıiuü]n|l[ae]r[%L]*|l[ıiuü]k?|[ıiuü]nc[ıiuü]|nc[ıiuü])%E",
+   "fix": "$1'$2",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "examples": {
+    "pos": [
+     "2023te başladı.",
+     "5inci kat"
+    ],
+    "neg": [
+     "2023'te başladı.",
+     "5G ağı"
+    ]
+   }
+  },
+  {
+   "id": "KS-10",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Belirli tarih bildiren ay adına gelen ek kesmeyle ayrılır: 17 Aralık'a kadar.",
+   "pattern": "(?<![0-9])([0-9]{1,2}[ \\t]+(?:Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık))(d[ae]n?|t[ae]n?|d[ae]ki|t[ae]ki|y[ae]|[ae]|[ıiuü]n|n[ıiuü]n)%E",
+   "case": "exact",
+   "suggestion": "$1'$2",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "examples": {
+    "pos": [
+     "17 Aralıkta açıklandı.",
+     "1 Mayısa kadar sürer."
+    ],
+    "neg": [
+     "17 Aralık'ta açıklandı.",
+     "Aralıkta kar yağar."
+    ]
+   }
+  },
+  {
+   "id": "KS-11",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Cins ada gelen ekler kesmeyle ayrılmaz (maddesinde).",
+   "pattern": "%B((?:madde|fıkra|cümle|sayfa|tablo|sekme|dosya|menü)(?:s[ıiuü]|l[ae]r[ıi])|(?:bend|bent|ek|bölüm|kısm|kısım|paragraf|şekl|şekil|başlığ|başlık|bağlantı)(?:[ıiuü]|l[ae]r[ıi])|bağlantıs[ıi])%A(n(?:d[ae](?:n|ki)?|[ae]|[ıiuü]))%E",
+   "exclude": "(?<![%W0-9])['‘][^'‘’\"\\n]{1,60}?['’][%L]+",
+   "case": "exact",
+   "fix": "$1$2",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "note": "Belge sözcüğü (madde, fıkra, bent, ek, bölüm, paragraf, sayfa...) + iyelik + kesme + n'li hâl eki. Öteki küçük harfli sözcükler KS-11B'de (uyarı, düzeltmesiz). Büyük harfli adlar (Avrupa Birliği'ne, Kanun'un) dışarıda. Tek tırnakla anılan sözcükten sonraki ek ('menüsü'nde) dışarıda: oradaki işaret tırnaktır.",
+   "examples": {
+    "pos": [
+     "Sözleşmenin 5. maddesi'nde belirtilen yükümlülükler.",
+     "Yönetmeliğin ikinci fıkrası'na göre.",
+     "Raporun ekleri'nde tablolar var."
+    ],
+    "neg": [
+     "Sözleşmenin 5. maddesinde belirtilen yükümlülükler.",
+     "Avrupa Birliği'ne katılım.",
+     "Türk Dil Kurumu Başkanı'na yazı.",
+     "Bu Kanun'un 17. maddesi uygulanır.",
+     "Paket 3 kg'dan ağır.",
+     "Ayşe'nin kitabı.",
+     "Ankara'da kaldı.",
+     "Ayar 'Gelişmiş menüsü'nde bulunur.",
+     "Ayar ‘menüsü’nde bulunur.",
+     "Sipariş yemeksepeti'nden geldi."
+    ]
+   }
+  },
+  {
+   "id": "KS-11B",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Cins ada gelen ekler kesmeyle ayrılmaz (wikinin). Sözcük küçük harfle yazılan bir özel adsa (marka) kesme kalır.",
+   "pattern": "%B([%L]+[ıiuü])%A(n(?:d[ae](?:n|ki)?|[ae]|[ıiuü]))%E",
+   "exclude": "(?<![%W0-9])['‘][^'‘’\"\\n]{1,60}?['’][%L]+",
+   "case": "exact",
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti",
+   "note": "KS-11'in belge sözcükleri dışındaki hâli. Küçük harfli marka adı olabilir (yemeksepeti'nden), bu yüzden uyarıdır ve otomatik düzeltilmez.",
+   "examples": {
+    "pos": [
+     "Projenin wiki'ni güncelledim.",
+     "Uygulamanın ayarı'na bak."
+    ],
+    "neg": [
+     "Sözleşmenin 5. maddesinde belirtilen yükümlülükler.",
+     "Avrupa Birliği'ne katılım.",
+     "Türk Dil Kurumu Başkanı'na yazı.",
+     "Bu Kanun'un 17. maddesi uygulanır.",
+     "Paket 3 kg'dan ağır.",
+     "Ayşe'nin kitabı.",
+     "Ankara'da kaldı.",
+     "Ayar 'Gelişmiş menüsü'nde bulunur.",
+     "Ayar ‘menüsü’nde bulunur."
+    ]
+   },
+   "prec": 1,
+   "fixable": false,
+   "suggestion": "$1$2"
+  },
+  {
+   "id": "KY-01",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Harf harf okunan kısaltmaya gelen ek, son harfin okunuşuna uyar (TDK'ye, ABD'de).",
+   "kind": "builtin",
+   "builtin": "apostrophe_suffix",
+   "target": "acronym",
+   "mode": "letter",
+   "word_acronyms": {
+    "NATO": "nato",
+    "UNESCO": "unesko",
+    "UNICEF": "unisef",
+    "NASA": "nasa",
+    "TÜBİTAK": "tübitak",
+    "ODTÜ": "odtü",
+    "ASELSAN": "aselsan",
+    "BOTAŞ": "botaş",
+    "KOBİ": "kobi",
+    "RTÜK": "rtük",
+    "YÖK": "yök",
+    "TOKİ": "toki",
+    "OYAK": "oyak",
+    "TÖMER": "tömer",
+    "İLESAM": "ilesam",
+    "HAVELSAN": "havelsan",
+    "TUSAŞ": "tusaş",
+    "FIFA": "fifa",
+    "UEFA": "uefa",
+    "AŞTİ": "aşti",
+    "SEO": "seo",
+    "GIF": "gif",
+    "JPEG": "jipeg"
+   },
+   "fixable": false,
+   "family": "kesme",
+   "source": "TDK Yazım Kılavuzu, Kısaltmalar",
+   "examples": {
+    "pos": [
+     "ABD'ya göre"
+    ],
+    "neg": [
+     "ABD'ye göre",
+     "NATO'ya göre",
+     "TÜSİAD'ın raporu"
+    ]
+   }
+  },
+  {
+   "id": "KY-01K",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "K ya da H ile biten kısaltma: ek okunuşa göre seçilir (ke, he).",
+   "kind": "builtin",
+   "builtin": "apostrophe_suffix",
+   "target": "acronym",
+   "mode": "kh",
+   "word_acronyms": {
+    "NATO": "nato",
+    "UNESCO": "unesko",
+    "UNICEF": "unisef",
+    "NASA": "nasa",
+    "TÜBİTAK": "tübitak",
+    "ODTÜ": "odtü",
+    "ASELSAN": "aselsan",
+    "BOTAŞ": "botaş",
+    "KOBİ": "kobi",
+    "RTÜK": "rtük",
+    "YÖK": "yök",
+    "TOKİ": "toki",
+    "OYAK": "oyak",
+    "TÖMER": "tömer",
+    "İLESAM": "ilesam",
+    "HAVELSAN": "havelsan",
+    "TUSAŞ": "tusaş",
+    "FIFA": "fifa",
+    "UEFA": "uefa",
+    "AŞTİ": "aşti",
+    "SEO": "seo",
+    "GIF": "gif",
+    "JPEG": "jipeg"
+   },
+   "fixable": false,
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "THK'ya bağış"
+    ],
+    "neg": [
+     "THK'ye bağış",
+     "YÖK'e başvurdu."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "KY-01W",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Sözcük gibi okunan kısaltmaya gelen ek okunuşa uyar.",
+   "kind": "builtin",
+   "builtin": "apostrophe_suffix",
+   "target": "acronym",
+   "mode": "word",
+   "word_acronyms": {
+    "NATO": "nato",
+    "UNESCO": "unesko",
+    "UNICEF": "unisef",
+    "NASA": "nasa",
+    "TÜBİTAK": "tübitak",
+    "ODTÜ": "odtü",
+    "ASELSAN": "aselsan",
+    "BOTAŞ": "botaş",
+    "KOBİ": "kobi",
+    "RTÜK": "rtük",
+    "YÖK": "yök",
+    "TOKİ": "toki",
+    "OYAK": "oyak",
+    "TÖMER": "tömer",
+    "İLESAM": "ilesam",
+    "HAVELSAN": "havelsan",
+    "TUSAŞ": "tusaş",
+    "FIFA": "fifa",
+    "UEFA": "uefa",
+    "AŞTİ": "aşti",
+    "SEO": "seo",
+    "GIF": "gif",
+    "JPEG": "jipeg"
+   },
+   "fixable": false,
+   "family": "kesme",
+   "examples": {
+    "pos": [
+     "NATO'ye katıldı."
+    ],
+    "neg": [
+     "NATO'ya katıldı."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Kesme İşareti"
+  },
+  {
+   "id": "NK-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Sıra sayısında nokta varsa ek yazılmaz (8. ya da 8'inci).",
+   "pattern": "%B(\\d+)\\.[ \\t]?%A?(?:inci|ıncı|uncu|üncü|nci|ncı|ncu|ncü)%E",
+   "fix": "$1.",
+   "family": "sayi",
+   "examples": {
+    "pos": [
+     "8.'inci madde",
+     "2.nci kat"
+    ],
+    "neg": [
+     "8. madde",
+     "8'inci madde"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "NK-02",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Ay adıyla yazılan tarihte günden sonra nokta konmaz.",
+   "pattern": "%B(\\d{1,2})\\.(?:((?:[Oo]cak|[Şş]ubat|[Mm]art|[Nn]isan|[Mm]ayıs|[Hh]aziran|[Tt]emmuz|[Aa]ğustos|[Ee]ylül|[Ee]kim|[Kk]asım|[Aa]ralık))|[ \\t]((?:[Oo]cak|[Şş]ubat|[Mm]art|[Nn]isan|[Mm]ayıs|[Hh]aziran|[Tt]emmuz|[Aa]ğustos|[Ee]ylül|[Ee]kim|[Kk]asım|[Aa]ralık))(?=[ \\t]+\\d{4}))%E",
+   "case": "exact",
+   "fix": "$1 $2$3",
+   "family": "sayi",
+   "examples": {
+    "pos": [
+     "29. Ekim 1923",
+     "29.Ekim"
+    ],
+    "neg": [
+     "29 Ekim 1923"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "NK-03",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Saat ve dakika TDK'ye göre nokta ile ayrılır (13.30).",
+   "pattern": "(?<![\\d:.])([01]?\\d|2[0-3]):([0-5]\\d)(?![\\d:])",
+   "suggestion": "$1.$2",
+   "registers_off": [
+    "teknik",
+    "commit",
+    "ui"
+   ],
+   "family": "sayi",
+   "examples": {
+    "pos": [
+     "Toplantı 13:30'da."
+    ],
+    "neg": [
+     "Toplantı 13.30'da."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "NK-04",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Ondalık kesir virgülle ayrılır.",
+   "pattern": "(?<![\\w.,])(\\d+)\\.(\\d{1,2})(?=[ \\t]?(?:milyon|milyar|bin|trilyon|kat|puan|yıl|metre|kilometre|kilogram|lira|dolar|avro|km|kg|tl|kez|mah|gb|mb|tb|ml|litre|gram|inç|cm|mm)%E)",
+   "fix": "$1,$2",
+   "family": "sayi",
+   "registers_off": [
+    "teknik",
+    "commit"
+   ],
+   "examples": {
+    "pos": [
+     "3.5 milyon kişi",
+     "Telefonu 2.5 kez şarj eder."
+    ],
+    "neg": [
+     "3,5 milyon kişi",
+     "saat 09.15",
+     "Go 1.22 sürümü gerekir.",
+     "Saat 14.30'da başlar."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "NK-05",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Binlik gruplar nokta ile ayrılır (1.500.000).",
+   "pattern": "(?<![\\d.,])\\d{1,3}(?:,\\d{3}){2,}(?![\\d,])",
+   "family": "sayi",
+   "examples": {
+    "pos": [
+     "1,500,000 kişi"
+    ],
+    "neg": [
+     "1.500.000 kişi"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "NK-05B",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "Binlik grup virgülle ayrılmış olabilir; Türkçede nokta kullanılır.",
+   "pattern": "(?<![\\d.,])\\d{1,3},\\d{3}(?=[ \\t]+(?:kişi|lira|dolar|avro|tl|adet|kilometre|km|metre|yıl|mah))",
+   "family": "sayi",
+   "examples": {
+    "pos": [
+     "1,500 kişi",
+     "10,000 mAh kapasite"
+    ],
+    "neg": [
+     "1.500 kişi"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "SY-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Yüzde işareti sayıdan önce yazılır (%25).",
+   "pattern": "(?<![\\w.,%])(\\d+(?:[.,]\\d+)?)[ \\t]?%(?![\\w%])",
+   "fix": "%$1",
+   "family": "sayi",
+   "source": "TDK Yazım Kılavuzu, Yüzde",
+   "examples": {
+    "pos": [
+     "Fiyatlar 25% arttı."
+    ],
+    "neg": [
+     "Fiyatlar %25 arttı."
+    ]
+   }
+  },
+  {
+   "id": "SY-02",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Yüzde işaretiyle sayı arasında boşluk bırakılmaz.",
+   "pattern": "%[ \\t]+(\\d)",
+   "fix": "%$1",
+   "family": "sayi",
+   "examples": {
+    "pos": [
+     "% 25 arttı"
+    ],
+    "neg": [
+     "%25 arttı"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "SY-03",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Üleştirme sayıları yazıyla yazılır (ikişer, onar).",
+   "pattern": "%B(\\d+)%A(şer|şar|er|ar)%E",
+   "family": "sayi",
+   "examples": {
+    "pos": [
+     "2'şer kişi"
+    ],
+    "neg": [
+     "ikişer kişi"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı"
+  },
+  {
+   "id": "SY-04",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Sayı adları ayrı yazılır.",
+   "pattern": "%B(on|yirmi|otuz|kırk|elli|altmış|yetmiş|seksen|doksan)(bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz)(inci|ıncı|uncu|üncü|nci|ncı|ncu|ncü|er|ar|şer|şar|de|da|te|ta|den|dan|ten|tan|e|a|ye|ya|i|ı|u|ü|yi|yı|in|ın|un|ün|nin|nın|nun|nün)?%E|%B(iki|üç|dört|beş|altı|yedi|sekiz|dokuz)(yüz|bin)(inci|ıncı|uncu|üncü|nci|ncı|ncu|ncü|er|ar|şer|şar|de|da|te|ta|den|dan|ten|tan|e|a|ye|ya|i|ı|u|ü|yi|yı|in|ın|un|ün|nin|nın|nun|nün)?%E",
+   "fix": "$1$4 $2$3$5$6",
+   "exclude": "ondokuz[ \\t]+mayıs|%B(?:altmışaltı|ellibir|yirmibir)[%L]*[ \\t]+(?:oyna|oyun)|%Byirmisekiz[ \\t]+çelebi",
+   "family": "sayi",
+   "source": "TDK Yazım Kılavuzu, Sayıların Yazılışı",
+   "examples": {
+    "pos": [
+     "onbeş gün",
+     "ikiyüz kişi"
+    ],
+    "neg": [
+     "on beş gün",
+     "iki yüz kişi",
+     "Akşam altmışaltı oynadık.",
+     "Yirmisekiz Çelebi Mehmet Paris'e gitti."
+    ]
+   }
+  },
+  {
+   "id": "DD-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Bağlaç olan \"de\" hiçbir zaman \"te\" biçiminde yazılmaz.",
+   "pattern": "%B([%W]+[pçtkfsşh])[ \\t]+t([ae])%E",
+   "case": "exact",
+   "fix": "$1 d$2",
+   "exclude": "[ \\t]t[ae][ \\t]+(?:ki%E|kendi|ora|bura|şura|en[ \\t]|baş|uzak|eski|ezel|ilk|o[ \\t]|[%U]|[0-9]|öte|baştan|[%L]+y?[ae][ \\t]+kadar%E|[%L]+[dt][ae]n%E)",
+   "family": "de-da",
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan da/de",
+   "examples": {
+    "pos": [
+     "Gidip te gelmedi.",
+     "Kitap ta aldım."
+    ],
+    "neg": [
+     "Gidip de gelmedi.",
+     "Ta İstanbul'dan geldi.",
+     "Kuyruk ta köşeye kadar uzadı."
+    ]
+   }
+  },
+  {
+   "id": "DD-02",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Bağlaç olan \"de\" ayrı yazılır.",
+   "kind": "map",
+   "map": {
+    "yada": "ya da",
+    "hemde": "hem de",
+    "dahada": "daha da",
+    "pekde": "pek de",
+    "hiçde": "hiç de",
+    "bilede": "bile de"
+   },
+   "family": "de-da",
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan da/de",
+   "examples": {
+    "pos": [
+     "Çay yada kahve"
+    ],
+    "neg": [
+     "Çay ya da kahve"
+    ]
+   }
+  },
+  {
+   "id": "DD-03",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Bağlaç olan \"de\" çekimli fiilden ayrı yazılır.",
+   "pattern": "%B([%L]+(?:yor|acak|ecek|mış|miş|muş|müş))(d[ae])%E",
+   "fix": "$1 $2",
+   "family": "de-da",
+   "examples": {
+    "pos": [
+     "Geliyorda gitmiyor."
+    ],
+    "neg": [
+     "Geliyor da gitmiyor."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan de"
+  },
+  {
+   "id": "DD-04",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Bulunma eki ayrılmış olabilir: \"hakkında\", \"arasında\".",
+   "pattern": "%B(hakkın|arasın|konusun|tarafın|sayesin|karşısın|içerisin|üzerin|ortasın)[ \\t]+(d[ae])%E",
+   "suggestion": "$1$2",
+   "family": "de-da",
+   "examples": {
+    "pos": [
+     "Bu konu hakkın da konuştuk."
+    ],
+    "neg": [
+     "Bu konu hakkında konuştuk.",
+     "Durumun da farkındayız."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan de"
+  },
+  {
+   "id": "DD-07",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Bağlaç olan \"de\" önceki sözcüğün son ünlüsüne uyar.",
+   "kind": "builtin",
+   "builtin": "particle_harmony",
+   "particle": "de",
+   "skip_words": [
+    "hayır",
+    "tamam",
+    "olur",
+    "yok",
+    "var",
+    "bana",
+    "ona",
+    "sana",
+    "bunu",
+    "onu",
+    "şunu",
+    "ama",
+    "hem",
+    "ya",
+    "ne"
+   ],
+   "family": "de-da",
+   "examples": {
+    "pos": [
+     "Kitap de aldım."
+    ],
+    "neg": [
+     "Kitap da aldım."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan de"
+  },
+  {
+   "id": "KI-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Bağlaç olan \"ki\" ayrı yazılır.",
+   "pattern": "%B(demek|kaldı|yeter|bilmem|nasıl|öyle|şöyle|sanırım|zannederim|biliyorum|görüyorum|anlaşılan|belli|dedi|diyor|istiyorum|umarım|düşünüyorum)ki%E",
+   "fix": "$1 ki",
+   "family": "ki",
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan ki",
+   "examples": {
+    "pos": [
+     "Demekki gelmeyecek."
+    ],
+    "neg": [
+     "Demek ki gelmeyecek.",
+     "Belki gelir."
+    ]
+   }
+  },
+  {
+   "id": "KI-02",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Kalıplaşmış \"ki\"li sözler bitişik yazılır: oysaki, hâlbuki, mademki.",
+   "pattern": "%B(oysa|halbu|hâlbu|madem|meğer)[ \\t]+ki%E",
+   "fix": "$1ki",
+   "family": "ki",
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan ki",
+   "examples": {
+    "pos": [
+     "Oysa ki biliyordu."
+    ],
+    "neg": [
+     "Oysaki biliyordu."
+    ]
+   }
+  },
+  {
+   "id": "KI-03",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Sıfat yapan \"-ki\" bitişik yazılır: \"evdeki kitap\".",
+   "pattern": "%B([%L]{2,}(?:da|de|ta|te))[ \\t]+ki[ \\t]+(?=[%L])",
+   "suggestion": "$1ki",
+   "exclude": "%B(?:öyle|böyle|şöyle|o[ \\t]+kadar|bu[ \\t]+kadar|öylesine)%E[^.!?\\n]{0,40}?[ \\t]ki%E",
+   "family": "ki",
+   "examples": {
+    "pos": [
+     "Evde ki kitap"
+    ],
+    "neg": [
+     "Evdeki kitap",
+     "Öyle bir yerde ki bilemezsin"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan ki"
+  },
+  {
+   "id": "KI-04",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Zaman bildiren sözcüklere gelen \"-ki\" bitişik yazılır.",
+   "kind": "map",
+   "map": {
+    "bugün ki": "bugünkü",
+    "dün ki": "dünkü",
+    "şimdi ki": "şimdiki",
+    "yarın ki": "yarınki",
+    "akşam ki": "akşamki",
+    "sabah ki": "sabahki"
+   },
+   "fixable": false,
+   "family": "ki",
+   "examples": {
+    "pos": [
+     "Bugün ki toplantı"
+    ],
+    "neg": [
+     "Bugünkü toplantı"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Bağlaç Olan ki"
+  },
+  {
+   "id": "MI-01",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Soru eki ayrı yazılır.",
+   "pattern": "%B([%L]+(?:yor|acak|ecek|mış|miş|muş|müş|maz|mez|dın|din|dun|dün|tın|tin|tun|tün|dık|dik|duk|dük|tık|tik|tuk|tük))(m[ıiuü])(s[ıiuü]n(?:[ıiuü]z)?|y[ıiuü]m|y[ıiuü]z|d[ıiuü]r|yd[ıiuü]|)%E|%B([%L]{2,}[aeıioöuü]r|var|yok)(m[ıiuü])()(?=[ \\t]*\\?)",
+   "fix": "$1$4 $2$5$3$6",
+   "family": "mi",
+   "source": "TDK Yazım Kılavuzu, Soru Eki",
+   "examples": {
+    "pos": [
+     "Geliyormusun?",
+     "Gelirmi?",
+     "Bu iş yokmu?"
+    ],
+    "neg": [
+     "Geliyor musun?",
+     "Geliyormuş.",
+     "Yirmi?"
+    ]
+   }
+  },
+  {
+   "id": "MI-02",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Soru eki önceki sözcüğün son ünlüsüne uyar.",
+   "kind": "builtin",
+   "builtin": "particle_harmony",
+   "particle": "mi",
+   "skip_words": [
+    "ne",
+    "ya",
+    "hem"
+   ],
+   "family": "mi",
+   "examples": {
+    "pos": [
+     "Okul mi?"
+    ],
+    "neg": [
+     "Okul mu?"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Soru Eki"
+  },
+  {
+   "id": "MI-03",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Soru ekinden sonra gelen ekler soru ekine bitişik yazılır.",
+   "pattern": "%B(m[ıiuü])[ \\t]+(s[ıiuü]n(?:[ıiuü]z)?|y[ıiuü]m|y[ıiuü]z|yd[ıiuü]|ym[ıiuü]ş|d[ıiuü]r)%E",
+   "fix": "$1$2",
+   "family": "mi",
+   "examples": {
+    "pos": [
+     "Gelecek mi sin?"
+    ],
+    "neg": [
+     "Gelecek misin?"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Soru Eki"
+  },
+  {
+   "id": "MI-04",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Soru eki ayrı yazılır. Soru cümlesinin sonundaki \"mı/mi/mu/mü\" önceki sözcüğe bitişmiş olabilir.",
+   "pattern": "%B(?:([%W][%L]*[bcçfgğhjklnprsştvyz])|((?!(?:yardı|kendi|kartı|sırtı|üstü|altı|yurdu|ordu|ördü)m[ıiuü]%E)[%L]*[bcçfgğhjklmnprsştvyz][dt][ıiuü]))(m[ıiuü])(?=[ \\t]*\\?)",
+   "exclude": "%B(?:resmi|ismi|kısmı|hükmü|ilmi|azmi|cismi|hazmı|zulmü|hilmi|seyri|ağzı)%E",
+   "family": "mi",
+   "source": "TDK Yazım Kılavuzu, Soru Eki",
+   "examples": {
+    "pos": [
+     "Güzelmi?",
+     "Okulmu?",
+     "Geldimi?"
+    ],
+    "neg": [
+     "Güzel mi?",
+     "Durumu?",
+     "Yönetimi?",
+     "Adımı?",
+     "Resmi?",
+     "Bu sistemi?",
+     "Yardımı?",
+     "Kendimi?",
+     "Ördü mü?"
+    ]
+   },
+   "suggestion": "$1$2 $3"
+  },
+  {
+   "id": "BK-01",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Bu söz ayrı yazılır.",
+   "kind": "map",
+   "suffix": true,
+   "map": {
+    "herşey": "her şey",
+    "birşey": "bir şey",
+    "bişey": "bir şey",
+    "hiçbirşey": "hiçbir şey",
+    "herzaman": "her zaman",
+    "herbiri": "her biri",
+    "hiçkimse": "hiç kimse",
+    "pekçok": "pek çok",
+    "herbir": "her bir"
+   },
+   "family": "birlesik",
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimeler",
+   "examples": {
+    "pos": [
+     "Herşey yolunda.",
+     "Birşeyler oldu."
+    ],
+    "neg": [
+     "Her şey yolunda."
+    ]
+   }
+  },
+  {
+   "id": "BK-02",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Bu söz bitişik yazılır.",
+   "kind": "map",
+   "suffix": true,
+   "map": {
+    "bir çok": "birçok",
+    "bir çoğ": "birçoğ",
+    "hiç bir": "hiçbir",
+    "her hangi": "herhangi"
+   },
+   "family": "birlesik",
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimeler",
+   "examples": {
+    "pos": [
+     "Bir çok kişi geldi.",
+     "Hiç bir şey"
+    ],
+    "neg": [
+     "Birçok kişi geldi.",
+     "Hiç bir kitap okudun mu?"
+    ]
+   },
+   "exclude": "%Bhiç[ \\t]+bir%E(?=[^.!?\\n]*%Bm[ıiuü](?:s[ıiuü]n(?:[ıiuü]z)?|y[ıiuü]m|y[ıiuü]z|d[ıiuü]r)?%E[^.!?\\n]*\\?)"
+  },
+  {
+   "id": "BK-02K",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Bu söz bitişik yazılır.",
+   "kind": "map",
+   "map": {
+    "bir kaç": "birkaç",
+    "bir kaçı": "birkaçı",
+    "bir kaçını": "birkaçını",
+    "bir kaçında": "birkaçında"
+   },
+   "family": "birlesik",
+   "examples": {
+    "pos": [
+     "Bir kaç gün"
+    ],
+    "neg": [
+     "Birkaç gün",
+     "Bir kaçış yolu"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimelerin Yazılışı"
+  },
+  {
+   "id": "BK-03",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Belgisiz sıfat ise bitişik yazılır: \"birtakım\".",
+   "pattern": "%Bbir[ \\t]+takım%E(?![ \\t]+(?:oyuncu|kurdu|kurmak|olarak|halinde|daha|elbise|çatal|tabak|var%E|yok%E|ile%E|gibi%E|[0-9]))",
+   "suggestion": "birtakım",
+   "family": "birlesik",
+   "examples": {
+    "pos": [
+     "Bir takım sorunlar çıktı."
+    ],
+    "neg": [
+     "Birtakım sorunlar çıktı.",
+     "Ligde bir takım daha var.",
+     "Bir takım elbise aldı."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimelerin Yazılışı"
+  },
+  {
+   "id": "BK-12",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Ses düşmesi olmayan \"etmek\"li birleşikler ayrı yazılır.",
+   "kind": "map",
+   "suffix": true,
+   "map": {
+    "terket": "terk et",
+    "terked": "terk ed",
+    "kabulet": "kabul et",
+    "kabuled": "kabul ed",
+    "yardımet": "yardım et",
+    "yardımed": "yardım ed",
+    "danset": "dans et",
+    "dansed": "dans ed",
+    "notet": "not et",
+    "yokol": "yok ol"
+   },
+   "family": "birlesik",
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimeler",
+   "examples": {
+    "pos": [
+     "Evi terketti."
+    ],
+    "neg": [
+     "Evi terk etti."
+    ]
+   }
+  },
+  {
+   "id": "BK-13",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "\"var olmak\" ayrı yazılır.",
+   "pattern": "%B(var)(ol(?!uş)[%L]*)%E",
+   "case": "exact",
+   "fix": "$1 $2",
+   "family": "birlesik",
+   "examples": {
+    "pos": [
+     "Hep varolacak."
+    ],
+    "neg": [
+     "Hep var olacak.",
+     "Varoluş felsefesi"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimelerin Yazılışı"
+  },
+  {
+   "id": "BK-14",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Ses olayı olan \"etmek\"li birleşikler bitişik yazılır.",
+   "kind": "map",
+   "suffix": true,
+   "case": "exact",
+   "map": {
+    "af et": "affet",
+    "af ed": "affed",
+    "his et": "hisset",
+    "his ed": "hissed",
+    "red et": "reddet",
+    "red ed": "redded",
+    "zan et": "zannet",
+    "zan ed": "zanned",
+    "seyir et": "seyret",
+    "seyir ed": "seyred",
+    "emir et": "emret",
+    "emir ed": "emred",
+    "sabır et": "sabret",
+    "sabır ed": "sabred",
+    "şükür et": "şükret",
+    "şükür ed": "şükred"
+   },
+   "family": "birlesik",
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimeler",
+   "examples": {
+    "pos": [
+     "Beni af et.",
+     "Teklifi red etti."
+    ],
+    "neg": [
+     "Beni affet.",
+     "Teklifi reddetti."
+    ]
+   }
+  },
+  {
+   "id": "BK-15",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü ayrı yazar.",
+   "kind": "map",
+   "suffix": true,
+   "map": {
+    "önyargı": "ön yargı",
+    "haftasonu": "hafta sonu",
+    "haftasonları": "hafta sonları",
+    "dilbilgisi": "dil bilgisi",
+    "eşanlamlı": "eş anlamlı",
+    "olağandışı": "olağan dışı",
+    "yasadışı": "yasa dışı",
+    "yanısıra": "yanı sıra",
+    "arasıra": "ara sıra",
+    "biraraya": "bir araya",
+    "önkoşul": "ön koşul",
+    "sonderece": "son derece",
+    "ilgiçekici": "ilgi çekici",
+    "biliminsan": "bilim insan",
+    "özgeçmiş": "öz geçmiş",
+    "çevrimiçi": "çevrim içi",
+    "çevrimdışı": "çevrim dışı"
+   },
+   "family": "birlesik",
+   "source": "TDK Yazım Kılavuzu; gts",
+   "examples": {
+    "pos": [
+     "Haftasonu görüşürüz."
+    ],
+    "neg": [
+     "Hafta sonu görüşürüz."
+    ]
+   }
+  },
+  {
+   "id": "BK-15W",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü ayrı yazar.",
+   "kind": "map",
+   "suffix": true,
+   "fixable": false,
+   "map": {
+    "eşzamanlı": "eş zamanlı",
+    "önek": "ön ek",
+    "sonek": "son ek",
+    "hakediş": "hak ediş"
+   },
+   "family": "birlesik",
+   "examples": {
+    "pos": [
+     "Eşzamanlı çalışır."
+    ],
+    "neg": [
+     "Eş zamanlı çalışır."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimelerin Yazılışı"
+  },
+  {
+   "id": "BK-16",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü bitişik yazar.",
+   "kind": "map",
+   "suffix": true,
+   "map": {
+    "alt yapı": "altyapı",
+    "üst yapı": "üstyapı",
+    "olağan üstü": "olağanüstü",
+    "bilinç altı": "bilinçaltı",
+    "akşam üstü": "akşamüstü",
+    "suç üstü": "suçüstü",
+    "vaz geç": "vazgeç",
+    "bir birine": "birbirine",
+    "bir birini": "birbirini",
+    "bir birinden": "birbirinden",
+    "bir birinde": "birbirinde",
+    "bir biriyle": "birbiriyle",
+    "bir birinin": "birbirinin",
+    "bir birlerine": "birbirlerine",
+    "bir birlerini": "birbirlerini"
+   },
+   "family": "birlesik",
+   "source": "TDK Yazım Kılavuzu; gts",
+   "examples": {
+    "pos": [
+     "Alt yapı çalışması",
+     "Bundan vaz geçti.",
+     "Bir birine baktılar."
+    ],
+    "neg": [
+     "Altyapı çalışması",
+     "Bir birim daha açıldı.",
+     "Bir birinci sınıf öğrencisi geldi."
+    ]
+   }
+  },
+  {
+   "id": "BK-22",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Pekiştirmeli sıfatlar bitişik yazılır.",
+   "kind": "map",
+   "suffix": true,
+   "map": {
+    "ap açık": "apaçık",
+    "mas mavi": "masmavi",
+    "kap kara": "kapkara",
+    "yem yeşil": "yemyeşil",
+    "bom boş": "bomboş",
+    "düm düz": "dümdüz",
+    "sap sarı": "sapsarı",
+    "kıp kırmızı": "kıpkırmızı",
+    "bem beyaz": "bembeyaz"
+   },
+   "family": "birlesik",
+   "examples": {
+    "pos": [
+     "Gökyüzü mas mavi."
+    ],
+    "neg": [
+     "Gökyüzü masmavi."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Birleşik Kelimelerin Yazılışı"
+  },
+  {
+   "id": "BH-04",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Dil adları büyük harfle başlar.",
+   "pattern": "%B((?:türkçe|ingilizce|almanca|fransızca|arapça|rusça|ispanyolca|italyanca|japonca|çince|farsça|korece|yunanca|latince|kürtçe|osmanlıca|azerice|felemenkçe|portekizce|hintçe|ibranice|ermenice|gürcüce|bulgarca|macarca|fince|isveççe|norveççe|danca|romence|sırpça|hırvatça|boşnakça|arnavutça|ukraynaca|kazakça|özbekçe|kırgızca|türkmence|tatarca|uygurca|moğolca|hollandaca|tayca)[%L]*)%E",
+   "case": "exact",
+   "transform": "capitalize",
+   "family": "buyuk-harf",
+   "source": "TDK Yazım Kılavuzu, Büyük Harfler",
+   "examples": {
+    "pos": [
+     "türkçe öğreniyor."
+    ],
+    "neg": [
+     "Türkçe öğreniyor."
+    ]
+   }
+  },
+  {
+   "id": "BH-05",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Millet adları büyük harfle başlar.",
+   "pattern": "(?<![%W.])(türk|alman|ingiliz|fransız|rus|japon|yunan|amerikalı|italyan)(l[ae]r[%L]*)?%E",
+   "case": "exact",
+   "transform": "capitalize",
+   "fixable": false,
+   "family": "buyuk-harf",
+   "examples": {
+    "pos": [
+     "türk kahvesi"
+    ],
+    "neg": [
+     "Türk kahvesi",
+     "türkü söyledi"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Büyük Harflerin Kullanıldığı Yerler"
+  },
+  {
+   "id": "BH-06",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Belirli bir tarihteki ay adı büyük harfle başlar.",
+   "pattern": "%B\\d{1,2}[ \\t]+(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık)(?=[ \\t]+(?:\\d{4}|günü|tarih)|%A|[ \\t]+[a-zçğıöşü]+[ \\t]+\\d{4})",
+   "group": 1,
+   "case": "exact",
+   "transform": "capitalize",
+   "family": "buyuk-harf",
+   "source": "TDK Yazım Kılavuzu, Büyük Harfler",
+   "examples": {
+    "pos": [
+     "29 ekim 1923",
+     "15 mayıs günü"
+    ],
+    "neg": [
+     "29 Ekim 1923"
+    ]
+   }
+  },
+  {
+   "id": "BH-13",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Başlıkta büyük yazılan sözler arasında \"ve\", \"ile\", \"ya\", \"veya\", \"ki\", \"de\", \"mi\" küçük yazılır.",
+   "kind": "builtin",
+   "builtin": "title_case_small",
+   "small_words": [
+    "Ve",
+    "İle",
+    "Ya",
+    "Veya",
+    "Yahut",
+    "Ki",
+    "Da",
+    "De",
+    "Mı",
+    "Mi",
+    "Mu",
+    "Mü"
+   ],
+   "family": "buyuk-harf",
+   "source": "TDK Yazım Kılavuzu, Büyük Harfler",
+   "examples": {
+    "pos": [
+     "# Türk Dili Ve Edebiyatı"
+    ],
+    "neg": [
+     "# Türk Dili ve Edebiyatı"
+    ]
+   }
+  },
+  {
+   "id": "BH-16",
+   "layer": "tdk",
+   "level": "error",
+   "evidence": "kaynak",
+   "message": "Özel addan türeyen sözler büyük harfle başlar.",
+   "pattern": "%B((?:türklü[kğ]|avrupalı|asyalı|istanbullu|ankaralı|izmirli|konyalı|türkiyeli|bursalı|adanalı|trabzonlu|amerikalı)[%L]*)%E",
+   "case": "exact",
+   "transform": "capitalize",
+   "family": "buyuk-harf",
+   "examples": {
+    "pos": [
+     "istanbullu bir yazar"
+    ],
+    "neg": [
+     "İstanbullu bir yazar"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Büyük Harflerin Kullanıldığı Yerler"
+  },
+  {
+   "id": "DZ-01",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "\"Hâlâ\" (henüz) anlamında şapkalı yazılır.",
+   "pattern": "%B(hala)(?=[ \\t]+(?:devam|bekl|duruyor|aynı|orada|burada|ayakta|çalış|yaşıyor|sürüyor|anlamadım|anlamış|bilmiyor|inan|hatırl|merak|umut|açık|kapalı|geçerli|var%E|yok%E|değil%E))",
+   "suggestion": "hâlâ",
+   "family": "duzeltme",
+   "examples": {
+    "pos": [
+     "Hala bekliyoruz."
+    ],
+    "neg": [
+     "Hâlâ bekliyoruz."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Düzeltme İşareti"
+  },
+  {
+   "id": "DZ-02",
+   "layer": "tdk",
+   "level": "info",
+   "evidence": "kaynak",
+   "message": "TDK \"zekâ\" biçiminde şapkalı yazar.",
+   "kind": "map",
+   "map": {
+    "zeka": "zekâ"
+   },
+   "suffix": true,
+   "fixable": false,
+   "fix_bare_only": true,
+   "family": "duzeltme",
+   "examples": {
+    "pos": [
+     "Yapay zeka"
+    ],
+    "neg": [
+     "Yapay zekâ"
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Düzeltme İşareti"
+  },
+  {
+   "id": "DZ-06",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "Bu sözde düzeltme işareti kullanılmaz.",
+   "kind": "map",
+   "suffix": true,
+   "map": {
+    "reklâm": "reklam",
+    "mülâkat": "mülakat",
+    "lâzım": "lazım",
+    "kâtil": "katil"
+   },
+   "family": "duzeltme",
+   "examples": {
+    "pos": [
+     "Reklâm verdik."
+    ],
+    "neg": [
+     "Reklam verdik."
+    ]
+   },
+   "source": "TDK Yazım Kılavuzu, Düzeltme İşareti"
+  },
+  {
+   "id": "DZ-07",
+   "layer": "tdk",
+   "level": "warning",
+   "evidence": "kaynak",
+   "message": "TDK bu sözü düzeltme işaretiyle yazar.",
+   "kind": "map",
+   "suffix": true,
+   "fixable": false,
+   "map": {
+    "pekala": "pekâlâ",
+    "hükümet": "hükûmet"
+   },
+   "family": "duzeltme",
+   "source": "gts; TDK Yazım Kılavuzu, Düzeltme İşareti",
+   "examples": {
+    "pos": [
+     "Pekala, başlayalım.",
+     "Hükümet açıkladı."
+    ],
+    "neg": [
+     "Pekâlâ, başlayalım.",
+     "Hükûmet açıkladı."
+    ]
+   }
+  }
+ ]
+}

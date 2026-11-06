@@ -1,0 +1,5 @@
+# B. Çeviri kalıpları
+=== önce
+Bu uygulama, kullanıcıların verilerine erişim sağlayabilmesi için birçok özelliğe sahiptir.
+=== sonra
+Uygulamanın, kullanıcıların verilerine erişebilmesi için birçok özelliği var.

@@ -1,0 +1,7 @@
+# 9. Teknik belge · teknik
+=== önce
+Öncelikle, uygulamanın sorunsuz bir şekilde çalışabilmesi için Node.js'in sisteminizde kurulu olduğundan emin olmanız gerekmektedir. Ardından, proje dizinine giderek bağımlılıkların yüklenmesi işlemini gerçekleştirmeniz gerekmektedir. Bu işlem, `npm install` komutu kullanılarak kolayca yapılabilir. Son olarak, uygulamayı başlatmak için `npm start` komutunu çalıştırmanız yeterli olacaktır.
+=== sonra
+1. Node.js'in sisteminizde kurulu olduğunu kontrol edin.
+2. Proje dizininde bağımlılıkları yükleyin: `npm install`
+3. Uygulamayı başlatın: `npm start`

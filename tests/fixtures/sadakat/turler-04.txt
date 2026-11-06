@@ -1,0 +1,6 @@
+# P4 Tez · akademik
+=== önce
+Bu bölümde, araştırmanın modeli, evren ve örneklemi, veri toplama araçları ve verilerin analizi konularına ilişkin bilgilere yer verilecektir.
+=== sonra
+Bu bölümde araştırmanın modeli, evren ve örneklemi, veri toplama araçları ve veri
+analizi açıklanacaktır.

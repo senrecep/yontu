@@ -1,0 +1,6 @@
+# Hukuk · hukuk
+=== önce
+Kiracı, sözleşmenin 5. maddesi'nde belirtilen yükümlülükleri yerine getirmekle mükelleftir.
+=== sonra
+Kiracı, sözleşmenin 5. maddesinde belirtilen yükümlülükleri yerine getirmekle
+mükelleftir.

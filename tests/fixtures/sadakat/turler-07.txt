@@ -1,0 +1,6 @@
+# P6 Resmî yazı · resmi
+=== önce
+Müdürlüğümüz tarafından personelimize yönelik bir eğitim programı düzenlemeyi planlıyoruz. Katılım sağlayacak personellerin listesini bize göndermenizi rica ederiz.
+=== sonra
+Müdürlüğümüzce personele yönelik bir eğitim programı düzenlenmesi planlanmaktadır.
+Katılacak personelin listesinin Müdürlüğümüze gönderilmesini rica ederim.

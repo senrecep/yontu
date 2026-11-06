@@ -1,0 +1,5 @@
+# Adlaştırma ve boş "olan"
+=== önce
+Bu durum önemlidir. Bunun sebebi, verilerin X'i göstermesidir.
+=== sonra
+Bu durum önemli, çünkü veriler X'i gösteriyor.

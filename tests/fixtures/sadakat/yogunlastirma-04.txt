@@ -1,0 +1,6 @@
+# Örnekler
+=== önce
+Çalışmada elde edilen bulgular, söz konusu değişkenler arasında anlamlı bir ilişkinin var olduğunu ortaya koymaktadır.
+=== sonra
+Çalışmanın bulguları, bu değişkenler arasında anlamlı bir ilişki olduğunu ortaya
+koymaktadır.

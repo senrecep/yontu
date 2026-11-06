@@ -1,0 +1,1310 @@
+{
+ "version": 1,
+ "registers": {
+  "akademik": {
+   "code13": "AK",
+   "register10": "akademik",
+   "multiplier": 3.0,
+   "sentence_words": [
+    14,
+    26
+   ],
+   "sentence_max": 45,
+   "atesman": [
+    30,
+    60
+   ],
+   "name": "Akademik",
+   "default_tur": "akademik-giris",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "hukuk": {
+   "code13": "HK",
+   "register10": "hukuki",
+   "multiplier": 3.0,
+   "sentence_words": [
+    15,
+    40
+   ],
+   "name": "Hukuk",
+   "default_tur": "hukuk",
+   "layers_off": [
+    "ai-iz",
+    "stil",
+    "yogunluk"
+   ],
+   "rewrite": false,
+   "g_family": "off",
+   "rules": {
+    "family:ys-G": "off"
+   }
+  },
+  "resmi": {
+   "code13": "HK",
+   "register10": "hukuki",
+   "multiplier": 3.0,
+   "sentence_words": [
+    15,
+    30
+   ],
+   "sentence_max": 45,
+   "atesman": [
+    30,
+    60
+   ],
+   "name": "Resmî yazışma",
+   "default_tur": "resmi-yazi",
+   "g_family": "off",
+   "rules": {
+    "family:ys-G": "off"
+   }
+  },
+  "kurumsal": {
+   "code13": "EP+AK",
+   "register10": "e-posta",
+   "multiplier": 2.0,
+   "sentence_words": [
+    12,
+    22
+   ],
+   "sentence_max": 35,
+   "name": "Kurumsal",
+   "default_tur": "resmi-eposta",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "haber": {
+   "code13": "HB",
+   "register10": "haber",
+   "multiplier": 1.0,
+   "sentence_words": [
+    8,
+    18
+   ],
+   "sentence_max": 25,
+   "atesman": [
+    50,
+    80
+   ],
+   "name": "Haber",
+   "default_tur": "haber",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "deneme": {
+   "code13": "BL",
+   "register10": "blog",
+   "multiplier": 1.5,
+   "sentence_words": [
+    8,
+    14
+   ],
+   "sentence_max": 35,
+   "name": "Deneme ve köşe yazısı",
+   "default_tur": "kose",
+   "g_family": "off",
+   "rules": {
+    "family:ys-G": "off"
+   }
+  },
+  "blog": {
+   "code13": "BL",
+   "register10": "blog",
+   "multiplier": 1.0,
+   "sentence_words": [
+    9,
+    16
+   ],
+   "sentence_max": 30,
+   "atesman": [
+    50,
+    80
+   ],
+   "name": "Blog",
+   "default_tur": "blog",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "sosyal": {
+   "code13": "SH",
+   "register10": "sohbet",
+   "multiplier": 1.0,
+   "short_gate": true,
+   "sentence_words": [
+    6,
+    14
+   ],
+   "atesman": [
+    70,
+    100
+   ],
+   "name": "Sosyal medya",
+   "default_tur": "x",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "teknik": {
+   "code13": "TK",
+   "register10": "teknik",
+   "multiplier": 1.0,
+   "sentence_words": [
+    8,
+    18
+   ],
+   "sentence_max": 30,
+   "atesman": [
+    50,
+    80
+   ],
+   "name": "Teknik",
+   "default_tur": "teknik-dok",
+   "g_family": "L0",
+   "rules": {
+    "KY-01": "info",
+    "KS-03B": "warning"
+   }
+  },
+  "commit": {
+   "code13": "TK",
+   "register10": "teknik",
+   "multiplier": 1.0,
+   "absolute_only": true,
+   "name": "Commit mesajı",
+   "default_tur": "commit",
+   "g_family": "off",
+   "rules": {
+    "family:ys-G": "off",
+    "KY-01": "info",
+    "KS-03B": "warning"
+   }
+  },
+  "ui": {
+   "code13": "TK",
+   "register10": "teknik",
+   "multiplier": 1.0,
+   "absolute_only": true,
+   "atesman": [
+    70,
+    100
+   ],
+   "name": "Arayüz metni",
+   "default_tur": "ui-bos",
+   "g_family": "off",
+   "rules": {
+    "family:ys-G": "off"
+   }
+  },
+  "pazarlama": {
+   "code13": "BL",
+   "register10": "blog",
+   "multiplier": 1.0,
+   "short_gate": true,
+   "sentence_words": [
+    4,
+    12
+   ],
+   "name": "Pazarlama",
+   "default_tur": "reklam",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "is-eposta": {
+   "code13": "EP",
+   "register10": "e-posta",
+   "multiplier": 1.0,
+   "sentence_words": [
+    8,
+    16
+   ],
+   "sentence_max": 30,
+   "name": "İş e-postası",
+   "default_tur": "is-eposta",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "sozlu": {
+   "code13": "BL",
+   "register10": "blog",
+   "multiplier": 1.5,
+   "sentence_words": [
+    8,
+    15
+   ],
+   "sentence_max": 30,
+   "name": "Sunum ve konuşma",
+   "default_tur": "sunum",
+   "g_family": "L0",
+   "rules": {}
+  },
+  "edebi": {
+   "code13": null,
+   "register10": null,
+   "multiplier": 1.0,
+   "name": "Edebî metin",
+   "default_tur": "edebi",
+   "layers_off": [
+    "ai-iz",
+    "stil",
+    "yogunluk"
+   ],
+   "g_family": "off",
+   "rules": {
+    "family:ys-G": "off"
+   }
+  },
+  "sohbet": {
+   "code13": "SH",
+   "register10": "sohbet",
+   "multiplier": 1.0,
+   "sentence_words": [
+    8,
+    16
+   ],
+   "sentence_max": 30,
+   "atesman": [
+    70,
+    100
+   ],
+   "name": "Sohbet asistanı",
+   "default_tur": "sohbet",
+   "g_family": "L0",
+   "rules": {
+    "KS-03B": "warning"
+   }
+  },
+  "notr": {
+   "code13": "*",
+   "register10": "nötr",
+   "multiplier": 1.0,
+   "ai_info": true,
+   "name": "Nötr (algılanamadı)",
+   "default_tur": null,
+   "g_family": "L0",
+   "rules": {
+    "KY-01": "info"
+   }
+  }
+ },
+ "profiles": {
+  "akademik-ozet": {
+   "p": "P1",
+   "name": "Akademik özet (abstract)",
+   "register": "akademik",
+   "guidance": {
+    "amac": "Hakem, alan uzmanı, veri tabanında tarayan araştırmacı. Okur 30 saniyede şunu bilmeli: amaç, yöntem, bulgu, sonuç.",
+    "uzunluk": "150-250 kelime (bazı dergiler 200-350, dergi yönergesi bağlar). Tek paragraf. Cümle ort. 16-26 kelime, 6-10 cümle. kaynak (dergi yönergeleri), cümle bandı hipotez.",
+    "resmiyet": "Özetlerde 1. tekil hiç yok. Ekin Şen 2020'de 150 özet ve 20.372 kelimede 1. tekil = 0 buldu. 1. çoğul az: biyolojide 1000 kelimede 2.62, dilbilimde 8.42. Tek yazarlı makalede \"biz\" (düzenleyici biz) kaçınma stratejisidir. Varsayılan: 3. tekil + edilgen (\"Bu çalışmada ... incelenmiştir\").",
+    "kip": "Amaç ve yöntem için geçmiş edilgen (-mIştIr): \"incelenmiş, karşılaştırılmıştır\". Bulgu için -DIr / -mAktAdIr (\"göstermektedir\"). Sonuç için geniş zaman ya da -DIr. -mAktAdIr burada doğaldır, ai-iz kuralı kapalı.",
+    "baglaclar": "Az ve işlevli: \"bu amaçla\", \"bulgular ... göstermektedir\", \"sonuç olarak\" (tek kez). \"Ayrıca/bunun yanı sıra\" zinciri AI izidir.",
+    "sozcuk": "Alan terimi zorunlu. Arapça kökenli terim (\"tahlil\", \"mukayese\") dergi geleneğine göre serbest. İngilizce terim ilk geçişte parantezle verilir: \"tutum ölçeği (attitude scale)\".",
+    "noktalama": "Noktalı virgül serbest (akademikte doğal). Em dash yok. Kısaltma ilk geçişte açılır.",
+    "yapi": "[Bağlam/boşluk 1 cümle] → [Amaç] → [Yöntem: örneklem, araç, analiz] → [Ana bulgular, sayılarla] → [Sonuç/öneri] → Anahtar kelimeler (3-5).",
+    "ai_hatalari": [
+     "\"Günümüzde giderek önem kazanan ...\" diye dayanaksız açılış.",
+     "Bulgu yerine vaat: \"önemli katkılar sunmaktadır\".",
+     "Sayı içermeyen bulgu cümlesi.",
+     "\"Bu bağlamda, bu çerçevede, bu doğrultuda\" üçlüsü.",
+     "Yöntem cümlesinde örneklem ve analiz adının olmaması."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Günümüzde giderek artan önemiyle dikkat çeken dijital okuryazarlık, eğitim alanında son derece kritik bir rol oynamaktadır. Bu bağlamda bu çalışma, öğretmen adaylarının dijital okuryazarlık düzeylerini kapsamlı bir şekilde incelemeyi amaçlamaktadır.",
+     "sonra": "Bu çalışmada öğretmen adaylarının dijital okuryazarlık düzeyleri incelenmiştir."
+    },
+    {
+     "once": "Elde edilen bulgular, katılımcıların kaygı düzeyleri ile akademik başarıları arasında anlamlı bir ilişkinin varlığına işaret etmekte olup bu durum literatüre önemli katkılar sunmaktadır.",
+     "sonra": "Bulgular, katılımcıların kaygı düzeyi ile akademik başarısı arasında anlamlı bir ilişki olduğunu göstermektedir."
+    }
+   ],
+   "sentence_words": [
+    16,
+    26
+   ],
+   "words": [
+    150,
+    250
+   ],
+   "rules": {
+    "ST-18": "info",
+    "ST-15": "info"
+   }
+  },
+  "akademik-giris": {
+   "p": "P2",
+   "name": "Akademik giriş",
+   "register": "akademik",
+   "guidance": {
+    "amac": "Alanın okuru. Okura sorunu, boşluğu ve bu çalışmanın yerini gösterir. Swales CARS sırası: alanı kur → boşluğu göster → boşluğu doldur.",
+    "uzunluk": "Makalede 400-1000 kelime (dergiye göre). Paragraf 4-8 cümle. Cümle ort. 16-26 kelime. hipotez",
+    "resmiyet": "3. tekil + edilgen baskın. \"Biz\" az. Dergipark 3691813: incelenen dergilerde \"biz\" seyrek, 3. tekil baskın. Nitel araştırmada yazar konumlanması için \"ben\" kabul görebilir (zaferhoca).",
+    "kip": "Literatür aktarımında -mIştIr (\"göstermiştir\") ve geniş zaman. Boşluk cümlesinde \"sınırlıdır\", \"bulunmamaktadır\".",
+    "baglaclar": "\"Ancak\" (boşluğa geçiş), \"bu nedenle\", \"buna karşın\". Paragraf başına bağlaç zorunlu değil.",
+    "sozcuk": "Terim tutarlılığı (aynı kavram için tek terim).",
+    "noktalama": "APA tipi atıf parantezi \"(Yılmaz, 2019)\". Atıflar yazarın gerçek kaynağı olmalı. AI'nin uydurduğu atıf fidelity gate kapsamındadır (yeni ad+yıl = error).",
+    "yapi": "[Alan ve önem, kaynakla] → [Önceki çalışmalar ne yaptı] → [Boşluk: ne yapılmadı] → [Bu çalışmanın amacı ve soruları] → [Makale düzeni, isteğe bağlı].",
+    "ai_hatalari": [
+     "Kaynaksız genelleme (\"Literatürde pek çok çalışma ...\").",
+     "Boşluğun hiç adlandırılmaması.",
+     "Aynı paragrafta \"önemli\" sözcüğünün 3 kez geçmesi.",
+     "Her paragrafın \"Bu bağlamda\" ile açılması.",
+     "Uydurma atıf."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Literatürde bu konuyla ilgili olarak pek çok çalışma bulunmakla birlikte, söz konusu çalışmaların büyük bir kısmının farklı açılardan ele alındığı görülmektedir. Ancak bu konuda yeterli düzeyde çalışma bulunmadığını söylemek mümkündür.",
+     "sonra": "Bu konudaki çalışmalar farklı açılardan yürütülmüştür, ancak [boşluğun adı] üzerine yeterli çalışma yoktur."
+    },
+    {
+     "once": "Bu bağlamda, sosyal medya kullanımının ergenlerin uyku düzeni üzerindeki etkisinin incelenmesi büyük önem taşımaktadır.",
+     "sonra": "Bu açıdan sosyal medya kullanımının ergenlerin uyku düzenine etkisi önemlidir.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    16,
+    26
+   ]
+  },
+  "akademik-tartisma": {
+   "p": "P3",
+   "name": "Akademik tartışma ve sonuç",
+   "register": "akademik",
+   "guidance": {
+    "amac": "Bulguları literatürle karşılaştırmak, sınırlılıkları söylemek, öneri vermek.",
+    "uzunluk": "Paragraf 4-8 cümle, cümle ort. 16-26. hipotez",
+    "resmiyet": "3. tekil + edilgen. Kaçınma (hedging) dozu önemli: \"olabilir\", \"düşündürmektedir\", \"-mAsI muhtemeldir\". Burada \"muhtemel\" doğaldır, MS ui listesi uygulanmaz.",
+    "kip": "Karşılaştırmada \"-lA tutarlıdır / örtüşmektedir\". Yorumda \"-DIğI düşünülmektedir\". Öneride \"-mAlIdIr / -ABilir\".",
+    "baglaclar": "\"Buna karşın\", \"bununla birlikte\", \"bu sonuç ... ile örtüşmektedir\". Aşırı \"ayrıca\" zinciri AI izidir.",
+    "yapi": "[Ana bulgu, bir cümlede] → [Literatürle karşılaştırma: uyum/çelişki] → [Olası açıklama] → [Sınırlılıklar] → [Öneriler: uygulama + araştırma].",
+    "ai_hatalari": [
+     "Bulguyu tekrar anlatıp yorum yapmamak.",
+     "Abartılı kesinlik (\"açıkça kanıtlamaktadır\").",
+     "Kalıp sınırlılık cümlesi (\"Her çalışmada olduğu gibi bu çalışmanın da bazı sınırlılıkları vardır\").",
+     "\"Sonuç olarak\" ile başlayan iki paragraf."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Bu çalışmanın bulguları, uzaktan eğitimin öğrenci motivasyonunu olumsuz etkilediğini açıkça kanıtlamaktadır.",
+     "sonra": "Bu çalışmanın bulguları, uzaktan eğitimin öğrenci motivasyonunu olumsuz etkilediğini kanıtlamaktadır.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Her çalışmada olduğu gibi bu çalışmanın da bazı sınırlılıkları bulunmaktadır. Çalışma yalnızca tek bir üniversitede gerçekleştirilmiştir.",
+     "sonra": "Her çalışma gibi bu çalışmanın da sınırlılıkları vardır. Çalışma yalnızca bir üniversitede yapılmıştır.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    16,
+    26
+   ]
+  },
+  "tez": {
+   "p": "P4",
+   "name": "Tez (lisansüstü)",
+   "register": "akademik",
+   "guidance": {
+    "amac": "Jüri ve enstitü. Akademik makaleden uzun. Enstitü yazım kılavuzu biçimi bağlar (kenar boşluğu, atıf stili).",
+    "uzunluk": "Paragraf 5-10 cümle, cümle ort. 16-28. Özet 250-300 kelime, sınırı enstitü kılavuzu koyar. hipotez",
+    "resmiyet": "Kişi zamirinden kaçınılır, \"Bu çalışmada ... incelenmiştir\" tercih edilir (zaferhoca, Türkçe tez yazım rehberi). Nitel desende araştırmacı konumu için \"ben\" kullanılabilir. Bu bir uyarı değil, `info`'dur.",
+    "kip": "Yöntem bölümünde geçmiş edilgen. Kuramsal çerçevede geniş zaman / -DIr.",
+    "baglaclar": "Akademik özetle aynı. Bölüm başı \"Bu bölümde ... ele alınacaktır\" yapısı bir kez kabul edilir, her alt başlıkta tekrarı AI/şablon izidir.",
+    "yapi": "Giriş (problem, amaç, önem, varsayımlar, sınırlılıklar, tanımlar) → Kuramsal çerçeve/literatür → Yöntem → Bulgular → Tartışma, sonuç, öneriler.",
+    "ai_hatalari": [
+     "\"Önem\" alt başlığında soyut şişirme.",
+     "Her alt başlığın \"Bu bölümde\" ile açılması.",
+     "Tanımlar bölümünde kaynaksız tanım.",
+     "Tez boyunca terim kayması (\"öz yeterlik / öz-yeterlilik / self-efficacy\")."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Bu bölümde, araştırmanın modeli, evren ve örneklemi, veri toplama araçları ve verilerin analizi konularına ilişkin bilgilere yer verilecektir.",
+     "sonra": "Bu bölümde araştırmanın modeli, örneklemi, veri toplama araçları ve analiz yöntemi açıklanmıştır."
+    },
+    {
+     "once": "Araştırmanın önemi, alanda bu konuya ilişkin yapılmış çalışmaların oldukça sınırlı olması ve elde edilecek sonuçların uygulayıcılara önemli katkılar sağlayacak olması bakımından büyük önem arz etmektedir.",
+     "sonra": "Alanda bu konuda az çalışma vardır. Sonuçlar uygulayıcılara [hangi kararda] yol gösterebilir."
+    }
+   ],
+   "sentence_words": [
+    16,
+    28
+   ]
+  },
+  "dilekce": {
+   "p": "P5",
+   "name": "Dilekçe",
+   "register": "resmi",
+   "guidance": {
+    "amac": "Bir kişinin kuruma talebi. Okur memur ya da yetkili. Talep ilk okumada anlaşılmalı.",
+    "uzunluk": "Gövde 1-3 paragraf, toplam 60-200 kelime. Cümle ort. 15-30. hipotez",
+    "resmiyet": "Dilekçeyi kişi yazar, bu yüzden 1. tekil doğaldır (\"başvurdum\", \"talep ediyorum\"). RYY'nin şahsileştirme yasağı kurumlar arası yazı içindir. Bu ayrım bizim çıkarımımız (hipotez). Hitap: \"... Müdürlüğüne\", \"... Başkanlığına\" (yönelme hâli).",
+    "kip": "Olay anlatımında görülen geçmiş. Talepte \"... yapılmasını / verilmesini\". Kapanış \"Gereğini saygılarımla arz ederim.\" ya da \"... bilgilerinize arz ederim.\" Akbank ve Ankara Ü. örneklerinde \"arz\" üst makama, \"rica\" eşit ya da alt makama.",
+    "baglaclar": "\"Bu nedenle\", \"ekte sunulan\". Az.",
+    "sozcuk": "Yerleşik kalıp terimler serbest (\"müracaat\", \"tarafıma\"). Ama \"mezkûr, ilişikte, işbu\" gibi arkaik süs `info`.",
+    "noktalama": "Tarih sağ üstte. İmza ve ad-soyad sağ altta. Adres ve \"Ek:\" listesi sol altta.",
+    "yapi": "[Kurum adı + -A hitap] → [Ben kimim, hangi bağlamda] → [Olay/gerekçe] → [Açık talep] → [Arz/rica kapanışı] → [Tarih, ad-soyad, imza, adres, ekler].",
+    "ai_hatalari": [
+     "Talebi son paragrafa gömmek.",
+     "Duygusal şişirme (\"mağduriyetimin giderilmesi hususunda yüce makamınızdan\").",
+     "\"Arz ederim\" ve \"rica ederim\" çiftinin yanlış seçilmesi.",
+     "Uydurma kanun maddesi (fidelity gate).",
+     "Kişi bilgisini eksik bırakıp boşluk yerine sahte veri yazmak."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Mağduriyetimin giderilmesi hususunda yüce makamınızın gerekli hassasiyeti göstereceğine olan inancımla, öğrenci belgemin tarafıma verilmesi hususunda gereğinin yapılmasını saygılarımla arz ederim.",
+     "sonra": "Öğrenci belgemin tarafıma verilmesi için gereğini saygılarımla arz ederim."
+    },
+    {
+     "once": "Kayıt yenileme işlemimi süresi içerisinde gerçekleştiremedim. Bu durumun sebebi, hastalığım nedeniyle hastanede yatıyor olmamdır.",
+     "sonra": "Hastanede yattığım için kayıt yenileme işlemimi süresi içinde yapamadım."
+    }
+   ],
+   "sentence_words": [
+    15,
+    30
+   ],
+   "words": [
+    60,
+    200
+   ],
+   "rules": {
+    "ST-15": "info"
+   }
+  },
+  "resmi-yazi": {
+   "p": "P6",
+   "name": "Resmî yazı (Resmî Yazışma Yönetmeliği)",
+   "register": "resmi",
+   "guidance": {
+    "amac": "Kurumdan kuruma yazı. Okur memur ve amir. Yönetmelik md. 16: \"Açık, anlaşılabilir, kısa ve olabildiğince öz anlatım\", \"Herkesçe bilinen Türkçe kelimeler\", TDK Sözlük ve Yazım Kılavuzu esas alınır, sebep-sonuç ilişkisi kurulur.",
+    "uzunluk": "Konu satırı kısa ve öz. Paragraf 2-5 cümle. İlk paragraf ilgi yazıya bağlanır. Paragraf girintisi 1,25 cm, iki yana yaslı, paragraflar arası boş satır yok. kaynak (RYY Kılavuzu)",
+    "resmiyet": "\"Şahsileştirilmiş anlatımdan kaçınılmalı.\" Kişi zamiri ve kişi eki yok. kaynak",
+    "kip": "\"Cümle sonları (metnin son cümlesi hariç) -dır/-dir ... ekleriyle bitirilmeli.\" RYY dönüşüm tablosu: Planlıyor → Planlanmaktadır · Planladık → Planlanmıştır · Planlayacağız → Planlanacaktır · Planlamalısınız → Planlanmalıdır. Bu register'da -mAktAdIr ai-iz kuralı kapalıdır. Tersine, şahıslı ya da -DIr'sız cümle sonu `info` verir.",
+    "kapanis": "Üst ve aynı düzey makama \"Arz ederim.\" Alt makama ve kamu dışı tüzel kişiye \"Rica ederim.\" Karma alıcıya \"Arz ve rica ederim.\" Hiyerarşi belirsizse \"arz\" kullanılır. Kalıplar: \"Bilgilerinize arz ederim.\", \"Gereğini rica ederim.\", \"Bilgilerini ve gereğini arz ederim.\"",
+    "baglaclar": "\"İlgi (a)'da kayıtlı yazı ile ...\", \"Ek-1'de belirtilen ...\", \"... Ek'te yer almaktadır.\"",
+    "sozcuk": "RYY ortak hata tablosu (art arda, birkaç, her şey, itibarıyla, kaydetmek, söz konusu, yurt dışı, tekrar, evrak, personel, mevzuat, iş birliği, satın alma, doküman, metot, direkt, tespit, veya, ya da) `tdk` katmanına alınır. \"Unvan → Ünvan\" satırı hariç tutulur.",
+    "noktalama": "Kısaltmalar TDK'ye göre. Tarih \"05.11.2026\" biçimi yazının başında, metin içinde \"5 Kasım 2026\".",
+    "yapi": "Sayı, Konu → [Muhatap] → İlgi: a) ... → [1. paragraf: ilgi yazıya atıf + konu] → [2. paragraf: gerekçe/ayrıntı] → [Son cümle: talep + arz/rica] → [İmza bloğu] → Ek: / Dağıtım:",
+    "ai_hatalari": [
+     "Şahıslı anlatım (\"planlıyoruz\", \"rica ediyoruz\").",
+     "Ara cümlede de \"rica ederiz\".",
+     "Kapanış yanlış: alt makama \"arz\".",
+     "Uydurma ilgi tarihi ve sayısı (fidelity gate: error).",
+     "Gereksiz \"Sayın\" yığılması.",
+     "Paragraf arası boş satır."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Müdürlüğümüz tarafından personelimize yönelik bir eğitim programı düzenlemeyi planlıyoruz. Katılım sağlayacak personellerin listesini bize göndermenizi rica ederiz.",
+     "sonra": "Müdürlüğümüzce personele yönelik bir eğitim programı düzenlenmesi planlanmaktadır. Katılacak personelin listesinin Müdürlüğümüze gönderilmesini rica ederim."
+    },
+    {
+     "once": "İlgi (a)'da kayıtlı yazınız itibariyle talep edilen bilgiler hazırlanmış olup Ek'te sunulmaktadır. Bilgilerinize arz ederiz.",
+     "sonra": "İlgi (a)'da kayıtlı yazı ile istenen bilgiler hazırlanmış olup Ek'te sunulmaktadır. Bilgilerinize arz ederim."
+    }
+   ]
+  },
+  "haber": {
+   "p": "P7",
+   "name": "Haber (ajans, ters piramit)",
+   "register": "haber",
+   "guidance": {
+    "amac": "Geniş kitle. Okur haberi ilk paragrafta alır, kalanı isteğe bağlı okur.",
+    "uzunluk": "Sağlık Bakanlığı Sağlık Haberciliği Kılavuzu bantları: ≤13 kelime \"çok kolay\", 14-18 \"kolay\", 19-25 \"anlaşılabilir\". Hedef ort. ≤18, tek cümle sınırı 25. kaynak Paragraf 1-3 cümle. Giriş (spot/lead) 1-2 cümle, 25-40 kelime. hipotez",
+    "resmiyet": "Nesnel, yansız, 3. kişi. Muhabirin \"ben/biz\"i yok. Abartılı sıfat ve yorum yok (ders notları: turkdili.net.tr, EBA). Sansasyon ve duygu sömürüsü dili yok (Sağlık Bakanlığı).",
+    "kip": "Görülen geçmiş (\"açıkladı\", \"bildirdi\"). Duyuru ve plan için -AcAk (\"yapılacak\"). -mAktAdIr az. Haber dili \"-dı\" ile ilerler.",
+    "baglaclar": "Az. Aktarma fiilleri çeşitli ama abartısız: \"dedi\", \"belirtti\", \"açıkladı\". \"İfade etti\" ve \"kaydetti\" zinciri AI ve ajans izidir.",
+    "sozcuk": "Sade. Yabancı para birimi yanında TL karşılığı parantezde (Sağlık Bakanlığı). Unvan ilk geçişte tam, sonraki geçişlerde soyadı.",
+    "noktalama": "Doğrudan alıntı tırnak içinde, aktarma fiili tırnaktan sonra. Ünlem yok. Dateline: \"İSTANBUL (AA) -\" (ajans biçimi). AA'nın \"Muhabirin El Kitabı\" (2008) açık kaynakta bulunamadı. Biçim, Gelişim Üniversitesi tezindeki gözleme (\"AA ağırlıkla ters piramit\") ve ders notlarına dayanır.",
+    "yapi": "Ters piramit: haberlerin ~%90'ında özetleyici giriş + ters piramit (Sağlık Bakanlığı). Giriş: kim/ne/nerede/ne zaman. Gövde: neden/nasıl, alıntı, arka plan. Alternatif yapılar: dörtgen, WSJ, kronolojik.",
+    "ai_hatalari": [
+     "Girişi bağlamla açıp haberi 3. paragrafa itmek (\"Son yıllarda giderek artan ...\").",
+     "Yorum sızdırmak (\"sevindirici bir gelişme\").",
+     "\"Önemli açıklamalarda bulundu\" (açıklamanın kendisini vermemek).",
+     "Kaynak belirtmemek.",
+     "Sonda ahlak dersi ya da özet paragrafı."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Son yıllarda giderek önem kazanan su tasarrufu konusunda önemli bir adım atıldı. Belediye, sevindirici bir gelişme olarak, yarından itibaren parklarda damla sulama sistemine geçileceğini açıkladı.",
+     "sonra": "Belediye, parklarda yarından itibaren damla sulama sistemine geçileceğini açıkladı."
+    },
+    {
+     "once": "Bakan, toplantının ardından basın mensuplarına önemli açıklamalarda bulundu ve yeni düzenlemenin vatandaşlarımıza büyük kolaylıklar sağlayacağını ifade etti.",
+     "sonra": "Bakan, toplantının ardından yeni düzenlemenin vatandaşlara kolaylık sağlayacağını söyledi."
+    }
+   ],
+   "sentence_words": [
+    8,
+    18
+   ],
+   "sentence_max": 25
+  },
+  "kose": {
+   "p": "P8",
+   "name": "Köşe yazısı ve deneme",
+   "register": "deneme",
+   "guidance": {
+    "amac": "Görüş bildirmek ve ikna etmek. Okur yazarı sesinden tanır.",
+    "uzunluk": "busbed 2023 köşe yazısı incelemesi: ortalama 10.22 kelime/cümle, yazı başına ~430 kelime ve ~42 cümle. Hedef bant 8-14 kelime. kaynak Paragraf 3-6 cümle.",
+    "resmiyet": "1. tekil serbest ve beklenir. \"Biz\" okurla ortaklık için kullanılır. Hitap (\"sevgili okur\") yazara özgüdür, AI'nin şablon hitabı değildir.",
+    "kip": "Geniş zaman, -DI, -mIş (aktarılan). -mAktAdIr nadirdir, yoğunsa AI ya da kurum sesi gibi okunur.",
+    "baglaclar": "Doğal konuşma bağları (\"ama\", \"yani\", \"üstelik\", \"oysa\"). \"Öte yandan / bunun yanı sıra / sonuç olarak\" zinciri AI izidir.",
+    "sozcuk": "Yazar tercihi geniştir. Arapça/Farsça kökenli sözcük üslup tercihi olabilir, uyarı yok.",
+    "noktalama": "Noktalı virgül yazara göre değişir. Em dash Türkçe vurgu aracı değildir (MS, TDK). Soru ve ünlem serbest ama dozlu.",
+    "yapi": "[Somut giriş: olay, gözlem, anı] → [Tez] → [Gerekçe, örnek] → [Karşı görüş] → [Kapanış: açık uç ya da çağrı]. Kalıp \"Sonuç olarak\" kapanışı gerekmez.",
+    "ai_hatalari": [
+     "Üçlü listeler (\"hem ..., hem ..., hem de ...\").",
+     "Aforizma kapanışı (\"Unutmayalım ki ...\").",
+     "Soru-cevap çiftleri (\"Peki bu ne anlama geliyor? Şu anlama geliyor: ...\").",
+     "Aşırı kısa vurucu cümleler (aşırı düzeltme dedektörü).",
+     "Kişisel sesin yerine genel geçer yargı."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Peki bu ne anlama geliyor? Aslında çok basit: Şehirlerimiz artık yürüyen insan için değil, otomobil için tasarlanıyor. Ve bu, hepimizi etkiliyor.",
+     "sonra": "Şehirlerimiz artık yürüyen insan için değil, otomobil için tasarlanıyor ve bu hepimizi etkiliyor."
+    },
+    {
+     "once": "Unutmayalım ki okumak sadece bir eylem değil, aynı zamanda bir yaşam biçimidir. Kitaplar bizi biz yapar.",
+     "sonra": "Okumak yalnızca bir eylem değil, bir yaşam biçimidir. Kitaplar bizi biz yapar.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    8,
+    14
+   ]
+  },
+  "blog": {
+   "p": "P9",
+   "name": "Blog",
+   "register": "blog",
+   "guidance": {
+    "amac": "Bilgi, deneyim ya da rehber. Okur tarar, başlık ve ilk paragrafa göre kalır ya da gider.",
+    "uzunluk": "Cümle ort. 9-16, paragraf 2-5 cümle. Ateşman bandı 50-80. hipotez (03: genel Türkçe metin 9-11 kelime/cümle).",
+    "resmiyet": "\"Sen\" ya da \"siz\", metin içinde tutarlı. 1. tekil deneyim anlatımında doğal.",
+    "kip": "Geniş zaman, şimdiki zaman, -DI. Rehberde emir (\"deneyin\", \"dene\"). -mAktAdIr yoğunluğu `warning` alır.",
+    "baglaclar": "Kısa geçişler. Her paragrafı bağlaçla açmak AI izidir.",
+    "sozcuk": "Gündelik sözcük. İngilizce terimde yerleşik karşılık varsa onu yaz, yoksa ilk geçişte açıkla.",
+    "noktalama": "Noktalı virgül 300 kelimede ≥1 ise `info`. Rewrite asla `;` üretmez. Em dash yok.",
+    "yapi": "[Kanca: sorun ya da sonuç] → [Neden önemli, kısa] → [Başlıklı adımlar/bölümler] → [Kapanış: tek cümlelik öneri]. \"Sonuç\" başlığı altında tekrarlı özet AI izidir.",
+    "ai_hatalari": [
+     "\"Bu yazıda ... ele alacağız\" girişi.",
+     "\"Hadi başlayalım!\"",
+     "Her başlık altında üçlü madde listesi.",
+     "\"Günümüzün hızla değişen dünyasında\".",
+     "Kapanışta \"Umarız bu yazı faydalı olmuştur\".",
+     "Kalın yazının aşırı kullanımı."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Günümüzün hızla değişen dijital dünyasında, verimli çalışmak her zamankinden daha önemli bir hâle gelmiştir. Bu yazıda, verimliliğinizi artırmanın yollarını detaylı bir şekilde ele alacağız. Hadi başlayalım!",
+     "sonra": "Verimli çalışmak her zamankinden önemli. Aşağıda verimliliğinizi artırmanın yollarını ayrıntılı olarak ele alıyoruz.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Sonuç olarak, düzenli uyku hem fiziksel hem zihinsel hem de duygusal sağlığımız açısından son derece kritik bir öneme sahiptir. Umarız bu yazı sizin için faydalı olmuştur!",
+     "sonra": "Kısacası düzenli uyku beden, zihin ve duygu sağlığımız için önemlidir.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    9,
+    16
+   ],
+   "atesman": [
+    50,
+    80
+   ],
+   "words": [
+    150,
+    2500
+   ],
+   "rules": {
+    "ST-15": "info"
+   }
+  },
+  "teknik-dok": {
+   "p": "P10",
+   "name": "Teknik dokümantasyon",
+   "register": "teknik",
+   "guidance": {
+    "amac": "Geliştirici ya da kullanıcı bir işi yapmak ister. Belge görev odaklıdır.",
+    "uzunluk": "Cümle ort. 8-18, paragraf 1-4 cümle. Adımlar numaralı. hipotez",
+    "resmiyet": "\"Siz\" (MS ve Google Material Türkçe rehberleri). Ürün davranışını anlatırken 3. kişi geniş zaman (\"Komut ... oluşturur\"). Google: ben ve sen aynı ifadede karışmaz.",
+    "kip": "Adımda emir \"-(y)In\": \"Çalıştırın\", \"Ekleyin\". MS: \"-ınız\" (yapınız) otoriter durur, \"yapın\" kullanılır. Davranış için geniş ve şimdiki zaman. Gerçek değilse gelecek zaman yok (MS). Edilgen doğal (\"Dosya oluşturulur\"). Bu register'da edilgen kuralı kapalı.",
+    "baglaclar": "\"Ardından\", \"sonra\", \"bunun için\". \"Böylece\" (MS: \"dolayısıyla\" yerine \"böylece, bu sayede\").",
+    "sozcuk": "Terim sözlüğü zorunlu: deploy için tek karşılık (dağıtmak / yayına almak / deploy etmek). Kod adları çevrilmez ve backtick içinde yazılır. Sonek kesme işaretiyle ayrılır: `config.yaml`'ı. Kesme işareti sınıfı `['’]`.",
+    "noktalama": "Kod bloklarında linter çalışmaz. Liste maddesi tam cümleyse büyük harf ve nokta, ifadeyse yalnız büyük harf (MS).",
+    "yapi": "[Ne yapar, 1 cümle] → [Ön koşullar] → [Adımlar] → [Doğrulama] → [Sorun giderme].",
+    "ai_hatalari": [
+     "\"Bu kapsamlı rehberde ...\" girişi.",
+     "Her adımda \"Öncelikle\", \"Daha sonra\", \"Son olarak\" zinciri.",
+     "Terim kayması.",
+     "\"Kolayca\", \"sadece\", \"basitçe\" (kullanıcıyı küçümser).",
+     "Uydurma flag ya da sürüm numarası (fidelity gate)."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Öncelikle, projenizi başarılı bir şekilde kurabilmek için gerekli olan bağımlılıkları kolayca yüklemeniz gerekmektedir. Bunun için aşağıdaki komutu çalıştırınız.",
+     "sonra": "Bağımlılıkları yüklemek için aşağıdaki komutu çalıştırın."
+    },
+    {
+     "once": "Uygulama deploy edildikten sonra, yayına alınan sürümün loglarını kontrol ederek dağıtımın başarılı olup olmadığını teyit edebilirsiniz.",
+     "sonra": "Uygulamayı yayına aldıktan sonra logları kontrol ederek sürümün çalıştığını doğrulayabilirsiniz.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    8,
+    18
+   ]
+  },
+  "readme": {
+   "p": "P11",
+   "name": "GitHub README",
+   "register": "teknik",
+   "guidance": {
+    "amac": "İlk kez gelen geliştirici 30 saniyede şunu bilmeli: ne, neden, nasıl kurulur, nasıl kullanılır.",
+    "uzunluk": "Tanıtım 1-3 cümle. Bölüm paragrafları 1-3 cümle. hipotez",
+    "resmiyet": "\"Siz\" ya da öznesiz emir. Topluluk projesinde \"sen\" de görülür, ama tutarlı olmalı.",
+    "kip": "Tanıtımda geniş zaman (\"X, Y'yi Z'ye dönüştürür\"). Kurulumda emir.",
+    "sozcuk": "Pazarlama sıfatı yok (\"güçlü, modern, hızlı, kapsamlı\"). Ölçülmüşse sayı kullanılır.",
+    "yapi": "# Ad → 1 cümle ne yapar → Kurulum → Hızlı başlangıç (kod) → Yapılandırma → Katkı → Lisans.",
+    "ai_hatalari": [
+     "\"Modern, güçlü ve kullanıcı dostu\" üçlüsü.",
+     "Her başlıkta emoji.",
+     "\"Özellikler\" listesinde ölçüsüz iddia.",
+     "Kod olmayan \"Hızlı Başlangıç\"."
+    ]
+   },
+   "examples": [
+    {
+     "once": "trlint, Türkçe metinleriniz için geliştirilmiş modern, güçlü ve kullanıcı dostu bir linter aracıdır. Yazım kalitenizi bir üst seviyeye taşır!",
+     "sonra": "trlint, Türkçe metin için bir linterdir.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Projeyi kullanmaya başlamak oldukça kolaydır. Yapmanız gereken tek şey aşağıdaki adımları takip etmektir.",
+     "sonra": "Kurulum için aşağıdaki adımları izleyin."
+    }
+   ],
+   "sentence_words": [
+    8,
+    18
+   ]
+  },
+  "changelog": {
+   "p": "P12",
+   "name": "CHANGELOG",
+   "register": "teknik",
+   "guidance": {
+    "amac": "Sürüm yükseltecek kullanıcı ne değişti, neyi kıracak bilmek ister. Keep a Changelog ilkeleri: insan için yazılır, en yeni sürüm üstte, tarih ISO biçiminde (YYYY-AA-GG), \"Unreleased\" bölümü, değişiklik türlerine göre gruplama.",
+    "kategori": "Keep a Changelog'un Türkçe sayfası şablonda İngilizce adları (Added, Changed, Deprecated, Removed, Fixed, Security) gösteriyor. Türkçe karşılık (Eklenenler, Değişenler, Kullanımdan kalkanlar, Kaldırılanlar, Düzeltmeler, Güvenlik) bizim önerimiz, kaynaklı değil. Proje içinde tek set seçilir.",
+    "uzunluk": "Madde başına 1 cümle, 4-14 kelime. hipotez",
+    "kip": "Madde dili tutarlı olmalı: ya ad öbeği (\"Türkçe çeviri\") ya geçmiş edilgen (\"Türkçe çeviri eklendi\"). Karışık kullanım `info`.",
+    "yapi": "`## [sürüm] - YYYY-AA-GG` → `### Kategori` → maddeler. Commit log'u yapıştırmak Keep a Changelog'un \"kötü uygulama\" listesinde.",
+    "ai_hatalari": [
+     "Commit mesajlarını aynen dökmek.",
+     "\"Çeşitli iyileştirmeler ve hata düzeltmeleri\".",
+     "Uydurma sürüm ve tarih (fidelity gate)."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Çeşitli iyileştirmeler yapıldı ve bazı hatalar giderildi.",
+     "sonra": "[Her değişiklik ayrı madde olarak, kategorisi altında yazılmalı]"
+    },
+    {
+     "once": "Kullanıcıların daha iyi bir deneyim yaşayabilmesi amacıyla giriş ekranında yer alan hata mesajları iyileştirilmiştir.",
+     "sonra": "Giriş ekranındaki hata mesajları iyileştirildi.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    3,
+    14
+   ]
+  },
+  "commit": {
+   "p": "P13",
+   "name": "Commit mesajı",
+   "register": "commit",
+   "guidance": {
+    "amac": "`git log`'u okuyan geliştirici ve otomatik araçlar (semver, changelog üretimi).",
+    "uzunluk": "Başlık ≤50 karakter (git geleneği, sert sınır 72). Gövde satırı ≤72 karakter. kaynak (git geleneği)",
+    "kip": "Standart yok. Git geleneği İngilizcede emir kipini kullanır (\"add\"). Conventional Commits'in Türkçe çevirisi örneklerde geçmiş edilgen kullanır (\"Türkçe çeviri eklendi\", \"yazım hataları düzeltildi\"). Türkçe için iki geçerli seçenek var: emir (\"ekle\") ya da geçmiş edilgen (\"eklendi\"). Kural depo içinde tutarlılık.",
+    "bicim": "`<tip>[(kapsam)][!]: <açıklama>`. Tip İngilizce kalır (feat, fix, docs, chore...), çünkü araçlar ona göre çalışır. Açıklama küçük harfle başlar, sonda nokta yoktur.",
+    "ai_hatalari": [
+     "Başlıkta neden yerine dosya listesi.",
+     "\"Güncellemeler yapıldı\".",
+     "Başlık > 72 karakter.",
+     "Gövdede madde madde kod tekrarı.",
+     "Aynı depoda \"ekle / eklendi / eklendi.\" karışımı."
+    ]
+   },
+   "examples": [
+    {
+     "once": "fix: Kullanıcı giriş ekranında yaşanan ve kullanıcıların sisteme giriş yapmasını engelleyen hata başarılı bir şekilde düzeltilmiştir.",
+     "sonra": "fix: giriş ekranındaki oturum açma hatası düzeltildi",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Güncellemeler yapıldı",
+     "sonra": "[tip(kapsam): neyin neden değiştiği]"
+    }
+   ],
+   "commit_title": {
+    "info": 60,
+    "warning": 72
+   }
+  },
+  "ui-buton": {
+   "p": "P14",
+   "name": "UI mikro metin: buton ve etiket",
+   "register": "ui",
+   "guidance": {
+    "amac": "Kullanıcı bir eylemi seçer. Metin eylemi ve sonucunu söyler.",
+    "uzunluk": "Buton 1-4 kelime, en çok 6. Bu sınır uygulayıcı rehberlerinden geliyor. iOS butonları 1-2 kelime (Erkan Ceylan). hipotez Türkçe metin İngilizceden belirgin biçimde uzar. talhaaslan.com \"yaklaşık iki katı\" diyor (hipotez). Yer tutucuya göre tasarım yapılmalı.",
+    "resmiyet": "\"Siz\": MS, Google Material Türkçe ve uiuxtasarim (banka, sağlık, kurumsal, kamu). Genç kitle ve oyun ürünlerinde \"sen\" olabilir. Ana hata ikisini karıştırmaktır. Kullanıcının uygulamaya söylediği onay kutusu metni 1. tekildir: \"Gönderdiğim iletilere imzamı otomatik olarak ekle\" (MS). Google: \"ben\" yalnız sahiplik için kullanılır (\"Profilim\").",
+    "kip": "Buton fiildir ve yalın emir biçimindedir: \"Kaydet\", \"Siparişi onayla\", \"Projeyi sil\". Bu biçim \"siz\" kullanan üründe de kabul görür (uiuxtasarim). \"Kaydedin\" biçimi seçilirse ürünün tamamında tutarlı olmalı. Etiket isimdir: \"Telefon numarası\" doğru, \"Telefon numaranızı giriniz\" yanlış.",
+    "sozcuk": "MS kaçınma listesi bu register'da `warning`: MS'e göre \"el ile\" yerine \"kendiniz\", \"öğe\" yerine nesnenin adı (dosya, resim) kullanılır. Aynı şeye tek ad verilir: \"Sepet\" ile \"Alışveriş çantası\" karışmamalı (uiuxtasarim). Geri alınamaz eylem açıkça adlandırılır: \"Hesabı kalıcı olarak sil\".",
+    "noktalama": "Butonda nokta yok. Tümüyle büyük harf kullanılmaz (MS, Erkan Ceylan). Değişkene ek gelirken ünlü uyumu kırılmasına ve İ/I büyük harf dönüşümüne dikkat edilir.",
+    "yapi": "[Fiil] + [nesne]. \"Evet/Hayır\" yerine eylem adı: \"Taslağı sil / Düzenlemeye dön\" (talhaaslan).",
+    "ai_hatalari": [
+     "Butonda \"Tamam\", \"Gönder\" gibi belirsiz etiket.",
+     "Etikette \"Lütfen ... giriniz\".",
+     "Aynı ekranda \"Kaydet\" ile \"Kaydedin\" karışık.",
+     "İngilizceden kelime kelime çeviri (\"Bir hesap oluşturun\" yerine \"Hesap oluştur\")."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Lütfen e-posta adresinizi giriniz",
+     "sonra": "E-posta adresi"
+    },
+    {
+     "once": "[Silme onayı iletişim kutusu] Emin misiniz? · Evet · Hayır",
+     "sonra": "Taslak silinsin mi? · Taslağı sil · Vazgeç"
+    }
+   ],
+   "line_words": 6,
+   "rules": {
+    "ST-16": "info"
+   }
+  },
+  "ui-hata": {
+   "p": "P15",
+   "name": "UI mikro metin: hata ve onay iletileri",
+   "register": "ui",
+   "guidance": {
+    "amac": "Kullanıcı ne olduğunu ve ne yapacağını bilmeli. Hata metni üç şey söyler: sorun, neden, çözüm (Erkan Ceylan).",
+    "uzunluk": "1-2 cümle, 5-14 kelime. Mobil snackbar en çok 2 satır (Google Material). hipotez / kaynak (Google)",
+    "resmiyet": "\"Siz\". MS'e göre \"özür dileriz\" yalnız ciddi hatada kullanılır, diğer durumlarda \"maalesef\" ya da \"ne yazık ki\". MS \"üzgünüz\" ifadesini hiç önermez. Bazı Türkçe UX yazıları (AykutUX) \"Üzgünüz\" örneği veriyor. Bu bir çelişkidir. Varsayılan olarak MS kuralı uygulanır, seviye `info`. Suçlayıcı dil yok: \"Yanlış şifre girdiniz\" yerine \"Şifrenizi kontrol eder misiniz?\" (Şeyma Balcı).",
+    "kip": "MS standartları: Cannot → \"...yapılamıyor\", Failed → \"...yapılamadı\", \"...bulunamıyor\", \"Bellek yeterli değil\". Mişli geçmiş kullanılmaz: \"Bu ayarı daha önce belirtmediniz\" (MS). Olaylar mantıksal sırayla anlatılır.",
+    "yapi": "[Ne oldu] + [neden, biliniyorsa] + [ne yapmalı]. Hata kodu gerekiyorsa sona.",
+    "ai_hatalari": [
+     "\"Bir hata oluştu\" (muratuysal).",
+     "\"Geçersiz giriş\".",
+     "Teknik kod tek başına (\"Hata 500\").",
+     "Fazla özür.",
+     "Ünlem.",
+     "Uydurma neden ya da kural (fidelity gate: kural ürün belgesinde yoksa yazılmaz)."
+    ]
+   },
+   "examples": [
+    {
+     "once": "[kural: şifre en az 8 karakter] Geçersiz giriş!",
+     "sonra": "Şifre en az 8 karakter olmalı."
+    },
+    {
+     "once": "Üzgünüz, dosyanız yüklenirken beklenmedik bir hata oluştu! Lütfen daha sonra tekrar deneyiniz.",
+     "sonra": "Dosya yüklenemedi. Daha sonra yeniden deneyin."
+    }
+   ],
+   "sentence_words": [
+    5,
+    14
+   ],
+   "max_sentences": 2,
+   "rules": {
+    "ST-16S": "info"
+   }
+  },
+  "ui-bos": {
+   "p": "P16",
+   "name": "UI mikro metin: boş durum ve bildirim",
+   "register": "ui",
+   "guidance": {
+    "amac": "Ekran boş. Kullanıcıya neden boş olduğu ve sonraki adım söylenir.",
+    "uzunluk": "Başlık 2-5 kelime, açıklama 1 cümle, bir eylem butonu. hipotez",
+    "resmiyet": "\"Siz\". Kişisel ton istenirse \"biz\" (MS: \"kaldığımız yerden devam edeceğiz\").",
+    "kip": "Geniş ve şimdiki zaman. Öneride \"-(y)AbIlIrsInIz\".",
+    "yapi": "[Durum] + [sonraki adım] + [buton]. Örnek (talhaaslan): \"Sepetiniz boş. En çok tercih edilen ürünlere göz atabilirsiniz\" + buton.",
+    "ai_hatalari": [
+     "\"Kayıt bulunamadı\" (muratuysal).",
+     "Aşırı şirinlik (\"Ups! Burası çok sessiz 🦗\").",
+     "Eylemsiz boş ekran.",
+     "Bildirimde ünlem yığını."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Kayıt bulunamadı.",
+     "sonra": "Henüz [nesne] yok. İlk [nesne] eklendiğinde burada görünecek."
+    },
+    {
+     "once": "Harika! İşleminiz başarılı bir şekilde gerçekleştirilmiştir!",
+     "sonra": "İşleminiz tamamlandı."
+    }
+   ],
+   "max_sentences": 3,
+   "rules": {
+    "ST-16S": "info"
+   }
+  },
+  "reklam": {
+   "p": "P17",
+   "name": "Reklam metni ve slogan",
+   "register": "pazarlama",
+   "guidance": {
+    "amac": "Dikkat çekmek, hatırlanmak, harekete geçirmek.",
+    "uzunluk": "Uğur Batı (2002) kozmetik reklam metinlerinde ortalamayı 7.1 kelime/cümle buldu. Okurun bir seferde hatırlayabildiği sınır ~15 kelime. kaynak Slogan genellikle 2-6 kelime, en çok 10. Örnekler: \"Sadece Yap\", \"Farklı Düşün\", \"Çünkü Buna Değersin\". hipotez (zayıf kaynak: iienstitu)",
+    "resmiyet": "Gıda markaları \"sen\" kullanıyor. \"Siz\" daha mesafeli (dergipark 212246). Emir kipi duygusal fiillerle kurulur: \"ara, iste, hisset\".",
+    "kip": "Batı 2002'ye göre bildirme cümlesi %36. Ünlem ve soru cümleleri ağırlıkla sloganlarda toplanıyor: soru cümlelerinin %86'sı, ünlemlerin %82'si. Emir oranı %66.",
+    "sozcuk": "Engin Yılmaz (Çukurova): yabancı öge oranı %78, üstünlük zarfları (\"En iyisi, şimdi daha da iyi\"), ses tekrarı %14. Hukuki sınır: Ticari Reklam ve Haksız Ticari Uygulamalar Yönetmeliği md. 7 reklamın doğru ve dürüst olmasını ister. md. 9'a göre reklam veren iddiasını ispatla yükümlü. Dayanak 6502 sayılı Kanun md. 61-62. Bu yüzden \"en iyi / en ucuz / %100 / garantili\" gibi kanıtsız üstünlük iddiası işaretlenir. 2026 değişiklikleri doğrulanmadı.",
+    "noktalama": "Ünlem serbest ama dozlu. Slogan sonunda nokta tercihtir.",
+    "yapi": "[Kanca/vaat] → [kanıt ya da özellik] → [çağrı]. Slogan tek fikir taşır.",
+    "ai_hatalari": [
+     "Klişe sıfat yığını (\"eşsiz, benzersiz, mükemmel\").",
+     "\"Hayalinizdeki ... artık bir tık uzağınızda!\"",
+     "Kanıtsız üstünlük.",
+     "Uydurma oran ya da ödül (fidelity gate: error).",
+     "Aynı metinde sen ve siz."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Eşsiz formülü ve benzersiz içeriğiyle cildinize mükemmel bir bakım sunan bu krem, hayalinizdeki cilde kavuşmanızı sağlayacak!",
+     "sonra": "[ürünün kanıtlı tek faydası]",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Türkiye'nin en iyi kahvesi şimdi kapınızda!",
+     "sonra": "Kahve şimdi kapınızda.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    4,
+    9
+   ],
+   "sentence_max": 15
+  },
+  "e-ticaret": {
+   "p": "P18",
+   "name": "E-ticaret ürün açıklaması",
+   "register": "pazarlama",
+   "guidance": {
+    "amac": "Alıcı karar verir. Özellik, ölçü, malzeme, kullanım ve iade bilgisini arar.",
+    "uzunluk": "Kısa giriş 1-2 cümle, ardından madde listesi (özellikler). Cümle 8-16 kelime. hipotez",
+    "resmiyet": "\"Siz\" baskın. Genç markada \"sen\" olabilir, tutarlı olmalı.",
+    "kip": "Geniş zaman (\"... sağlar\", \"... uyumludur\"). Edilgen az.",
+    "sozcuk": "Somut ad ve ölçü, Türkçe sayı biçimi (`1.500 mAh`, `3,5 kg`, `%100 pamuk`). Sayı kalkları `tdk` katmanında. \"Premium, kaliteli, şık\" gibi boş sıfat.",
+    "yapi": "[Ne + kimin için, 1 cümle] → [3-6 özellik maddesi: ölçü/malzeme] → [Kullanım/bakım] → [Kutu içeriği]. Trendyol, Getir gibi platformların açık Türkçe içerik rehberi bulunamadı.",
+    "ai_hatalari": [
+     "Ürüne bilgi yerine duygu yüklemek.",
+     "Spesifikasyon uydurmak (fidelity gate: error).",
+     "\"Tarzınızı yansıtın\" kalıbı.",
+     "İngilizce sayı biçimi (`2.5 kg`)."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Bu şık ve kaliteli tişört, %100 pamuk yapısıyla gün boyu mükemmel bir konfor sunarken tarzınızı da yansıtmanıza olanak tanır.",
+     "sonra": "%100 pamuk tişört. Gün boyu rahat kullanım için."
+    },
+    {
+     "once": "Powerbank 10,000 mAh kapasitesi ile telefonunuzu 2.5 kez şarj edebilir.",
+     "sonra": "10.000 mAh kapasiteli powerbank, telefonunuzu 2,5 kez şarj edebilir."
+    }
+   ],
+   "sentence_words": [
+    8,
+    16
+   ]
+  },
+  "linkedin": {
+   "p": "P19",
+   "name": "LinkedIn gönderisi",
+   "register": "blog",
+   "guidance": {
+    "amac": "Profesyonel ağ. Deneyim, duyuru ya da görüş. İlk 2 satır \"devamını gör\" kesiminden önce görünür.",
+    "uzunluk": "80-250 kelime. Paragraf 1-3 cümle, kısa satır. Cümle 8-16 kelime. hipotez",
+    "resmiyet": "1. tekil doğal. Okura \"siz\". Ekip duyurusunda \"biz\".",
+    "kip": "-DI (deneyim), geniş zaman. -mAktAdIr kurum basın dili gibi durur.",
+    "ai_hatalari": [
+     "\"Heyecanla duyurmak isterim ki\" kalıbı.",
+     "Tek satırlık vurucu cümle merdiveni (aşırı düzeltme dedektörü).",
+     "\"İşte öğrendiğim 5 ders 👇\".",
+     "Her satır başında emoji.",
+     "Sonda 8+ hashtag.",
+     "\"Siz ne düşünüyorsunuz? Yorumlarda buluşalım!\""
+    ]
+   },
+   "examples": [
+    {
+     "once": "Büyük bir heyecan ve gururla duyurmak isterim ki, yeni bir yolculuğa başlıyorum! 🚀 Bu muhteşem fırsat için minnettarım. 🙏",
+     "sonra": "Yeni bir işe başlıyorum. Bu fırsat için minnettarım.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Başarısız oldum.\\nVazgeçmedim.\\nTekrar denedim.\\nVe başardım.\\nİşte size hayat dersi.",
+     "sonra": "Başarısız oldum, vazgeçmedim ve yeniden denedim."
+    }
+   ],
+   "sentence_words": [
+    8,
+    16
+   ],
+   "words": [
+    80,
+    250
+   ],
+   "rules": {
+    "ST-15": "info"
+   }
+  },
+  "x": {
+   "p": "P20",
+   "name": "X (Twitter) gönderisi",
+   "register": "sosyal",
+   "guidance": {
+    "amac": "Akış içinde hızlı okuma. Tek fikir.",
+    "uzunluk": "1-2 cümle, 6-14 kelime/cümle. Karakter sınırı platformca belirlenir (standart hesap 280). hipotez",
+    "resmiyet": "Serbest. Kişisel hesapta 1. tekil, kurumsal hesapta \"biz\" ve \"siz\".",
+    "kip": "Gündelik. Ek kısaltması ve argo kişisel hesapta normaldir, uyarılmaz.",
+    "noktalama": "Serbest. Noktalı virgül `info`. Em dash `warning` (tdk).",
+    "ai_hatalari": [
+     "Flood'da her tweeti \"1/\" numarası ve 🧵 ile açmak.",
+     "Her cümlede hashtag.",
+     "Kurumsal hesapta \"Değerli takipçilerimiz\".",
+     "Retorik soru + cevap."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Değerli takipçilerimiz, sistemlerimizde planlı bir bakım çalışması gerçekleştirilecektir. Anlayışınız için teşekkür ederiz! 🙏 #bakım #duyuru",
+     "sonra": "Sistemlerimizde planlı bakım yapılacak. Anlayışınız için teşekkürler."
+    },
+    {
+     "once": "Yapay zekâ işimizi elimizden alacak mı? Cevap basit: Hayır. Ama işimizi değiştirecek.",
+     "sonra": "Yapay zekâ işimizi elimizden almayacak ama değiştirecek."
+    }
+   ],
+   "sentence_words": [
+    6,
+    14
+   ]
+  },
+  "instagram": {
+   "p": "P21",
+   "name": "Instagram açıklaması",
+   "register": "sosyal",
+   "guidance": {
+    "amac": "Görselin bağlamı. Okur görsele bakar, ilk satırı okur.",
+    "uzunluk": "İlk satır ≤ 10 kelime. Toplam 20-120 kelime. hipotez",
+    "resmiyet": "\"Sen\" yaygın (marka hesabı da dahil). Tutarlılık kuralı geçerli.",
+    "erisilebilirlik": "Alt metin ≤125 karakter, \"resim/fotoğraf\" sözcüğüyle başlamaz (Google Material Türkçe). kaynak",
+    "ai_hatalari": [
+     "\"Bu muhteşem anı sizlerle paylaşmak istedim ✨\".",
+     "Görselde görüneni tekrarlamak.",
+     "20+ hashtag'i metin içine gömmek.",
+     "Duygu sıfatı yığını."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Bu muhteşem gün batımını sizlerle paylaşmak istedim ✨ Doğanın büyüleyici güzelliği karşısında kelimeler kifayetsiz kalıyor 🌅",
+     "sonra": "Gün batımı.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "[alt metin] Resim: Masada duran bir fincan kahvenin fotoğrafı",
+     "sonra": "[alt metin] Masada bir fincan kahve"
+    }
+   ],
+   "words": [
+    20,
+    120
+   ],
+   "rules": {
+    "ST-15": "info"
+   }
+  },
+  "resmi-eposta": {
+   "p": "P22",
+   "name": "Resmî e-posta (kurum dışı, ilk temas)",
+   "register": "kurumsal",
+   "guidance": {
+    "amac": "Tanımadığınız ya da üst konumdaki kişiye talep veya bilgi. Okur e-postayı neden aldığını ilk cümlede anlamalı.",
+    "uzunluk": "60-200 kelime. Paragraf 1-3 cümle. Cümle 10-20 kelime. hipotez",
+    "resmiyet": "Hitap: \"Sayın [Unvan] [Soyadı],\" ya da \"Sayın [Ad Soyad],\". \"Siz\" ve 1. tekil (\"yazıyorum\"). Kurum adına yazılıyorsa \"biz\". Kapanış: \"Saygılarımla,\" ya da \"İyi çalışmalar dilerim,\".",
+    "kip": "Şimdiki ve geniş zaman. Rica için \"-(y)AbIlIr misiniz\" ya da \"... rica ederim\". -mAktAdIr dozlu kullanılır, resmî yazı kadar değil.",
+    "baglaclar": "Az. Konu satırı içeriği söyler (\"Toplantı talebi: [konu]\").",
+    "yapi": "[Hitap] → [Kimim + neden yazıyorum, 1-2 cümle] → [Ayrıntı] → [Açık talep ve tarih] → [Kapanış + imza].",
+    "ai_hatalari": [
+     "\"Umarım bu e-posta sizi iyi bulur\" (İngilizce kalk).",
+     "Aşırı teşekkür zinciri.",
+     "Talebin sona gömülmesi.",
+     "\"Herhangi bir sorunuz olursa çekinmeden iletişime geçebilirsiniz\" kalıbı her e-postada."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Umarım bu e-posta sizi iyi bulur. Sizinle iletişime geçmekten büyük bir mutluluk duyuyorum. Size bir konuda yazmak istedim.",
+     "sonra": "[Kurumunuzdaki] [konu] hakkında yazıyorum."
+    },
+    {
+     "once": "Herhangi bir sorunuz veya ek bilgiye ihtiyacınız olması durumunda lütfen benimle iletişime geçmekten çekinmeyiniz. Zaman ayırdığınız için şimdiden çok teşekkür ederim.",
+     "sonra": "Sorunuz olursa yanıtlamaktan memnuniyet duyarım. Teşekkür ederim."
+    }
+   ],
+   "sentence_words": [
+    10,
+    20
+   ],
+   "words": [
+    60,
+    200
+   ],
+   "rules": {
+    "ST-15": "info"
+   }
+  },
+  "is-eposta": {
+   "p": "P23",
+   "name": "İş içi e-posta ve mesaj",
+   "register": "is-eposta",
+   "guidance": {
+    "amac": "Ekip arkadaşı. Ne isteniyor, ne zamana kadar, kim yapacak.",
+    "uzunluk": "20-150 kelime. Cümle 8-16 kelime. hipotez",
+    "resmiyet": "\"Merhaba [Ad],\" hitabı. \"Sen\" ya da \"siz\" şirket kültürüne göre seçilir. 1. tekil ve 1. çoğul doğal.",
+    "kip": "Şimdiki ve geniş zaman, istekte \"-(y)AbIlIr misin/misiniz\". -mAktAdIr ve edilgen yoğunsa yapay durur (`warning`).",
+    "yapi": "[İstek ya da karar, ilk satırda] → [Bağlam, 1-3 cümle] → [Son tarih / sorumlu] → [Kısa kapanış].",
+    "ai_hatalari": [
+     "İş içi e-postada resmî yazı dili (\"Bilgilerinize sunarım\").",
+     "Uzun giriş.",
+     "Madde listesi şişkinliği.",
+     "\"Aşağıda detaylı bir şekilde açıklamaya çalıştım\"."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Merhaba Ayşe, sprint planlaması kapsamında gerçekleştirilecek olan toplantıya ilişkin olarak gündem maddelerinin tarafınızca hazırlanması hususunu bilgilerinize sunarım.",
+     "sonra": "Merhaba Ayşe, sprint planlama toplantısının gündemini hazırlayabilir misin?"
+    },
+    {
+     "once": "Aşağıda, mevcut durumu ve olası çözüm önerilerini detaylı bir şekilde açıklamaya çalıştım. Umarım faydalı olur.",
+     "sonra": "Durumu ve çözüm önerilerini aşağıya yazdım."
+    }
+   ],
+   "sentence_words": [
+    8,
+    16
+   ],
+   "words": [
+    20,
+    150
+   ],
+   "rules": {
+    "ST-15": "info"
+   }
+  },
+  "basin-bulteni": {
+   "p": "P24",
+   "name": "Basın bülteni",
+   "register": "kurumsal",
+   "guidance": {
+    "amac": "Gazeteci ve editör. Haber değerini ilk paragrafta görmeli. Metin haber olarak kullanılabilir olmalı.",
+    "uzunluk": "press.org.tr: başlık 8-12 kelime (marka + fiil + rakam), spot 2-3 cümle (30-45 kelime), giriş 5N1K (40-60 kelime), gövde 120-200 kelime, 1-2 alıntı (tam ad + unvan), boilerplate 50-80 kelime, toplam 350-500 kelime. STGM rehberi: 3-4 paragraf, tek sayfa, \"Editöre Not\" bölümü, jargon yok. Çelişki: Mürsel Çavuş başlık için 3-5 kelime öneriyor. Bu yüzden başlık eşiği yalnızca `info`. kaynak (sektör rehberleri, hakemli değil)",
+    "resmiyet": "3. kişi (haber gibi). Kurum kendinden \"şirket\" ya da adıyla söz eder. Alıntı içinde \"biz\" serbest.",
+    "kip": "Görülen geçmiş ve -AcAk. Haber dili.",
+    "sozcuk": "Abartı yok. Medikal örnek: \"Mucize Tedavi Bulundu\" gibi başlık yerine veriye dayalı başlık. \"Lider, öncü, sektörde ilk\" gibi iddia kanıtlıysa yazılır.",
+    "noktalama": "Dateline: \"İSTANBUL, [gün Ay yıl]\". Alıntı tırnakta. Ünlem yok.",
+    "yapi": "Başlık → Spot → Dateline + giriş (5N1K) → Gövde → Alıntı → Boilerplate (\"[Kurum] Hakkında\") → Basın iletişim.",
+    "ai_hatalari": [
+     "Başlıkta sıfat yığını.",
+     "Alıntının kurumsal boş söz olması (\"Bu iş birliğinden büyük mutluluk duyuyoruz\").",
+     "Uydurma rakam ve unvan (fidelity gate: error).",
+     "5N1K'nın 3. paragrafa kalması."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Sektörün Öncüsü X Şirketi'nden Devrim Niteliğinde Muhteşem Bir Adım!",
+     "sonra": "X Şirketi [ürün/hizmet adı] ile [ne yaptığı]"
+    },
+    {
+     "once": "Şirketin Genel Müdürü, \"Bu iş birliğinden büyük mutluluk ve gurur duyuyoruz. Birlikte çok güzel işler başaracağımıza inanıyoruz,\" dedi.",
+     "sonra": "Şirketin Genel Müdürü, \"Bu iş birliğiyle [somut hedef] amaçlıyoruz,\" dedi."
+    }
+   ],
+   "sentence_words": [
+    12,
+    22
+   ]
+  },
+  "sunum": {
+   "p": "P25",
+   "name": "Sunum ve konuşma metni",
+   "register": "sozlu",
+   "guidance": {
+    "amac": "Dinleyici. Kulakla anlaşılır, geri dönüp okunamaz.",
+    "uzunluk": "Cümle ort. 8-15 kelime. Uzun yan cümle ve fiilin sona kalması kulağı yorar. Slayt maddesi ≤ 8 kelime. hipotez",
+    "resmiyet": "Hitap: \"Değerli konuklar\", \"Sevgili arkadaşlar\". \"Siz\" ve \"biz\". 1. tekil konuşmacı sesi doğal. -AlIm (\"bakalım\", \"düşünelim\") konuşmada doğal ve yönlendiricidir. Yazılı blogda aşırısı AI izidir.",
+    "kip": "Şimdiki zaman, geniş zaman, -AlIm. -mAktAdIr sözlü dilde yapaydır (`warning`).",
+    "baglaclar": "Açık geçiş işaretleri burada işlevseldir (\"İlk olarak\", \"Şimdi ikinci konuya geçelim\"). Yazılı metindeki bağlaç uyarıları bu register'da gevşetilir.",
+    "noktalama": "Konuşma metni okunacağı gibi yazılır. Sayı söylenecek biçimde verilir.",
+    "yapi": "[Hitap + kanca] → [Yol haritası, 1 cümle] → [3 ana nokta] → [Özet] → [Teşekkür/çağrı].",
+    "ai_hatalari": [
+     "Yazılı metin dilini konuşmaya taşımak (\"-mAktAdIr\", uzun edilgen).",
+     "Slaytta tam paragraf.",
+     "\"Hepinizi saygıyla selamlıyorum\" + \"Bugün sizlerle ...\" + \"Hiç düşündünüz mü?\" üçlüsü."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Günümüzde yapay zekâ teknolojilerinin eğitim süreçlerine entegrasyonu, öğretmenlerin rollerinin yeniden tanımlanmasını gerekli kılmaktadır.",
+     "sonra": "Yapay zekâ derslere girdikçe öğretmenin rolünü yeniden tanımlamak gerekiyor.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "[slayt maddesi] Müşteri memnuniyetinin artırılmasına yönelik olarak gerçekleştirilen çalışmalar kapsamında yeni bir geri bildirim sistemi hayata geçirilmiştir.",
+     "sonra": "[slayt maddesi] Yeni geri bildirim sistemi"
+    }
+   ],
+   "sentence_words": [
+    8,
+    15
+   ],
+   "line_words": 8,
+   "rules": {
+    "ST-16": "info"
+   }
+  },
+  "edebi": {
+   "p": "P26",
+   "name": "Edebî metin ve öykü",
+   "register": "edebi",
+   "guidance": {
+    "amac": "Estetik deneyim. Yazarın sesi kuraldan önce gelir.",
+    "uzunluk": "Ölçüm uyarısı yok. Burstiness `info` bile kapalıdır, çünkü edebî ritim bilinçli bir seçimdir.",
+    "resmiyet": "Anlatıcıya göre değişir (1. tekil, 3. tekil, 2. tekil deneysel).",
+    "kip": "-DI (görülen), -mIş (masal, aktarılan), şimdiki zaman (canlı anlatım). Zaman kayması bilinçli olabilir.",
+    "noktalama": "Diyalog: satır başı uzun çizgi muaf. Cümle içi em dash yine `warning` (TDK). Üç nokta, ünlem ve noktalı virgül yazarın seçimidir.",
+    "sozcuk": "Arkaik ya da yöresel sözcük bilinçli olabilir. Sözlük `►` yönlendirmesi asla uyarılmaz.",
+    "ai_hatalari": [
+     "Duygu adlandırma: \"içinde derin bir hüzün hissetti\" (göster, söyleme).",
+     "Klişe imge (\"gözlerinden yaşlar süzüldü\", \"kalbi yerinden çıkacak gibi\").",
+     "Her paragrafın aynı ritimde bitmesi.",
+     "Ders veren son cümle.",
+     "Sıfat yığını (\"karanlık, soğuk ve ıssız gece\")."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Ayşe, kapının önünde dururken içinde derin ve tarifsiz bir hüzün hissetti. Annesinin yokluğu kalbini acıtıyordu.",
+     "sonra": "Ayşe kapının önünde durdu. İçinde derin bir hüzün vardı. Annesinin yokluğu kalbini acıtıyordu.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Karanlık, soğuk ve ıssız gecede, yalnızlığın ağırlığı omuzlarına çökmüş bir hâlde yürüyordu. Ve o an anladı ki, hayat aslında bir yolculuktu.",
+     "sonra": null,
+     "duzeltme": "15 §2.1",
+     "not": "edebi: öneri yok"
+    }
+   ]
+  },
+  "sohbet": {
+   "p": "P27",
+   "name": "Sohbet asistanı cevabı",
+   "register": "sohbet",
+   "guidance": {
+    "amac": "Soruyu soran kişi. Cevap ilk cümlede verilir.",
+    "uzunluk": "Sohbet temel çizgisi (ege-arhan): medyan 12 kelime/cümle, cümlelerin %28'i ≤8 kelime, fiil-sonu oranı %36. Hedef bant 8-16. hipotez (tek korpus, kalibrasyon gerekir) Paragraf 1-4 cümle.",
+    "resmiyet": "Kullanıcının hitabını izler: \"sen\" ile soran kişiye \"sen\". Belirsizse \"siz\". Asistanın \"ben\"i serbest, ama \"Bir yapay zekâ olarak\" girişi gereksiz.",
+    "kip": "Şimdiki ve geniş zaman, öneride emir ya da \"-(y)AbIlIrsIn\". -mAktAdIr `warning`.",
+    "baglaclar": "Doğal. Her cevaba \"Tabii ki!\", \"Harika bir soru!\" ile başlamak AI izidir.",
+    "noktalama": "Rewrite noktalı virgül üretmez. Em dash yok. Liste yalnız gerçekten liste olan içerikte kullanılır.",
+    "yapi": "[Cevap] → [Gerekçe/ayrıntı] → [Gerekirse adımlar] → [Tek satır seçenek ya da uyarı]. Kapanışta \"Başka bir sorunuz olursa ...\" gereksiz.",
+    "ai_hatalari": [
+     "Övgü açılışı.",
+     "Soruyu tekrar etmek.",
+     "Her cevaba başlık ve kalın yazı.",
+     "\"Özetle\" ile tekrar.",
+     "\"Umarım yardımcı olmuştur!\"",
+     "Gereksiz uyarı paragrafı.",
+     "Bilmediği bilgiyi uydurmak (fidelity)."
+    ]
+   },
+   "examples": [
+    {
+     "once": "Harika bir soru! Python'da bir listeyi ters çevirmek için birkaç farklı yöntem bulunmaktadır. Gelin bunları birlikte detaylı bir şekilde inceleyelim.",
+     "sonra": "Python'da bir listeyi ters çevirmenin birkaç yolu var. Bunlara birlikte bakalım.",
+     "duzeltme": "15 §2.1"
+    },
+    {
+     "once": "Özetle, düzenli egzersiz hem fiziksel hem de zihinsel sağlığınız için son derece önemlidir. Umarım bu bilgiler size yardımcı olmuştur! Başka bir sorunuz olursa çekinmeden sorabilirsiniz. 😊",
+     "sonra": "Kısacası düzenli egzersiz beden ve zihin sağlığı için önemli.",
+     "duzeltme": "15 §2.1"
+    }
+   ],
+   "sentence_words": [
+    8,
+    16
+   ]
+  },
+  "hukuk": {
+   "p": "P28",
+   "name": "Hukuk metni (sözleşme, karar, yönetmelik, aydınlatma metni)",
+   "register": "hukuk",
+   "sentence_words": [
+    15,
+    40
+   ],
+   "rewrite": false,
+   "guidance": {
+    "amac": "Hukukçu ve taraflar. Metin hak ve yükümlülük doğurur. Anlam ve terim değişmez.",
+    "uzunluk": "Cümle ort. 15-40 kelime (hipotez). Uzun cümle tek başına kusur sayılmaz.",
+    "resmiyet": "Kişisiz anlatım. Taraflar tanımlanan adlarıyla anılır.",
+    "kip": "-mAktAdIr, edilgen ve -DIr doğaldır. Bu ölçümler kapalıdır.",
+    "baglaclar": "Hukuki bağlaçlar (ancak, şu kadar ki, aksi hâlde) terimdir, değiştirilmez.",
+    "sozcuk": "İşbu, mezkûr, önem arz etmek, temel esaslar, söz konusu, talepte bulunmak terim ya da kalıplaşmış ifadedir. Dokunulmaz.",
+    "noktalama": "Yalnız TDK yazım ve noktalama denetimi uygulanır.",
+    "yapi": "Madde, fıkra ve bent yapısı korunur. Numaralandırma değişmez.",
+    "ai_hatalari": [
+     "Terimi eş anlamlısıyla değiştirmek.",
+     "Kipi ya da yükümlülüğün gücünü değiştirmek (-mAlI, -Abilir).",
+     "Madde sırasını ya da numarasını değiştirmek."
+    ]
+   },
+   "examples": [],
+   "not": "Linter yalnız tdk katmanını ve sadakat kapısını çalıştırır. Yeniden yazım, kullanıcı açıkça istemedikçe yapılmaz."
+  }
+ }
+}

@@ -1,0 +1,5 @@
+# A. Sözcük ve kalıp
+=== önce
+Günümüzde giderek önem kazanan veri güvenliği, şirketler için kritik bir rol oynamaktadır.
+=== sonra
+Veri güvenliğinin şirketler için önemi giderek artıyor.
