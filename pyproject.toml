@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yontu"
+version = "0.1.0"
+description = "Türkçe metin denetleyicisi: TDK yazım ve noktalama, yapay zekâ izleri, tür üslubu, yoğunlaştırma."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "senrecep" }]
+keywords = ["türkçe", "turkish", "linter", "tdk", "yazım", "noktalama", "mcp", "claude"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: Turkish",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/senrecep/yontu"
+Repository = "https://github.com/senrecep/yontu"
+Issues = "https://github.com/senrecep/yontu/issues"
+Changelog = "https://github.com/senrecep/yontu/blob/main/CHANGELOG.md"
+
+[project.scripts]
+yontu = "yontu.cli:main"
+trlint = "yontu.cli:main"
+
+[tool.setuptools]
+# yontu.skill carries SKILL.md and references/** so the MCP guide tools work from a wheel.
+# yontu.paths finds them in either layout.
+package-dir = { "" = "skills/yontu/scripts", "yontu.skill" = "skills/yontu" }
+packages = ["yontu", "yontu.skill"]
+# Only the package-data globs below; yontu.skill's directory also holds scripts/.
+include-package-data = false
+
+[tool.setuptools.package-data]
+yontu = ["data/*.json"]
+"yontu.skill" = ["SKILL.md", "references/*.md", "references/**/*.md"]

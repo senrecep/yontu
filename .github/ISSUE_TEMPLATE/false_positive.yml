@@ -1,0 +1,34 @@
+name: False positive / Yanlış alarm
+description: The linter flagged text that is correct, or missed a clear error
+labels: ["false-positive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Send only text you have the right to share. Say where it comes from if it is not yours.
+  - type: textarea
+    id: input
+    attributes:
+      label: Input text / Metin
+      description: The sentence or paragraph, with enough context for the rule to fire.
+    validations:
+      required: true
+  - type: input
+    id: rule
+    attributes:
+      label: Rule id / Kural kimliği
+      description: For example `KS-01` or `AI-E6`. Write "missed" if the linter found nothing.
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command or settings
+      description: For example `yontu lint metin.md --tur blog`, and your `.yontu.json` if you have one.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result / Beklenen
+      description: What should have happened, and why. For a TDK rule, cite the Yazım Kılavuzu section or the Güncel Türkçe Sözlük entry.
+    validations:
+      required: true

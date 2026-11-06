@@ -1,0 +1,28 @@
+name: Feature request / Özellik isteği
+description: Suggest a new rule, genre, agent integration or option
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of change?
+      options:
+        - New rule
+        - New genre (tür)
+        - Agent integration
+        - CLI or MCP option
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Sorun
+      description: What do you want to do that yontu does not do today? For a rule, give example text that should be caught and text that must be left alone.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal / Öneri
+      description: How it could work. For a rule, a source (TDK section, dictionary entry, study) helps most.

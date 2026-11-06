@@ -1,0 +1,46 @@
+name: Bug report / Hata bildirimi
+description: Something in yontu crashes or behaves wrongly (not a wrong finding; use the false positive form for that)
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened? / Ne oldu?
+      description: What you ran, what you expected, what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce / Yeniden üretme adımları
+      description: The command, and the smallest text that shows the problem.
+      render: shell
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where did it happen?
+      options:
+        - CLI (yontu / trlint)
+        - MCP server
+        - Hook
+        - Skill
+        - install.sh
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: yontu version
+      description: Output of `yontu --version`, or the commit if you run from a checkout.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Python version and OS
+      placeholder: Python 3.9.6, macOS 15
+    validations:
+      required: true
