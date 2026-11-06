@@ -5,7 +5,7 @@ Kimlik: `ui-hata`. Kayıt: `ui`. Linter: `yontu lint --tur ui-hata`.
 - Okur: ne olduğunu ve ne yapacağını bilmek isteyen kullanıcı.
 - Cümle: 1-2 cümle, 5-14 sözcük.
 - Hitap: "siz", emir `-(y)In`.
-- Kip ve zaman: sorun, biliniyorsa neden, çözüm.
+- Kip ve zaman: sorunda görülen geçmiş ("yüklenemedi"), çözümde emir ("yeniden deneyin").
 - Bağlaçlar: yok.
 - Kelime katmanı: suçlamayan, teknik olmayan dil. `Üzgünüz` yok.
 - Noktalama: ünlem yok.

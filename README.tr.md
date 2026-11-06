@@ -33,7 +33,7 @@ yontu bunları kaynaklı kurallara, tür profillerine ve bir sözcük listesine 
 | Profiller | 17 register altında 28 tür. Her biri cümle uzunluğu, yoğunluk, resmiyet, hitap, kip ve zaman, bağlaç, söz varlığı, noktalama ve yapı tanımlar |
 | Sadakat kapısı | `yontu compare ESKI YENI` yeni sayı, tarih, ad, URL ya da kod eklenirse hata verir. Bir öğe düşerse, olumsuzluk ya da kip değişirse uyarır |
 | MCP sunucusu | `yontu mcp`, stdio, SDK'siz JSON-RPC |
-| Kancalar | Ajana göre düzenleme sonrası ya da tur sonu kancası: Claude Code, Codex, Cursor, Gemini CLI, Copilot, Antigravity. Ayrıntılar `integrations/` klasöründe |
+| Kancalar | Ajana göre düzenleme sonrası ya da yanıt sonu kancası: Claude Code, Codex, Cursor, Gemini CLI, Copilot, Antigravity. Ayrıntılar `integrations/` klasöründe |
 
 ## Önce ve sonra
 
@@ -78,7 +78,7 @@ Bu komut yalnız skill'i kopyalar. MCP sunucusu ve kancalar gelmez.
 Komut satırı aracı:
 
 ```
-pipx install yontu          # yontu ve trlint komutlarını PATH'e koyar
+pipx install yontu          # yontu komutunu PATH'e koyar
 uvx yontu lint metin.md     # kurulumsuz
 ```
 
@@ -94,8 +94,6 @@ Diğer istemciler için `{"command": "uvx", "args": ["yontu", "mcp"]}`. Ajan ba�
 
 claude.ai web sitesinde skill, zip olarak yüklenir ve kod çalıştırma açık olmalıdır. Uzak MCP bağlayıcısı v0.2 için planlandı. Mobil uygulamalarda denenmedi. Adımlar: [integrations/claude-ai](integrations/claude-ai/README.md).
 
-Sunucu varsayılan olarak üç araç listeler: `lint_text`, `compare_texts`, `get_style_guide`. Sekiz aracın hepsi için sunucunun ortamına `YONTU_MCP_TOOLS=full` eklenir. Diğer beş araç listelenmese de çağrılırsa yanıt verir, ama çoğu istemci modele yalnız listelenen araçları gösterir.
-
 ### Ajan başına
 
 | Ajan | Skill | MCP | Kancalar |
@@ -106,8 +104,6 @@ Sunucu varsayılan olarak üç araç listeler: `lint_text`, `compare_texts`, `ge
 | Cursor | `~/.cursor/skills` | `mcp.json` | `hooks.json` |
 | claude.ai (web, mobil) | zip yükleme, bkz. [klasör](integrations/claude-ai/README.md) | v0.2 için planlandı | yok |
 | OpenCode, Hermes, Windsurf, Copilot, Cline, Zed, Claude Desktop, Antigravity | klasöre bakın | klasöre bakın | kısmen |
-
-Ayar dosyaları, kesin yollar ve hangi sürümde neyin denendiği: [integrations/](integrations/README.md).
 
 ### Kurulum profilleri
 
@@ -121,11 +117,11 @@ Ayar dosyaları, kesin yollar ve hangi sürümde neyin denendiği: [integrations
 
 Bağlam maliyeti: tam eklenti MCP araçları hariç sürekli yaklaşık 150, lite yaklaşık 130 token tutar. Bir blog yazısını baştan sona yeniden yazmak toplam yaklaşık 3.900 token harcar. Sayılar, yöntem ve neyin ne zaman yüklendiği: [docs/CONTEXT.md](docs/CONTEXT.md).
 
-## Tools
+## Araçlar
 
 | MCP aracı | Ne yapar |
 |---|---|
-| `lint_text` | Katman, kural kimliği, düzey, konum ve öneriyle bulguları verir (`detail: true` bütün alanları döndürür) |
+| `lint_text` | Bulguları katman, kural kimliği, düzey, konum ve öneriyle verir (`detail: true` bütün alanları döndürür) |
 | `compare_texts` | İki sürüm arasındaki sadakat kapısı |
 | `get_style_guide` | Tür kimliğine göre bir türün rehberini ya da bir başvuru dosyasını verir: önce bölüm listesi, sonra tek bölüm |
 | `fix_text` | Yalnız güvenli `tdk` düzeltmelerini uygular |
@@ -139,8 +135,6 @@ Sunucu varsayılan olarak ilk üç aracı listeler. Sekizinin de listelenmesi i�
 MCP istemleri: `turkcelestir` (metni Türkçeye çevirir ya da uyarlar), `yogunlastir` (metni sıkılaştırır).
 
 ## Kullanım
-
-`yontu` ve `trlint` aynı komuttur.
 
 ```
 yontu lint DOSYA [--register SLUG] [--tur KIMLIK] [--layer tdk,ai-iz] [--min-level warning] [--format json]

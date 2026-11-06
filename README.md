@@ -80,7 +80,7 @@ This copies the skill only: no MCP server, no hooks.
 ### CLI
 
 ```
-pipx install yontu          # puts yontu and trlint on PATH
+pipx install yontu          # puts yontu on PATH
 uvx yontu lint metin.md     # no install
 ```
 
@@ -145,8 +145,6 @@ The server lists the first three tools by default. Set `YONTU_MCP_TOOLS=full` in
 Prompts: `turkcelestir` (translate or adapt into Turkish), `yogunlastir` (tighten a text).
 
 ## CLI
-
-`yontu` and `trlint` are the same command.
 
 ```
 yontu lint FILE [--register SLUG] [--tur ID] [--layer tdk,ai-iz] [--min-level warning] [--format json]

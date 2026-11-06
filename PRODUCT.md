@@ -24,7 +24,7 @@ Every rule was written for Turkish, not ported from English lists. `tdk` rules n
 
 ## Operating Context
 
-Used inside an agent session, from a shell, or as an MCP tool. Delivered as an Agent Skill (`skills/yontu/`), a Claude Code plugin (`/plugin marketplace add senrecep/yontu`, `/plugin install yontu@yontu`, or `yontu-lite@yontu`), an MCP server (`yontu mcp`, stdio), a Gemini CLI extension, and post-edit or stop hooks for Claude Code, Codex, Cursor, Gemini CLI, Copilot and Antigravity. CLI: `yontu` and its alias `trlint` with `lint`, `compare`, `stats`, `rules`, `explain`, `profiles`, `mcp`, `hook`.
+Used inside an agent session, from a shell, or as an MCP tool. Delivered as an Agent Skill (`skills/yontu/`), a Claude Code plugin (`/plugin marketplace add senrecep/yontu`, `/plugin install yontu@yontu`, or `yontu-lite@yontu`), an MCP server (`yontu mcp`, stdio), a Gemini CLI extension, and post-edit or stop hooks for Claude Code, Codex, Cursor, Gemini CLI, Copilot and Antigravity. CLI: `yontu` with `lint`, `compare`, `stats`, `rules`, `explain`, `profiles`, `mcp`, `hook`.
 
 ## Capabilities and Constraints
 

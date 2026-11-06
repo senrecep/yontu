@@ -1,4 +1,4 @@
-# 06 — TDK yazım ve noktalama kuralları (linter/reviewer odaklı)
+# 06. TDK yazım ve noktalama kuralları (linter/reviewer odaklı)
 
 Kapsam: Türkçe "humanizer" linter'ı ve reviewer'ı için TDK yazım/noktalama kuralları. Her kural regex'e dönüştürülebilecek biçimde yazıldı. Kurallar TDK Yazım Kuralları sayfalarından özetlendi. Yazımlar TDK Güncel Türkçe Sözlük API'sinde (`https://sozluk.gov.tr/gts?ara=…`) doğrulandı. Tarih: 2026-11-05.
 
@@ -31,7 +31,7 @@ Kapsam: Türkçe "humanizer" linter'ı ve reviewer'ı için TDK yazım/noktalama
 Not: Görevde geçen `.../de-da-baglaci/`, `.../ki-baglaci/` ve `.../virgul/` slug'ları **404** veriyor. Doğru slug'lar yukarıda. Noktalama için ayrı sayfa yok, hepsi `noktalama-isaretleri-aciklamalar` sayfasında. TDK ana sayfası (`/icerik/yazim-kurallari/`) da 404 döndürüyor, liste için WP API kullanılmalı.
 
 Prior art (dikkatli kullanılmalı, bkz. §14):
-- https://github.com/Denomas/Turkce-yazim-denetimi (Vale kuralları; **birkaç kuralı TDK'ya aykırı**)
+- https://github.com/Denomas/Turkce-yazim-denetimi (Vale kuralları; **birkaç kuralı TDK'ye aykırı**)
 - https://github.com/saidsurucu/turkce-imla-skill (Claude skill, `.skill` paketi)
 - https://docs.rs/akana-core/latest/src/akana_core/grammar/orthography.rs.html (Rust; mi/de-da kontrolleri, iyi bir FP listesi var)
 
@@ -70,7 +70,7 @@ TDK: "nokta, virgül, noktalı virgül, iki nokta, üç nokta, soru, ünlem, tı
 
 ## 3. Nokta ( . )
 
-TDK maddeleri (tam metin özetleri, örnekler TDK'dan):
+TDK maddeleri (tam metin özetleri, örnekler TDK'den):
 1. Cümle sonuna konur.
 2. Bazı kısaltmaların sonuna: Alb., Dr., Yrd. Doç., Prof., Cad., Sok., s., sf., vb., Alm., Ar., İng.
 3. Sıra bildirmek için sayıdan sonra: 3. (üçüncü), 15.; II. Mehmet, XIV. Louis, XV. yüzyıl; 2. Cadde.
@@ -115,7 +115,7 @@ TDK kullanım yerleri (1–15): eş görevli kelimeler; sıralı cümleler; yük
 | VR-05 şart ekinden sonra virgül | info | `\b\w+(?:sa|se)(?:m|n|k|nız|niz|lar|ler)?,\s` | `gelirse, gideriz` → `gelirse gideriz` | Çok yaygın ve uzun şart cümlelerinde okunurluk için konuyor; TDK uyarısı var ama "humanizer" için yalnızca info. "Ayrıca, hatta, yine de" hariç tutulmalı. "-se" ile biten isimler (ör. "kese", "masa"…) FP → bir fiil kök/çekim kontrolü gerekir |
 | VR-06 hitap/evet/peki sonrası virgül eksik | info | `^(Evet|Hayır|Peki|Tamam|Olur|Haydi|Elbette|Pekâlâ)\s+(?=\w)` | `Evet bu doğru` → `Evet, bu doğru` | Elbette tek başına zarf olarak kullanılabilir |
 | VR-07 özne "bu/şu/o" sonrası virgül | info | yalnızca reviewer | `Bu benim için zor.` → `Bu, benim için zor.` | Sıfat olarak "bu kitap" → regexle ayrılamaz |
-| VR-08 İngilizce bağlaç-başı virgülü | warning (stil) | `^(Ancak|Fakat|Ayrıca|Dahası|Üstelik|Sonuç olarak|Özetle|Kısacası|Bu nedenle|Dolayısıyla|Öte yandan|Bununla birlikte),` | AI kalıbı; TDK'da zorunlu değil. Sık tekrar sayılmalı (bkz. dosya 05/07) | Tek başına hata değil; **yoğunluk** metriği olarak kullan |
+| VR-08 İngilizce bağlaç-başı virgülü | warning (stil) | `^(Ancak|Fakat|Ayrıca|Dahası|Üstelik|Sonuç olarak|Özetle|Kısacası|Bu nedenle|Dolayısıyla|Öte yandan|Bununla birlikte),` | AI kalıbı; TDK'de zorunlu değil. Sık tekrar sayılmalı (bkz. dosya 05/07) | Tek başına hata değil; **yoğunluk** metriği olarak kullan |
 
 ---
 
@@ -136,7 +136,7 @@ TDK: (1) örnek verilecek cümle sonuna; (2) açıklama verilecek cümle sonuna;
 
 **Büyük harf kuralı (Büyük Harfler A):** "İki noktadan sonra gelen **cümleler** büyük harfle başlar: Menfaat sandalyeye benzer: Başında taşırsan…" **UYARI:** "İki noktadan sonra cümle ve özel ad niteliğinde olmayan örnekler sıralandığında bunlar **büyük harfle başlamaz**: …çok evde görmüşsünüzdür: duvarlarda çiviler, çivi yerleri, lekeler…"
 
-→ Görevdeki "colon then capital = İngilizce sızıntısı" varsayımı **TDK'ya göre yanlış**. İki noktadan sonra tam cümle varsa büyük harf **doğrudur**. Kontrol edilebilir olan, büyük harfle başlayan **sıralama** (fiilsiz liste) ve İngilizce "Title: Subtitle" kalıbıdır.
+→ Görevdeki "colon then capital = İngilizce sızıntısı" varsayımı **TDK'ye göre yanlış**. İki noktadan sonra tam cümle varsa büyük harf **doğrudur**. Kontrol edilebilir olan, büyük harfle başlayan **sıralama** (fiilsiz liste) ve İngilizce "Title: Subtitle" kalıbıdır.
 
 | id | seviye | regex / mantık | yanlış → doğru | FP riski |
 |---|---|---|---|---|
@@ -181,7 +181,7 @@ TDK: (1) örnek verilecek cümle sonuna; (2) açıklama verilecek cümle sonuna;
 
 **Uzun çizgi (TDK):** "Yazıda **satır başına alınan konuşmaları** göstermek için kullanılır. Buna konuşma çizgisi de denir." Oyunlarda konuşanın adından sonra da konabilir ("Sıtkı Bey — Kaleyi…"). **UYARI:** "Konuşmalar tırnak içinde verildiğinde uzun çizgi kullanılmaz."
 
-→ TDK'da uzun çizginin **cümle içi ara söz / vurgu / açıklama** kullanımı **yoktur**. Bu kullanım İngilizce em-dash alışkanlığıdır ve AI metninin en güçlü işaretlerinden biridir. TDK'nın ara söz için önerdiği karşılıklar: virgül (Virgül 4), bitişik kısa çizgi (Kısa Çizgi 2), yay ayraç (Yay Ayraç 1).
+→ TDK'de uzun çizginin **cümle içi ara söz / vurgu / açıklama** kullanımı **yoktur**. Bu kullanım İngilizce em-dash alışkanlığıdır ve AI metninin en güçlü işaretlerinden biridir. TDK'nin ara söz için önerdiği karşılıklar: virgül (Virgül 4), bitişik kısa çizgi (Kısa Çizgi 2), yay ayraç (Yay Ayraç 1).
 
 Not: TDK sayfası başlıkta kısa çizgiyi `–` (en dash) glifiyle gösteriyor ama örneklerde `-` (hyphen) kullanıyor; "XII – XIV. yüzyıllar" örneğinde aralıklı en dash da var. Aralık gösteriminde `-` ve `–` ikisi de kabul edilmeli.
 
@@ -208,7 +208,7 @@ Not: TDK sayfası başlıkta kısa çizgiyi `–` (en dash) glifiyle gösteriyor
 
 **Tırnak (TDK):** (1) olduğu gibi aktarılan söz; UYARI: alıntının sonundaki işaret **tırnak içinde kalır**: “İzmir üzerine dünyada bir şehir daha yoktur!” diyorlar. (2) Özel olarak vurgulanmak istenen söz: Yeni bir “barış taarruzu” başladı. (3) Eser, yazı ve bölüm adları. UYARI: Bunlar eğik yazıyla da gösterilebilir. **UYARI: Tırnak içine alınan sözlerden sonra gelen ekleri ayırmak için kesme işareti kullanılmaz: Elif Şafak'ın “Bit Palas”ını okudunuz mu?** (4) Makale adları. **Tek tırnak:** tırnak içinde tırnak.
 
-TDK'nın kendi glifleri: “ ” (çift), ‘ ’ (tek), ’ (kesme). Yani **kıvrık tırnaklar TDK biçimidir, işaretlenmemeli.** Düz `"` ve `'` dijitalde kabul edilir. Linter ikisini de kabul etmeli, yalnızca **aynı metinde karışık kullanımı** info olarak bildirmeli. Alman/Fransız tırnağı (`„ “`, `« »`) Türkçe standardında yok.
+TDK'nin kendi glifleri: “ ” (çift), ‘ ’ (tek), ’ (kesme). Yani **kıvrık tırnaklar TDK biçimidir, işaretlenmemeli.** Düz `"` ve `'` dijitalde kabul edilir. Linter ikisini de kabul etmeli, yalnızca **aynı metinde karışık kullanımı** info olarak bildirmeli. Alman/Fransız tırnağı (`„ “`, `« »`) Türkçe standardında yok.
 
 | id | seviye | regex | yanlış → doğru | FP riski |
 |---|---|---|---|---|
@@ -227,7 +227,7 @@ TDK'nın kendi glifleri: “ ” (çift), ‘ ’ (tek), ’ (kesme). Yani **kı
 
 ---
 
-## 10. Kesme işareti — ayrıntılı kurallar
+## 10. Kesme işareti: ayrıntılı kurallar
 
 ### 10.1 Konur (TDK madde 1–7)
 1. Özel adlara getirilen **iyelik, durum ve bildirme (ek fiil)** ekleri: Kurtuluş Savaşı'nı, Atatürk'üm, Türkiye'mizin, Ziya Gökalp'tan, Refik Halit Karay'mış, Ahmet Cevat Emre'dir, Namık Kemal'se, Şinasi'yle, Alman'sınız, Kırgız'ım, Osmanlı Devleti'ndeki, Çanakkale Boğazı'nın, Resmî Gazete'de, Millî Eğitim Temel Kanunu'na, Eski Çağ'ın, Yükselme Dönemi'nin.
@@ -254,12 +254,12 @@ TDK'nın kendi glifleri: “ ” (çift), ‘ ’ (tek), ’ (kesme). Yani **kı
 
 | id | seviye | regex | yanlış → doğru | FP riski |
 |---|---|---|---|---|
-| KS-01 kurum adı + kesme | **error** | `\b(Kurumu|Kurulu|Bakanlığı|Başkanlığı|Müdürlüğü|Genel Müdürlüğü|Üniversitesi|Fakültesi|Enstitüsü|Yüksekokulu|Meclisi|Derneği|Vakfı|Belediyesi|Valiliği|Kaymakamlığı|Lisesi|Okulu|Hastanesi|Bankası|Şirketi|Ortaklığı|Holdingi|Merkezi|Ajansı|Odası|Borsası|Konseyi|Komisyonu|Mahkemesi|Savcılığı|Bakkaliyesi|Kulübü|Partisi|Sendikası|Federasyonu|Birleşimi|Oturumu)['’]` | `Türk Dil Kurumu'nun` → `Türk Dil Kurumunun`; `İstanbul Üniversitesi'nde` → `İstanbul Üniversitesinde` | **Avrupa Birliği'ne** (istisna; listede "Birliği" yok); makam "Başkanı'na" (listede yok, doğru); spor kulübü/ parti adları basında kesmeyle yazılıyor ama TDK'ya göre yine kesmesiz |
+| KS-01 kurum adı + kesme | **error** | `\b(Kurumu|Kurulu|Bakanlığı|Başkanlığı|Müdürlüğü|Genel Müdürlüğü|Üniversitesi|Fakültesi|Enstitüsü|Yüksekokulu|Meclisi|Derneği|Vakfı|Belediyesi|Valiliği|Kaymakamlığı|Lisesi|Okulu|Hastanesi|Bankası|Şirketi|Ortaklığı|Holdingi|Merkezi|Ajansı|Odası|Borsası|Konseyi|Komisyonu|Mahkemesi|Savcılığı|Bakkaliyesi|Kulübü|Partisi|Sendikası|Federasyonu|Birleşimi|Oturumu)['’]` | `Türk Dil Kurumu'nun` → `Türk Dil Kurumunun`; `İstanbul Üniversitesi'nde` → `İstanbul Üniversitesinde` | **Avrupa Birliği'ne** (istisna; listede "Birliği" yok); makam "Başkanı'na" (listede yok, doğru); spor kulübü/ parti adları basında kesmeyle yazılıyor ama TDK'ye göre yine kesmesiz |
 | KS-02 dil adı + kesme | **error** | `\b([A-ZÇĞİÖŞÜ][a-zçğıöşü]+(?:ça|çe|ca|ce))['’]\w+` | `Türkçe'de`, `İngilizce'ye` → `Türkçede`, `İngilizceye` | Özel ad "Ece'nin", "Bilge'nin", "Hatice'yi", "Nice'te", "Seyrekçe" vb. → kişi adı listesiyle hariç tut (ör. Ece, Gonca, Hatice, Nevin…); `-ca/-ce` ile biten il/ilçe (Gölcük değil; "Karaca" soyadı, "Çatalca") FP |
 | KS-03 çokluk/yapım eki öncesi kesme | **error** | `\b[A-ZÇĞİÖŞÜ]\w*['’](lar|ler|lı|li|lu|lü|lık|lik|luk|lük|cı|ci|cu|cü|çı|çi|çu|çü|laş|leş|ca|ce|ça|çe|sız|siz|suz|süz|ız|iz)\w*` | `Türk'ler`, `Avrupa'lı`, `Ankara'lı`, `Atatürk'çü` → `Türkler`, `Avrupalı`, `Ankaralı`, `Atatürkçü` | `'ler` kısaltmadan sonra geçerli (`STK'ler`, `AVM'ler`) → büyük harf kısaltmaları hariç tut (`[A-ZÇĞİÖŞÜ]{2,}['’]ler` OK). Sayıdan sonra `1990'lı` geçerli → rakamı hariç tut |
 | KS-04 noktalı kısaltma + kesme | error | `\b(vb|vs|Dr|Prof|Doç|Av|Alb|Gen|Mah|Cad|Sok|No|Alm|İng|Fr|Ar|Far)\.['’]` | `vb.'leri`, `Dr.'a`, `No.'lu` → `vb.leri`, `Dr.a`, `No.lu` | Cümle sonu noktası + tırnak (`vb.'`) |
 | KS-05 bağlaç de/da kesmeyle | warning (reviewer) | `\b[A-ZÇĞİÖŞÜ]\w*['’](da|de)\s+(geldi|gitti|var|yok|olur|oldu|bil|çok|mi|mı)` | `Ayşe'de geldi` → `Ayşe de geldi` | Bulunma eki ile karışır ("Ankara'da var"); regex yalnızca sezgi, kararı reviewer verir |
-| KS-06 özel ada ek, kesme yok (gazetteer) | warning | `\b(Türkiye|İstanbul|Ankara|İzmir|Avrupa|Asya|Amerika|Almanya|Fransa|İngiltere|Rusya|Çin|Japonya|Google|Microsoft|Apple|OpenAI)(nin|nın|de|da|den|dan|te|ta|ten|tan|ye|ya|yi|yı|e|a|i|ı|in|ın|un|ün|le|la|yle|yla|dir|dır|dur|dür)\b` | `İstanbulda` → `İstanbul'da` | `-li/-lı`, `-ce`, `-ler` dahil edilmemeli (yapım/çokluk). Marka adlarının "iş yeri adı" sayılıp sayılmayacağı TDK'da belirsiz; basın kesmeli yazıyor (Google'ın). **Tek kelimelik marka: kesme kabul; çok kelimeli "X Şirketi": kesmesiz** |
+| KS-06 özel ada ek, kesme yok (gazetteer) | warning | `\b(Türkiye|İstanbul|Ankara|İzmir|Avrupa|Asya|Amerika|Almanya|Fransa|İngiltere|Rusya|Çin|Japonya|Google|Microsoft|Apple|OpenAI)(nin|nın|de|da|den|dan|te|ta|ten|tan|ye|ya|yi|yı|e|a|i|ı|in|ın|un|ün|le|la|yle|yla|dir|dır|dur|dür)\b` | `İstanbulda` → `İstanbul'da` | `-li/-lı`, `-ce`, `-ler` dahil edilmemeli (yapım/çokluk). Marka adlarının "iş yeri adı" sayılıp sayılmayacağı TDK'de belirsiz; basın kesmeli yazıyor (Google'ın). **Tek kelimelik marka: kesme kabul; çok kelimeli "X Şirketi": kesmesiz** |
 | KS-07 kesmeli ekin ses uyumu (özel ad) | error | §10.3 algoritması | `Ahmet'de` → `Ahmet'te`; `Kemal'dan` → `Kemal'den`; `Paris'ye` → `Paris'e` | Yabancı adların okunuşu (Bordeaux'ya: "bordo"); okunuş sözlüğü gerekir → yabancı ad listesini warning'e düşür |
 | KS-08 "o" zamiri büyük/kesmeli | warning | `(?<![.!?]\s)\bO['’](nun|na|nu|nda|ndan)\b` | `O'nun (Atatürk) için` → `onun` | Cümle başı "O'nun" bile yanlış (kesme gereksiz) → kesme kısmı her zaman error |
 | KS-09 ek fiil/ek ile özel ad, kesme eksik sayı | error | `\b(\d+)(de|da|te|ta|den|dan|ten|tan|e|a|ye|ya|i|ı|u|ü|yi|yı|in|ın|un|ün|nin|nın|nun|nün|inci|ıncı|uncu|üncü|nci|ncı|ncu|ncü|lik|lık|luk|lük|li|lı|lu|lü)\b` | `2023te`, `5inci` → `2023'te`, `5'inci` | `3D`, `4K`, `5G`, `2FA` (harfle biten kodlar) — listedeki ekler değil ama `5G`'yi atlamak için harfli tek-karakter son eki dışla |
@@ -309,12 +309,12 @@ Algoritma: sağdan ilk sıfır olmayan basamak grubunu bul. Son basamak 0 değil
 
 **Kısaltma harf okunuşları (Türk alfabesi):** A a, B be, C ce, Ç çe, D de, E e, F fe, G ge, Ğ yumuşak ge, H he, I ı, İ i, J je, K **ke**, L le, M me, N ne, O o, Ö ö, P pe, R re, S se, Ş şe, T te, U u, Ü ü, V ve, Y ye, Z ze. → Ünsüzle biten her harf adı **e** ile biter. Bu yüzden harf harf okunan, ünsüz harfle biten kısaltmalar **ince ünlülü ek** alır: **TDK'ye, TDK'nin, TDK'den; TBMM'ye/'nin; ABD'ye/'de; THY'de; AKP'nin; CHP'ye; TL'nin; TV'ye**. Ünlü harfle bitenler kendi harfine göre: ODTÜ'ye (kelime okunuşu), AB'ye (be), BM'de (me), İTÜ'de.
 
-→ Görevde geçen "**TDK'ya**" biçimi **TDK'ya göre yanlıştır**. Doğrusu **TDK'ye**. TDK'nın kendi örnekleri: "TDK'nin, TDK'den" (Kesme 3, Kısaltmalar). Ayrıca TDK yazarken "TDK'nın" değil "TDK'nin" kullanıyor.
+→ Görevde geçen "**TDK'ya**" biçimi **TDK'ye göre yanlıştır**. Doğrusu **TDK'ye**. TDK'nin kendi örnekleri: "TDK'nin, TDK'den" (Kesme 3, Kısaltmalar). Ayrıca TDK yazarken "TDK'nın" değil "TDK'nin" kullanıyor.
 
 | id | seviye | regex | yanlış → doğru | FP riski |
 |---|---|---|---|---|
 | KY-01 ünsüzle biten kısaltmaya kalın ek | warning | `\b([A-ZÇĞİÖŞÜ]{2,6})['’](ya|yı|nın|dan|da|tan|ta|a|ı|ın|la|yla|lar|lık|dır|ydı)\b` + son harf ∉ {A, I, O, U} + kısaltma ∉ KELİME_OKUNAN | `TDK'ya`, `ABD'ye`ok, `TBMM'nın` → `TDK'ye`, `TBMM'nin` | **KELİME_OKUNAN** listesi: NATO, UNESCO, UNICEF, NASA, BOTAŞ, ASELSAN, TÜBİTAK, RTÜK, TÖMER, İLESAM, OYAK, TOKİ, SGK? (harf: SGK'ye ✓), ÖSYM (harf), HAVELSAN, ROKETSAN, TUSAŞ, İSKİ, ASKİ, BİM?, TEKEL, NATO, FIFA, UEFA, OPEC, AFAD, KOSGEB, YÖK (kelime: YÖK'e), ÖSYM, MEB (harf: MEB'e? okunuş "meb" → MEB'e de yaygın). İngilizce okunan kısaltmalar (AI "ey-ay", API, CEO, PDF) için okunuş belirsiz → **warning ve öneri**, error değil |
-| KY-02 küçük harf kısaltma | info | `\b(cm|mm|km|kg|mg|ml|gr|lt)['’](\w+)` | `kg'dan` ✓ (okunuş: kilogram) | Okunuşa göre — "km'ye" (kilometre) ✓ |
+| KY-02 küçük harf kısaltma | info | `\b(cm|mm|km|kg|mg|ml|gr|lt)['’](\w+)` | `kg'dan` ✓ (okunuş: kilogram) | Okunuşa göre: "km'ye" (kilometre) ✓ |
 | KY-03 noktalı/kesmesiz | bkz. KS-04 | | | |
 | KY-04 büyük harfli kısaltmada nokta | warning | `\b(?:[A-ZÇĞİÖŞÜ]\.){2,}(?![A-ZÇĞİÖŞÜ])` hariç `T\.C\.` | `A.B.D.` → `ABD` | T.C. ve T. (Türkçe) gelenekleşmiş istisna; kişi adı baş harfleri "M. K. Atatürk" |
 | KY-05 sert ünsüz yumuşatma | error | `\b(TÜBİTAĞ|RTÜĞ|CMUĞ|AGİĞ)['’]` | `TÜBİTAĞ'ın` → `TÜBİTAK'ın` | yok |
@@ -356,7 +356,7 @@ Sözlükte ayrı madde olarak doğrulananlar: **nasıl ki, şöyle ki, kaldı ki
 
 | id | seviye | regex | yanlış → doğru | FP riski |
 |---|---|---|---|---|
-| MI-01 fiile bitişik soru eki | error | `\b(\w+(?:dı|di|du|dü|tı|ti|tu|tü|yor|acak|ecek|mış|miş|muş|müş|ır|ir|ur|ür|ar|er|r|maz|mez|sa|se|malı|meli))(mı|mi|mu|mü)(sın|sin|sun|sün|yım|yim|yum|yüm|yız|yiz|yuz|yüz|sınız|siniz|sunuz|sünüz|ydı|ydi|ydu|ydü|ymış|ymiş|dır|dir|dur|dür)?\b` | `geliyormusun` → `geliyor musun`; `yaptınmı` → `yaptın mı` | İsimler: "hazırmı"? → zaten hata. Gerçek kelimeler: "kimi, simi, tümü, ümü, dünyamı (dünyamı = dünyam-ı!)", "-mı" iyelik+belirtme: "kitabımı, arabamı, işimi, evimi" (**çok yüksek FP**) → yalnızca **fiil çekimi** önekli kalıp tutulmalı; isim gövdesi için uygulanmamalı |
+| MI-01 fiile bitişik soru eki | error | `\b(\w+(?:dı|di|du|dü|tı|ti|tu|tü|yor|acak|ecek|mış|miş|muş|müş|ır|ir|ur|ür|ar|er|r|maz|mez|sa|se|malı|meli))(mı|mi|mu|mü)(sın|sin|sun|sün|yım|yim|yum|yüm|yız|yiz|yuz|yüz|sınız|siniz|sunuz|sünüz|ydı|ydi|ydu|ydü|ymış|ymiş|dır|dir|dur|dür)?\b` | `geliyormusun` → `geliyor musun`; `yaptınmı` → `yaptın mı` | İsimler: "hazırmı"? → zaten hata. Gerçek kelimeler: "kimi, simi, tümü, ümü, dünyamı (dünyamı = dünyam-ı!)", "-mı" iyelik+belirtme: "kitabımı, arabamı, işimi, evimi" (**çok yüksek FP**) → yalnızca **fiil çekimi** ön ekli kalıp tutulmalı; isim gövdesi için uygulanmamalı |
 | MI-02 soru eki ünlü uyumu | error | önceki kelimenin son ünlüsü → beklenen `mı/mi/mu/mü` | `geldi mı` → `geldi mi`; `okul mi` → `okul mu` | Yabancı kelime (Kemal mi ✓) |
 | MI-03 soru ekinin sonrasını ayırma | error | `\b(mı|mi|mu|mü)\s+(sın|sin|sun|sün|yım|yim|yız|yiz|sınız|siniz|ydı|ydi|ymış|ymiş)\b` | `gelecek mi sin` → `gelecek misin` | yok |
 | MI-04 sıralı soruda ara soru işareti | info | `\b(mı|mi|mu|mü)\?\s*[a-zçğıöşü][^?]{0,40}\b(mı|mi|mu|mü)\?` | `Yakından mı? uzaktan mı?` → `Yakından mı, uzaktan mı?` | Ayrı soru cümleleri de olabilir |
@@ -484,7 +484,7 @@ Sözlükte madde olarak bulunmayan ama TDK kuralına göre doğru olanlar: **bir
 
 TDK: (1) yazılışı aynı anlamı farklı kelimeleri ayırt etmek için: **âdet/adet, âlem/alem, âşık/aşık, hâl/hal, hâlâ/hala, şûra/şura**. (2) Arapça/Farsça kökenli kelimelerde ince g, k'den sonraki a, u: **dergâh, gâvur, karargâh, tezgâh, yadigâr, dükkân, hikâye, kâfir, kâğıt, Hakkâri, Kâzım, mahkûm, mezkûr, sükûn, sükût**; ince l sonrası özel adlarda: Halûk, Lâle, Elâzığ, Lâdik. (3) **Nispet î**: askerî, dinî, ilmî, resmî, millî; ek alınca da korunur: millîleştirmek, resmîlik.
 
-Sözlük API'sinde düzeltme işareti göz ardı edilir (`zeka` → `zekâ`, `halbuki` → `hâlbuki`, `reklâm` → `reklam`). Bu yüzden API düzeltme işaretini doğrulamaz. Madde başı (`madde`) alanı ise TDK'nın tercih ettiği biçimi verir: **zekâ, yapay zekâ, hükûmet, hâlbuki, hâlihazırda, herhâlde, pekâlâ, reklam (şapkasız), mülakat (şapkasız), mesela (şapkasız)**.
+Sözlük API'sinde düzeltme işareti göz ardı edilir (`zeka` → `zekâ`, `halbuki` → `hâlbuki`, `reklâm` → `reklam`). Bu yüzden API düzeltme işaretini doğrulamaz. Madde başı (`madde`) alanı ise TDK'nin tercih ettiği biçimi verir: **zekâ, yapay zekâ, hükûmet, hâlbuki, hâlihazırda, herhâlde, pekâlâ, reklam (şapkasız), mülakat (şapkasız), mesela (şapkasız)**.
 
 | id | seviye | regex | doğru | FP riski |
 |---|---|---|---|---|
@@ -564,7 +564,7 @@ dolayısı ile → dolayısıyla  ard arda → art arda      oysa ki → oysaki
 Ek yaygın hatalar (TDK kuralından türetilmiş, API'de tek tek doğrulanmadı ama kural metniyle uyumlu): `yalnızlık` ✓, `kendiside` → `kendisi de`, `birtek` → `bir tek`, `hiçbirzaman` → `hiçbir zaman`, `okadar/bukadar/nekadar` → `o kadar/bu kadar/ne kadar`, `herkesde` → `herkeste`, `yanlızca` → `yalnızca`, `tabiki` → `tabii ki`, `tabi ki` → `tabii ki`.
 
 ### 16.2 warning (sözlükte var ama yönlendirme / tercih edilmeyen biçim)
-API bu biçimleri "► / bkz." ile tercih edilen maddeye yönlendiriyor. Yanlış değil, ama TDK'nın tercih ettiği biçim öneriliyor:
+API bu biçimleri "► / bkz." ile tercih edilen maddeye yönlendiriyor. Yanlış değil, ama TDK'nin tercih ettiği biçim öneriliyor:
 ```
 makina → makine        mönü → menü           ahçı → aşçı
 sarmısak → sarımsak    tekrardan → tekrar (sözlükte "tekrar tekrar" anlamına yönlendirilmiş; "yeniden" anlamında üslup hatası sayılır)
@@ -629,7 +629,7 @@ TDK kuralına dayananlar **error**. Üslup tercihi olup AI'yı ele verenler **in
 
 ## 18. Prior art: bilinen hatalı üçüncü taraf kuralları
 
-`Denomas/Turkce-yazim-denetimi` (Vale) kurallarında TDK'ya **aykırı** maddeler var. Bunlar kopyalanmamalı:
+`Denomas/Turkce-yazim-denetimi` (Vale) kurallarında TDK'ye **aykırı** maddeler var. Bunlar kopyalanmamalı:
 
 | dosya | hatalı kural | TDK |
 |---|---|---|
@@ -656,7 +656,7 @@ TDK kuralına dayananlar **error**. Üslup tercihi olup AI'yı ele verenler **in
 7. **Seviye politikası (humanizer bağlamı)**: error → otomatik düzeltilebilir (yalnız deterministik ve FP≈0 olanlar: VR-01, CZ-01, UN-01, SY-01/02/03, NK-01, KS-01..04, BK-01..11, MI-03, KI-02, DD-01/02, §16.1 listesi). warning → reviewer'a öneri. info → metrik/yoğunluk (AI-*).
 8. **Morfoloji**: MI-01, DD-03, DD-05, VR-05 için Zemberek (Java) veya `zeyrek` (Python) gibi bir çözümleyici FP'yi ciddi düşürür. Deterministik linter'da bu kurallar warning kalmalı.
 9. **Sözlük API**: `https://sozluk.gov.tr/gts?ara=` yanıtı başında `\n` olabilir, `strip()` gerekli. Bulunamayınca `{"error":"Sonuç bulunamadı"}` döner. Düzeltme işaretini yok sayar. Çok kelimeli kalıpların bir kısmı madde değildir (bir şey, demek ki). Rate limit belirsiz, 8 paralel istekte sorun çıkmadı. Tek seferde timeout yaşanabiliyor. **Çalışma anında değil, build sırasında** bir kez çekilip statik liste olarak gömülmeli.
-10. **Test korpusu**: TDK sayfalarındaki örnek cümleler (bu dosyada alıntılananlar) "doğru" pozitif test seti olarak kullanılmalı. Linter TDK'nın kendi örneklerinde **sıfır** uyarı vermeli. Ham metinler scratchpad'de `tdk/*.txt` olarak indirildi; WP API ile yeniden üretilebilir: `curl 'https://tdk.gov.tr/wp-json/wp/v2/posts?categories=27&per_page=50&_fields=slug,link,content'`.
+10. **Test korpusu**: TDK sayfalarındaki örnek cümleler (bu dosyada alıntılananlar) "doğru" pozitif test seti olarak kullanılmalı. Linter TDK'nin kendi örneklerinde **sıfır** uyarı vermeli. Ham metinler scratchpad'de `tdk/*.txt` olarak indirildi; WP API ile yeniden üretilebilir: `curl 'https://tdk.gov.tr/wp-json/wp/v2/posts?categories=27&per_page=50&_fields=slug,link,content'`.
 
 ---
 

@@ -1,6 +1,6 @@
 # yontu: agent guide
 
-Turkish humanizer and TDK linter. An agent skill, an offline Python CLI (`yontu`, alias `trlint`), a stdio MCP server and hooks. Standard library only, Python 3.9+. [CONTRIBUTING.md](CONTRIBUTING.md) has the full contributor rules; this file is the short version for coding agents.
+Turkish humanizer and TDK linter. An agent skill, an offline Python CLI (`yontu`), a stdio MCP server and hooks. Standard library only, Python 3.9+. [CONTRIBUTING.md](CONTRIBUTING.md) has the full contributor rules; this file is the short version for coding agents.
 
 ## Layout
 
@@ -14,7 +14,7 @@ Turkish humanizer and TDK linter. An agent skill, an offline Python CLI (`yontu`
 | `tests/fixtures/` | `insan/` (human-register reference texts per genre), `sadakat/` (before and after pairs), plus `tdk-ornekler.txt`, `yanlis-bicimler.txt`, `maskeleme.md`, AI-style samples |
 | `integrations/<agent>/` | Config and hook files per agent; status table in `integrations/README.md` |
 | `.claude-plugin/`, `hooks/`, `commands/` | Claude Code plugin, hooks and slash commands |
-| `docs/research/` | Dated background notes, not rule sources. Do not edit |
+| `docs/research/` | Dated background notes, not rule sources. Fix spelling only; keep the findings as dated |
 
 There is one copy of the code. `pyproject.toml` packages `skills/yontu/scripts/yontu` and ships `SKILL.md` and `references/` inside the wheel.
 
@@ -27,7 +27,7 @@ python3 -m unittest discover -s tests
 /usr/bin/python3 -m unittest discover -s tests    # macOS system Python 3.9
 ```
 
-Both must stay green (210 tests today). Run the CLI from the checkout without installing:
+Both must stay green (251 tests today). Run the CLI from the checkout without installing:
 
 ```
 python3 skills/yontu/scripts/yontu lint FILE [--tur ID] [--layer tdk] [--format json]

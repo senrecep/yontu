@@ -43,11 +43,11 @@ export const after: Segment[][] = [
 export const lintBefore = {
   cmd: 'yontu lint metin.md --tur readme',
   lines: [
-    'metin.md:1:36: uyarı BH-13 [tdk] Başlıkta büyük yazılan sözler arasında "ve", "ile", "ya", "veya", "ki", "de", "mi" küçük yazılır. «Ve» → ve',
-    'metin.md:3:49: bilgi AI-C8 [ai-iz] Aynı paragrafta birden çok üçlü sıralama var. (2 kez, eşik 2) «hatalarını, noktalama sorunlarını ve yapay»',
-    'metin.md:3:119: bilgi AI-D15 [ai-iz] Pazarlama sıfatı üçlüsü. Aracın ne yaptığını yazın. «modern, güçlü ve kullanıcı dostu»',
-    'metin.md:3:204: bilgi AI-D13 [ai-iz] Kalıp vaat: "bir üst seviyeye taşımak". Neyin nasıl değiştiğini yazın. «bir üst seviyeye taşımaktır»',
-    'metin.md:5:11: bilgi YS-A25 [yogunluk] Hafif fiil kalıbı: "-mA işlemini gerçekleştirmek". «Analiz işlemini gerçekleştirmek» → fiilin kendisi',
+    'metin.md:1:36: uyarı BH-13 [tdk] Başlıkta büyük yazılan sözler arasında "ve", "ile", "ya", "veya", "ki", "de", "mi" küçük yazılır. “Ve” → ve',
+    'metin.md:3:49: bilgi AI-C8 [ai-iz] Aynı paragrafta birden çok üçlü sıralama var. (2 kez, eşik 2) “hatalarını, noktalama sorunlarını ve yapay”',
+    'metin.md:3:119: bilgi AI-D15 [ai-iz] Pazarlama sıfatı üçlüsü. Aracın ne yaptığını yazın. “modern, güçlü ve kullanıcı dostu”',
+    'metin.md:3:204: bilgi AI-D13 [ai-iz] Kalıp vaat: "bir üst seviyeye taşımak". Neyin nasıl değiştiğini yazın. “bir üst seviyeye taşımaktır”',
+    'metin.md:5:11: bilgi YS-A25 [yogunluk] Hafif fiil kalıbı: "-mA işlemini gerçekleştirmek". “Analiz işlemini gerçekleştirmek” → fiilin kendisi',
   ],
   summary: 'metin.md: 0 hata, 1 uyarı, 4 bilgi · teknik/readme (flag)',
 };
@@ -85,11 +85,11 @@ export const tdk = {
   input: "Herşey hazır, Türkçe'de yazdığımız metni kontrol edelim ve bitirelim. Umarım yardımcı olur.",
   cmd: 'yontu lint not.md',
   lines: [
-    'not.md:1:1: hata BK-01 [tdk] Bu söz ayrı yazılır. «Herşey» → Her şey',
-    "not.md:1:15: hata KS-02 [tdk] Dil adlarına gelen ekler kesmeyle ayrılmaz. «Türkçe'de» → Türkçede",
-    'not.md:1:71: bilgi AI-E1 [ai-iz] Sohbet kapanışı. Metinde gereksiz. «Umarım yardımcı olur»',
+    'not.md:1:1: hata BK-01 [tdk] Bu söz ayrı yazılır. “Herşey” → Her şey',
+    "not.md:1:15: hata KS-02 [tdk] Dil adlarına gelen ekler kesmeyle ayrılmaz. “Türkçe'de” → Türkçede",
+    'not.md:1:71: bilgi AI-E1 [ai-iz] Sohbet kapanışı. Metinde gereksiz. “Umarım yardımcı olur”',
   ],
-  summary: 'not.md: 2 hata, 0 uyarı, 1 bilgi · notr/- (içerik 0.00)',
+  summary: 'not.md: 2 hata, 0 uyarı, 1 bilgi · notr/- (içerik 0,00)',
   fixCmd: 'yontu lint not.md --fix',
   fixOut: 'Her şey hazır, Türkçede yazdığımız metni kontrol edelim ve bitirelim. Umarım yardımcı olur.',
 };

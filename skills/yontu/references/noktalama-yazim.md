@@ -50,7 +50,7 @@ ama paragraf paragraf yinelenirse AI izidir. Tek tek değil, yoğunluk olarak de
 TDK üç durumda kullanır: virgüllerle ayrılmış takımları ayırmak, ögelerinde virgül olan sıralı
 cümleleri ayırmak ve ikiden fazla eş değer ögede virgül varsa özneden sonra.
 
-Kurala uygundur, ama Türkçede seyrektir. Kocagül (2026) argümantatif metinlerde noktalı
+Kurala uygundur, ama Türkçede seyrektir. Kocagül (2026) tartışmacı metinlerde noktalı
 virgülü AI metinlerinin %76,8'inde, insan metinlerinin %15,2'sinde buldu. Akademik ve hukuk
 metninde dokunma. Blog, e-posta, sosyal medya, sohbet ve arayüz metninde yeniden yazarken
 noktalı virgül üretme. Noktalı virgülden sonra küçük harfle devam edilir.
@@ -158,7 +158,6 @@ Sık yanlışlar ve doğruları:
 - `yinede` → yine de
 - `oysa ki` → oysaki
 - `yapay zeka` → yapay zekâ
-- `unvan` → ünvan (güncel sözlük böyle verir, uyarıdır ve otomatik düzeltilmez)
 - `yanlız` → yalnız
 - `süpriz` → sürpriz
 - `şarz` → şarj

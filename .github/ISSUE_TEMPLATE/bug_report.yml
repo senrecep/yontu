@@ -22,7 +22,7 @@ body:
     attributes:
       label: Where did it happen?
       options:
-        - CLI (yontu / trlint)
+        - CLI (yontu)
         - MCP server
         - Hook
         - Skill

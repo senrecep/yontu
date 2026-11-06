@@ -3,7 +3,7 @@
 Kimlik: `is-eposta`. Kayıt: `is-eposta`. Linter: `yontu lint --tur is-eposta`.
 
 - Okur: ekip arkadaşı. Ne isteniyor, ne zamana, kim yapacak.
-- Cümle: 8-16 sözcük, 20-150 sözcük.
+- Cümle: 8-16 sözcük, metin toplam 20-150 sözcük.
 - Hitap: `Merhaba [Ad],` ve şirket kültürüne göre "sen" ya da "siz".
 - Kip ve zaman: şimdiki ve geniş zaman. `-mAktAdIr` ve edilgen yoğunsa yapay durur.
 - Bağlaçlar: az.

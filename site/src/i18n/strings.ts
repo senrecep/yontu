@@ -96,7 +96,7 @@ const tr = {
   facts: [
     ['bağımlılık', '0, yalnız Python standart kitaplığı'],
     ['MCP', 'elle yazılmış JSON-RPC, SDK yok'],
-    ['test', '214 birim testi, her değişiklikte CI’da'],
+    ['test', '251 birim testi, her değişiklikte CI’da'],
     ['Python', '3.9, 3.10, 3.11, 3.12, 3.13, 3.14 ve macOS'],
     ['sürüm', '0.1.0, PyPI ve MCP Registry’de'],
     ['yayın', 'GitHub Releases, SHA256 özetleriyle'],
@@ -263,7 +263,7 @@ const en: typeof tr = {
   facts: [
     ['dependencies', '0, Python standard library only'],
     ['MCP', 'hand written JSON-RPC, no SDK'],
-    ['tests', '214 unit tests, run in CI on every change'],
+    ['tests', '251 unit tests, run in CI on every change'],
     ['Python', '3.9, 3.10, 3.11, 3.12, 3.13, 3.14 and macOS'],
     ['version', '0.1.0, on PyPI and the MCP Registry'],
     ['release', 'GitHub Releases with SHA256 checksums'],

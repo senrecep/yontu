@@ -1,4 +1,4 @@
-# 05 — Türkçe bağlaç, edat ve söylem belirleyicileri envanteri
+# 05. Türkçe bağlaç, edat ve söylem belirleyicileri envanteri
 
 Amaç: Türkçe humanizer için (skill + deterministik linter) bağlantı öğelerinin işlevine göre gruplanmış, kayıt (register), yazım/noktalama, nüans ve doğal örnek içeren kapsamlı listesi. Her grupta LLM'lerin fazla kullandığı ve neredeyse hiç kullanmadığı öğeler işaretli.
 
@@ -11,7 +11,7 @@ Kaynak notu: Yazım ve noktalama kuralları TDK Yazım Kılavuzu'ndan alındı (
 
 ---
 
-## 0. TDK'nın bağlayıcılarla ilgili kesin kuralları (linter için birincil kaynak)
+## 0. TDK'nin bağlayıcılarla ilgili kesin kuralları (linter için birincil kaynak)
 
 ### 0.1 Bağlaç olan "ki" (TDK, "Bağlaç Olan ki'nin Yazılışı")
 URL: https://tdk.gov.tr/icerik/yazim-kurallari/baglac-olan-kinin-yazilisi/
@@ -71,7 +71,7 @@ TDK uyarıları (birebir kurallar):
 9. Ara söz ve ara cümleler virgülle (ya da kısa çizgiyle) ayrılır.
 10. Bir sözcüğün sonrakine bağlı olmadığını göstermek ve yanlış anlamayı önlemek için virgül konur. Kullanıldığı bağlama göre bu kural cümle başı bağlayıcıları da kapsayabilir.
 
-TDK'nın **düzenlemediği** konular (linter bunlarda hata vermemeli, en fazla stil önerisi yapmalı):
+TDK'nin **düzenlemediği** konular (linter bunlarda hata vermemeli, en fazla stil önerisi yapmalı):
 - Cümle başındaki *Ama / Fakat / Ancak / Oysa / Yani / Örneğin / Kısacası / Öte yandan*'dan sonra virgül konup konmayacağı. TDK örneklerinde *Ama* ve *Fakat*'tan sonra genelde virgül yok. Çok sözcüklü söylem belirleyicilerden sonra (*Öte yandan, Bununla birlikte, Kısacası, Sözün kısası,*) yayın pratiğinde virgül yaygın.
 - Bağlaç *ki*'den önce ya da sonra virgül (kılavuzda kural yok). TDK örneği "Seni öyle göreceğim geldi ki." virgülsüz.
 - *Ama, fakat, ancak, lakin, çünkü* öncesinde noktalı virgül. 2000 kılavuzunda vardı, 2005'te kaldırıldı, 2012 ve sonrasında yok. Kaynak: dergipark makalesi https://dergipark.org.tr/en/download/article-file/70399. Linter `; ama` / `; çünkü` gördüğünde "eski kural, virgül yeterli" diye stil uyarısı verebilir.
@@ -93,12 +93,12 @@ TDK'nın **düzenlemediği** konular (linter bunlarda hata vermemeli, en fazla s
 | **ayrıca** **[LLM+]** | R/N | Cümle başında çoğu zaman virgüllü. | İngilizcedeki *also/additionally* karşılığı. LLM'ler neredeyse her paragrafın başında kullanıyor. | "Ayrıca, sistem güncellenmiştir." → daha doğal: "Sistem de güncellendi." |
 | **ek olarak / buna ek olarak** **[LLM+]** | R | Virgülle | Doğrudan *in addition* kalkı. İnsan yazısında seyrek, resmî raporda bile ağır durur. | → "…de", "üstelik", "bir de" |
 | **bunun yanı sıra / -ın yanı sıra** **[LLM+]** | R | | Edat öbeği olarak meşru, ama LLM bunu sıralayıcı bağlaç gibi kullanıyor. | "Maaşın yanı sıra yol parası da veriliyor." (doğal kullanım) |
-| **aynı zamanda** **[LLM+]** | N | | Gerçek anlamı "eşzamanlı". LLM bunu *also* yerine kullanıyor ("X aynı zamanda Y'dir"). | "Hem öğretmen hem yazar." ile değiştir. |
+| **aynı zamanda** **[LLM+]** | N | | Gerçek anlamı "eş zamanlı". LLM bunu *also* yerine kullanıyor ("X aynı zamanda Y'dir"). | "Hem öğretmen hem yazar." ile değiştir. |
 | **dahası** **[LLM+]** | R/E | Virgülle | *Moreover* kalkı. Az kullanılırsa güçlü, LLM'de ise klişe. | → "üstelik", "hatta", "kaldı ki" |
 | **üstelik** **[LLM-]** | N | Cümle başında virgüllü ya da virgülsüz. | Eklenen bilgi öncekinden daha ağır. Hafif sitem ya da şaşkınlık taşır. | "Geç kaldı, üstelik özür de dilemedi." |
 | **üstüne üstlük** **[LLM-]** | G | | "Bir de bu" diye yakınma tonu. | "Yağmur yağdı, üstüne üstlük otobüs kaçtı." |
 | **bir de** **[LLM-]** | G/N | Ayrı. | Listeye son bir öğe ekler, çoğunlukla yakınma ya da ironi taşır. | "Bir de utanmadan hesap soruyor." |
-| **bir yandan … bir yandan (da) / bir taraftan … diğer taraftan** | N | | Eşzamanlı iki eylemi anlatır. | "Bir yandan yemek yapıyor, bir yandan telefonla konuşuyordu." |
+| **bir yandan … bir yandan (da) / bir taraftan … diğer taraftan** | N | | Eş zamanlı iki eylemi anlatır. | "Bir yandan yemek yapıyor, bir yandan telefonla konuşuyordu." |
 | **öncelikle, ilk olarak, ikinci olarak, son olarak** **[LLM+]** | R | | Madde madde yazma refleksinin düzyazıya taşınmış hâli. | → "Önce…, sonra…, en sonunda…" ya da sıralı cümle |
 | **önce … sonra … en sonunda / derken** | N | | Doğal anlatım sırası. | "Önce bir sessizlik oldu, derken kapı çalındı." |
 | **her şeyden önce** | N | | Öncelik vurgusu. LLM'de açılış klişesi olarak fazla kullanılıyor. | |
@@ -262,13 +262,13 @@ TDK'nın **düzenlemediği** konular (linter bunlarda hata vermemeli, en fazla s
 
 ---
 
-## 8. Zaman ve eşzamanlılık
+## 8. Zaman ve eş zamanlılık
 
 | İfade | Kayıt | Nüans | Doğal örnek |
 |---|---|---|---|
 | **-ınca / -ince** | N | Temel zaman bağlayıcısı | "Eve gelince ara." |
 | **-dığında / -dığı zaman** | N | | |
-| **-ken** | N | Eşzamanlılık ve karşıtlık | "Yürürken düşündüm." |
+| **-ken** | N | Eş zamanlılık ve karşıtlık | "Yürürken düşündüm." |
 | **-ır -maz** **[LLM-]** | N | "…-ınca hemen" | "Kapıyı açar açmaz bağırdı." |
 | **mı/mi ("-ınca" anlamı)** **[LLM-]** | G/E | TDK: ardından virgül yok | "Bir başladı mı susmaz." |
 | **-dıkça** | N | Süreklilik ve orantı | "Okudukça açılıyordu." |
@@ -361,7 +361,7 @@ TDK'nın **düzenlemediği** konular (linter bunlarda hata vermemeli, en fazla s
 | Şüphe ve pekiştirme (cümle sonu) | "Ne bileyim ki?", "Gelir mi ki?" | Ayrı (TDK) |
 | Sitem ve pekiştirme | "Öyle bir sevindim ki!" | |
 | Karşıtlık ("ki" = oysa) | "Ona güvendim, ki hiç güvenmemeliydim." | Edebî |
-| Kalıplar | *demek ki, kaldı ki, yeter ki, ne var ki, şu var ki, diyelim ki, neyse ki, illa ki, tabii ki, iyi ki, ne yazık ki, şükür ki, bereket ki, öyle ki, şöyle ki, o kadar ki, değil ki, ola ki, olur ki, meğer ki/meğerki, nerde (nerede) ki* | Hepsi ayrı. Bitişik olan yalnızca TDK'nın 7 sözcüğü. |
+| Kalıplar | *demek ki, kaldı ki, yeter ki, ne var ki, şu var ki, diyelim ki, neyse ki, illa ki, tabii ki, iyi ki, ne yazık ki, şükür ki, bereket ki, öyle ki, şöyle ki, o kadar ki, değil ki, ola ki, olur ki, meğer ki/meğerki, nerde (nerede) ki* | Hepsi ayrı. Bitişik olan yalnızca TDK'nin 7 sözcüğü. |
 
 ### 12.2 de / da (bağlaç)
 | İşlev | Örnek |

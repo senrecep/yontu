@@ -2,7 +2,7 @@
 name: yontu
 description: >-
   Türkçe metni yontar: yapay zekâ ve çeviri kalıplarını işaretler ve sadeleştirir (humanizer),
-  TDK yazım ve noktalamasını denetler, metni türüne (akademik, haber, blog, e-posta, hukuk,
+  yazımı ve noktalamayı TDK kurallarına göre denetler, metni türüne (akademik, haber, blog, e-posta, hukuk,
   arayüz, sosyal medya) uydurur ve kısaltır. Türkçe metin yazarken, düzeltirken, Türkçeleştirirken ya da
   "doğallaştır", "AI kokusunu gider", "kısalt", "TDK'ye göre düzelt" istendiğinde kullan.
   Turkish humanizer: flags and simplifies AI tells and translationese, TDK spelling and
@@ -13,7 +13,7 @@ compatibility: >-
 metadata:
   version: "0.1.0"  # x-release-please-version
   language: "tr"
-  cli: "yontu, trlint"
+  cli: "yontu"
 ---
 
 # yontu

@@ -11,7 +11,7 @@ Yanlış biçimler kod içinde gösterilir.
 - Kalıplaşmış yedi sözcükte bitişiktir: belki, çünkü, hâlbuki, mademki, meğerki, oysaki, sanki.
 - `oysa ki` → oysaki, `madem ki` → mademki, `demekki` → demek ki.
 - "illaki" sözlükte geçerli bir maddedir, düzeltme.
-- Sıfat yapan "-ki" bitişiktir ve ünlü uyumuna girmez: yarınki, akşamki, dünkü, bugünkü.
+- Sıfat yapan "-ki" bitişiktir ve genellikle ünlü uyumuna girmez: yarınki, akşamki. İstisnalar: dünkü, bugünkü, öbürkü.
 
 ## "de" yazımı
 

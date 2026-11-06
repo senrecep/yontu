@@ -3,7 +3,7 @@
 Kimlik: `resmi-eposta`. Kayıt: `kurumsal`. Linter: `yontu lint --tur resmi-eposta`.
 
 - Okur: tanımadığın ya da üst konumdaki kişi. Neden yazdığını ilk cümlede anlamalı.
-- Cümle: 10-20 sözcük, 60-200 sözcük.
+- Cümle: 10-20 sözcük, metin toplam 60-200 sözcük.
 - Hitap: `Sayın [Ad Soyad]`, "siz".
 - Kip ve zaman: şimdiki ve geniş zaman, ricada `-(y)AbIlIr misiniz`.
 - Bağlaçlar: az.

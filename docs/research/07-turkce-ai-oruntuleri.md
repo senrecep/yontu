@@ -1,4 +1,4 @@
-# 07 - Türkçe'ye özgü yapay zeka metin izleri ve çeviri kokusu (translationese)
+# 07 - Türkçeye özgü yapay zekâ metin izleri ve çeviri kokusu (translationese)
 
 Kapsam: AI ajanları için Türkçe humanizer (skill + deterministik linter + hook). Bu dosya bir katalog. Her iz için: neden iz, regex ipucu, yanlış pozitif (FP) riski, önce/sonra örneği.
 Tarih: 2026-11-05. Örnekler Türkçe, açıklamalar karışık.
@@ -11,7 +11,7 @@ Tarih: 2026-11-05. Örnekler Türkçe, açıklamalar karışık.
 
 | Kaynak | Bulgu | Linter için anlamı |
 |---|---|---|
-| Kocagül 2026, *Detecting the Human in the Machine* (Çankaya Univ. JHSS), 336 tartışmacı metin, 56 katılımcı, 61 özellik. https://doi.org/10.47777/cankujhss.1957142 | Cümle başında "Sonuç": AI %83.9, insan %7.2. **Noktalı virgül: AI %76.8, insan %15.2.** Yüksek virgül yoğunluğu: %82.1 / %20.5. Tırnak işareti: %42.9 / %8.9. Cümle başı söylem belirleyicileri (öncelikle, ayrıca, sonuç olarak): %83.9 / %25.9. **-ArAk zarf-fiil zinciri: %82.1 / %32.2.** Çok paragraflı yapı: %53.6 / %2.7. İnsan tarafı: cümle başı "aslında/ama/çünkü/bence" %31.3 / AI %23.2. Yüklem düşürme (eksiltili cümle): insan %20.5 / AI %3.6. Editörlü hibrit metinlerde 61 özelliğin 41'i (%67) AI profilinde kalıyor. | En güçlü tekil sinyaller bunlar. Noktalı virgül, Pangram'ın "AI noktalı virgül kullanmaz" iddiasının tersine, **Türkçe'de AI sinyali**. -ArAk ve cümle başı bağlaç sayımı birinci sınıf özellik olmalı. |
+| Kocagül 2026, *Detecting the Human in the Machine* (Çankaya Univ. JHSS), 336 tartışmacı metin, 56 katılımcı, 61 özellik. https://doi.org/10.47777/cankujhss.1957142 | Cümle başında "Sonuç": AI %83.9, insan %7.2. **Noktalı virgül: AI %76.8, insan %15.2.** Yüksek virgül yoğunluğu: %82.1 / %20.5. Tırnak işareti: %42.9 / %8.9. Cümle başı söylem belirleyicileri (öncelikle, ayrıca, sonuç olarak): %83.9 / %25.9. **-ArAk zarf-fiil zinciri: %82.1 / %32.2.** Çok paragraflı yapı: %53.6 / %2.7. İnsan tarafı: cümle başı "aslında/ama/çünkü/bence" %31.3 / AI %23.2. Yüklem düşürme (eksiltili cümle): insan %20.5 / AI %3.6. Editörlü hibrit metinlerde 61 özelliğin 41'i (%67) AI profilinde kalıyor. | En güçlü tekil sinyaller bunlar. Noktalı virgül, Pangram'ın "AI noktalı virgül kullanmaz" iddiasının tersine, **Türkçede AI sinyali**. -ArAk ve cümle başı bağlaç sayımı birinci sınıf özellik olmalı. |
 | Bergin & Atasoy 2026, UTOAD, 147 ChatGPT-4o-mini + 147 öğrenci metni. https://dergipark.org.tr/tr/pub/utoad/article/1805843 | AI: 34.235 token / 2.365 tür (TTR %6.9). Öğrenci: 23.306 / 3.800 (TTR %16.3). Deyim: AI 1.038 kullanım ama 107 tür; öğrenci 559 kullanım, 205 tür. İkileme: AI 68 kullanım / 10 tür, öğrenci 53 / 29. Atasözü: AI 0. | AI deyim ve ikilemeyi **çok ama tekdüze** kullanıyor. Linter: aynı deyim/ikileme tekrarı ve düşük tür/kullanım oranı. "Deyim ekle" tavsiyesi dikkatli verilmeli. |
 | Uzun 2024, IntechOpen, ChatGPT-4 Türkçe akademik + duygusal metin. https://doi.org/10.5772/intechopen.1007724 | AI ortalama cümle 15-20 kelime, paragraf 5-7. Akademik metinde insanla fark küçük (Cohen d≈0.3). Duygusal metinde belirgin fark. | Akademik registerda sözcük düzeyi tespit zayıf. Duygusal/kişisel registerda ton ve somutluk daha ayırt edici. |
 | Şimşek & Özdemir 2026, JLERE. https://dergipark.org.tr/en/pub/jlere/article/1858803 | ChatGPT daha yüksek karmaşık (birleşik) cümle oranı, daha az hata. | Hatasızlık + birleşik cümle yoğunluğu birlikte iz. |
@@ -42,12 +42,12 @@ Tarih: 2026-11-05. Örnekler Türkçe, açıklamalar karışık.
 Genel FP kuralı: tek eşleşme ceza değil. Skor = ağırlıklı eşleşme / 100 kelime. Akademik ve hukuki registerda A2/A5'in eşiği 2 kat yüksek tutulmalı.
 
 Regex notları (tüm bölüm için):
-- Python `re` Unicode'da `\w` Türkçe harfleri kapsar; `\b` çalışır. **Büyük/küçük harf için `re.I` kullanma**: `I/ı` ve `İ/i` yanlış eşleşir. Önce Türkçe'ye özel küçültme yap: `s.replace("I","ı").replace("İ","i").lower()`.
+- Python `re` Unicode'da `\w` Türkçe harfleri kapsar; `\b` çalışır. **Büyük/küçük harf için `re.I` kullanma**: `I/ı` ve `İ/i` yanlış eşleşir. Önce Türkçeye özel küçültme yap: `s.replace("I","ı").replace("İ","i").lower()`.
 - Ünlü uyumu ve kaynaştırma için çekim eki grubu: `(?:\w*)` kuyruk yeterli. Örnek: `\bkilit (?:bir )?rol oyna\w*`.
 - Şapka varyantı: `hâl|hal`, `imkân|imkan`, `kâr|kar` için `[aâ]`.
 
 ### A1. Önem şişirme (significance inflation)
-Neden iz: Her konuyu "kritik/hayati" seviyesine çıkarma, RLHF ödül eğilimi. Türkçe'de "-maktadır" ile birleşip kalıp cümle üretir.
+Neden iz: Her konuyu "kritik/hayati" seviyesine çıkarma, RLHF ödül eğilimi. Türkçede "-maktadır" ile birleşip kalıp cümle üretir.
 Regex: `\b(?:kilit|kritik|hayati|önemli|büyük|merkezi) (?:bir )?(?:rol|önem|yer|işlev)\w* (?:oyna|taşı|üstlen|arz et|sahip)\w*`
 FP: Orta. Bilimsel metinde "kritik sıcaklık", "kritik yol" terimdir. Terim listesi muafiyeti gerekir.
 
@@ -171,7 +171,7 @@ FP: Orta. "sürdürülebilir kalkınma", "dinamik programlama" terimdir. Eşik: 
 | 100 | tarihin ve modernin buluştuğu | eski ve yeni yapılar yan yana |
 
 ### A4. Moda mecazlar ve isimler
-Neden iz: İngilizce LLM jargonu (journey, tapestry, landscape, ecosystem, delve, symphony) doğrudan çevriliyor. Türkçe'de bu kullanımlar korpusta seyrek.
+Neden iz: İngilizce LLM jargonu (journey, tapestry, landscape, ecosystem, delve, symphony) doğrudan çevriliyor. Türkçede bu kullanımlar korpusta seyrek.
 Regex: `\b(?:yolculu[kğ]\w*|goblen\w*|manzara\w*|ekosistem\w*|senfoni\w*|dokunuş\w*|sinerji\w*|mozaik\w*|labirent\w*|pusula\w*)\b`
 FP: Düşük-orta. Gerçek yolculuk, gerçek manzara, biyolojik ekosistem. Bağlam: soyut isimle tamlama (`\w+ yolculuğu`, `\w+ ekosistemi`) ise iz.
 
@@ -293,11 +293,11 @@ Her biri İngilizce bir kaynaktan doğrudan geçmiş. Hem çeviri metinlerde hem
 | # | Kalıp | Kaynak | Neden iz | Regex | FP | Önce → Sonra |
 |---|---|---|---|---|---|---|
 | B1 | günün sonunda | at the end of the day | Aşut 2024 (BirGün) çeviri söylem olarak listeliyor | `\bgünün sonunda\b` | Orta: gerçek "akşam" anlamı. Fiil zamanı/saat bağlamı varsa muaf. | "Günün sonunda önemli olan müşteri memnuniyeti." → "Sonuçta önemli olan müşterinin memnun kalması." |
-| B2 | masaya getirmek | bring to the table | Türkçe'de "katkı", "getirmek" yeter | `\bmasaya (?:getir|koy)\w*` | Düşük | "Ekibe masaya getirdiği deneyim" → "Ekibe kattığı deneyim" |
+| B2 | masaya getirmek | bring to the table | Türkçede "katkı", "getirmek" yeter | `\bmasaya (?:getir|koy)\w*` | Düşük | "Ekibe masaya getirdiği deneyim" → "Ekibe kattığı deneyim" |
 | B3 | oyunun kurallarını değiştiren | game-changer | A1 | `\boyunun kurallarını değiştir\w*` | Düşük (spor haberi hariç) | "Oyunun kurallarını değiştiren bir özellik" → "Ödeme süresini yarıya indiren bir özellik" |
 | B4 | -e sahip olmak | have / possess | "Ev sahibi" dışında Türkçe "-li/-sı var" der | `\b\w+[ae] sahip(?:tir|tır|tirler| olan| olmak\w*| olduğu\w*)\b` | Orta: hukukta "hakka sahip" yerleşik. | "Şirket 200 çalışana sahiptir." → "Şirketin 200 çalışanı var." |
 | B5 | tarafından edilgen | by-passive | Türkçe failli edilgeni seyrek kullanır; özne etken olur | `\btarafından\b` (sayım; 100 kelimede ≥1.5) | Orta: haber ve hukuk normal | "Rapor ekip tarafından hazırlandı." → "Raporu ekip hazırladı." |
-| B6 | bir X olarak | as a X | "Bir yazılımcı olarak düşünüyorum ki" | `\b(?:bir )?\w+ olarak,? (?:ben|biz|düşünüyorum|söyleyebilirim)` ve genel `\bolarak\b` yoğunluğu | Orta: "olarak" Türkçe'de doğal; yoğunluk >1.5/100 kelime iz | "Bir uzman olarak şunu söyleyebilirim" → "Yıllardır bu işi yapıyorum, şunu gördüm" |
+| B6 | bir X olarak | as a X | "Bir yazılımcı olarak düşünüyorum ki" | `\b(?:bir )?\w+ olarak,? (?:ben|biz|düşünüyorum|söyleyebilirim)` ve genel `\bolarak\b` yoğunluğu | Orta: "olarak" Türkçede doğal; yoğunluk >1.5/100 kelime iz | "Bir uzman olarak şunu söyleyebilirim" → "Yıllardır bu işi yapıyorum, şunu gördüm" |
 | B7 | için aşırı kullanımı | for / in order to | "-mek için" her amacı taşıyor; Türkçe "-e", "-meye", "diye" de kullanır | `\biçin\b` (100 kelimede ≥3) | Yüksek; sadece yoğunluk | "Hızlı olmak için önbellek kullanıyoruz" → "Önbellek kullanıyoruz, hızlansın diye" |
 | B8 | hafif fiil yapmak/etmek | make/do + N | "karar yapmak", "hata yapmak" doğal; "bir değişiklik yapmak" yerine "değiştirmek" | `\bbir \w+ (?:yap|gerçekleştir)\w*` | Orta | "Kodda bir güncelleme yaptık" → "Kodu güncelledik" |
 | B9 | -ebilmek kaçamağı | can/may hedging | Her yargıyı olasılığa çevirme | `\b\w+(?:abil|ebil)\w*(?:ir|ır|ur|ür)\b` yoğunluğu, `olabilir` ≥3/paragraf | Orta | "Bu durum sorunlara yol açabilir ve performansı etkileyebilir." → "Bu, sayfayı yavaşlatıyor." |
@@ -333,7 +333,7 @@ Regex: `\b\w+(?:makta|mekte)(?:dır|dir|dırlar|dirler)\b`. Oran = eşleşen cü
 Eşik: Blog/e-posta'da >%15; akademikte >%45 (bushrabeg: doğal akademik ~%20-25). Paragrafta ≥4 ise sert.
 FP: Yüksek akademik/hukukta. Register tespiti olmadan ağır ceza verme.
 Önce: "Yapay zeka sağlık alanında yaygınlaşmaktadır. Doktorlar teşhis için kullanmaktadır. Hastalar da faydalanmaktadır."
-Sonra: "Yapay zeka hastanelere hızla girdi. Doktorlar teşhiste kullanıyor, hastalar da sonuçlarını daha erken alıyor."
+Sonra: "Yapay zekâ hastanelere hızla girdi. Doktorlar teşhiste kullanıyor, hastalar da sonuçlarını daha erken alıyor."
 
 ### C2. -mIştIr yığılması ve kesinlik -DIr
 Neden iz: "-mıştır" (geçmiş + kesinlik) ve isim cümlesinde "-dır" her cümlede. Konuşma ve blogda "-dı/-dır"sız hal doğal.
@@ -382,7 +382,7 @@ FP: Akademik yöntem bölümü.
 Sonra: "Bu konuya dikkatle bakmalıyız."
 
 ### C8. Üçlüler (triads)
-Neden iz: Her sayıma üç öğe: "hızlı, güvenli ve ölçeklenebilir". Kural-of-three RLHF eğilimi.
+Neden iz: Her sayıma üç öğe: "hızlı, güvenli ve ölçeklenebilir". Üçleme kuralı (rule of three) RLHF eğilimi.
 Regex: `\b\w+, \w+ ve \w+\b` (sıfat/isim üçlüsü); paragraf başına sayım, ≥2 üçlü → iz.
 FP: Orta-yüksek; doğal sayımlar da üçlü olabilir. Yalnızca yoğunluk.
 Önce: "Ekibimiz yaratıcı, dinamik ve çözüm odaklıdır."
@@ -404,7 +404,7 @@ FP: Düşük-orta; konuşma dilinde doğal ama tekrar iz.
 Önce: "Peki bu ne anlama geliyor? Cevap basit: maliyet düşüyor."
 Sonra: "Kısacası maliyet düşüyor." ya da daha iyisi: "Aylık fatura 40 bin liradan 28 bine indi."
 
-### C11. Noktalı virgül ve virgül yoğunluğu (Türkçe'ye özgü)
+### C11. Noktalı virgül ve virgül yoğunluğu (Türkçeye özgü)
 Neden iz: Kocagül: noktalı virgül AI %76.8 / insan %15.2; yüksek virgül yoğunluğu %82.1 / %20.5. Pangram'ın İngilizce gözlemi ("AI noktalı virgül kullanmaz") Türkçe için **ters**.
 Regex: `;` sayısı; virgül/cümle oranı.
 Eşik: Blog/e-posta'da 300 kelimede ≥1 noktalı virgül → orta ağırlık. Virgül/cümle > 2.5 → zayıf.
@@ -413,7 +413,7 @@ FP: Akademik/hukuki metinde noktalı virgül doğal. bushrabeg'in "mutlak yasak"
 Sonra: "Sistem hızlı ama pahalı. Bakımı da zor."
 
 ### C12. Uzun tire (em dash) ve kısa tire (en dash)
-Neden iz: Türkçe yazımda uzun tire nadirdir (TDK'da konuşma çizgisi/ara söz için var ama gündelik metinde yok). İngilizce LLM alışkanlığı.
+Neden iz: Türkçe yazımda uzun tire nadirdir (TDK'de konuşma çizgisi/ara söz için var ama gündelik metinde yok). İngilizce LLM alışkanlığı.
 Regex: `[—–]` ; ayrıca ` - ` (boşluklu kısa çizgi ara söz olarak).
 Eşik: Herhangi bir uzun tire → orta-yüksek ağırlık (insanca: sıfır tolerans).
 FP: Edebi metinde diyalog çizgisi (`^—`) muaf. Sayı aralığı `\d–\d` muaf.
@@ -516,7 +516,7 @@ Sonra: "Beş şehir öneriyorum: ..." (açılış ve kapanış silinir)
 4. **Hatasızlık AI kanıtı değil**, hata eklemek humanizasyon değil. Humanizer yazım hatası üretmemeli.
 5. **Tartışmalı kurallar** (bushrabeg'de mutlak, burada değil):
    - "ama/ancak" öncesi virgül: TDK yasaklamaz. Yalnızca yoğunluk.
-   - Noktalı virgül: TDK'da geçerli. Ama Türkçe AI sinyali olarak güçlü (Kocagül). Yasak değil, blog'da yumuşat.
+   - Noktalı virgül: TDK'de geçerli. Ama Türkçe AI sinyali olarak güçlü (Kocagül). Yasak değil, blog'da yumuşat.
    - Bağlaçla başlayan cümle ("Ama", "Ve"): insanda daha sık (Kocagül: insan %31.3). Tersine humanizasyon tekniği olarak kullanılabilir.
    - Şapka (â, î, û) kaldırma: üslup tercihi, iz değil. Tutarsızlık (aynı metinde hem "hâlâ" hem "hala") zayıf iz.
 6. **Aşırı düzeltme kokusu** (insanca §45): Humanizer çıktısında her paragrafta "Ama" ile başlayan cümle, zorla argo, yapay yazım hatası, her cümlede devrik yapı yeni bir iz olur. Linter kendi çıktısını da tarar.
@@ -558,7 +558,7 @@ SENT_START_CONN = re.compile(r"(?:^|(?<=[.!?])\s+)(?:Bu bağlamda|Öte yandan|Bu
 - Hook için: PostToolUse (Write/Edit) sonrası yalnızca `.md`/`.txt` ve Türkçe oranı yüksek dosyalarda çalıştır (Türkçe tespiti: `[çğışöü]` karakter oranı > %3).
 
 ### G4. Yeniden yazım ilkeleri (skill için)
-- Klişeyi silmek çoğu zaman eşanlamlıyla değiştirmekten iyidir.
+- Klişeyi silmek çoğu zaman eş anlamlısıyla değiştirmekten iyidir.
 - Somut bilgi yoksa uydurma; kullanıcıdan iste ya da cümleyi kısalt.
 - İnsan ritmi: kısa-uzun karışımı, ara sıra devrik cümle, yüklem düşürme (Kocagül: insan %20.5), virgülle bağlanan fiil zinciri, cümle başında "Ama/Çünkü/Aslında/Bence" (ölçülü), birinci çoğul şahıs.
 - Deyim ve ikileme: sayıyı artırma, **çeşitliliği** artır (Bergin & Atasoy). 150-250 kelimede ≤1 deyim (insanca).
@@ -569,7 +569,7 @@ SENT_START_CONN = re.compile(r"(?:^|(?<=[.!?])\s+)(?:Bu bağlamda|Öte yandan|Bu
 ## H. Açık sorular
 
 1. Kocagül 2026'nın Supplementary Table S1 (61 özelliğin tamamı) erişilebilirse eşikler kalibre edilmeli.
-2. Claude'a özgü Türkçe izler (GPT'den farklı) için korpus yok. Öneri: aynı 50 istemle Claude/GPT/Gemini Türkçe çıktısı toplayıp n-gram farkı çıkarmak. Claude'un İngilizce'deki "genuinely", "I'd be happy to", em dash eğilimlerinin Türkçe karşılıkları ("gerçekten", "memnuniyetle", uzun tire) bu katalogda var ama Claude'a özgü frekans ölçülmedi.
+2. Claude'a özgü Türkçe izler (GPT'den farklı) için korpus yok. Öneri: aynı 50 istemle Claude/GPT/Gemini Türkçe çıktısı toplayıp n-gram farkı çıkarmak. Claude'un İngilizcedeki "genuinely", "I'd be happy to", em dash eğilimlerinin Türkçe karşılıkları ("gerçekten", "memnuniyetle", uzun tire) bu katalogda var ama Claude'a özgü frekans ölçülmedi.
 3. Register sınıflandırıcısının deterministik doğruluğu bilinmiyor; küçük bir etiketli set (Bilkent Turkish Writings 9.119 AI öncesi deneme + hf `tum-nlp/neural-news-benchmark`) ile test edilmeli.
 4. Noktalı virgül: Kocagül tartışmacı deneme korpusunda güçlü sinyal; teknik dokümantasyonda geçerliliği test edilmeli.
 

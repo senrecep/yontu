@@ -1,4 +1,4 @@
-# 04 — Türkçe Cümle Türleri ve Ritim Çeşitlendirme Rehberi
+# 04. Türkçe Cümle Türleri ve Ritim Çeşitlendirme Rehberi
 
 > Tarih: 2026-11-05.
 > Etiket kuralı: **[Kaynak]** işaretli örnekler kaynaktan birebir alındı. **[kurgu]** işaretli örnekler bu proje için yazıldı; bunlar yazara atfedilmez. Cemil Meriç ve Orhan Pamuk için birebir alıntı **getirilemedi**. Bu yüzden onlara örnek cümle atfetmedim, yalnızca genel üslup tarifi verdim (bkz. §6.0).
@@ -39,7 +39,7 @@ HKU'ya göre cümleler dört ölçüte göre sınıflandırılır:
 **Sınıflandırmadaki görüş ayrılıkları.** Humanizer bunları bilmeli ama okulda öğretilen sınıflandırmayı dayatmamalı:
 - Bazı dilciler sıralı ve bağlı cümleyi "yapı" türü saymaz, birleşik cümlenin alt türü sayar. Bazıları sıralı cümleyi hiç ele almaz (MUTAF, Dizdaroğlu 1976 ve Hatipoğlu 1982'ye atıfla).
 - Ki'li cümleyi Karahan önce "bağlı cümle" altında incelemiş, sonraki baskılarda "ki bağlama edatı ile bağlanan cümleler" diye ayırmıştır (MUTAF). Ediskun bu yapı için "Türkçe kökenli olmayan bir cümle ögesi" der (MUTAF). TDB de "Türkçenin yapısına tam olarak uygun değildir" der.
-- **mi'li birleşik cümle** çoğu listede yer almaz. MEB PDF'i bunu ayrı bir tür olarak verir (bkz. §4.2.5).
+- **mi'li birleşik cümle** çoğu listede yer almaz. MEB PDF'si bunu ayrı bir tür olarak verir (bkz. §4.2.5).
 
 ---
 
@@ -114,7 +114,7 @@ Tek yüklemli, tek yargılı cümledir. Diğer ögelerin sayısı önemli değil
 - [Kaynak: HUR] *Ayşe koliyi mutfağa getirdi.*
 - [Kaynak: Sait Faik, MUTAF] *Akşama Fadime geliverdi.* / *Tatlı tatlı güler.*
 
-**Dikkat.** Fiilimsi (-ip, -arak, -ince) basit cümleyi okul dilbilgisinde girişik birleşik cümleye çevirir. MUTAF ise Sait Faik'in şu cümlesini basit cümle olarak sayar ("dinlenerek … yürüyerek" zarf tümleci kabul edilir): *"…derileri pul pul çobanlarla dinlenerek, ekseriya, bahar güneşine sarılıp yürüyerek dolaştım."* Okul kitaplarıyla akademik çalışmalar bu noktada ayrışır.
+**Dikkat.** Fiilimsi (-ip, -arak, -ince) basit cümleyi okul dil bilgisinde girişik birleşik cümleye çevirir. MUTAF ise Sait Faik'in şu cümlesini basit cümle olarak sayar ("dinlenerek … yürüyerek" zarf tümleci kabul edilir): *"…derileri pul pul çobanlarla dinlenerek, ekseriya, bahar güneşine sarılıp yürüyerek dolaştım."* Okul kitaplarıyla akademik çalışmalar bu noktada ayrışır.
 
 ### 4.2 Birleşik cümle
 Bir temel cümle ile en az bir yan cümleden oluşur (HKU).
@@ -194,7 +194,7 @@ Aralarında anlam ilgisi olan bağımsız yargılar virgül ya da noktalı virg�
 - [Kaynak: Sait Faik, ÇETİN] *Yazdım, beceremedim.*
 
 ### 4.4 Bağlı cümle
-İki ya da daha fazla bağımsız cümle bağlaçla bağlanır: *ve, ama, fakat, lakin, çünkü, meğer, veya, halbuki, oysa, yine de, ne var ki, üstelik, hatta* (TDB). Ortak ögesi olan da olabilir, olmayan da.
+İki ya da daha fazla bağımsız cümle bağlaçla bağlanır: *ve, ama, fakat, lakin, çünkü, meğer, veya, hâlbuki, oysa, yine de, ne var ki, üstelik, hatta* (TDB). Ortak ögesi olan da olabilir, olmayan da.
 - [Kaynak: HUR] *Hem suçlu hem güçlü.* (eksiltili bağlı cümle)
 - [Kaynak: Sait Faik, MUTAF] *Fakat sonraları düşünüp taşındım.*
 - [Kaynak: Sait Faik, ÇETİN] *Trifon toprağı sevmez; ona hürmet ederdi. Çünkü birçok sevdikleri orada … yaşıyorlardı. Fakat toprağın üstünde koşan … insanlar ne tuhaf mahlûklardı.*
@@ -374,7 +374,7 @@ Ataç'ta görüldüğü gibi: *"Yıllar güçlerini kesmiştir zavallıların, a
 | M5 | "-mektedir/-maktadır" ve "-dır" yoğunluğu | Yüklemlerin ne kadarı bu eklerle bitiyor | >%30 | Deneme türünde <%10 |
 | M6 | Retorik soru biçimi | "?" ile biten cümleden sonraki cümle "Bu, … anlamına gelir/geliyor" ya da "Cevap basit:" gibi başlıyor mu? | Var | Yok |
 | M7 | Bürokratik ki'li kalıp | `\b(belirtmek|unutmamak|söylemek|vurgulamak|eklemek)\s+gerekir\s+ki\b`, `\b\w+(malı|meli)dır\s+ki\b`, `\b(açıktır|aşikârdır|görülüyor)\s+ki\b` | Var | 0 |
-| M8 | Cümle başı bağlaç oranı | "Ama/Fakat/Oysa/Çünkü/Hele/Peki/Yine de/Ne var ki" ile başlayan cümle oranı, ve aynı bağlacın tekrarı | 0 ya da hep aynı ("Ayrıca", "Bunun yanı sıra") | %5-15, çeşitli |
+| M8 | Cümle başı bağlaç oranı | "Ama/Fakat/Oysa/Çünkü/Hele/Peki/Yine de/Ne var ki" ile başlayan cümle oranı ve aynı bağlacın tekrarı | 0 ya da hep aynı ("Ayrıca", "Bunun yanı sıra") | %5-15, çeşitli |
 | M9 | Eksiltili cümle ve tek sözcüklü cümle | Çekimli yüklemi olmayan ve noktayla biten kısa birim | 0 | Deneme türünde 500 kelimede 1-3 |
 | M10 | mi'li zaman ya da koşul yapısı | `\b\w+(dı|di|du|dü|tı|ti|tu|tü)(k|n|nız|niz)?\s+m[ıiuü]\b` ardından virgülsüz yüklem | 0 | Bonus sinyal, zorunlu değil |
 | M11 | Ünlem yoğunluğu | "!" sayısı | 0 ya da pazarlama tonunda aşırı | Deneme türünde ≤1/300 kelime |

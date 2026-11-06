@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Removed
+
+* **cli:** drop the `trlint` console script and the `trlint-disable` comment prefix; use `yontu` and `yontu-disable`.
+
 ## 0.1.0 (2026-11-06)
 
 

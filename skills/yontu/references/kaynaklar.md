@@ -1,7 +1,7 @@
 # Kaynaklar
 
 Ne zaman oku: Bir kuralın dayanağını göstermen gerektiğinde, kullanıcı "bu nereden çıktı"
-diye sorduğunda ya da yontu'nun yararlandığı önceki çalışmalara atıf yapacağında. yontu çalışırken
+diye sorduğunda ya da yontu'nun yararlandığı önceki çalışmalara atıf yapman gerektiğinde. yontu çalışırken
 ağa çıkmaz. Bağlantılar okur içindir.
 
 ## Yazım ve noktalama
@@ -21,7 +21,7 @@ ağa çıkmaz. Bağlantılar okur içindir.
   - Ek fiil: https://tdk.gov.tr/icerik/yazim-kurallari/ek-fiilin-yazilisi/
 - TDK Güncel Türkçe Sözlük: https://sozluk.gov.tr. Linterdeki sözcük kuralları sözlük
   sorgularıyla doğrulandı ve her kural sorgu tarihini taşır. Sözlükte madde bulunmaması tek başına yazım kuralı sayılmaz, bu
-  yüzden "ünvan" ve "iş birliği" kuralları uyarı düzeyindedir ve otomatik düzeltilmez.
+  yüzden "iş birliği" kuralı uyarı düzeyindedir ve otomatik düzeltilmez.
 
 ## Yapay zekâ izleri
 

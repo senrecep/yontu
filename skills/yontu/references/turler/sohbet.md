@@ -5,7 +5,7 @@ Kimlik: `sohbet`. Kayıt: `sohbet`. Linter: `yontu lint --tur sohbet`.
 - Okur: soruyu soran kişi. Cevabı ilk cümlede ister.
 - Cümle: 8-16 sözcük, paragraf 1-4 cümle.
 - Hitap: kullanıcının hitabını izle, belirsizse "siz".
-- Kip ve zaman: şimdiki ve geniş zaman, öneride emir ya da `-(y)AbIlIrsIn`.
+- Kip ve zaman: şimdiki ve geniş zaman, öneride emir ya da `-(y)AbIlIrsInIz` ("sen" hitabında `-(y)AbIlIrsIn`).
 - Bağlaçlar: doğal.
 - Kelime katmanı: gündelik ve kesin.
 - Noktalama: noktalı virgül ve uzun çizgi üretme. Liste yalnız gerçek liste için.

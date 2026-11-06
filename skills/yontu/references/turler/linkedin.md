@@ -3,7 +3,7 @@
 Kimlik: `linkedin`. Kayıt: `blog`. Linter: `yontu lint --tur linkedin`.
 
 - Okur: profesyonel ağ. İlk iki satır görünür.
-- Cümle: 8-16 sözcük, paragraf 1-3 cümle, 80-250 sözcük.
+- Cümle: 8-16 sözcük, paragraf 1-3 cümle, metin toplam 80-250 sözcük.
 - Hitap: birinci tekil doğal, okura "siz".
 - Kip ve zaman: `-DI` ve geniş zaman.
 - Bağlaçlar: az.
@@ -35,6 +35,6 @@ Gönderi kişisel bir sesle yazılır. Kalıp coşkuyu çıkar, yazarın duygusu
 
 > Önce: Bu yolculukta öğrendiğim beş ders var: azim, sabır ve ekip ruhu her şeydir.
 
-Sonra: Bu işte en çok azmin, sabrın ve ekip çalışmasının işe yaradığını gördüm.
+Sonra: Bu işte en çok azmin, sabrın ve ekip ruhunun faydasını gördüm.
 
 Girdide bunu gösteren bir olay varsa onu ekle. Yoksa yer tutucu bırak.
