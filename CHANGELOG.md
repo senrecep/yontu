@@ -6,6 +6,14 @@
 
 * **cli:** drop the `trlint` console script and the `trlint-disable` comment prefix; use `yontu` and `yontu-disable`.
 
+## [0.2.0](https://github.com/senrecep/yontu/compare/v0.1.0...v0.2.0) (2026-11-06)
+
+
+### Added
+
+* **linter:** cut false positives and add rules for missed patterns ([727237d](https://github.com/senrecep/yontu/commit/727237d2aa2cffa86ba8238cc5387b96a2868e70))
+* **site:** use chisel logo for mark, favicon and social card ([a7f8b85](https://github.com/senrecep/yontu/commit/a7f8b8541d8eb3c8cb133286b8a8b185a9ef1f7f))
+
 ## 0.1.0 (2026-11-06)
 
 

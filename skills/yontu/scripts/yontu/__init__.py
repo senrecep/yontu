@@ -7,7 +7,7 @@ from . import fidelity as _fidelity
 from . import metrics as _metrics
 from . import profiller as _profiller
 
-__version__ = "0.1.0"  # x-release-please-version
+__version__ = "0.2.0"  # x-release-please-version
 __all__ = ["lint", "fix", "compare", "stats", "profiles", "__version__"]
 
 

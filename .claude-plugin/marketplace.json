@@ -9,7 +9,7 @@
       "name": "yontu",
       "source": "./",
       "description": "Tam paket: skill, çevrim dışı denetleyici, MCP sunucusu ve kancalar. TDK yazımı, yapay zekâ izleri, tür üslubu.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "senrecep"
       },
@@ -19,7 +19,7 @@
       "name": "yontu-lite",
       "source": "./skills/yontu",
       "description": "Yalnız skill: MCP sunucusu ve kanca yok, en az bağlam. yontu ile birlikte kurma.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "senrecep"
       },
